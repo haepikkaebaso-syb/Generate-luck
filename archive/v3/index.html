@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101f2b">
+  <meta name="description" content="공식 최근 10년 로또 기록 분석, 시계열 검증, 5등 이상 확률을 직접 계산하는 조합 분산 생성기.">
+  <title>로또 아틀리에 — 6/45 번호 생성기</title>
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="core.js"></script>
+  <script defer src="research.js"></script>
+  <script defer src="joint.js"></script>
+  <script defer src="draws.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 이동</a>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="로또 아틀리에 처음으로"><span class="brand-mark">6<span>/</span>45</span><span>로또 아틀리에<small>LOTTO ATELIER</small></span></a>
+    <div class="local-badge"><span aria-hidden="true">◈</span> 공식 10년 데이터 · 522회 분석</div>
+  </header>
+  <main id="main">
+    <section class="page-heading"><div><p class="eyebrow">TEN YEARS OF LOTTO · RESEARCH EDITION</p><h1>분석하고, 검증하고, 고르다.</h1><p id="data-banner">2016.09.17 ~ 2026.09.12 · 동행복권 공식 기록</p></div><div class="odds-top"><span>한 조합의 1등 확률</span><strong>1 <em>/</em> 8,145,060</strong><a href="https://m.dhlottery.co.kr/lt645/intro" target="_blank" rel="noopener noreferrer">동행복권 공식 안내 ↗</a></div></section>
+    <nav class="tabs" aria-label="주요 메뉴"><button data-tab="generate" class="tab active" aria-current="page"><span>01</span> 번호 생성</button><button data-tab="analysis" class="tab"><span>02</span> 10년 정밀 분석</button><button data-tab="validation" class="tab"><span>03</span> 예측력 검증</button><button data-tab="lag" class="tab"><span>04</span> 회차 간 연관</button><button data-tab="saved" class="tab"><span>05</span> 보관함 <b id="saved-count">0</b></button></nav>
+    <section id="view-generate" class="view">
+      <div class="workspace">
+        <aside class="settings panel">
+          <div class="section-title"><h2>생성 설정</h2><button id="reset" class="text-button">초기화</button></div>
+          <fieldset class="field-group"><legend>생성 방식</legend><label class="method"><input type="radio" name="method" value="diverse" checked><span><strong>분산 조합 <b class="method-tag">기본</b></strong><small>게임끼리 겹치는 번호를 줄여 구성</small></span></label><label class="method"><input type="radio" name="method" value="weighted"><span><strong>통계 가중 실험</strong><small>과거 빈도 모형을 적용 · 예측 우세 미확인</small></span></label><label class="method"><input type="radio" name="method" value="random"><span><strong>완전 무작위</strong><small>모든 허용 조합을 같은 확률로 선택</small></span></label><label class="method"><input type="radio" name="method" value="balanced"><span><strong>균형 조건</strong><small>원하는 합계와 홀짝 범위로 선택</small></span></label></fieldset>
+          <div id="model-options" hidden><label class="input-label">실험 모형<select id="model-select"></select></label><p id="model-note" class="hint"></p></div>
+          <div id="balance-options" hidden><div class="input-pair"><label>합계 최소<input id="min-sum" type="number" min="21" max="255" value="100"></label><label>합계 최대<input id="max-sum" type="number" min="21" max="255" value="180"></label></div><div class="input-pair"><label>홀수 최소 개수<input id="min-odd" type="number" min="0" max="6" value="2"></label><label>홀수 최대 개수<input id="max-odd" type="number" min="0" max="6" value="4"></label></div><p class="hint">균형 조건은 선택 취향입니다. 조합당 당첨 확률을 높이지 않습니다.</p></div>
+          <fieldset class="field-group"><legend>게임 수 <span class="muted">한 번에 최대 20게임</span></legend><div class="amount-row"><div class="stepper"><button id="minus" aria-label="게임 수 줄이기">−</button><input id="amount" type="number" min="1" max="20" value="5" aria-label="생성할 게임 수"><button id="plus" aria-label="게임 수 늘리기">+</button></div><strong id="cost">5,000<span>원</span></strong></div><p class="hint">구매 시 금액 · 1게임 1,000원</p></fieldset>
+          <fieldset class="field-group number-settings"><legend>번호 선택 <span class="muted">선택 사항</span></legend><div class="select-modes" role="group" aria-label="번호 선택 동작"><button data-mode="fixed" class="selected" aria-pressed="true">고정 번호 <b id="fixed-count">0</b></button><button data-mode="excluded" aria-pressed="false">제외 번호 <b id="excluded-count">0</b></button></div><p class="hint" id="selection-hint">조합에 꼭 넣을 번호를 선택하세요. 최대 6개</p><div id="number-grid" class="number-grid" aria-label="1부터 45까지 번호 선택"></div><div class="number-legend"><span><i class="fixed-dot"></i>고정</span><span><i class="excluded-dot"></i>제외</span><span>다시 누르면 해제</span></div></fieldset>
+          <label class="check-label"><input type="checkbox" id="avoid-saved" checked><span>보관함에 있는 조합은 제외</span></label>
+          <div id="form-error" class="inline-error" role="alert" hidden></div>
+          <button id="generate" class="primary-button"><span aria-hidden="true">✧</span> 번호 생성하기 <span aria-hidden="true">→</span></button>
+          <p class="hint center">생성된 번호는 구매되지 않습니다.</p>
+        </aside>
+        <div class="result-column">
+          <section class="ticket panel" aria-labelledby="result-title"><div class="ticket-top"><div><p class="eyebrow">6/45 NUMBER COLLECTION</p><h2 id="result-title">이번에 고른 조합</h2></div><span class="ticket-symbol" aria-hidden="true">6/45</span></div><div class="ticket-meta"><span id="generation-label">완전 무작위</span><span id="generation-time"></span></div><div id="tickets" aria-live="polite"></div><div class="ticket-bottom"><div><span class="muted">서로 다른 조합</span><strong id="unique-count">0게임</strong></div><div><span class="muted">포함된 번호 종류</span><strong id="coverage">0 / 45</strong></div><div><span class="muted">예상 구매 금액</span><strong id="result-cost">0원</strong></div></div><div class="ticket-actions"><button id="save" class="dark-button">보관함에 저장</button><button id="copy" class="secondary-button">번호 복사</button><button id="csv" class="secondary-button">CSV 받기</button></div></section>
+          <section class="portfolio-panel panel"><div class="section-title"><h2>이 조합의 실제 당첨 범위</h2><span class="pill">전체 경우의 수로 계산</span></div><div id="portfolio-result" aria-live="polite"></div><p class="hint">같은 회차에 이 조합을 모두 구매할 때, 적어도 한 게임이 본번호 3개 이상 일치하는 확률입니다. 공정한 추첨 가정이며 과거 적중률이나 수익률이 아닙니다.</p></section>
+          <section class="probability-note"><span class="info-icon" aria-hidden="true">i</span><div><strong>여러 게임의 분산 효과와 1등 확률은 구분합니다.</strong><p id="probability-text"></p></div></section>
+          <section class="panel model-verdict"><strong id="generation-verdict"></strong><p>빈도 모형의 검증과 이전 번호·번호쌍·조합 유사도의 시차 실험을 구분해 살펴볼 수 있습니다.</p><button class="text-button" data-tab="lag">회차 간 연관 분석 보기 →</button></section>
+          <section class="panel checker"><div class="section-title"><h2>당첨번호와 대조</h2><span class="pill">직접 확인</span></div><div class="check-source"><label for="draw-select">공식 기록</label><select id="draw-select"></select></div><div class="winning-line" id="winning-line"></div><div class="manual-draw"><label>당첨번호 6개<input id="winning-input" type="text" placeholder="예: 1 8 15 22 31 40" inputmode="numeric"></label><label>보너스<input id="bonus-input" type="number" min="1" max="45" placeholder="선택"></label><button id="check" class="secondary-button">대조하기</button></div><p id="check-message" class="hint" role="status">과거 대조 결과는 다음 회차의 예측 성능이 아닙니다.</p><div id="check-results"></div></section>
+        </div>
+      </div>
+    </section>
+    <section id="view-analysis" class="view" hidden>
+      <div class="analysis-intro"><div><p class="eyebrow">OFFICIAL DRAW RECORDS</p><h2>최근 10년, 522번의 추첨.</h2><p id="data-description"></p></div><button id="export-research" class="secondary-button">분석 자료 받기</button></div>
+      <div class="data-alert"><strong id="data-status"></strong><span>본번호와 보너스를 분리하고, 원본 응답과 회차별로 대조했습니다. 이 파일의 자료는 기준일까지의 스냅샷입니다.</span><a href="https://m.dhlottery.co.kr/lt645/result" target="_blank" rel="noopener noreferrer">동행복권 공식 당첨결과 ↗</a></div>
+      <section class="research-conclusion" id="research-conclusion"></section>
+      <div class="section-title"><h2>기간별 번호 출현</h2><label class="range-filter">빈도 그래프 범위<select id="stats-range"><option value="52">마지막 52회</option><option value="156">마지막 156회</option><option value="0" selected>전체 10년</option></select></label></div>
+      <div class="stat-cards" id="stat-cards"></div>
+      <section class="panel frequency-panel"><div class="section-title"><div><h2>번호별 출현 횟수</h2><p class="hint">본번호 6개 기준 · 보너스 제외 · 높고 낮음은 다음 당첨 가능성을 뜻하지 않습니다.</p></div></div><div id="frequency-chart" class="frequency-chart"></div><div class="chart-legend"><span><i class="fixed-dot"></i>선택한 기간의 출현 횟수</span><span id="frequency-period"></span></div></section>
+      <section class="panel detail-panel"><div class="section-title"><div><h2>45개 번호 상세 비교</h2><p class="hint">전체 10년 기준. ‘현재 공백’은 마지막 출현 후 지난 회차 수입니다. 오래 안 나왔다고 다음에 나올 확률이 커지지는 않습니다.</p></div><label class="range-filter">정렬<select id="number-sort"><option value="number">번호순</option><option value="count">전체 출현 많은 순</option><option value="recent52Count">최근 52회 많은 순</option><option value="currentGap">현재 공백 긴 순</option></select></label></div><div id="number-details" class="table-scroll" tabindex="0" aria-label="번호별 상세 통계"></div></section>
+      <div class="distribution-grid"><section class="panel detail-panel"><h2>홀수 개수</h2><div id="odd-distribution"></div></section><section class="panel detail-panel"><h2>직전 회차와 같은 번호 수</h2><div id="repeat-distribution"></div></section><section class="panel detail-panel"><h2>본번호 6개의 합계</h2><div id="sum-distribution"></div></section><section class="panel detail-panel"><h2>연속수와 합계의 특징</h2><div id="pattern-summary"></div></section></div>
+      <section class="panel detail-panel"><div class="section-title"><div><h2>연도별 번호 변화</h2><p class="hint">색은 각 연도 출현 비율, 셀 안 숫자는 출현 횟수입니다. 2016년과 2026년은 일부 기간만 포함합니다.</p></div></div><div id="annual-heatmap" class="table-scroll" tabindex="0" aria-label="연도별 번호 출현 표"></div></section>
+      <div class="analysis-bottom"><section class="panel"><div class="section-title"><h2>함께 나온 번호 쌍</h2><span class="pill">990쌍 비교</span></div><p class="hint">기대 횟수는 쌍마다 약 7.91회입니다. 쌍 전체를 비교한 보정 결과를 함께 표시합니다.</p><div id="pair-details" class="table-scroll"></div></section><section class="panel recent-panel"><div class="section-title"><h2>공식 최근 10회 기록</h2><span class="pill">기준일 현재</span></div><div id="recent-draws"></div></section></div>
+    </section>
+    <section id="view-validation" class="view" hidden>
+      <div class="analysis-intro"><div><p class="eyebrow">WALK-FORWARD VALIDATION</p><h2>다음 회차에서도 통했을까?</h2><p>매 회차의 번호를 고를 때, 그 회차보다 앞선 기록만 사용했습니다.</p></div><button id="export-validation" class="secondary-button">검증 결과 받기</button></div>
+      <div id="validation-verdict" class="research-conclusion"></div>
+      <div id="validation-timeline" class="validation-timeline"></div>
+      <section class="panel detail-panel"><h2>무작위 대비 예측 오차</h2><p class="hint">Brier 오차는 번호별 출현 예측과 실제 결과의 차이입니다. 낮을수록 좋습니다. 모형의 가중치로 실제 생성되는 분포를 계산해 같은 기준으로 검증했습니다.</p><div id="validation-table" class="table-scroll" tabindex="0" aria-label="예측 모형 비교"></div><p class="hint">대안 4개를 동시에 비교한 최종 구간의 구간 추정은 98.75%씩 사용합니다. 양의 개선 구간이 0을 벗어날 때만 통계적 우세를 표시합니다. 재표집 구간은 근사값입니다.</p></section>
+      <section class="panel detail-panel"><h2>5게임을 생성했을 때의 과거 결과</h2><p class="hint">각 실제 회차마다 256번씩 다시 생성한 5게임 묶음의 ‘5등 이상 하나라도’ 비율입니다. 256번은 같은 회차에서의 반복이며, 256개의 새로운 추첨이 아닙니다.</p><div id="portfolio-validation" class="table-scroll" tabindex="0" aria-label="5게임 과거 대조 결과"></div></section>
+      <div class="analysis-bottom"><section class="panel"><h2>검증을 읽는 방법</h2><div id="validation-method" class="findings"></div></section><section class="panel"><h2>분산 조합의 효과는 직접 계산합니다</h2><div id="diversity-explanation" class="findings"></div></section></div>
+    </section>
+    <section id="view-lag" class="view" hidden>
+      <div class="analysis-intro"><div><p class="eyebrow">SERIAL DEPENDENCE · JOINT PROBABILITY</p><h2>이전 조합과 이후 회차의 관계.</h2><p>1회 뒤부터 52회 뒤까지, 번호 조건과 여섯 번호 전체의 예측을 구분해 평가합니다.</p></div><button id="export-lag" class="secondary-button">시차 분석 받기</button></div>
+      <div class="data-alert"><strong>이미 확인한 과거 자료를 다시 탐색한 결과입니다.</strong><span>마지막 104회도 이전 분석에서 확인했습니다. 이번 결과를 새로운 독립 검증으로 부르지 않습니다. 시간적 연관성은 추첨 간 원인·영향을 입증하지 않습니다.</span></div>
+      <section class="research-conclusion" id="lag-verdict"></section>
+      <div class="lag-summary-cards" id="lag-summary-cards"></div>
+      <section class="panel detail-panel"><div class="section-title"><div><h2>몇 회 뒤에 같은 번호가 다시 나왔을까?</h2><p class="hint">두 회차의 본번호 중복 개수 평균입니다. 공정한 독립 추첨의 기대값은 0.8개입니다.</p></div></div><div id="lag-overlap" class="table-scroll" tabindex="0" aria-label="시차별 중복 번호 수와 검정 결과"></div></section>
+      <section class="panel detail-panel"><div class="section-title"><div><h2>가장 강해 보였던 조건부 관계</h2><p class="hint">전체 558,900개 관계 중 선택된 과거 비율입니다. 작은 표본과 대규모 검색 효과를 함께 읽어야 합니다.</p></div><div class="lag-rule-filters"><label class="range-filter">회차 간격<select id="lag-rule-lag"></select></label><label class="range-filter">조건 종류<select id="lag-rule-kind"><option value="pair">이전 번호 쌍 → 후속 번호</option><option value="single">이전 한 번호 → 후속 번호</option></select></label></div></div><div id="lag-rules" class="table-scroll" tabindex="0" aria-label="탐색에서 선택된 시차 규칙"></div><p class="hint">보정 p는 회차 순서를 999번 섞을 때마다 전체 검색에서 가장 극단적인 통계량을 다시 찾은 결과입니다. 관측된 조건부 비율은 미래 당첨 확률이 아닙니다.</p></section>
+      <div class="analysis-bottom lag-explanations"><section class="panel"><h2>여섯 번호 조합의 표본은 충분할까?</h2><div id="lag-support" class="findings"></div></section><section class="panel"><h2>이번에 확장한 평가</h2><div class="findings"><article><h3>실제로 나온 여섯 번호의 전체 확률</h3><p>각 모형이 실제 당첨 조합 전체에 배정한 확률을 계산합니다. 균등 기준보다 높았는지는 로그 점수 차이로 평가하며, 이 값을 1등 확률의 증가율로 바꾸지 않습니다.</p></article><article><h3>단일 번호·번호 쌍·조합 유사도</h3><p>1회 전, 1~3회 전, 1~10회 전 조건을 사용합니다. 조합 유사도는 공유하는 번호 쌍의 비율이며 임의의 여섯 번호 상호작용을 학습한 것은 아닙니다. 적게 관측된 조건은 균등값 쪽으로 강하게 보정합니다.</p></article><article><h3>정확한 혼합분포 실험</h3><p>균등 모형과 다섯 시차 모형의 정규화된 조합 확률을 같은 비율로 섞습니다. 가중치를 단순 평균하는 방식과 다르며, 성능은 별도로 검사합니다.</p></article></div></section></div>
+      <section class="panel detail-panel"><h2>실제 여섯 번호 전체의 예측 점수</h2><p class="hint">각 회차 예측에는 그 회차 이전 자료만 사용했습니다. 주 지표는 균등 대비 평균 로그 점수입니다. 0이 기준이며 양수일수록 이 과거 구간의 전체 조합 예측 점수가 좋습니다.</p><div id="lag-model-table" class="table-scroll" tabindex="0" aria-label="시차 예측 모형의 조합 전체 로그 점수"></div><p id="lag-model-conclusion" class="hint"></p><p class="hint">고정·제외가 없는 모형의 회고 실험입니다. 여섯 번호 가중치 곱 모형은 미래 번호쌍의 임의 상호작용을 모두 학습하지 않습니다. 혼합 모형은 여섯 분포를 섞어 의존 구조를 넓힌 추가 실험입니다.</p></section>
+      <section class="panel detail-panel"><h2>1등 횟수만으로 판단하기 어려운 이유</h2><div id="lag-jackpot-context"></div></section>
+      <section class="panel next-experiment"><div><p class="eyebrow">A TEST BEFORE THE DRAW</p><h2>다음 회차의 실험 계획을 남기세요.</h2><p id="lag-future-note"></p><p class="hint">예측 분포·자료 해시·모형 버전을 기록하는 로컬 JSON입니다. 추첨 후 수정할 수 없는 공인 사전등록은 아니며, 구매나 당첨 보장을 뜻하지 않습니다.</p></div><button id="export-next-experiment" class="dark-button">다음 회차 실험 계획 받기</button></section>
+    </section>
+    <section id="view-saved" class="view" hidden>
+      <div class="analysis-intro"><div><p class="eyebrow">MY COLLECTION</p><h2>내 번호 보관함</h2><p>이 브라우저에 저장한 조합입니다. 중요한 기록은 CSV로 받아 두세요.</p></div><button id="export-all" class="dark-button">전체 CSV 받기</button></div>
+      <p class="data-alert">브라우저 데이터 삭제, 시크릿 모드 종료, 파일 위치·브라우저 변경 시 저장 기록이 유지되지 않을 수 있습니다.</p>
+      <div id="saved-list"></div>
+    </section>
+    <footer><span class="footer-brand">LOTTO ATELIER <b>6/45</b></span><p>과거 기록은 참고용입니다. 같은 회차의 중복 조합을 줄이고, 정한 예산 안에서 사용하세요.</p><a href="https://m.dhlottery.co.kr/lt645/result" target="_blank" rel="noopener noreferrer">공식 당첨결과 ↗</a></footer>
+  </main>
+  <div id="toast" role="status" class="toast" hidden></div>
+  <noscript>번호 생성기를 사용하려면 브라우저의 JavaScript를 허용해 주세요.</noscript>
+</body>
+</html>

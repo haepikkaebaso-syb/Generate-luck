@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "referenceDate": "2026-09-13",
+  "source": "Official draws, 720-1241, 522 observations",
+  "exploratory": true,
+  "freshHoldout": false,
+  "files": [
+    {
+      "path": "data/draws.json",
+      "sha256": "3188ae42aa4b6319de2313a3c215ddc7b6855d0eec4a428b8e85c5b5d8aa0f9f"
+    },
+    {
+      "path": "data/jackpot-research/FINDINGS.ko.md",
+      "sha256": "7e5940903464757fd4c593cf1dbb3f0c176c72a7ba59732a7962185e309cffd4"
+    },
+    {
+      "path": "data/jackpot-research/audit/audit_final_report.py",
+      "sha256": "d85fb95057a1f52749b29a773298452017fac0571c00fcb508b0da58b44e7c8a"
+    },
+    {
+      "path": "data/jackpot-research/audit/cardinality-audit.json",
+      "sha256": "e8c8ec4596b5c41138058109d5dcf9bf2afefcbf4a61ed8fe11448bd50a5ad35"
+    },
+    {
+      "path": "data/jackpot-research/audit/classification-audit.json",
+      "sha256": "c88c51cb790593cc8f52a15ef362f641621301376bc046d86b8af52a37fa639d"
+    },
+    {
+      "path": "data/jackpot-research/audit/classification-samples-node.json",
+      "sha256": "0e662e841da896f3e62aaa354d383d62601f15c7b849c9e274ed09b24620fa47"
+    },
+    {
+      "path": "data/jackpot-research/audit/compare_cardinalities.py",
+      "sha256": "a7f6a0cc0be2ac6ff3f609bda1ecebdebd258d61d3db970e4c04943fe113c95a"
+    },
+    {
+      "path": "data/jackpot-research/audit/compare_classification.py",
+      "sha256": "77b6351c65ad2af9fc95bcba5ee3b5f68d97834dd7a55c98a577a8e9515eba97"
+    },
+    {
+      "path": "data/jackpot-research/audit/compare_scores.py",
+      "sha256": "d6b499913ebb6cabc6b10d82c8d90a931b2afdef75957400b7bea8a491b791bb"
+    },
+    {
+      "path": "data/jackpot-research/audit/export_and_verify_node_scores.cjs",
+      "sha256": "26a8ba6bc54a484e5e5d64d2c38948319d05e60323b08eaa22832f38d277484d"
+    },
+    {
+      "path": "data/jackpot-research/audit/export_classification_samples.cjs",
+      "sha256": "4ff15fc1a1c5aa05490e01b09df1a1c37456e3df408b191d0cb673b9e5833988"
+    },
+    {
+      "path": "data/jackpot-research/audit/final-report-audit.json",
+      "sha256": "6ea5ed4dc016ffe5bd849f920d922a88198ccc5bb7e23fef02ad05607835a7b1"
+    },
+    {
+      "path": "data/jackpot-research/audit/independent-scoring-reconstruction.json",
+      "sha256": "ddc9c960d887f9302550fba0a26f352855b167410b05b8e1d6d4283d0f6606a9"
+    },
+    {
+      "path": "data/jackpot-research/audit/independent-type-counts.json",
+      "sha256": "5c8b6e2d14bd4d8cb93b1b53ebe06baeab89d352123442e0a7394a0f19491e22"
+    },
+    {
+      "path": "data/jackpot-research/audit/independent_scoring_audit.py",
+      "sha256": "a91d60a16abdf6d5b9af51ab2a9789ae3d063227967f4958c0b06d6569b81248"
+    },
+    {
+      "path": "data/jackpot-research/audit/independent_type_counts.py",
+      "sha256": "796e186beaf836fd4762696b02ac2cb4c485ae9ef9cb1fda5be698af662ede2d"
+    },
+    {
+      "path": "data/jackpot-research/audit/node-score-audit-samples.json",
+      "sha256": "316b914afe3452d55b0e71660c5f63b7dd81c274b5ce69677c730fa954eeaa14"
+    },
+    {
+      "path": "data/jackpot-research/audit/scoring-audit.json",
+      "sha256": "0a04dbe02c323b23c08324679a1395bbe631444a4c83f976238865be16ba19bc"
+    },
+    {
+      "path": "data/jackpot-research/build-lotto-winner-cases-20260913.py",
+      "sha256": "1025d9efec92ee04319d138141634c73704bb1499bc32351468621f3a7760487"
+    },
+    {
+      "path": "data/jackpot-research/enumerate-types.cjs",
+      "sha256": "dfdc8c0bf43b67599dae589d67bbd86c8d93ea188edcee15c76995b253eede71"
+    },
+    {
+      "path": "data/jackpot-research/exact-type-cardinalities.json",
+      "sha256": "e1a926200fff475dad50dc0258e0468e7be497b58f99fabb8aa37941cf2e1ab6"
+    },
+    {
+      "path": "data/jackpot-research/filter-comparison.json",
+      "sha256": "31c97db69d14cd08b2985ef53c63179312c87efb77bb5fe251e411c4b0e2928c"
+    },
+    {
+      "path": "data/jackpot-research/jackpot-type-report.json",
+      "sha256": "2faef98c380cfa9885ea56811fc4e2acb8902261259e4fb730fdfbacb2498873"
+    },
+    {
+      "path": "data/jackpot-research/run-type-experiment.cjs",
+      "sha256": "2c021222738f3aa279c2ca71fad99b7c58edbb814e325bb9d9476d6aa06d6316"
+    },
+    {
+      "path": "data/jackpot-research/specification.json",
+      "sha256": "0cca039877a2b4de71f46a10b30807206f38f0347e7d9daed614f0a21210182a"
+    },
+    {
+      "path": "data/jackpot-research/type-models.cjs",
+      "sha256": "b1cb74f1fe01686b66c7cc63bb88a972171a644ece2051532dcb240bca04827f"
+    },
+    {
+      "path": "data/jackpot-research/type-partitions.cjs",
+      "sha256": "671ff217d17624a69eba3ea699644cc192279aedce1fc8f78da501038fe786be"
+    },
+    {
+      "path": "data/jackpot-research/verification-summary.json",
+      "sha256": "9f631c79113e7a3c53dbe2d69191eadd28b21e353b11fea0c773524c5cddfc2e"
+    },
+    {
+      "path": "data/jackpot-research/verify-type-models.cjs",
+      "sha256": "57cac12ac8e7a76f88f3b0171833103ee5def0501d2bd6d83cde52e7684a538b"
+    },
+    {
+      "path": "data/jackpot-research/winner-cases.json",
+      "sha256": "9a23c04c3b3c092e7954717ada2f7405911223e852fd494f9d027a570d8d8d55"
+    },
+    {
+      "path": "scripts/analyze-jackpot-filters.cjs",
+      "sha256": "4eaa66d33b7f6789edcf9d6f97260315a938ab0f700cbe379c15a850a5d7ac32"
+    }
+  ]
+}

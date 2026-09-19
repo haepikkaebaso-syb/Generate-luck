@@ -1,0 +1,88 @@
+{
+  "passed": true,
+  "source": "C:\\Users\\Public\\Documents\\ESTsoft\\CreatorTemp\\lotto-jackpot-types-20260913\\jackpot-type-report.json",
+  "sourceSha256": "2faef98c380cfa9885ea56811fc4e2acb8902261259e4fb730fdfbacb2498873",
+  "allModelScoreComparisons": 4392,
+  "independentBootstrapEndpointComparisons": 96,
+  "maxBootstrapEndpointError": 2.7755575615628914e-17,
+  "observedTypeCountsCompared": 706,
+  "latestForecastTypeCountsAndProbabilitiesCompared": 706,
+  "wilsonEndpointsCompared": 3180,
+  "historicalExamplesChecked": 756,
+  "developmentSelectedModel": "sum_bin",
+  "positiveReused104AdjustedIntervalModels": [],
+  "structuralZeroIntervalIssueCount": 0,
+  "salient": {
+    "selectedDevelopmentLogGain": 0.0017922834671085242,
+    "selectedReused104LogGain": -0.007920391835430024,
+    "selectedReused104Interval95": {
+      "confidence": 0.95,
+      "lower": -0.017448158007688227,
+      "upper": 0.0007327659554191663,
+      "method": "paired circular-block percentile bootstrap",
+      "blockLength": 4,
+      "replicates": 4000,
+      "seed": 20260914
+    },
+    "mixtureReused104": {
+      "drawCount": 104,
+      "meanJointLogGain": 0.010608773300262496,
+      "sumJointLogGain": 1.1033124232272995,
+      "geometricMeanAssignedLikelihoodRatio": 1.010665245860587,
+      "jointLogGainIntervalAdjusted": {
+        "confidence": 0.9954545454545455,
+        "lower": -0.013587498606826608,
+        "upper": 0.03570743444837944,
+        "method": "paired circular-block percentile bootstrap",
+        "blockLength": 4,
+        "replicates": 4000,
+        "seed": 20260914
+      },
+      "jointLogGainInterval95": {
+        "confidence": 0.95,
+        "lower": -0.006367264505925821,
+        "upper": 0.02794415510644262,
+        "method": "paired circular-block percentile bootstrap",
+        "blockLength": 4,
+        "replicates": 4000,
+        "seed": 20260914
+      }
+    },
+    "sum120to149Example": {
+      "index": 2,
+      "key": "120-149",
+      "label": "120~149",
+      "possible": true,
+      "categoryCardinality": 3037490,
+      "trailingObservedCount": 61,
+      "trailingObservedRate": 0.391025641025641,
+      "observedRateWilson95": {
+        "confidence": 0.95,
+        "lower": 0.31794989228667325,
+        "upper": 0.46933933635994274,
+        "width": 0.15138944407326954,
+        "method": "Wilson observed-rate interval; descriptive, unadjusted, not a future prediction interval"
+      },
+      "structuralZeroNote": null,
+      "theoreticalCategoryProbability": 0.3729242019088871,
+      "modeledCategoryProbability": 0.3819749214672641,
+      "fairTicketProbability": 1.2277380399898834e-07,
+      "experimentalTicketProbability": 1.257534745685629e-07,
+      "experimentalPerTicketLiftOverFair": 1.0242695955694188,
+      "fiveDistinctTicketsSameCategory": {
+        "ticketCount": 5,
+        "fairProbability": 6.138690199949418e-07,
+        "experimentalModelProbability": 6.287673728428144e-07,
+        "assumption": "All5distinct tickets lie in this category; exact under this fitted category model only."
+      },
+      "modelProbabilityIsVerifiedFutureChance": false
+    }
+  },
+  "inferenceLimits": [
+    "Block4 percentile intervals are approximate descriptive uncertainty for reused history, not a fresh confirmation.",
+    "Bonferroni adjustment across11 alternatives does not remove historical reuse, repeated analyses, or post-selection effects.",
+    "A positive mean log likelihood score or its exponent is not a future jackpot probability improvement.",
+    "No adjusted lower interval bound exceeds0 in the reused104; a high-probability jackpot ticket recommendation is unsupported.",
+    "Large type probability must be divided by exact type cardinality before it can represent an individual-ticket probability under a type model."
+  ]
+}

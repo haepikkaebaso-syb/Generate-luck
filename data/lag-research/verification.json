@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "checks": [
+    "558900 conditional rules across 12 lags",
+    "All 522 full-six sets distinct; 8145060 possible",
+    "All row/column count invariants and 4800 randomly selected rule counts independently verified",
+    "All 12 mean overlaps independently verified using Python set intersections",
+    "All 40 displayed extreme rules independently recounted and adjusted p-values reconstructed"
+  ]
+}

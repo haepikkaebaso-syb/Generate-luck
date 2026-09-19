@@ -1,0 +1,382 @@
+{
+  "requests": [
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/result",
+      "file": "raw/official-result-page.html",
+      "bytes": 570483,
+      "sha256": "83215fa9b2793590dbcf4f66b6d5a45849533d54ba628840d2dd4b3aa938ba81",
+      "contentType": "text/html; charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=center&srchLtEpsd=1241",
+      "file": "raw/center-1241.json",
+      "bytes": 6274,
+      "sha256": "4e20ee02f57f0374f911cf2bdbdfa40e9f90f4ceef1ae4ce24a100c6141e42ac",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1232",
+      "file": "raw/older-1232.json",
+      "bytes": 6274,
+      "sha256": "f7700ba0fee727b1d00d7b929fed9bfc219b048fb76a3bd5979cc64a668ff400",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1222",
+      "file": "raw/older-1222.json",
+      "bytes": 6275,
+      "sha256": "334c672a5fa589b2bd922f8626c937e9e24a2b844e1f2aeec934159de97c0946",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1212",
+      "file": "raw/older-1212.json",
+      "bytes": 6272,
+      "sha256": "bdd0ee25f6ebfc45bf8acd9fa5fe23268f907b29f6bc742ca2068cc49bbdb5b9",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1202",
+      "file": "raw/older-1202.json",
+      "bytes": 6268,
+      "sha256": "b83d13f10703f268bb168bb43394fbbb1089c2d1e8a29ce2fcfecf1119e8ee1f",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1192",
+      "file": "raw/older-1192.json",
+      "bytes": 6271,
+      "sha256": "554aa90557dd6e91bac47c19cc9f75696b285f6c7dfe120ccbc40054397e00aa",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1182",
+      "file": "raw/older-1182.json",
+      "bytes": 6263,
+      "sha256": "6d57a838da19c7fd618ba948e2f771381e2ea5fffab293814ee107132f293351",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1172",
+      "file": "raw/older-1172.json",
+      "bytes": 6275,
+      "sha256": "0d27d06b57e1b1eec59f06dd6201ddfeab904343f382c35aca881a085eeb2ecb",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1162",
+      "file": "raw/older-1162.json",
+      "bytes": 6274,
+      "sha256": "39677059463c69712fd4a3a544a30a73f6ed3cd3f56828538c1d30f5dfc592d4",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1152",
+      "file": "raw/older-1152.json",
+      "bytes": 6261,
+      "sha256": "5281c72d049e015ae21d8d1cd92cd2ba3c7237529311e85a162e36e0b27a1c3a",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1142",
+      "file": "raw/older-1142.json",
+      "bytes": 6266,
+      "sha256": "f0231fb74468b120a307bbda8f8aed017f8af7ba1f349d979165f02b3d250d8b",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1132",
+      "file": "raw/older-1132.json",
+      "bytes": 6269,
+      "sha256": "7ecf44c8e6d8c72a873796deda984a9f75c2a67871bf07fd0849c6f05c0c3837",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1122",
+      "file": "raw/older-1122.json",
+      "bytes": 6267,
+      "sha256": "d5ae923cba1d5654fb90b617b16168c836110a61abad1b64df4e3dcb115d9e4d",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1112",
+      "file": "raw/older-1112.json",
+      "bytes": 6270,
+      "sha256": "84cf1ee12988aae851ac06508f5c7153a0a32b26ffbbc2fb0772f604fa158bdd",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1102",
+      "file": "raw/older-1102.json",
+      "bytes": 6270,
+      "sha256": "68ac6230231e5ffb1d181464b25263559fb2c8582e8ec8a05a96fcc4238d8dff",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1092",
+      "file": "raw/older-1092.json",
+      "bytes": 6272,
+      "sha256": "2c5118e69ae5041f12c8a77e4eb6472ec46d671e47ebbc106ee2c1e3c756013b",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1082",
+      "file": "raw/older-1082.json",
+      "bytes": 6261,
+      "sha256": "5ec0656ffa7858d3caeb4939c35f08677f3a4b4da7de1c1aacb95c070d65a897",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1072",
+      "file": "raw/older-1072.json",
+      "bytes": 6262,
+      "sha256": "9437f5f4c1e8235d1632db7849f86ac17dc44928c5032024657f30d16ee651e5",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1062",
+      "file": "raw/older-1062.json",
+      "bytes": 6271,
+      "sha256": "02afd574cf1d7ec3aac43e242af76ca907cf8c07184a1c67d656c69403e903d0",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1052",
+      "file": "raw/older-1052.json",
+      "bytes": 6272,
+      "sha256": "73d4c1f1d06db930fe1f87c23493f8912ea95676da289e8f8a423c41569dd5df",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1042",
+      "file": "raw/older-1042.json",
+      "bytes": 6259,
+      "sha256": "09fcbe0522caaaec6f0b6a3c7348d75c7ab3aa2eac2cc0ed60280f8725c63bf4",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1032",
+      "file": "raw/older-1032.json",
+      "bytes": 6260,
+      "sha256": "2bf73abd7bb2a8763b928c7d0c873258242d21e51c2f3ae7249d6bf4bf2bc396",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1022",
+      "file": "raw/older-1022.json",
+      "bytes": 6271,
+      "sha256": "6f3ef8ff452a98cb46b087cb7cfa85ff52da13468d655f2c4fa000d916601ac5",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1012",
+      "file": "raw/older-1012.json",
+      "bytes": 6264,
+      "sha256": "9ce611389784f95a2a29abd6a2d11f6309deb41ba383c99353cfa38638779511",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=1002",
+      "file": "raw/older-1002.json",
+      "bytes": 6256,
+      "sha256": "f5c2c699ddd1f50b1af854f9a22f0403dd75bf63593df3bac8fa487d2faf955a",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=992",
+      "file": "raw/older-992.json",
+      "bytes": 6248,
+      "sha256": "6ee63c7b91d6daea122fe9cb0a51012583941218b76b1ff04b043ce40450c4b2",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=982",
+      "file": "raw/older-982.json",
+      "bytes": 6240,
+      "sha256": "7457619ddb7e5e42900bd82bf14933fe4d9a75484edb2dea00372e3e6fdb644b",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=972",
+      "file": "raw/older-972.json",
+      "bytes": 6237,
+      "sha256": "d4a7af27b1706ade65d46bf3e8fa7183caa104abca0c79e8a7ac0bee8e8f0d50",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=962",
+      "file": "raw/older-962.json",
+      "bytes": 6245,
+      "sha256": "60671731eb94b6df089a2378881f6f5f17f7ae03c35a6a528bac4ad7d9809017",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=952",
+      "file": "raw/older-952.json",
+      "bytes": 6252,
+      "sha256": "4b3c68a218eae5d40211a1d1d6b15e68dcd1d9c12f54cb69bb636fff14e66870",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=942",
+      "file": "raw/older-942.json",
+      "bytes": 6241,
+      "sha256": "518b732de6b8a5ff89b34a61114450adeb17db0e76659402e063ac1e7947424c",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=932",
+      "file": "raw/older-932.json",
+      "bytes": 6234,
+      "sha256": "fb2d5936ba61b11e5e3b387158896d59bdf01d6321cd690f422c2f73f95008d8",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=922",
+      "file": "raw/older-922.json",
+      "bytes": 6238,
+      "sha256": "647544b7582d49c117fb95d0a203570453206d6c8d840e144998c532f9fb6216",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=912",
+      "file": "raw/older-912.json",
+      "bytes": 6233,
+      "sha256": "ca244f990ac64c4cad16378bd6c77a8bc84a770bfa036b4d389dc9733c556a28",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=902",
+      "file": "raw/older-902.json",
+      "bytes": 6237,
+      "sha256": "41cfee0de0b97e57d566a27fcce680016cf8ba076b02315946e61d44e92047de",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=892",
+      "file": "raw/older-892.json",
+      "bytes": 6232,
+      "sha256": "fbbb1ed11dd2899d73ab9f8f10c0cd7adf902bf7787c05425bc24d21ac62447c",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=882",
+      "file": "raw/older-882.json",
+      "bytes": 6234,
+      "sha256": "ac2a0be70a6a87c31576920c017831ca1a6c6ac63009d3d81e3c02cc4d0ad062",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=872",
+      "file": "raw/older-872.json",
+      "bytes": 6232,
+      "sha256": "e1cf77b284b071f6c15150ac7a212f2ffb1f9f603272bd615bfdc3556213c131",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=862",
+      "file": "raw/older-862.json",
+      "bytes": 6228,
+      "sha256": "bb0400c693189a12fcf901f99a078c89a1db29c124894f4612138667e9bd6e5f",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=852",
+      "file": "raw/older-852.json",
+      "bytes": 6235,
+      "sha256": "356a033a56c0cb8dc2d1a1ce6813cf4f13a72c46cf848ffadedfb19c2b413376",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=842",
+      "file": "raw/older-842.json",
+      "bytes": 6230,
+      "sha256": "b42f4316fb9ab06c7f4dc7a6fd923534171d26ff94c9dd5a83f593902c7c98fc",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=832",
+      "file": "raw/older-832.json",
+      "bytes": 6230,
+      "sha256": "0d45b44d380e7b91f459b0fb3a127bb86b1654da9fa6ca53e90cfea063786cb7",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=822",
+      "file": "raw/older-822.json",
+      "bytes": 6224,
+      "sha256": "d9fc0c04affddeddd99e27c58e297d95618a302ce6aebc9c43d3790de67d6cbf",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=812",
+      "file": "raw/older-812.json",
+      "bytes": 6229,
+      "sha256": "84a1c0df4484f6deb38f7916c333e36326d98fb06c688102c9c466414bbde0df",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=802",
+      "file": "raw/older-802.json",
+      "bytes": 6223,
+      "sha256": "ee6ee22456770cee3cc94c622eae7a2478cfe9bf9c0d34f5cdadf4c406283c80",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=792",
+      "file": "raw/older-792.json",
+      "bytes": 6227,
+      "sha256": "f60f27de56b5550d7cea17394527c0fa1376013fb01b18248b69f650ddd65a6e",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=782",
+      "file": "raw/older-782.json",
+      "bytes": 6234,
+      "sha256": "70726a173ac410e36df3a8ce683d25f523d669f8560d88eb94ad4dc0445bc1c3",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=772",
+      "file": "raw/older-772.json",
+      "bytes": 6220,
+      "sha256": "51a54ceda71056aa082b2c14b99d8fb1b851fb84d76014458b24b27f2eccf57e",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=762",
+      "file": "raw/older-762.json",
+      "bytes": 6217,
+      "sha256": "68f9e58ff33e29120fbabb932df777b633e256167f5143e70c8a4d760b318866",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=752",
+      "file": "raw/older-752.json",
+      "bytes": 6223,
+      "sha256": "3a2cb453c88d783a517544ab854da7ff66ada44101acb9ff2b42cf7594f4b400",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=742",
+      "file": "raw/older-742.json",
+      "bytes": 6224,
+      "sha256": "d80be865aa56ec226dc5611d5ad709b9ba8c49e0aab6ba3eee8c01414a6dc3ae",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=732",
+      "file": "raw/older-732.json",
+      "bytes": 6221,
+      "sha256": "83655997cb0f693691c0a5a66e83dbe5b17a61b548cd8f1351ef4b1046c87227",
+      "contentType": "application/json;charset=UTF-8"
+    },
+    {
+      "url": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do?srchDir=older&srchCursorLtEpsd=722",
+      "file": "raw/older-722.json",
+      "bytes": 6219,
+      "sha256": "6996c40a35cfaa7cdcbb8d15dbf94d185b52d3b716604b1ab61dbf7892c7edac",
+      "contentType": "application/json;charset=UTF-8"
+    }
+  ]
+}

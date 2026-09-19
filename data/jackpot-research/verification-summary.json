@@ -1,0 +1,530 @@
+{
+  "reportSha256": "2faef98c380cfa9885ea56811fc4e2acb8902261259e4fb730fdfbacb2498873",
+  "reportBytes": 4494566,
+  "codeHashesMatch": true,
+  "drawFeatureRows": 522,
+  "scoredRows": 366,
+  "modelScores": 4392,
+  "allCategoryObservationTotals": [
+    {
+      "id": "odd_count",
+      "total": 522
+    },
+    {
+      "id": "low_count",
+      "total": 522
+    },
+    {
+      "id": "sum_bin",
+      "total": 522
+    },
+    {
+      "id": "adjacent_pairs",
+      "total": 522
+    },
+    {
+      "id": "last_digit_distinct",
+      "total": 522
+    },
+    {
+      "id": "prime_count",
+      "total": 522
+    },
+    {
+      "id": "decade_occupancy",
+      "total": 522
+    },
+    {
+      "id": "span_bin",
+      "total": 522
+    },
+    {
+      "id": "joint_sum_odd_adjacent",
+      "total": 522
+    },
+    {
+      "id": "joint_sum_odd_low",
+      "total": 522
+    }
+  ],
+  "selected": {
+    "criterion": "highest development meanJointLogGain including uniform",
+    "selectedModel": "sum_bin",
+    "developmentMeanJointLogGain": 0.0017922834671085242,
+    "reusedHistoricalTestMeanJointLogGain": -0.007920391835430024,
+    "selectedTestInterval95": {
+      "confidence": 0.95,
+      "lower": -0.017448158007688227,
+      "upper": 0.0007327659554191663,
+      "method": "paired circular-block percentile bootstrap",
+      "blockLength": 4,
+      "replicates": 4000,
+      "seed": 20260914
+    }
+  },
+  "topCommon": [
+    {
+      "id": "odd_count",
+      "key": "3",
+      "count": 163,
+      "Nc": 2727340,
+      "observedRate": 0.31226053639846746,
+      "fairRate": 0.33484590659860086,
+      "examples": [
+        {
+          "round": 1239,
+          "date": "2026-08-29",
+          "numbers": [
+            11,
+            13,
+            22,
+            32,
+            33,
+            36
+          ]
+        },
+        {
+          "round": 1233,
+          "date": "2026-07-18",
+          "numbers": [
+            2,
+            7,
+            20,
+            25,
+            37,
+            40
+          ]
+        },
+        {
+          "round": 1229,
+          "date": "2026-06-20",
+          "numbers": [
+            12,
+            13,
+            29,
+            34,
+            37,
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "low_count",
+      "key": "3",
+      "count": 168,
+      "Nc": 2727340,
+      "observedRate": 0.3218390804597701,
+      "fairRate": 0.33484590659860086,
+      "examples": [
+        {
+          "round": 1241,
+          "date": "2026-09-12",
+          "numbers": [
+            7,
+            13,
+            16,
+            23,
+            24,
+            43
+          ]
+        },
+        {
+          "round": 1239,
+          "date": "2026-08-29",
+          "numbers": [
+            11,
+            13,
+            22,
+            32,
+            33,
+            36
+          ]
+        },
+        {
+          "round": 1238,
+          "date": "2026-08-22",
+          "numbers": [
+            2,
+            13,
+            18,
+            32,
+            38,
+            42
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sum_bin",
+      "key": "120-149",
+      "count": 197,
+      "Nc": 3037490,
+      "observedRate": 0.3773946360153257,
+      "fairRate": 0.3729242019088871,
+      "examples": [
+        {
+          "round": 1241,
+          "date": "2026-09-12",
+          "numbers": [
+            7,
+            13,
+            16,
+            23,
+            24,
+            43
+          ]
+        },
+        {
+          "round": 1240,
+          "date": "2026-09-05",
+          "numbers": [
+            11,
+            13,
+            19,
+            20,
+            31,
+            44
+          ]
+        },
+        {
+          "round": 1239,
+          "date": "2026-08-29",
+          "numbers": [
+            11,
+            13,
+            22,
+            32,
+            33,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adjacent_pairs",
+      "key": "0",
+      "count": 250,
+      "Nc": 3838380,
+      "observedRate": 0.4789272030651341,
+      "fairRate": 0.47125251379363686,
+      "examples": [
+        {
+          "round": 1238,
+          "date": "2026-08-22",
+          "numbers": [
+            2,
+            13,
+            18,
+            32,
+            38,
+            42
+          ]
+        },
+        {
+          "round": 1237,
+          "date": "2026-08-15",
+          "numbers": [
+            10,
+            20,
+            23,
+            34,
+            37,
+            40
+          ]
+        },
+        {
+          "round": 1236,
+          "date": "2026-08-08",
+          "numbers": [
+            12,
+            18,
+            21,
+            29,
+            34,
+            38
+          ]
+        }
+      ]
+    },
+    {
+      "id": "last_digit_distinct",
+      "key": "5",
+      "count": 238,
+      "Nc": 4048680,
+      "observedRate": 0.4559386973180077,
+      "fairRate": 0.4970718447746241,
+      "examples": [
+        {
+          "round": 1240,
+          "date": "2026-09-05",
+          "numbers": [
+            11,
+            13,
+            19,
+            20,
+            31,
+            44
+          ]
+        },
+        {
+          "round": 1236,
+          "date": "2026-08-08",
+          "numbers": [
+            12,
+            18,
+            21,
+            29,
+            34,
+            38
+          ]
+        },
+        {
+          "round": 1232,
+          "date": "2026-07-11",
+          "numbers": [
+            12,
+            15,
+            19,
+            22,
+            24,
+            36
+          ]
+        }
+      ]
+    },
+    {
+      "id": "prime_count",
+      "key": "2",
+      "count": 182,
+      "Nc": 2863315,
+      "observedRate": 0.3486590038314176,
+      "fairRate": 0.3515400745973633,
+      "examples": [
+        {
+          "round": 1239,
+          "date": "2026-08-29",
+          "numbers": [
+            11,
+            13,
+            22,
+            32,
+            33,
+            36
+          ]
+        },
+        {
+          "round": 1238,
+          "date": "2026-08-22",
+          "numbers": [
+            2,
+            13,
+            18,
+            32,
+            38,
+            42
+          ]
+        },
+        {
+          "round": 1237,
+          "date": "2026-08-15",
+          "numbers": [
+            10,
+            20,
+            23,
+            34,
+            37,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "decade_occupancy",
+      "key": "1,2,1,1,1",
+      "count": 20,
+      "Nc": 225000,
+      "observedRate": 0.038314176245210725,
+      "fairRate": 0.027624105899772378,
+      "examples": [
+        {
+          "round": 1222,
+          "date": "2026-05-02",
+          "numbers": [
+            4,
+            11,
+            17,
+            22,
+            32,
+            41
+          ]
+        },
+        {
+          "round": 1196,
+          "date": "2025-11-01",
+          "numbers": [
+            8,
+            12,
+            15,
+            29,
+            40,
+            45
+          ]
+        },
+        {
+          "round": 1179,
+          "date": "2025-07-05",
+          "numbers": [
+            3,
+            16,
+            18,
+            24,
+            40,
+            44
+          ]
+        }
+      ]
+    },
+    {
+      "id": "span_bin",
+      "key": "30-39",
+      "count": 268,
+      "Nc": 4342065,
+      "observedRate": 0.5134099616858238,
+      "fairRate": 0.5330918372608673,
+      "examples": [
+        {
+          "round": 1241,
+          "date": "2026-09-12",
+          "numbers": [
+            7,
+            13,
+            16,
+            23,
+            24,
+            43
+          ]
+        },
+        {
+          "round": 1240,
+          "date": "2026-09-05",
+          "numbers": [
+            11,
+            13,
+            19,
+            20,
+            31,
+            44
+          ]
+        },
+        {
+          "round": 1237,
+          "date": "2026-08-15",
+          "numbers": [
+            10,
+            20,
+            23,
+            34,
+            37,
+            40
+          ]
+        }
+      ]
+    },
+    {
+      "id": "joint_sum_odd_adjacent",
+      "key": "120-149|odd=3|adjacent=0",
+      "count": 29,
+      "Nc": 468642,
+      "observedRate": 0.05555555555555555,
+      "fairRate": 0.057536961053693894,
+      "examples": [
+        {
+          "round": 1233,
+          "date": "2026-07-18",
+          "numbers": [
+            2,
+            7,
+            20,
+            25,
+            37,
+            40
+          ]
+        },
+        {
+          "round": 1222,
+          "date": "2026-05-02",
+          "numbers": [
+            4,
+            11,
+            17,
+            22,
+            32,
+            41
+          ]
+        },
+        {
+          "round": 1196,
+          "date": "2025-11-01",
+          "numbers": [
+            8,
+            12,
+            15,
+            29,
+            40,
+            45
+          ]
+        }
+      ]
+    },
+    {
+      "id": "joint_sum_odd_low",
+      "key": "120-149|odd=4|low=3",
+      "count": 37,
+      "Nc": 450353,
+      "observedRate": 0.07088122605363985,
+      "fairRate": 0.0552915509523564,
+      "examples": [
+        {
+          "round": 1241,
+          "date": "2026-09-12",
+          "numbers": [
+            7,
+            13,
+            16,
+            23,
+            24,
+            43
+          ]
+        },
+        {
+          "round": 1225,
+          "date": "2026-05-23",
+          "numbers": [
+            8,
+            9,
+            19,
+            25,
+            41,
+            42
+          ]
+        },
+        {
+          "round": 1219,
+          "date": "2026-04-11",
+          "numbers": [
+            1,
+            2,
+            15,
+            28,
+            39,
+            45
+          ]
+        }
+      ]
+    }
+  ],
+  "syntheticTestsPassed": 7,
+  "independentAuditFolder": "C:/Users/Public/Documents/ESTsoft/CreatorTemp/lotto-type-independent-audit-20260913",
+  "structuralZeroCategoriesCorrected": 176
+}

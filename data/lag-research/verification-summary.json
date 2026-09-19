@@ -1,0 +1,9 @@
+{
+  "syntheticAndMathChecksPassed": 8,
+  "syntheticAndMathChecksFailed": 0,
+  "codeHashesMatchReport": true,
+  "perRoundCount": 366,
+  "developmentCount": 262,
+  "reusedHistoricalTestCount": 104,
+  "allTestTop6HistogramsSumTo104": true
+}

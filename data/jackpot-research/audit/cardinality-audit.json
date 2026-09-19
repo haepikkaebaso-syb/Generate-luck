@@ -1,0 +1,68 @@
+{
+  "passed": true,
+  "method": "Analytic/DP independent counts compared cell-for-cell to exhaustive Node enumeration.",
+  "partitions": [
+    {
+      "id": "odd_count",
+      "allDefinedCells": 7,
+      "positiveCells": 7,
+      "allCellsMatch": true
+    },
+    {
+      "id": "low_count",
+      "allDefinedCells": 7,
+      "positiveCells": 7,
+      "allCellsMatch": true
+    },
+    {
+      "id": "sum_bin",
+      "allDefinedCells": 5,
+      "positiveCells": 5,
+      "allCellsMatch": true
+    },
+    {
+      "id": "adjacent_pairs",
+      "allDefinedCells": 6,
+      "positiveCells": 6,
+      "allCellsMatch": true
+    },
+    {
+      "id": "last_digit_distinct",
+      "allDefinedCells": 6,
+      "positiveCells": 5,
+      "allCellsMatch": true
+    },
+    {
+      "id": "prime_count",
+      "allDefinedCells": 7,
+      "positiveCells": 7,
+      "allCellsMatch": true
+    },
+    {
+      "id": "decade_occupancy",
+      "allDefinedCells": 209,
+      "positiveCells": 209,
+      "allCellsMatch": true
+    },
+    {
+      "id": "span_bin",
+      "allDefinedCells": 4,
+      "positiveCells": 4,
+      "allCellsMatch": true
+    },
+    {
+      "id": "joint_sum_odd_adjacent",
+      "allDefinedCells": 210,
+      "positiveCells": 120,
+      "allCellsMatch": true
+    },
+    {
+      "id": "joint_sum_odd_low",
+      "allDefinedCells": 245,
+      "positiveCells": 160,
+      "allCellsMatch": true
+    }
+  ],
+  "checkedCells": 706,
+  "total": 8145060
+}

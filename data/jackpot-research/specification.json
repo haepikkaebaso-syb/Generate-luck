@@ -1,0 +1,30 @@
+﻿{
+  "fixedBeforeAnyModelScoresComputedOrViewed": true,
+  "referenceDate": "2026-09-13",
+  "game": "Korean Lotto 6/45",
+  "drawWeight": "Each of522draws contributes exactly1; firstPrizeWinners and prize amounts are never used as weights.",
+  "sampleSpace": {"n":45,"k":6,"total":8145060,"unordered":true,"distinctNumbers":true},
+  "partitions": [
+    {"id":"odd_count","categories":"0..6"},
+    {"id":"low_count","definition":"number<=22","categories":"0..6"},
+    {"id":"sum_bin","bins":[[21,89],[90,119],[120,149],[150,179],[180,255]]},
+    {"id":"adjacent_pairs","definition":"count i=0..4 where sorted[i+1]-sorted[i]==1; no wraparound","categories":"0..5"},
+    {"id":"last_digit_distinct","definition":"number of distinct decimal residues n%10","categories":"1..6; zero-cardinality categories retained and marked impossible"},
+    {"id":"prime_count","primes":[2,3,5,7,11,13,17,19,23,29,31,37,41,43],"categories":"0..6"},
+    {"id":"decade_occupancy","groups":[[1,10],[11,20],[21,30],[31,40],[41,45]],"categories":"five-component nonnegative count vectors summing to6, last count<=5"},
+    {"id":"span_bin","definition":"max-min","bins":[[0,19],[20,29],[30,39],[40,44]]},
+    {"id":"joint_sum_odd_adjacent","definition":"Cartesian product of fixed sum_bin,odd_count,adjacent_pairs categories; impossible cells retained"},
+    {"id":"joint_sum_odd_low","definition":"Cartesian product of fixed sum_bin,odd_count,low_count categories; impossible cells retained"}
+  ],
+  "models": ["uniform","odd_count","low_count","sum_bin","adjacent_pairs","last_digit_distinct","prime_count","decade_occupancy","span_bin","joint_sum_odd_adjacent","joint_sum_odd_low","type_mixture"],
+  "rollingModel": {"lookbackDraws":156,"priorStrength":156,"prior":"qc=Nc/8145060","categoryProbability":"(pastCategoryCount+156*qc)/(pastDrawCount+156)","unorderedTicketProbability":"categoryProbability/Nc","noPeek":"prediction at index t uses only draws[max(0,t-156)..t-1]"},
+  "mixture": {"componentCount":11,"components":"uniform plus all10category models","componentWeight":"1/11","probability":"arithmetic mean of11normalized unordered-ticket probabilities; never averaged feature scores"},
+  "split": {"warmup":156,"development":262,"reusedHistoricalTest":104,"freshHoldout":false},
+  "selection": "Highest development mean exact joint loggain including uniform; ties follow model order; no retuning after results.",
+  "primaryMetric": "log(8145060*P(actual unordered six-number set)), natural logarithms",
+  "bootstrap": {"kind":"circular block percentile","blockLength":4,"replicates":4000,"alternativeCount":11,"individualAdjustedConfidence":0.9954545454545455,"familywiseAlphaApproximate":0.05,"developmentSeed":20260913,"testSeed":20260914,"selectedUnadjustedConfidence":0.95},
+  "descriptive": {"allDraws":522,"expected":"522*qc","lift":"(count/522)/qc","observedRateInterval":"Wilson95%, descriptive unadjusted interval, not future prediction interval","topCommonPerPartition":5,"topPerCombinationLiftPerPartition":5,"minimumObservedCountForLiftDisplay":20,"minimumSupportAppliesToDisplayOnly":true,"exampleDrawsPerDisplayedCategory":3},
+  "forecastUncertaintyWidths": "Show Wilson95 observed-rate intervals and widths for trailing156counts as descriptive uncertainty only; do not call them guaranteed future-ticket probability intervals.",
+  "fiveDistinctTicketsInSameCategory": {"experimentalProbability":"5*categoryProbability/Nc, only if Nc>=5","fairProbability":"5/8145060","qualification":"Exact only under stated fitted type model, not a verified change in fair-draw chances."},
+  "limitations": ["Last104draws were used in earlier analyses and are exploratory reused history, not an untouched test.","Category selection and all partitions fixed before this experiment's scores; no tuning after results.","Large class frequency does not imply large probability for an individual combination because its cardinalityNc also matters.","For a fair independent draw exact class probability is qc and every individual ticket probability is1/8145060.","Wilson intervals, lifts, and their display ranking are descriptive exploratory summaries with no multiplicity adjustment.","Adjusted bootstrap intervals are approximate and do not remove historical reuse or post-selection effects."]
+}

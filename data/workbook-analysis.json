@@ -1,0 +1,1197 @@
+{
+  "source": "6_45 select.xlsx",
+  "sourceSha256": "ccbf7d321397bd4d9135f7bdb1e0a93e6c88cf599e7f4c0123a5310f1b02f402",
+  "sourceBytes": 20007887,
+  "analysisMethod": "Read-only OOXML extraction of saved values and formulas; Excel recalculation not performed.",
+  "historyMetadata": {
+    "source": "6_45 select.xlsx",
+    "sourceType": "user-workbook",
+    "sourceSheet": "6,45 result",
+    "sourceRange": "B26:T1177",
+    "sourceColumnMap": {
+      "round": "B",
+      "date": "C",
+      "numbers": "N:S",
+      "bonus": "T"
+    },
+    "sourceSha256": "ccbf7d321397bd4d9135f7bdb1e0a93e6c88cf599e7f4c0123a5310f1b02f402",
+    "recordCount": 1152,
+    "firstRound": 1,
+    "latestRound": 1152,
+    "firstDate": "2002-12-07",
+    "latestDate": "2024-12-28",
+    "extractedAt": "2026-09-13T12:04:37.027105+00:00",
+    "latestDataLabel": "첨부 엑셀 기준 · 1152회 (2024-12-28)",
+    "dateMeaning": "Draw dates as recorded in the supplied workbook, not inferred.",
+    "validation": {
+      "uniqueContiguousRounds": true,
+      "sixDistinctNumbersInRange1To45": true,
+      "allBonusNumbersValidAndDistinct": true,
+      "allDatesPresent": true,
+      "weeklyDateSequence": true,
+      "matchingWorkbookCopies": [
+        "6,45 select",
+        "분석도구"
+      ],
+      "operatorIndependentlyVerified": false
+    },
+    "excludedBlankRounds": [
+      1153,
+      1154,
+      1155,
+      1156,
+      1157,
+      1158,
+      1159,
+      1160,
+      1161,
+      1162,
+      1163,
+      1164,
+      1165,
+      1166,
+      1167,
+      1168,
+      1169,
+      1170,
+      1171
+    ],
+    "limitations": "첨부 엑셀의 기록을 구조 검증하고 3개 시트 간 일치 여부를 확인했습니다. 공식 사이트 전체 대조나 이후 회차 자동 갱신은 수행하지 않았습니다."
+  },
+  "totals": {
+    "sheetCount": 13,
+    "nonemptyCells": 316266,
+    "formulaCells": 149292,
+    "cachedErrorCount": 489
+  },
+  "sheets": [
+    {
+      "name": "6,45 result",
+      "dimension": "A1:AO1177",
+      "nonemptyCells": 24340,
+      "formulaCells": 2346,
+      "functions": {
+        "IF": 9654,
+        "SUMPRODUCT": 7032,
+        "ISNUMBER": 7032,
+        "MATCH": 7032,
+        "AND": 2039,
+        "COUNTBLANK": 1172,
+        "COLUMNS": 1172,
+        "COUNTA": 1172,
+        "COUNTIF": 1172,
+        "OR": 278
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": [],
+      "historicalRecords": {
+        "count": 1152,
+        "first": {
+          "round": 1,
+          "date": "2002-12-07",
+          "numbers": [
+            10,
+            23,
+            29,
+            33,
+            37,
+            40
+          ],
+          "bonus": 16,
+          "sourceRow": 1177
+        },
+        "last": {
+          "round": 1152,
+          "date": "2024-12-28",
+          "numbers": [
+            30,
+            31,
+            32,
+            35,
+            36,
+            37
+          ],
+          "bonus": 5,
+          "sourceRow": 26
+        },
+        "rejectedRows": [
+          {
+            "row": 7,
+            "round": 1171,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 8,
+            "round": 1170,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 9,
+            "round": 1169,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 10,
+            "round": 1168,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 11,
+            "round": 1167,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 12,
+            "round": 1166,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 13,
+            "round": 1165,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 14,
+            "round": 1164,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 15,
+            "round": 1163,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 16,
+            "round": 1162,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 17,
+            "round": 1161,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 18,
+            "round": 1160,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 19,
+            "round": 1159,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 20,
+            "round": 1158,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 21,
+            "round": 1157,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 22,
+            "round": 1156,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 23,
+            "round": 1155,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 24,
+            "round": 1154,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 25,
+            "round": 1153,
+            "reason": "no winning numbers"
+          }
+        ]
+      }
+    },
+    {
+      "name": "6,45 select",
+      "dimension": "A1:CD1177",
+      "nonemptyCells": 26388,
+      "formulaCells": 2781,
+      "functions": {
+        "IF": 10392,
+        "MATCH": 7109,
+        "SUMPRODUCT": 7047,
+        "ISNUMBER": 7032,
+        "AND": 2456,
+        "COUNTIF": 1539,
+        "COLUMNS": 1449,
+        "COUNTBLANK": 1172,
+        "COUNTA": 1172,
+        "COLUMN": 573,
+        "SMALL": 544,
+        "IFERROR": 539,
+        "INDEX": 499,
+        "MOD": 476,
+        "ROW": 428,
+        "OR": 410,
+        "RANDBETWEEN": 341,
+        "LARGE": 311,
+        "INDIRECT": 102,
+        "ISERROR": 65,
+        "NOT": 50,
+        "SUM": 31,
+        "ROWS": 6,
+        "INT": 2
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": [
+        {
+          "cell": "AP60",
+          "formula": "INDEX($AP:$AP,LARGE(INDEX((COUNTIF($AO60:AO60,$AP$14:$AP$22)=0)*ROW($AP$14:$AP$22),),RANDBETWEEN(1,$AO$22-$AO$14+2-COLUMNS($AO60:AO60))))",
+          "cachedValue": 8
+        },
+        {
+          "cell": "AQ60",
+          "formula": "INDEX($AP:$AP,LARGE(INDEX((COUNTIF($AO60:AP60,$AP$23:$AP$32)=0)*ROW($AP$23:$AP$32),),RANDBETWEEN(1,$AO$23-$AO$14+3-COLUMNS($AO60:AP60))))",
+          "cachedValue": 14
+        },
+        {
+          "cell": "AR60",
+          "formula": "INDEX($AP:$AP,LARGE(INDEX((COUNTIF($AO60:AQ60,$AP$23:$AP$32)=0)*ROW($AP$23:$AP$32),),RANDBETWEEN(1,$AO$23-$AO$14+3-COLUMNS($AO60:AQ60))))",
+          "cachedValue": 17
+        },
+        {
+          "cell": "AS60",
+          "formula": "INDEX($AP:$AP,LARGE(INDEX((COUNTIF($AO60:AR60,$AP$33:$AP$42)=0)*ROW($AP$33:$AP$42),),RANDBETWEEN(1,$AO$23-$AO$14+5-COLUMNS($AO60:AR60))))",
+          "cachedValue": 24
+        },
+        {
+          "cell": "AT60",
+          "formula": "INDEX($AP:$AP,LARGE(INDEX((COUNTIF($AO60:AS60,$AP$43:$AP$52)=0)*ROW($AP$43:$AP$52),),RANDBETWEEN(1,$AO$23-$AO$14+6-COLUMNS($AO60:AS60))))",
+          "cachedValue": 32
+        },
+        {
+          "cell": "AU60",
+          "formula": "INDEX($AP:$AP,LARGE(INDEX((COUNTIF($AO60:AT60,$AP$53:$AP$58)=0)*ROW($AP$53:$AP$58),),RANDBETWEEN(1,$AO$23-$AO$14+3-COLUMNS($AO60:AT60))))",
+          "cachedValue": 42
+        },
+        {
+          "cell": "X61",
+          "formula": "INDEX($W:$W,LARGE(INDEX((COUNTIF($W61:W61,$W$14:$W$58)=0)*ROW($W$14:$W$58),),RANDBETWEEN(1,$W$58-$W$14+2-COLUMNS($W61:W61))))",
+          "cachedValue": 26
+        },
+        {
+          "cell": "Y61",
+          "formula": "INDEX($W:$W,LARGE(INDEX((COUNTIF($W61:X61,$W$14:$W$58)=0)*ROW($W$14:$W$58),),RANDBETWEEN(1,$W$58-$W$14+2-COLUMNS($W61:X61))))",
+          "cachedValue": 12
+        }
+      ],
+      "historicalRecords": {
+        "count": 1152,
+        "first": {
+          "round": 1,
+          "date": "2002-12-07",
+          "numbers": [
+            10,
+            23,
+            29,
+            33,
+            37,
+            40
+          ],
+          "bonus": 16,
+          "sourceRow": 1177
+        },
+        "last": {
+          "round": 1152,
+          "date": "2024-12-28",
+          "numbers": [
+            30,
+            31,
+            32,
+            35,
+            36,
+            37
+          ],
+          "bonus": 5,
+          "sourceRow": 26
+        },
+        "rejectedRows": [
+          {
+            "row": 7,
+            "round": 1171,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 8,
+            "round": 1170,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 9,
+            "round": 1169,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 10,
+            "round": 1168,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 11,
+            "round": 1167,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 12,
+            "round": 1166,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 13,
+            "round": 1165,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 14,
+            "round": 1164,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 15,
+            "round": 1163,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 16,
+            "round": 1162,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 17,
+            "round": 1161,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 18,
+            "round": 1160,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 19,
+            "round": 1159,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 20,
+            "round": 1158,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 21,
+            "round": 1157,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 22,
+            "round": 1156,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 23,
+            "round": 1155,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 24,
+            "round": 1154,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 25,
+            "round": 1153,
+            "reason": "no winning numbers"
+          }
+        ]
+      }
+    },
+    {
+      "name": "총빈도_random",
+      "dimension": "A2:S59",
+      "nonemptyCells": 382,
+      "formulaCells": 138,
+      "functions": {
+        "ROW": 120,
+        "INDEX": 84,
+        "LARGE": 78,
+        "COUNTIF": 78,
+        "RANDBETWEEN": 78,
+        "INDIRECT": 72,
+        "COLUMNS": 54,
+        "NOT": 36,
+        "COLUMN": 26,
+        "SMALL": 20,
+        "IF": 16,
+        "ISBLANK": 16,
+        "COUNTA": 12,
+        "ROWS": 12
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": [
+        {
+          "cell": "I10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($H10:H10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(A1))))",
+          "cachedValue": 15
+        },
+        {
+          "cell": "J10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:I10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(B1))))",
+          "cachedValue": 43
+        },
+        {
+          "cell": "K10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:J10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(C1))))",
+          "cachedValue": 45
+        },
+        {
+          "cell": "L10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:K10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(D1))))",
+          "cachedValue": 12
+        },
+        {
+          "cell": "M10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:L10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(E1))))",
+          "cachedValue": 26
+        },
+        {
+          "cell": "N10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:M10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(F1))))",
+          "cachedValue": 31
+        },
+        {
+          "cell": "I11",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($H11:H11,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,$A$54-$A$10+2-COLUMNS($H11:H11))))",
+          "cachedValue": 2
+        },
+        {
+          "cell": "J11",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($H11:I11,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,$A$54-$A$10+2-COLUMNS($H11:I11))))",
+          "cachedValue": 18
+        }
+      ]
+    },
+    {
+      "name": "보너스_random",
+      "dimension": "A2:S59",
+      "nonemptyCells": 372,
+      "formulaCells": 130,
+      "functions": {
+        "ROW": 112,
+        "INDIRECT": 72,
+        "LARGE": 70,
+        "COUNTIF": 70,
+        "RANDBETWEEN": 70,
+        "INDEX": 68,
+        "COLUMNS": 46,
+        "NOT": 36,
+        "COLUMN": 26,
+        "SMALL": 20,
+        "IF": 16,
+        "ISBLANK": 16,
+        "COUNTA": 12,
+        "ROWS": 12
+      },
+      "cachedErrorCount": 8,
+      "cachedErrorSamples": [
+        {
+          "cell": "M19",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "N19",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "K20",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "L20",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "M20",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "N20",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "M21",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "N21",
+          "value": "#NUM!"
+        }
+      ],
+      "randomFormulaSamples": [
+        {
+          "cell": "I10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($H10:H10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(A1))))",
+          "cachedValue": 12
+        },
+        {
+          "cell": "J10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:I10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(B1))))",
+          "cachedValue": 6
+        },
+        {
+          "cell": "K10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:J10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(C1))))",
+          "cachedValue": 34
+        },
+        {
+          "cell": "L10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:K10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(D1))))",
+          "cachedValue": 22
+        },
+        {
+          "cell": "M10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:L10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(E1))))",
+          "cachedValue": 24
+        },
+        {
+          "cell": "N10",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($G10:M10,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,COUNTA($B:$B)-COLUMN(F1))))",
+          "cachedValue": 9
+        },
+        {
+          "cell": "I11",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($H11:H11,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,$A$54-$A$10+2-COLUMNS($H11:H11))))",
+          "cachedValue": 2
+        },
+        {
+          "cell": "J11",
+          "formula": "INDEX($B:$B,LARGE(INDEX((COUNTIF($H11:I11,$B$10:$B$54)=0)*ROW($B$10:$B$54),),RANDBETWEEN(1,$A$54-$A$10+2-COLUMNS($H11:I11))))",
+          "cachedValue": 29
+        }
+      ]
+    },
+    {
+      "name": "n번째볼 빈도",
+      "dimension": "A4:H82",
+      "nonemptyCells": 447,
+      "formulaCells": 66,
+      "functions": {
+        "ROW": 132,
+        "IF": 102,
+        "INDEX": 66,
+        "LARGE": 66,
+        "RANDBETWEEN": 66,
+        "COUNTIF": 66,
+        "IFERROR": 36,
+        "ISERROR": 36,
+        "MATCH": 36,
+        "COLUMN": 36,
+        "TRANSPOSE": 6
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": [
+        {
+          "cell": "B62",
+          "formula": "TRANSPOSE(INDEX($A$12:$A$56,LARGE(IF(B$12:B$56<>0,ROW(B$12:B$56)-ROW(B$12)+1),RANDBETWEEN(1,COUNTIF(B$12:B$56,\"<>0\")))))",
+          "cachedValue": 27
+        },
+        {
+          "cell": "C62",
+          "formula": "TRANSPOSE(INDEX($A$12:$A$56,LARGE(IF(C$12:C$56<>0,ROW(C$12:C$56)-ROW(C$12)+1),RANDBETWEEN(1,COUNTIF(C$12:C$56,\"<>0\")))))",
+          "cachedValue": 31
+        },
+        {
+          "cell": "D62",
+          "formula": "TRANSPOSE(INDEX($A$12:$A$56,LARGE(IF(D$12:D$56<>0,ROW(D$12:D$56)-ROW(D$12)+1),RANDBETWEEN(1,COUNTIF(D$12:D$56,\"<>0\")))))",
+          "cachedValue": 12
+        },
+        {
+          "cell": "E62",
+          "formula": "TRANSPOSE(INDEX($A$12:$A$56,LARGE(IF(E$12:E$56<>0,ROW(E$12:E$56)-ROW(E$12)+1),RANDBETWEEN(1,COUNTIF(E$12:E$56,\"<>0\")))))",
+          "cachedValue": 27
+        },
+        {
+          "cell": "F62",
+          "formula": "TRANSPOSE(INDEX($A$12:$A$56,LARGE(IF(F$12:F$56<>0,ROW(F$12:F$56)-ROW(F$12)+1),RANDBETWEEN(1,COUNTIF(F$12:F$56,\"<>0\")))))",
+          "cachedValue": 40
+        },
+        {
+          "cell": "G62",
+          "formula": "TRANSPOSE(INDEX($A$12:$A$56,LARGE(IF(G$12:G$56<>0,ROW(G$12:G$56)-ROW(G$12)+1),RANDBETWEEN(1,COUNTIF(G$12:G$56,\"<>0\")))))",
+          "cachedValue": 39
+        },
+        {
+          "cell": "B63",
+          "formula": "INDEX($A$12:$A$56,LARGE(IF(B$12:B$56<>0,ROW(B$12:B$56)-ROW(B$12)+1),RANDBETWEEN(1,COUNTIF(B$12:B$56,\"<>0\"))))",
+          "cachedValue": 20
+        },
+        {
+          "cell": "C63",
+          "formula": "INDEX($A$12:$A$56,LARGE(IF(C$12:C$56<>0,ROW(C$12:C$56)-ROW(C$12)+1),RANDBETWEEN(1,COUNTIF(C$12:C$56,\"<>0\"))))",
+          "cachedValue": 2
+        }
+      ]
+    },
+    {
+      "name": "NUM",
+      "dimension": "A1:AN767",
+      "nonemptyCells": 19824,
+      "formulaCells": 10400,
+      "functions": {
+        "IF": 10602,
+        "AND": 6063,
+        "ISNUMBER": 4912,
+        "MATCH": 4912,
+        "SUMPRODUCT": 4572,
+        "ROW": 1254,
+        "OR": 860,
+        "COUNTIF": 776,
+        "COUNTBLANK": 762,
+        "COLUMNS": 762,
+        "COUNTA": 762,
+        "INDEX": 627,
+        "SMALL": 627
+      },
+      "cachedErrorCount": 25,
+      "cachedErrorSamples": [
+        {
+          "cell": "T141",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T142",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T143",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T144",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T145",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T146",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T147",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T148",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T149",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T150",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T151",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "T152",
+          "value": "#NUM!"
+        }
+      ],
+      "randomFormulaSamples": []
+    },
+    {
+      "name": "궁합번호",
+      "dimension": "A1:GI1197",
+      "nonemptyCells": 26798,
+      "formulaCells": 2801,
+      "functions": {
+        "IF": 9857,
+        "SUMPRODUCT": 6990,
+        "ISNUMBER": 6936,
+        "MATCH": 6936,
+        "AND": 1745,
+        "ROW": 1249,
+        "COUNTBLANK": 1156,
+        "COLUMNS": 1156,
+        "COUNTA": 1156,
+        "COUNTIF": 1156,
+        "MMULT": 473,
+        "TRANSPOSE": 473,
+        "COLUMN": 473,
+        "INDEX": 419,
+        "SMALL": 419,
+        "OR": 190,
+        "COUNTIFS": 1
+      },
+      "cachedErrorCount": 353,
+      "cachedErrorSamples": [
+        {
+          "cell": "AK28",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "BG28",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CB28",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "FH28",
+          "value": "#N/A"
+        },
+        {
+          "cell": "GC28",
+          "value": "#N/A"
+        },
+        {
+          "cell": "Y35",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AU35",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "BP35",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "Y36",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AU36",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "BP36",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CK36",
+          "value": "#NUM!"
+        }
+      ],
+      "randomFormulaSamples": []
+    },
+    {
+      "name": "궁합번호 (2)",
+      "dimension": "A1:CR1197",
+      "nonemptyCells": 37992,
+      "formulaCells": 8311,
+      "functions": {
+        "IF": 10743,
+        "SUMPRODUCT": 9912,
+        "ISNUMBER": 7020,
+        "MATCH": 7020,
+        "AND": 2994,
+        "COLUMN": 2896,
+        "MMULT": 2892,
+        "TRANSPOSE": 2892,
+        "COUNTBLANK": 1170,
+        "COLUMNS": 1170,
+        "COUNTA": 1170,
+        "COUNTIF": 1170,
+        "EXACT": 1013,
+        "OR": 210,
+        "SMALL": 3
+      },
+      "cachedErrorCount": 84,
+      "cachedErrorSamples": [
+        {
+          "cell": "CL61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CM61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CN61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CO61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CP61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CQ61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CR61",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CL62",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CM62",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CN62",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CO62",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "CP62",
+          "value": "#NUM!"
+        }
+      ],
+      "randomFormulaSamples": []
+    },
+    {
+      "name": "궁합번호 (3)",
+      "dimension": "A1:FI1197",
+      "nonemptyCells": 67657,
+      "formulaCells": 37744,
+      "functions": {
+        "IF": 26511,
+        "COLUMN": 17367,
+        "SMALL": 15223,
+        "MOD": 14260,
+        "IFERROR": 14052,
+        "SUMPRODUCT": 10429,
+        "MATCH": 7288,
+        "ISNUMBER": 7060,
+        "AND": 3349,
+        "MMULT": 3315,
+        "TRANSPOSE": 3315,
+        "ROW": 2952,
+        "INDEX": 1500,
+        "COUNTIF": 1239,
+        "COUNTBLANK": 1174,
+        "COLUMNS": 1174,
+        "COUNTA": 1174,
+        "EXACT": 1013,
+        "OFFSET": 329,
+        "OR": 320,
+        "INDIRECT": 281,
+        "ISERROR": 228,
+        "SUM": 37,
+        "NOT": 2,
+        "ISBLANK": 2
+      },
+      "cachedErrorCount": 19,
+      "cachedErrorSamples": [
+        {
+          "cell": "AY27",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY28",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY29",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY30",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY31",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY32",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY33",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY34",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY35",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY36",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY37",
+          "value": "#NUM!"
+        },
+        {
+          "cell": "AY38",
+          "value": "#NUM!"
+        }
+      ],
+      "randomFormulaSamples": []
+    },
+    {
+      "name": "분석도구",
+      "dimension": "A1:DR1198",
+      "nonemptyCells": 110417,
+      "formulaCells": 84434,
+      "functions": {
+        "AND": 30100,
+        "IF": 25411,
+        "EXACT": 14117,
+        "SUMPRODUCT": 7278,
+        "ISNUMBER": 7063,
+        "MATCH": 7063,
+        "ROW": 2344,
+        "COUNTIF": 1200,
+        "COUNTBLANK": 1178,
+        "COLUMNS": 1177,
+        "COUNTA": 1177,
+        "INDEX": 1172,
+        "SMALL": 1172,
+        "OR": 310,
+        "COUNTIFS": 6
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": [],
+      "historicalRecords": {
+        "count": 1152,
+        "first": {
+          "round": 1,
+          "date": "2002-12-07",
+          "numbers": [
+            10,
+            23,
+            29,
+            33,
+            37,
+            40
+          ],
+          "bonus": 16,
+          "sourceRow": 1197
+        },
+        "last": {
+          "round": 1152,
+          "date": "2024-12-28",
+          "numbers": [
+            30,
+            31,
+            32,
+            35,
+            36,
+            37
+          ],
+          "bonus": 5,
+          "sourceRow": 46
+        },
+        "rejectedRows": [
+          {
+            "row": 27,
+            "round": 1171,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 28,
+            "round": 1170,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 29,
+            "round": 1169,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 30,
+            "round": 1168,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 31,
+            "round": 1167,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 32,
+            "round": 1166,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 33,
+            "round": 1165,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 34,
+            "round": 1164,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 35,
+            "round": 1163,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 36,
+            "round": 1162,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 37,
+            "round": 1161,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 38,
+            "round": 1160,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 39,
+            "round": 1159,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 40,
+            "round": 1158,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 41,
+            "round": 1157,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 42,
+            "round": 1156,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 43,
+            "round": 1155,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 44,
+            "round": 1154,
+            "reason": "no winning numbers"
+          },
+          {
+            "row": 45,
+            "round": 1153,
+            "reason": "no winning numbers"
+          }
+        ]
+      }
+    },
+    {
+      "name": "종이패턴",
+      "dimension": "A1:AJ148",
+      "nonemptyCells": 1348,
+      "formulaCells": 10,
+      "functions": {
+        "AND": 60,
+        "IF": 16,
+        "OR": 16
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": []
+    },
+    {
+      "name": "Sheet1",
+      "dimension": "A1:H29",
+      "nonemptyCells": 28,
+      "formulaCells": 12,
+      "functions": {
+        "ROW": 24,
+        "INDIRECT": 24,
+        "LARGE": 12,
+        "NOT": 12,
+        "COUNTIF": 12,
+        "RANDBETWEEN": 12,
+        "COLUMNS": 12
+      },
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": [
+        {
+          "cell": "C5",
+          "formula": "LARGE(ROW(INDIRECT($B$1&\":\"&$B$2))*NOT(COUNTIF($B5:B5,ROW(INDIRECT($B$1&\":\"&$B$2)))),RANDBETWEEN(1,$B$2-$B$1+2-COLUMNS($B5:B5)))",
+          "cachedValue": 21
+        },
+        {
+          "cell": "D5",
+          "formula": "LARGE(ROW(INDIRECT($B1&\":\"&$B2))*NOT(COUNTIF($B5:C5,ROW(INDIRECT($B1&\":\"&$B2)))),RANDBETWEEN(1,$B2-$B1+2-COLUMNS($B5:C5)))",
+          "cachedValue": 7
+        },
+        {
+          "cell": "E5",
+          "formula": "LARGE(ROW(INDIRECT($B1&\":\"&$B2))*NOT(COUNTIF($B5:D5,ROW(INDIRECT($B1&\":\"&$B2)))),RANDBETWEEN(1,$B2-$B1+2-COLUMNS($B5:D5)))",
+          "cachedValue": 38
+        },
+        {
+          "cell": "F5",
+          "formula": "LARGE(ROW(INDIRECT($B1&\":\"&$B2))*NOT(COUNTIF($B5:E5,ROW(INDIRECT($B1&\":\"&$B2)))),RANDBETWEEN(1,$B2-$B1+2-COLUMNS($B5:E5)))",
+          "cachedValue": 16
+        },
+        {
+          "cell": "G5",
+          "formula": "LARGE(ROW(INDIRECT($B1&\":\"&$B2))*NOT(COUNTIF($B5:F5,ROW(INDIRECT($B1&\":\"&$B2)))),RANDBETWEEN(1,$B2-$B1+2-COLUMNS($B5:F5)))",
+          "cachedValue": 17
+        },
+        {
+          "cell": "H5",
+          "formula": "LARGE(ROW(INDIRECT($B1&\":\"&$B2))*NOT(COUNTIF($B5:G5,ROW(INDIRECT($B1&\":\"&$B2)))),RANDBETWEEN(1,$B2-$B1+2-COLUMNS($B5:G5)))",
+          "cachedValue": 1
+        },
+        {
+          "cell": "C6",
+          "formula": "LARGE(ROW(INDIRECT($B$1&\":\"&$B$2))*NOT(COUNTIF($B6:B6,ROW(INDIRECT($B$1&\":\"&$B$2)))),RANDBETWEEN(1,$B$2-$B$1+2-COLUMNS($B6:B6)))",
+          "cachedValue": 24
+        },
+        {
+          "cell": "D6",
+          "formula": "LARGE(ROW(INDIRECT($B$1&\":\"&$B$2))*NOT(COUNTIF($B6:C6,ROW(INDIRECT($B$1&\":\"&$B$2)))),RANDBETWEEN(1,$B$2-$B$1+2-COLUMNS($B6:C6)))",
+          "cachedValue": 20
+        }
+      ]
+    },
+    {
+      "name": "개 나이",
+      "dimension": "C5:I136",
+      "nonemptyCells": 273,
+      "formulaCells": 119,
+      "functions": {},
+      "cachedErrorCount": 0,
+      "cachedErrorSamples": [],
+      "randomFormulaSamples": []
+    }
+  ]
+}

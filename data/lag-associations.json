@@ -1,0 +1,2206 @@
+{
+  "schemaVersion": 1,
+  "analysisStatus": "exploratory-reused-history-no-fresh-holdout",
+  "source": {
+    "file": "D:\\로또 당첨번호 발생기\\data\\draws.json",
+    "firstRound": 720,
+    "lastRound": 1241,
+    "firstDate": "2016-09-17",
+    "lastDate": "2026-09-12",
+    "drawCount": 522,
+    "officialPage": "https://m.dhlottery.co.kr/lt645/result",
+    "dataSha256": "3188ae42aa4b6319de2313a3c215ddc7b6855d0eec4a428b8e85c5b5d8aa0f9f"
+  },
+  "method": {
+    "lags": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      20,
+      52
+    ],
+    "mainBallsOnly": true,
+    "ruleCount": 558900,
+    "singleNumberRules": 24300,
+    "antecedentPairRules": 534600,
+    "permutations": 999,
+    "seed": 64520260913,
+    "null": "The observed whole draws are exchangeable across time; permute full six-number rows together.",
+    "score": "Absolute hypergeometric-standardized residual of conditional hit count; score only, no Fisher or Gaussian p-value.",
+    "multiplicity": "One joint maximum over all 558900 single/pair rules and all 12 lags in every permutation.",
+    "pFormula": "(1 + number of permutation maxima >= observed absolute score)/(B+1)",
+    "overlapMultiplicity": "Mean-overlap p-values adjusted over the separate family of 12 lags.",
+    "limits": [
+      "Temporal association is not a causal effect or evidence that a draw mechanism has memory.",
+      "A whole-draw exchangeability test conditions on observed draws; it does not prove fairness or any future predictability.",
+      "The final 104 draws were already inspected in earlier work. All new historical results reuse evaluated data and are exploratory.",
+      "Conditional rates are selected on the same history and inflated by search; they are not future probabilities.",
+      "Pair-to-number association does not determine the joint probability of an entire six-number set.",
+      "999 permutations resolve p-values only in increments of 0.001; Monte Carlo uncertainty remains."
+    ]
+  },
+  "globalAssociationTest": {
+    "observedMaxAbsoluteResidual": 6.030841676956557,
+    "observedMaxSingleAbsoluteResidual": 4.433844594753283,
+    "observedMaxPairAbsoluteResidual": 6.030841676956557,
+    "singleFamilyPermutationP": 0.531,
+    "pairFamilyPermutationP": 0.69,
+    "individualFamilyPValuesNote": "Each controls its own full family across all lags; the joint familywisePermutationP controls the entire search.",
+    "permutationExceedances": 690,
+    "familywisePermutationP": 0.691,
+    "monteCarloTailProbability95Interval": [
+      0.6609970332804689,
+      0.7192556879278016
+    ],
+    "permutationMaxQuantiles": {
+      "50%": 6.173257872783179,
+      "90%": 6.644085603871912,
+      "95%": 6.8157615215972225,
+      "99%": 7.085438034878391
+    }
+  },
+  "fullSixPattern": {
+    "possibleCombinations": 8145060,
+    "perTicketFirstPrizeProbability": 1.2277380399898834e-7,
+    "distinctHistoricalCombinations": 522,
+    "duplicatedCombinations": [],
+    "chanceOfAnyRepeatedFullCombinationIn522FairDraws": 0.01655666744623118,
+    "expectedFullCombinationRepeatPairs": 0.016694904641586433,
+    "historyCoverage": 0.00006408792568747192,
+    "fixedIndependentOneTicketPerDrawChanceOfAtLeastOneFirstPrizeIn522Draws": 0.00006408587603414015,
+    "interpretation": "Without repeated full-six antecedents, history cannot estimate a repeatable conditional next-draw distribution for a specified six-number state."
+  },
+  "pairSupportByLag": [
+    {
+      "lag": 1,
+      "transitions": 521,
+      "min": 0,
+      "median": 8,
+      "mean": 7.893939393939394,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 102,
+      "under10SupportPairs": 715
+    },
+    {
+      "lag": 2,
+      "transitions": 520,
+      "min": 0,
+      "median": 8,
+      "mean": 7.878787878787879,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 102,
+      "under10SupportPairs": 717
+    },
+    {
+      "lag": 3,
+      "transitions": 519,
+      "min": 0,
+      "median": 8,
+      "mean": 7.863636363636363,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 102,
+      "under10SupportPairs": 719
+    },
+    {
+      "lag": 4,
+      "transitions": 518,
+      "min": 0,
+      "median": 8,
+      "mean": 7.848484848484849,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 102,
+      "under10SupportPairs": 724
+    },
+    {
+      "lag": 5,
+      "transitions": 517,
+      "min": 0,
+      "median": 8,
+      "mean": 7.833333333333333,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 103,
+      "under10SupportPairs": 726
+    },
+    {
+      "lag": 6,
+      "transitions": 516,
+      "min": 0,
+      "median": 8,
+      "mean": 7.818181818181818,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 103,
+      "under10SupportPairs": 727
+    },
+    {
+      "lag": 7,
+      "transitions": 515,
+      "min": 0,
+      "median": 8,
+      "mean": 7.803030303030303,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 105,
+      "under10SupportPairs": 728
+    },
+    {
+      "lag": 8,
+      "transitions": 514,
+      "min": 0,
+      "median": 8,
+      "mean": 7.787878787878788,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 106,
+      "under10SupportPairs": 729
+    },
+    {
+      "lag": 9,
+      "transitions": 513,
+      "min": 0,
+      "median": 8,
+      "mean": 7.7727272727272725,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 108,
+      "under10SupportPairs": 730
+    },
+    {
+      "lag": 10,
+      "transitions": 512,
+      "min": 0,
+      "median": 8,
+      "mean": 7.757575757575758,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 108,
+      "under10SupportPairs": 732
+    },
+    {
+      "lag": 20,
+      "transitions": 502,
+      "min": 0,
+      "median": 7,
+      "mean": 7.606060606060606,
+      "max": 19,
+      "zeroSupportPairs": 2,
+      "under5SupportPairs": 116,
+      "under10SupportPairs": 750
+    },
+    {
+      "lag": 52,
+      "transitions": 470,
+      "min": 0,
+      "median": 7,
+      "mean": 7.121212121212121,
+      "max": 18,
+      "zeroSupportPairs": 3,
+      "under5SupportPairs": 155,
+      "under10SupportPairs": 794
+    }
+  ],
+  "lagOverlap": [
+    {
+      "lag": 1,
+      "transitions": 521,
+      "meanSharedNumbers": 0.800383877159309,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 1,
+      "permutationPAdjusted12Lags": 1
+    },
+    {
+      "lag": 2,
+      "transitions": 520,
+      "meanSharedNumbers": 0.7807692307692308,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.573,
+      "permutationPAdjusted12Lags": 1
+    },
+    {
+      "lag": 3,
+      "transitions": 519,
+      "meanSharedNumbers": 0.7938342967244701,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.831,
+      "permutationPAdjusted12Lags": 1
+    },
+    {
+      "lag": 4,
+      "transitions": 518,
+      "meanSharedNumbers": 0.7644787644787645,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.295,
+      "permutationPAdjusted12Lags": 0.984
+    },
+    {
+      "lag": 5,
+      "transitions": 517,
+      "meanSharedNumbers": 0.8259187620889749,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.48,
+      "permutationPAdjusted12Lags": 1
+    },
+    {
+      "lag": 6,
+      "transitions": 516,
+      "meanSharedNumbers": 0.7693798449612403,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.369,
+      "permutationPAdjusted12Lags": 0.996
+    },
+    {
+      "lag": 7,
+      "transitions": 515,
+      "meanSharedNumbers": 0.8621359223300971,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.085,
+      "permutationPAdjusted12Lags": 0.621
+    },
+    {
+      "lag": 8,
+      "transitions": 514,
+      "meanSharedNumbers": 0.8132295719844358,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.759,
+      "permutationPAdjusted12Lags": 1
+    },
+    {
+      "lag": 9,
+      "transitions": 513,
+      "meanSharedNumbers": 0.7894736842105263,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.763,
+      "permutationPAdjusted12Lags": 1
+    },
+    {
+      "lag": 10,
+      "transitions": 512,
+      "meanSharedNumbers": 0.76953125,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.418,
+      "permutationPAdjusted12Lags": 0.996
+    },
+    {
+      "lag": 20,
+      "transitions": 502,
+      "meanSharedNumbers": 0.7430278884462151,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.116,
+      "permutationPAdjusted12Lags": 0.741
+    },
+    {
+      "lag": 52,
+      "transitions": 470,
+      "meanSharedNumbers": 0.8936170212765957,
+      "fairIndependentExpected": 0.8,
+      "drawPermutationExpected": 0.8006192041535215,
+      "permutationPUnadjusted": 0.014,
+      "permutationPAdjusted12Lags": 0.135
+    }
+  ],
+  "patternRecurrence": [
+    {
+      "size": 1,
+      "possiblePatterns": 45,
+      "observedOccurrences": 3132,
+      "distinctObserved": 45,
+      "distinctRepeated": 45,
+      "maxSupport": 88,
+      "meanSupportAcrossAllPossible": 69.6,
+      "observedPatternFraction": 1
+    },
+    {
+      "size": 2,
+      "possiblePatterns": 990,
+      "observedOccurrences": 7830,
+      "distinctObserved": 988,
+      "distinctRepeated": 985,
+      "maxSupport": 19,
+      "meanSupportAcrossAllPossible": 7.909090909090909,
+      "observedPatternFraction": 0.997979797979798
+    },
+    {
+      "size": 3,
+      "possiblePatterns": 14190,
+      "observedOccurrences": 10440,
+      "distinctObserved": 7357,
+      "distinctRepeated": 2416,
+      "maxSupport": 6,
+      "meanSupportAcrossAllPossible": 0.7357293868921776,
+      "observedPatternFraction": 0.5184637068357999
+    },
+    {
+      "size": 4,
+      "possiblePatterns": 148995,
+      "observedOccurrences": 7830,
+      "distinctObserved": 7641,
+      "distinctRepeated": 185,
+      "maxSupport": 3,
+      "meanSupportAcrossAllPossible": 0.05255209906372697,
+      "observedPatternFraction": 0.051283600120809424
+    },
+    {
+      "size": 5,
+      "possiblePatterns": 1221759,
+      "observedOccurrences": 3132,
+      "distinctObserved": 3130,
+      "distinctRepeated": 2,
+      "maxSupport": 2,
+      "meanSupportAcrossAllPossible": 0.0025635170274988764,
+      "observedPatternFraction": 0.002561880043445557
+    },
+    {
+      "size": 6,
+      "possiblePatterns": 8145060,
+      "observedOccurrences": 522,
+      "distinctObserved": 522,
+      "distinctRepeated": 0,
+      "maxSupport": 1,
+      "meanSupportAcrossAllPossible": 0.00006408792568747192,
+      "observedPatternFraction": 0.00006408792568747192
+    }
+  ],
+  "topPositiveRules": [
+    {
+      "antecedent": [
+        25,
+        45
+      ],
+      "target": 5,
+      "lag": 10,
+      "support": 6,
+      "hits": 5,
+      "conditionalRate": 0.8333333333333334,
+      "backgroundRate": 0.099609375,
+      "lift": 8.366013071895425,
+      "standardizedResidual": 6.030841676956557,
+      "familywisePermutationP": 0.691
+    },
+    {
+      "antecedent": [
+        5,
+        26
+      ],
+      "target": 27,
+      "lag": 9,
+      "support": 9,
+      "hits": 7,
+      "conditionalRate": 0.7777777777777778,
+      "backgroundRate": 0.1364522417153996,
+      "lift": 5.7,
+      "standardizedResidual": 5.649187400363383,
+      "familywisePermutationP": 0.987
+    },
+    {
+      "antecedent": [
+        1,
+        26
+      ],
+      "target": 1,
+      "lag": 8,
+      "support": 8,
+      "hits": 6,
+      "conditionalRate": 0.75,
+      "backgroundRate": 0.11867704280155641,
+      "lift": 6.3196721311475414,
+      "standardizedResidual": 5.559415073372952,
+      "familywisePermutationP": 0.998
+    },
+    {
+      "antecedent": [
+        30,
+        38
+      ],
+      "target": 1,
+      "lag": 2,
+      "support": 8,
+      "hits": 6,
+      "conditionalRate": 0.75,
+      "backgroundRate": 0.11923076923076924,
+      "lift": 6.290322580645161,
+      "standardizedResidual": 5.542924356691454,
+      "familywisePermutationP": 0.998
+    },
+    {
+      "antecedent": [
+        30,
+        43
+      ],
+      "target": 44,
+      "lag": 10,
+      "support": 10,
+      "hits": 7,
+      "conditionalRate": 0.7,
+      "backgroundRate": 0.126953125,
+      "lift": 5.513846153846154,
+      "standardizedResidual": 5.491718417558998,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        16,
+        39
+      ],
+      "target": 44,
+      "lag": 20,
+      "support": 10,
+      "hits": 7,
+      "conditionalRate": 0.7,
+      "backgroundRate": 0.1294820717131474,
+      "lift": 5.406153846153846,
+      "standardizedResidual": 5.422654422338796,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        17,
+        38
+      ],
+      "target": 19,
+      "lag": 5,
+      "support": 7,
+      "hits": 6,
+      "conditionalRate": 0.8571428571428571,
+      "backgroundRate": 0.1450676982591876,
+      "lift": 5.908571428571428,
+      "standardizedResidual": 5.38100499191306,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        5,
+        45
+      ],
+      "target": 18,
+      "lag": 5,
+      "support": 9,
+      "hits": 7,
+      "conditionalRate": 0.7777777777777778,
+      "backgroundRate": 0.1528046421663443,
+      "lift": 5.090014064697609,
+      "standardizedResidual": 5.251889032055894,
+      "familywisePermutationP": 1
+    }
+  ],
+  "topNegativeRules": [
+    {
+      "antecedent": [
+        35
+      ],
+      "target": 39,
+      "lag": 5,
+      "support": 74,
+      "hits": 0,
+      "conditionalRate": 0,
+      "backgroundRate": 0.13346228239845262,
+      "lift": 0,
+      "standardizedResidual": -3.6435470826431766,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        29
+      ],
+      "target": 3,
+      "lag": 2,
+      "support": 66,
+      "hits": 1,
+      "conditionalRate": 0.015151515151515152,
+      "backgroundRate": 0.14807692307692308,
+      "lift": 0.10232192050373869,
+      "standardizedResidual": -3.250811893226566,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        31
+      ],
+      "target": 39,
+      "lag": 9,
+      "support": 71,
+      "hits": 1,
+      "conditionalRate": 0.014084507042253521,
+      "backgroundRate": 0.13450292397660818,
+      "lift": 0.10471524800979792,
+      "standardizedResidual": -3.2007169398774464,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        14
+      ],
+      "target": 10,
+      "lag": 3,
+      "support": 69,
+      "hits": 1,
+      "conditionalRate": 0.014492753623188406,
+      "backgroundRate": 0.12716763005780346,
+      "lift": 0.11396574440052702,
+      "standardizedResidual": -3.0140923027338906,
+      "familywisePermutationP": 1
+    }
+  ],
+  "topSinglePositiveRules": [
+    {
+      "antecedent": [
+        20
+      ],
+      "target": 38,
+      "lag": 8,
+      "support": 55,
+      "hits": 20,
+      "conditionalRate": 0.36363636363636365,
+      "backgroundRate": 0.1575875486381323,
+      "lift": 2.3075196408529743,
+      "standardizedResidual": 4.433844594753283,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        8
+      ],
+      "target": 14,
+      "lag": 7,
+      "support": 56,
+      "hits": 18,
+      "conditionalRate": 0.32142857142857145,
+      "backgroundRate": 0.13203883495145632,
+      "lift": 2.4343487394957983,
+      "standardizedResidual": 4.43021375447979,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        39
+      ],
+      "target": 37,
+      "lag": 20,
+      "support": 68,
+      "hits": 19,
+      "conditionalRate": 0.27941176470588236,
+      "backgroundRate": 0.12749003984063745,
+      "lift": 2.191636029411765,
+      "standardizedResidual": 4.035757030602359,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        2
+      ],
+      "target": 22,
+      "lag": 6,
+      "support": 61,
+      "hits": 17,
+      "conditionalRate": 0.2786885245901639,
+      "backgroundRate": 0.12596899224806202,
+      "lift": 2.2123581336696088,
+      "standardizedResidual": 3.8243899790731395,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        26
+      ],
+      "target": 38,
+      "lag": 10,
+      "support": 66,
+      "hits": 21,
+      "conditionalRate": 0.3181818181818182,
+      "backgroundRate": 0.158203125,
+      "lift": 2.011223344556678,
+      "standardizedResidual": 3.812114616116692,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        8
+      ],
+      "target": 15,
+      "lag": 2,
+      "support": 56,
+      "hits": 17,
+      "conditionalRate": 0.30357142857142855,
+      "backgroundRate": 0.13846153846153847,
+      "lift": 2.192460317460317,
+      "standardizedResidual": 3.7834663778849174,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        20
+      ],
+      "target": 23,
+      "lag": 3,
+      "support": 56,
+      "hits": 15,
+      "conditionalRate": 0.26785714285714285,
+      "backgroundRate": 0.11560693641618497,
+      "lift": 2.3169642857142856,
+      "standardizedResidual": 3.7688745160032644,
+      "familywisePermutationP": 1
+    },
+    {
+      "antecedent": [
+        24
+      ],
+      "target": 3,
+      "lag": 9,
+      "support": 71,
+      "hits": 21,
+      "conditionalRate": 0.29577464788732394,
+      "backgroundRate": 0.14814814814814814,
+      "lift": 1.9964788732394367,
+      "standardizedResidual": 3.768662040608468,
+      "familywisePermutationP": 1
+    }
+  ],
+  "topRulesByLag": [
+    {
+      "lag": 1,
+      "singlePositive": [
+        {
+          "antecedent": [
+            6
+          ],
+          "target": 35,
+          "lag": 1,
+          "support": 77,
+          "hits": 20,
+          "conditionalRate": 0.2597402597402597,
+          "backgroundRate": 0.1420345489443378,
+          "lift": 1.8287118287118285,
+          "standardizedResidual": 3.2019989523277,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            9
+          ],
+          "target": 26,
+          "lag": 1,
+          "support": 64,
+          "hits": 16,
+          "conditionalRate": 0.25,
+          "backgroundRate": 0.12667946257197696,
+          "lift": 1.9734848484848486,
+          "standardizedResidual": 3.16394572331654,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            40
+          ],
+          "target": 13,
+          "lag": 1,
+          "support": 60,
+          "hits": 2,
+          "conditionalRate": 0.03333333333333333,
+          "backgroundRate": 0.15738963531669867,
+          "lift": 0.21178861788617884,
+          "standardizedResidual": -2.8024908438188683,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            39
+          ],
+          "target": 11,
+          "lag": 1,
+          "support": 70,
+          "hits": 3,
+          "conditionalRate": 0.04285714285714286,
+          "backgroundRate": 0.1324376199616123,
+          "lift": 0.32360248447204965,
+          "standardizedResidual": -2.374213404203002,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            26,
+            36
+          ],
+          "target": 18,
+          "lag": 1,
+          "support": 12,
+          "hits": 8,
+          "conditionalRate": 0.6666666666666666,
+          "backgroundRate": 0.15163147792706333,
+          "lift": 4.39662447257384,
+          "standardizedResidual": 5.0278619991650775,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            2,
+            30
+          ],
+          "target": 33,
+          "lag": 1,
+          "support": 8,
+          "hits": 6,
+          "conditionalRate": 0.75,
+          "backgroundRate": 0.14587332053742802,
+          "lift": 5.141447368421053,
+          "standardizedResidual": 4.873791204931781,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            12,
+            42
+          ],
+          "target": 31,
+          "lag": 1,
+          "support": 18,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1401151631477927,
+          "lift": 0,
+          "standardizedResidual": -1.7413110457094347,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            12,
+            42
+          ],
+          "target": 24,
+          "lag": 1,
+          "support": 18,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1381957773512476,
+          "lift": 0,
+          "standardizedResidual": -1.7274162850690975,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 2,
+      "singlePositive": [
+        {
+          "antecedent": [
+            8
+          ],
+          "target": 15,
+          "lag": 2,
+          "support": 56,
+          "hits": 17,
+          "conditionalRate": 0.30357142857142855,
+          "backgroundRate": 0.13846153846153847,
+          "lift": 2.192460317460317,
+          "standardizedResidual": 3.7834663778849174,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            4
+          ],
+          "target": 24,
+          "lag": 2,
+          "support": 58,
+          "hits": 17,
+          "conditionalRate": 0.29310344827586204,
+          "backgroundRate": 0.13846153846153847,
+          "lift": 2.1168582375478926,
+          "standardizedResidual": 3.614115111035068,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            29
+          ],
+          "target": 3,
+          "lag": 2,
+          "support": 66,
+          "hits": 1,
+          "conditionalRate": 0.015151515151515152,
+          "backgroundRate": 0.14807692307692308,
+          "lift": 0.10232192050373869,
+          "standardizedResidual": -3.250811893226566,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19
+          ],
+          "target": 37,
+          "lag": 2,
+          "support": 74,
+          "hits": 2,
+          "conditionalRate": 0.02702702702702703,
+          "backgroundRate": 0.13076923076923078,
+          "lift": 0.2066772655007949,
+          "standardizedResidual": -2.8554019288948234,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            30,
+            38
+          ],
+          "target": 1,
+          "lag": 2,
+          "support": 8,
+          "hits": 6,
+          "conditionalRate": 0.75,
+          "backgroundRate": 0.11923076923076924,
+          "lift": 6.290322580645161,
+          "standardizedResidual": 5.542924356691454,
+          "familywisePermutationP": 0.998
+        },
+        {
+          "antecedent": [
+            1,
+            8
+          ],
+          "target": 15,
+          "lag": 2,
+          "support": 4,
+          "hits": 4,
+          "conditionalRate": 1,
+          "backgroundRate": 0.13846153846153847,
+          "lift": 7.222222222222221,
+          "standardizedResidual": 5.003358045479671,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 13,
+          "lag": 2,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1576923076923077,
+          "lift": 0,
+          "standardizedResidual": -1.9196032980017168,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            6,
+            38
+          ],
+          "target": 12,
+          "lag": 2,
+          "support": 16,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1673076923076923,
+          "lift": 0,
+          "standardizedResidual": -1.8194665686742528,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 3,
+      "singlePositive": [
+        {
+          "antecedent": [
+            20
+          ],
+          "target": 23,
+          "lag": 3,
+          "support": 56,
+          "hits": 15,
+          "conditionalRate": 0.26785714285714285,
+          "backgroundRate": 0.11560693641618497,
+          "lift": 2.3169642857142856,
+          "standardizedResidual": 3.7688745160032644,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            22
+          ],
+          "target": 32,
+          "lag": 3,
+          "support": 64,
+          "hits": 16,
+          "conditionalRate": 0.25,
+          "backgroundRate": 0.11753371868978806,
+          "lift": 2.1270491803278686,
+          "standardizedResidual": 3.5109465227889145,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            14
+          ],
+          "target": 10,
+          "lag": 3,
+          "support": 69,
+          "hits": 1,
+          "conditionalRate": 0.014492753623188406,
+          "backgroundRate": 0.12716763005780346,
+          "lift": 0.11396574440052702,
+          "standardizedResidual": -3.0140923027338906,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            2
+          ],
+          "target": 45,
+          "lag": 3,
+          "support": 62,
+          "hits": 2,
+          "conditionalRate": 0.03225806451612903,
+          "backgroundRate": 0.15028901734104047,
+          "lift": 0.21464019851116622,
+          "standardizedResidual": -2.7688491746710726,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            13,
+            17
+          ],
+          "target": 42,
+          "lag": 3,
+          "support": 6,
+          "hits": 5,
+          "conditionalRate": 0.8333333333333334,
+          "backgroundRate": 0.13680154142581888,
+          "lift": 6.091549295774648,
+          "standardizedResidual": 4.989096942949967,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            20,
+            27
+          ],
+          "target": 4,
+          "lag": 3,
+          "support": 5,
+          "hits": 4,
+          "conditionalRate": 0.8,
+          "backgroundRate": 0.11175337186897881,
+          "lift": 7.158620689655173,
+          "standardizedResidual": 4.903603126591851,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            21,
+            35
+          ],
+          "target": 13,
+          "lag": 3,
+          "support": 16,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1579961464354528,
+          "lift": 0,
+          "standardizedResidual": -1.7583571282985493,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 27,
+          "lag": 3,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1348747591522158,
+          "lift": 0,
+          "standardizedResidual": -1.7517919555926977,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 4,
+      "singlePositive": [
+        {
+          "antecedent": [
+            36
+          ],
+          "target": 31,
+          "lag": 4,
+          "support": 71,
+          "hits": 20,
+          "conditionalRate": 0.28169014084507044,
+          "backgroundRate": 0.14092664092664092,
+          "lift": 1.9988423692841986,
+          "standardizedResidual": 3.6660557502164988,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            29
+          ],
+          "target": 41,
+          "lag": 4,
+          "support": 66,
+          "hits": 17,
+          "conditionalRate": 0.25757575757575757,
+          "backgroundRate": 0.1274131274131274,
+          "lift": 2.02157943067034,
+          "standardizedResidual": 3.391742803299425,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            43
+          ],
+          "target": 6,
+          "lag": 4,
+          "support": 67,
+          "hits": 2,
+          "conditionalRate": 0.029850746268656716,
+          "backgroundRate": 0.14864864864864866,
+          "lift": 0.20081411126187243,
+          "standardizedResidual": -2.92663307716985,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            3
+          ],
+          "target": 21,
+          "lag": 4,
+          "support": 77,
+          "hits": 4,
+          "conditionalRate": 0.05194805194805195,
+          "backgroundRate": 0.15637065637065636,
+          "lift": 0.3322109988776656,
+          "standardizedResidual": -2.7315703628910257,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            13,
+            28
+          ],
+          "target": 9,
+          "lag": 4,
+          "support": 12,
+          "hits": 7,
+          "conditionalRate": 0.5833333333333334,
+          "backgroundRate": 0.12355212355212356,
+          "lift": 4.721354166666667,
+          "standardizedResidual": 4.892419642412479,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            35,
+            36
+          ],
+          "target": 31,
+          "lag": 4,
+          "support": 11,
+          "hits": 7,
+          "conditionalRate": 0.6363636363636364,
+          "backgroundRate": 0.14092664092664092,
+          "lift": 4.5155666251556665,
+          "standardizedResidual": 4.768858011526959,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 18,
+          "lag": 4,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1525096525096525,
+          "lift": 0,
+          "standardizedResidual": -1.8821450277921519,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            21,
+            35
+          ],
+          "target": 13,
+          "lag": 4,
+          "support": 16,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1583011583011583,
+          "lift": 0,
+          "standardizedResidual": -1.760423210201469,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 5,
+      "singlePositive": [
+        {
+          "antecedent": [
+            31
+          ],
+          "target": 41,
+          "lag": 5,
+          "support": 72,
+          "hits": 18,
+          "conditionalRate": 0.25,
+          "backgroundRate": 0.12572533849129594,
+          "lift": 1.9884615384615385,
+          "standardizedResidual": 3.424982287188718,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            16
+          ],
+          "target": 35,
+          "lag": 5,
+          "support": 79,
+          "hits": 20,
+          "conditionalRate": 0.25316455696202533,
+          "backgroundRate": 0.13733075435203096,
+          "lift": 1.84346585844179,
+          "standardizedResidual": 3.2466135303145287,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            35
+          ],
+          "target": 39,
+          "lag": 5,
+          "support": 74,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.13346228239845262,
+          "lift": 0,
+          "standardizedResidual": -3.6435470826431766,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            31
+          ],
+          "target": 3,
+          "lag": 5,
+          "support": 72,
+          "hits": 3,
+          "conditionalRate": 0.041666666666666664,
+          "backgroundRate": 0.14893617021276595,
+          "lift": 0.27976190476190477,
+          "standardizedResidual": -2.752999968806829,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            17,
+            38
+          ],
+          "target": 19,
+          "lag": 5,
+          "support": 7,
+          "hits": 6,
+          "conditionalRate": 0.8571428571428571,
+          "backgroundRate": 0.1450676982591876,
+          "lift": 5.908571428571428,
+          "standardizedResidual": 5.38100499191306,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            5,
+            45
+          ],
+          "target": 18,
+          "lag": 5,
+          "support": 9,
+          "hits": 7,
+          "conditionalRate": 0.7777777777777778,
+          "backgroundRate": 0.1528046421663443,
+          "lift": 5.090014064697609,
+          "standardizedResidual": 5.251889032055894,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 24,
+          "lag": 5,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.13926499032882012,
+          "lift": 0,
+          "standardizedResidual": -1.784732871544011,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 42,
+          "lag": 5,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.13733075435203096,
+          "lift": 0,
+          "standardizedResidual": -1.7703075637525036,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 6,
+      "singlePositive": [
+        {
+          "antecedent": [
+            2
+          ],
+          "target": 22,
+          "lag": 6,
+          "support": 61,
+          "hits": 17,
+          "conditionalRate": 0.2786885245901639,
+          "backgroundRate": 0.12596899224806202,
+          "lift": 2.2123581336696088,
+          "standardizedResidual": 3.8243899790731395,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            16
+          ],
+          "target": 26,
+          "lag": 6,
+          "support": 79,
+          "hits": 20,
+          "conditionalRate": 0.25316455696202533,
+          "backgroundRate": 0.12790697674418605,
+          "lift": 1.9792865362485617,
+          "standardizedResidual": 3.6186946321641407,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            17
+          ],
+          "target": 26,
+          "lag": 6,
+          "support": 67,
+          "hits": 1,
+          "conditionalRate": 0.014925373134328358,
+          "backgroundRate": 0.12790697674418605,
+          "lift": 0.11668928086838534,
+          "standardizedResidual": -2.965494049759407,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19
+          ],
+          "target": 39,
+          "lag": 6,
+          "support": 74,
+          "hits": 2,
+          "conditionalRate": 0.02702702702702703,
+          "backgroundRate": 0.13372093023255813,
+          "lift": 0.2021151586368978,
+          "standardizedResidual": -2.9108467256470303,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            7,
+            31
+          ],
+          "target": 43,
+          "lag": 6,
+          "support": 6,
+          "hits": 5,
+          "conditionalRate": 0.8333333333333334,
+          "backgroundRate": 0.12596899224806202,
+          "lift": 6.615384615384616,
+          "standardizedResidual": 5.247374577104586,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            37,
+            45
+          ],
+          "target": 4,
+          "lag": 6,
+          "support": 7,
+          "hits": 5,
+          "conditionalRate": 0.7142857142857143,
+          "backgroundRate": 0.1124031007751938,
+          "lift": 6.354679802955665,
+          "standardizedResidual": 5.071173943693563,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 31,
+          "lag": 6,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.14147286821705427,
+          "lift": 0,
+          "standardizedResidual": -1.8011993749352961,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            12,
+            42
+          ],
+          "target": 34,
+          "lag": 6,
+          "support": 18,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.14534883720930233,
+          "lift": 0,
+          "standardizedResidual": -1.7792481898188601,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 7,
+      "singlePositive": [
+        {
+          "antecedent": [
+            8
+          ],
+          "target": 14,
+          "lag": 7,
+          "support": 56,
+          "hits": 18,
+          "conditionalRate": 0.32142857142857145,
+          "backgroundRate": 0.13203883495145632,
+          "lift": 2.4343487394957983,
+          "standardizedResidual": 4.43021375447979,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            7
+          ],
+          "target": 44,
+          "lag": 7,
+          "support": 71,
+          "hits": 17,
+          "conditionalRate": 0.23943661971830985,
+          "backgroundRate": 0.1262135922330097,
+          "lift": 1.8970747562296857,
+          "standardizedResidual": 3.0909950245146276,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            33
+          ],
+          "target": 21,
+          "lag": 7,
+          "support": 75,
+          "hits": 3,
+          "conditionalRate": 0.04,
+          "backgroundRate": 0.1533980582524272,
+          "lift": 0.2607594936708861,
+          "standardizedResidual": -2.9453839083099895,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            2
+          ],
+          "target": 18,
+          "lag": 7,
+          "support": 61,
+          "hits": 2,
+          "conditionalRate": 0.03278688524590164,
+          "backgroundRate": 0.1533980582524272,
+          "lift": 0.2137372898941689,
+          "standardizedResidual": -2.78135568338469,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            4,
+            6
+          ],
+          "target": 25,
+          "lag": 7,
+          "support": 3,
+          "hits": 3,
+          "conditionalRate": 1,
+          "backgroundRate": 0.10485436893203884,
+          "lift": 9.537037037037036,
+          "standardizedResidual": 5.070616778449036,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            11,
+            34
+          ],
+          "target": 35,
+          "lag": 7,
+          "support": 4,
+          "hits": 4,
+          "conditionalRate": 1,
+          "backgroundRate": 0.1378640776699029,
+          "lift": 7.253521126760563,
+          "standardizedResidual": 5.016068005134352,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            12,
+            42
+          ],
+          "target": 13,
+          "lag": 7,
+          "support": 18,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.15922330097087378,
+          "lift": 0,
+          "standardizedResidual": -1.877597920941347,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            34,
+            42
+          ],
+          "target": 13,
+          "lag": 7,
+          "support": 17,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.15922330097087378,
+          "lift": 0,
+          "standardizedResidual": -1.8228642465688127,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 8,
+      "singlePositive": [
+        {
+          "antecedent": [
+            20
+          ],
+          "target": 38,
+          "lag": 8,
+          "support": 55,
+          "hits": 20,
+          "conditionalRate": 0.36363636363636365,
+          "backgroundRate": 0.1575875486381323,
+          "lift": 2.3075196408529743,
+          "standardizedResidual": 4.433844594753283,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            34
+          ],
+          "target": 6,
+          "lag": 8,
+          "support": 74,
+          "hits": 21,
+          "conditionalRate": 0.28378378378378377,
+          "backgroundRate": 0.14785992217898833,
+          "lift": 1.9192745376955902,
+          "standardizedResidual": 3.5568305547164916,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            44
+          ],
+          "target": 27,
+          "lag": 8,
+          "support": 67,
+          "hits": 2,
+          "conditionalRate": 0.029850746268656716,
+          "backgroundRate": 0.13618677042801555,
+          "lift": 0.2191897654584222,
+          "standardizedResidual": -2.7186002627738293,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19
+          ],
+          "target": 15,
+          "lag": 8,
+          "support": 73,
+          "hits": 3,
+          "conditionalRate": 0.0410958904109589,
+          "backgroundRate": 0.14007782101167315,
+          "lift": 0.2933789954337899,
+          "standardizedResidual": -2.6281035584622807,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            1,
+            26
+          ],
+          "target": 1,
+          "lag": 8,
+          "support": 8,
+          "hits": 6,
+          "conditionalRate": 0.75,
+          "backgroundRate": 0.11867704280155641,
+          "lift": 6.3196721311475414,
+          "standardizedResidual": 5.559415073372952,
+          "familywisePermutationP": 0.998
+        },
+        {
+          "antecedent": [
+            8,
+            26
+          ],
+          "target": 21,
+          "lag": 8,
+          "support": 4,
+          "hits": 4,
+          "conditionalRate": 1,
+          "backgroundRate": 0.1517509727626459,
+          "lift": 6.58974358974359,
+          "standardizedResidual": 4.742414758069623,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 15,
+          "lag": 8,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.14007782101167315,
+          "lift": 0,
+          "standardizedResidual": -1.7909687048317033,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 42,
+          "lag": 8,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.13813229571984437,
+          "lift": 0,
+          "standardizedResidual": -1.7764794778189361,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 9,
+      "singlePositive": [
+        {
+          "antecedent": [
+            24
+          ],
+          "target": 3,
+          "lag": 9,
+          "support": 71,
+          "hits": 21,
+          "conditionalRate": 0.29577464788732394,
+          "backgroundRate": 0.14814814814814814,
+          "lift": 1.9964788732394367,
+          "standardizedResidual": 3.768662040608468,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            25
+          ],
+          "target": 4,
+          "lag": 9,
+          "support": 53,
+          "hits": 13,
+          "conditionalRate": 0.24528301886792453,
+          "backgroundRate": 0.11306042884990253,
+          "lift": 2.169486011711126,
+          "standardizedResidual": 3.2069879599746987,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            31
+          ],
+          "target": 39,
+          "lag": 9,
+          "support": 71,
+          "hits": 1,
+          "conditionalRate": 0.014084507042253521,
+          "backgroundRate": 0.13450292397660818,
+          "lift": 0.10471524800979792,
+          "standardizedResidual": -3.2007169398774464,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            40
+          ],
+          "target": 17,
+          "lag": 9,
+          "support": 58,
+          "hits": 1,
+          "conditionalRate": 0.017241379310344827,
+          "backgroundRate": 0.13060428849902533,
+          "lift": 0.13201235203293876,
+          "standardizedResidual": -2.7178582094389894,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            5,
+            26
+          ],
+          "target": 27,
+          "lag": 9,
+          "support": 9,
+          "hits": 7,
+          "conditionalRate": 0.7777777777777778,
+          "backgroundRate": 0.1364522417153996,
+          "lift": 5.7,
+          "standardizedResidual": 5.649187400363383,
+          "familywisePermutationP": 0.987
+        },
+        {
+          "antecedent": [
+            29,
+            38
+          ],
+          "target": 39,
+          "lag": 9,
+          "support": 11,
+          "hits": 7,
+          "conditionalRate": 0.6363636363636364,
+          "backgroundRate": 0.13450292397660818,
+          "lift": 4.7312252964426875,
+          "standardizedResidual": 4.926789395017166,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 13,
+          "lag": 9,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.15984405458089668,
+          "lift": 0,
+          "standardizedResidual": -1.9356043863692443,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            27,
+            38
+          ],
+          "target": 13,
+          "lag": 9,
+          "support": 16,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.15984405458089668,
+          "lift": 0,
+          "standardizedResidual": -1.77086342640316,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 10,
+      "singlePositive": [
+        {
+          "antecedent": [
+            26
+          ],
+          "target": 38,
+          "lag": 10,
+          "support": 66,
+          "hits": 21,
+          "conditionalRate": 0.3181818181818182,
+          "backgroundRate": 0.158203125,
+          "lift": 2.011223344556678,
+          "standardizedResidual": 3.812114616116692,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            23
+          ],
+          "target": 4,
+          "lag": 10,
+          "support": 58,
+          "hits": 15,
+          "conditionalRate": 0.25862068965517243,
+          "backgroundRate": 0.11328125,
+          "lift": 2.282996432818074,
+          "standardizedResidual": 3.705169152464969,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            8
+          ],
+          "target": 5,
+          "lag": 10,
+          "support": 56,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.099609375,
+          "lift": 0,
+          "standardizedResidual": -2.6348546800228756,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            23
+          ],
+          "target": 10,
+          "lag": 10,
+          "support": 58,
+          "hits": 1,
+          "conditionalRate": 0.017241379310344827,
+          "backgroundRate": 0.125,
+          "lift": 0.13793103448275862,
+          "standardizedResidual": -2.6326280918328244,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            25,
+            45
+          ],
+          "target": 5,
+          "lag": 10,
+          "support": 6,
+          "hits": 5,
+          "conditionalRate": 0.8333333333333334,
+          "backgroundRate": 0.099609375,
+          "lift": 8.366013071895425,
+          "standardizedResidual": 6.030841676956557,
+          "familywisePermutationP": 0.691
+        },
+        {
+          "antecedent": [
+            30,
+            43
+          ],
+          "target": 44,
+          "lag": 10,
+          "support": 10,
+          "hits": 7,
+          "conditionalRate": 0.7,
+          "backgroundRate": 0.126953125,
+          "lift": 5.513846153846154,
+          "standardizedResidual": 5.491718417558998,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 21,
+          "lag": 10,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.150390625,
+          "lift": 0,
+          "standardizedResidual": -1.8670868707055257,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            12,
+            42
+          ],
+          "target": 45,
+          "lag": 10,
+          "support": 18,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.150390625,
+          "lift": 0,
+          "standardizedResidual": -1.8154486202002262,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 20,
+      "singlePositive": [
+        {
+          "antecedent": [
+            39
+          ],
+          "target": 37,
+          "lag": 20,
+          "support": 68,
+          "hits": 19,
+          "conditionalRate": 0.27941176470588236,
+          "backgroundRate": 0.12749003984063745,
+          "lift": 2.191636029411765,
+          "standardizedResidual": 4.035757030602359,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            26
+          ],
+          "target": 38,
+          "lag": 20,
+          "support": 65,
+          "hits": 20,
+          "conditionalRate": 0.3076923076923077,
+          "backgroundRate": 0.15737051792828685,
+          "lift": 1.955209347614411,
+          "standardizedResidual": 3.5634998800164017,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            5
+          ],
+          "target": 44,
+          "lag": 20,
+          "support": 51,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.1294820717131474,
+          "lift": 0,
+          "standardizedResidual": -2.9028970890539463,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            10
+          ],
+          "target": 6,
+          "lag": 20,
+          "support": 65,
+          "hits": 2,
+          "conditionalRate": 0.03076923076923077,
+          "backgroundRate": 0.14741035856573706,
+          "lift": 0.20873180873180874,
+          "standardizedResidual": -2.8402234297049747,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            16,
+            39
+          ],
+          "target": 44,
+          "lag": 20,
+          "support": 10,
+          "hits": 7,
+          "conditionalRate": 0.7,
+          "backgroundRate": 0.1294820717131474,
+          "lift": 5.406153846153846,
+          "standardizedResidual": 5.422654422338796,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            20,
+            39
+          ],
+          "target": 42,
+          "lag": 20,
+          "support": 4,
+          "hits": 4,
+          "conditionalRate": 1,
+          "backgroundRate": 0.13745019920318724,
+          "lift": 7.27536231884058,
+          "standardizedResidual": 5.025202764587107,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 13,
+          "lag": 20,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.15737051792828685,
+          "lift": 0,
+          "standardizedResidual": -1.9185161525043857,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 33,
+          "lag": 20,
+          "support": 19,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.14342629482071714,
+          "lift": 0,
+          "standardizedResidual": -1.8165782851793586,
+          "familywisePermutationP": 1
+        }
+      ]
+    },
+    {
+      "lag": 52,
+      "singlePositive": [
+        {
+          "antecedent": [
+            13
+          ],
+          "target": 13,
+          "lag": 52,
+          "support": 72,
+          "hits": 22,
+          "conditionalRate": 0.3055555555555556,
+          "backgroundRate": 0.16170212765957448,
+          "lift": 1.8896198830409356,
+          "standardizedResidual": 3.598937458169752,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            26
+          ],
+          "target": 19,
+          "lag": 52,
+          "support": 60,
+          "hits": 17,
+          "conditionalRate": 0.2833333333333333,
+          "backgroundRate": 0.14680851063829786,
+          "lift": 1.9299516908212562,
+          "standardizedResidual": 3.1958240864188823,
+          "familywisePermutationP": 1
+        }
+      ],
+      "singleNegative": [
+        {
+          "antecedent": [
+            38
+          ],
+          "target": 31,
+          "lag": 52,
+          "support": 72,
+          "hits": 3,
+          "conditionalRate": 0.041666666666666664,
+          "backgroundRate": 0.1425531914893617,
+          "lift": 0.2922885572139303,
+          "standardizedResidual": -2.6579831867875283,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            27
+          ],
+          "target": 33,
+          "lag": 52,
+          "support": 60,
+          "hits": 2,
+          "conditionalRate": 0.03333333333333333,
+          "backgroundRate": 0.14468085106382977,
+          "lift": 0.2303921568627451,
+          "standardizedResidual": -2.6222918970930182,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairPositive": [
+        {
+          "antecedent": [
+            15,
+            28
+          ],
+          "target": 25,
+          "lag": 52,
+          "support": 7,
+          "hits": 5,
+          "conditionalRate": 0.7142857142857143,
+          "backgroundRate": 0.1127659574468085,
+          "lift": 6.334231805929919,
+          "standardizedResidual": 5.063918853785338,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            6,
+            13
+          ],
+          "target": 1,
+          "lag": 52,
+          "support": 7,
+          "hits": 5,
+          "conditionalRate": 0.7142857142857143,
+          "backgroundRate": 0.11914893617021277,
+          "lift": 5.994897959183674,
+          "standardizedResidual": 4.89176301591977,
+          "familywisePermutationP": 1
+        }
+      ],
+      "pairNegative": [
+        {
+          "antecedent": [
+            19,
+            21
+          ],
+          "target": 18,
+          "lag": 52,
+          "support": 18,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.15531914893617021,
+          "lift": 0,
+          "standardizedResidual": -1.853188656459177,
+          "familywisePermutationP": 1
+        },
+        {
+          "antecedent": [
+            11,
+            21
+          ],
+          "target": 12,
+          "lag": 52,
+          "support": 16,
+          "hits": 0,
+          "conditionalRate": 0,
+          "backgroundRate": 0.16595744680851063,
+          "lift": 0,
+          "standardizedResidual": -1.8135216896461055,
+          "familywisePermutationP": 1
+        }
+      ]
+    }
+  ]
+}

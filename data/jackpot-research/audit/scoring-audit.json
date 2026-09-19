@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "normalizationChecks": 3670,
+  "mixtureChecks": 366,
+  "futurePerturbationChecks": 6,
+  "oldHistoryExclusionChecks": 6,
+  "emptyHistoryUniformChecks": 48,
+  "independentPerTicketScoreComparisons": 4392,
+  "draws": 366,
+  "models": 12,
+  "maxAbsoluteProbabilityError": 7.940933880509066e-23,
+  "maxAbsoluteLogScoreError": 4.440892098500626e-16,
+  "independentDevelopmentDraws": 262,
+  "independentReusedHistoricalTestDraws": 104,
+  "importantInterpretation": "A likelihood score ratio is not an established future jackpot probability multiplier."
+}

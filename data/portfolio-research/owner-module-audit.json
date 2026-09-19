@@ -1,0 +1,240 @@
+{
+  "createdAtUtc": "2026-09-13T13:22:49.817Z",
+  "passed": true,
+  "checksPassed": 42,
+  "checksFailed": 0,
+  "permutationChecks": 100,
+  "results": [
+    {
+      "name": "all20 final templates agree with independent statistics",
+      "passed": true
+    },
+    {
+      "name": "100 deterministic relabelings preserve every probability and balanced usage",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze null",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze object",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze empty",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze 21tickets",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze duplicate ticket",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze overlap2",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze overlap5",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze length5",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze length7",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze duplicate number",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze zero",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze 46",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze decimal",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze string",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze null number",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze NaN",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze Infinity",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze sparse inner",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze sparse outer",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze null row",
+      "passed": true
+    },
+    {
+      "name": "reject invalid analyze undefined row",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount -1",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount 0",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount 21",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount 1.5",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount 5",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount NaN",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount null",
+      "passed": true
+    },
+    {
+      "name": "reject invalid generation amount Infinity",
+      "passed": true
+    },
+    {
+      "name": "reject missing wrong-size and malformed template",
+      "passed": true
+    },
+    {
+      "name": "reject invalid RNG negative",
+      "passed": true
+    },
+    {
+      "name": "reject invalid RNG upper-bound",
+      "passed": true
+    },
+    {
+      "name": "reject invalid RNG fraction",
+      "passed": true
+    },
+    {
+      "name": "reject invalid RNG NaN",
+      "passed": true
+    },
+    {
+      "name": "reject invalid RNG string",
+      "passed": true
+    },
+    {
+      "name": "shuffle consumes44label swaps and amount-1ticket swaps",
+      "passed": true
+    },
+    {
+      "name": "nonlinear input is rejected without mutating it",
+      "passed": true
+    },
+    {
+      "name": "random baseline matches exact without-replacement product at all sizes and thresholds",
+      "passed": true
+    },
+    {
+      "name": "invalid baseline arguments are rejected",
+      "passed": true
+    },
+    {
+      "name": "browser IIFE exposes complete API without CommonJS",
+      "passed": true
+    }
+  ],
+  "defects": [],
+  "previousDefect": {
+    "name": "Sparse outer and inner arrays skipped by Array.some/every",
+    "status": "Fixed by owner; regression cases now checked"
+  },
+  "claimsReview": {
+    "linearExactFormula": "Correct on all tested paths. analyze rejects non-linear inputs.",
+    "atLeast4UpperBound": "Valid: any two >=4 events would require at least7 distinct winning numbers; all per-ticket events disjoint.",
+    "jackpotProbability": "m/8145060, same for every portfolio of m distinct tickets.",
+    "randomBaseline": "Exact average over uniformly selected distinct tickets; not independent with-replacement approximation.",
+    "atLeast3GlobalOptimum": "Not claimed; bounded search plus two deterministic review improvements.",
+    "templateRelabeling": "Uniform full45label Fisher-Yates preserves structure and makes every individual ticket marginally uniform when supplied bounded RNG is unbiased.",
+    "uiSnapshot": "dist/index.html described unconstrained full45 generation, removed fixed/excluded controls, separated >=3 fromprofit and retained global-optimum limitation; app wiring remains owner work in progress at audit start."
+  },
+  "searchBudget": {
+    "sizesSearched": 13,
+    "randomizedStartingDesignsPerSize": 20,
+    "totalRandomizedStartingDesigns": 260,
+    "adaptiveRestartsAfterFailedDesign": 0,
+    "maximumConflictRepairAttemptsPerStartingDesign": 80000,
+    "totalConflictRepairAttemptsActuallyUsed": 323161,
+    "maximumConflictRepairAttemptsActuallyUsed": 7384,
+    "initialDegreePreservingRandomizationAttemptsPerCandidate": "m*200",
+    "totalInitialRandomizationAttempts": 728000,
+    "topCandidatesLocallyImprovedPerSize": 3,
+    "localSwapAttemptsPerCandidate": 3000,
+    "totalLocalSwapAttempts": 117000,
+    "optimizedCandidatesExactChecked": 39,
+    "additionalDeterministicReviewCandidates": 2,
+    "additionalDeterministicReviewCounts": [
+      10,
+      15
+    ],
+    "finalBoundedPassFrozen": true,
+    "baselineCountsWithFiveSeeds": [
+      8,
+      10,
+      15,
+      20
+    ],
+    "otherBaselineCountsWithOneSeed": [
+      9,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19
+    ],
+    "totalBaselineSeeds": 29,
+    "candidateSeedFormula": "20260913+10000*m+c, c=0..19",
+    "localSeedFormula": "30300000+1000*m+i, i=0..2",
+    "baselineSeedFormula": "20260913+101*m+b, b=0..4 for8/10/15/20, otherwise b=0"
+  },
+  "hashes": {
+    "ownerPortfolio": "c15e708854ee0e010273bd84b45188973b2ec2c21468d35a4803605cf7ae32c9",
+    "ownerCore": "e8aa26ad134bef0f100bbcfb595ad090559fff3d9ba9ab300963b811e43f0d04",
+    "finalTemplates": "87fe730ca517af8e6137d88e65132ac57e9493cf85c65f8f039e1e53dc799312",
+    "buildCode": "aef157d04d0ec4fc64802f540ae8586e1047e80f51819dbf0d59504e44fc5eec",
+    "runtime": "c249ed7b0f875671d86fc2beb245ebb3b8725ae652c36a43ce72357494ee35a1"
+  }
+}

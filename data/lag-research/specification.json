@@ -1,0 +1,48 @@
+{
+  "fixedBeforeScores": true,
+  "definitionConfirmedAtUtc": "2026-09-13",
+  "dataPath": "D:/로또 당첨번호 발생기/data/draws.json",
+  "warmupDraws": 156,
+  "developmentDraws": 262,
+  "reusedHistoricalTestDraws": 104,
+  "selectionRule": "Highest development mean exact full-six joint log-gain, including uniform; ties follow listed model order.",
+  "models": [
+    "uniform",
+    "lag_single1",
+    "lag_single123",
+    "lag_single1to10",
+    "lag_pair123",
+    "lag_similarity123",
+    "lag_mixture"
+  ],
+  "priorStrength": 80,
+  "priorNumberProbability": 0.13333333333333333,
+  "minimumPairTrainingOccurrence": 8,
+  "conditionalFormula": "(targetCount + 80 * (6/45)) / (antecedentSupport + 80)",
+  "singleAggregation": "Arithmetic mean of p/(6/45) over the six current-source antecedents and all included lags.",
+  "pairAggregation": "Arithmetic mean of p/(6/45) over current-source pairs with training support >= 8 across lags 1,2,3; uniform fallback if no pairs qualify.",
+  "similarity": "At each lag L, historical source similarity is C(overlap with current source, 2)/15; use weighted target counts and weighted support with prior strength 80, then mean the three lag ratios.",
+  "trainingConstraint": "For prediction index t and lag L, current source is t-L; every historical source s has s+L<t.",
+  "distribution": "P(S)=product_{n in S}(w_n)/ESP6(w), unordered six-element sets.",
+  "primaryMetric": "logGain=sum(log(w_actualSix))-log(ESP6(w))+log(C(45,6)), natural logarithms",
+  "secondaryMetric": "Mean of 45 exact-marginal squared errors; lower is better. Top-six match histogram, weights descending and number ascending for ties.",
+  "bootstrap": {
+    "kind": "circular block percentile",
+    "blockLength": 4,
+    "replicates": 4000,
+    "seed": 20260913,
+    "alternativeIntervalConfidence": 0.9916666666666667,
+    "selectedIntervalConfidence": 0.95
+  },
+  "limitations": [
+    "Final 104 historical draws were inspected in prior experiments; this is exploratory reuse, not a fresh holdout.",
+    "99.1667% intervals for six alternatives are only an approximate Bonferroni family-wise adjustment; block bootstrap coverage and post-selection effects remain approximate.",
+    "No hyperparameter tuning or model redefinition after scores are viewed."
+  ],
+  "mixture": "Exact equal mixture of normalized unordered-ticket distributions of uniform and the five temporal models. P_mix(S)=sum(P_component(S))/6. Marginals are means of component marginals. Joint score uses logsumexp of component log-probabilities, never averaged weights.",
+  "prespecifiedAddition": {
+    "model": "lag_mixture",
+    "addedBeforeAnyScoresComputedOrViewed": true,
+    "recordedAtUtc": "2026-09-13T12:54:11.504878+00:00"
+  }
+}

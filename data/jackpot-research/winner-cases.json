@@ -1,0 +1,184 @@
+{
+  "sourceFile": "D:\\로또 당첨번호 발생기\\data\\draws.json",
+  "sourceSha256": "3188ae42aa4b6319de2313a3c215ddc7b6855d0eec4a428b8e85c5b5d8aa0f9f",
+  "drawCount": 522,
+  "firstRound": 720,
+  "lastRound": 1241,
+  "firstDate": "2016-09-17",
+  "lastDate": "2026-09-12",
+  "officialFirstPrizeWinnerCountSummary": {
+    "sum": 6151,
+    "minimum": 2,
+    "maximum": 63,
+    "mean": 11.78352490421456,
+    "median": 11.0,
+    "zeroCountRounds": [],
+    "minimumCountRounds": [
+      1018
+    ],
+    "maximumCountRounds": [
+      1128
+    ],
+    "interpretation": "회차별 공식 firstPrizeWinners 집계 합계. 서로 다른 사람의 수로 해석할 수 없으며 독립적인 추첨 표본은 회차 단위이다."
+  },
+  "examples": [
+    {
+      "round": 1128,
+      "date": "2024-07-13",
+      "numbers": [
+        1,
+        5,
+        8,
+        16,
+        28,
+        33
+      ],
+      "bonus": 45,
+      "firstPrizeWinners": 63,
+      "firstPrizePerWinner": 419925560,
+      "descriptionKo": "홀수3·짝수3, 연속번호 없음. 이 자료에서1등당첨자수 최대인 사례.",
+      "oddCount": 3,
+      "sum": 91,
+      "selectedAfterObservation": true
+    },
+    {
+      "round": 1018,
+      "date": "2022-06-04",
+      "numbers": [
+        3,
+        19,
+        21,
+        25,
+        37,
+        45
+      ],
+      "bonus": 35,
+      "firstPrizeWinners": 2,
+      "firstPrizePerWinner": 12361744688,
+      "descriptionKo": "6개 모두 홀수. 이 자료에서1등당첨자수 최소인 사례.",
+      "oddCount": 6,
+      "sum": 150,
+      "selectedAfterObservation": true
+    },
+    {
+      "round": 783,
+      "date": "2017-12-02",
+      "numbers": [
+        14,
+        15,
+        16,
+        17,
+        38,
+        45
+      ],
+      "bonus": 36,
+      "firstPrizeWinners": 4,
+      "firstPrizePerWinner": 4603964625,
+      "descriptionKo": "14·15·16·17의4연속번호를 포함한 사례.",
+      "oddCount": 3,
+      "sum": 145,
+      "selectedAfterObservation": true
+    }
+  ],
+  "observedOddCountHistogram": [
+    11,
+    37,
+    113,
+    163,
+    146,
+    47,
+    5
+  ],
+  "fairOddCountCategorySizes": [
+    74613,
+    605682,
+    1850695,
+    2727340,
+    2045505,
+    740278,
+    100947
+  ],
+  "fairOddCountCategoryProbabilities": [
+    0.009160521837776518,
+    0.07436188315371525,
+    0.22721686519190773,
+    0.33484590659860086,
+    0.25113442994895063,
+    0.09088674607676309,
+    0.012393647192285877
+  ],
+  "combinationProbabilityDistinction": {
+    "outcomeCount": 8145060,
+    "fairCategoryProbability": "N_c/N",
+    "fairParticularCombinationProbability": 1.2277380399898834e-07,
+    "fiveUniqueValidTicketsJackpotProbability": 6.138690199949418e-07,
+    "fiveTicketPercent": 6.138690199949418e-05,
+    "threeOddCategoryProbability": 0.33484590659860086,
+    "allOddCategoryProbability": 0.012393647192285877,
+    "point": "유형 자체의 출현확률이 높아도 그 안의 개별6개번호 조합이 더 높은확률을 갖는 것은 아니다."
+  },
+  "purchaseMethodLimitations": {
+    "availableDrawFields": [
+      "round",
+      "date",
+      "numbers",
+      "bonus",
+      "firstPrizeWinners",
+      "firstPrizePerWinner"
+    ],
+    "missingFromThisDataset": [
+      "회차별 자동·수동·반자동 총 구매게임 수",
+      "선택방법별 비당첨 게임 자료",
+      "모든 판매조합의 구매 빈도",
+      "구매자 고유식별과 중복구매 여부"
+    ],
+    "denominatorNeeded": "자동/수동별 1등당첨건수 / 각 방식의 전체 구매게임수. 회차·중복구매의 군집성도 고려해야 함.",
+    "winnerWeightedConfounding": "한 당첨조합을1등당첨자수만큼 복제하면 같은 추첨을 반복표본으로 취급하며 구매인기·판매량·중복구매를 추첨확률과 혼동한다.",
+    "prizeConfounding": "1등당첨금은 해당회차 배분금액과 공동당첨자수의 영향을 받으므로 당첨금액을 다음번호 예측력으로 해석하지 않는다."
+  },
+  "dirichletClassificationModel": {
+    "precondition": "서로 겹치지 않고 전체 조합공간을 모두 덮는 유한한 유형분할; N_c>0인 유형만 사용. 과거 회차를 각1표본으로 집계.",
+    "fairBaseline": "q0_c=N_c/N",
+    "prior": "theta ~ Dirichlet(alpha), alpha_c=tau*q0_c, tau>0",
+    "posterior": "theta | data ~ Dirichlet(alpha_c+n_c)",
+    "posteriorPredictiveCategory": "qhat_c=(alpha_c+n_c)/(tau+n)",
+    "marginalPosterior": "theta_c | data ~ Beta(alpha_c+n_c, tau+n-alpha_c-n_c)",
+    "credibleIntervalMeaning": "모형과 사전분포, 안정적 유형확률 가정하에서 미지의유형확률 theta_c에 대한 사후 불확실성. 미래예측 우월성을 실증적으로 증명하는 구간이 아님.",
+    "jointCombinationProbability": "P_model(S)=qhat_c/N_c for S in category c, additionally assuming uniformity within each category",
+    "individualCombinationCredibleInterval": "[BetaQuantile(.025),BetaQuantile(.975)]/N_c under same model",
+    "jackpotProbabilityForUniquePortfolio": "sum_c m_c*theta_c/N_c, where m_c distinct purchased tickets are in category c",
+    "portfolioUncertainty": "다른유형에 걸친 포트폴리오는 하나의Dirichlet표본에서 합계확률을 계산한다. 유형별구간 끝점을 더해95%구간이라 부르지 않는다.",
+    "exactJointLogGain": "log(qhat_c)-log(q0_c)=log(P_model(actualSix))+log(N)",
+    "baselineRecovery": "qhat_c=q0_c이면 모든6개조합에 대해1/N로 복원된다.",
+    "limitations": [
+      "유형빈도 차이는 관찰된차이이며 인과적영향을 입증하지 않는다.",
+      "홀짝·합계·연속번호 같은 중첩분류를 독립이라고 가정해 단순곱하지 않는다.",
+      "전체모형의6개번호 확률합이1인지 확인하고 실제나온6개조합의 전체로그점수로 순차평가한다.",
+      "유형경계·사전강도·모형 선택을 점수를본뒤 조정하면 같은과거자료의성능이 과대평가될수있다.",
+      "이미관찰한마지막104회는 새로운독립검증이 아니며 이번결과도 탐색적으로표시한다.",
+      "관찰자료가 기계적편향의가능성까지 모두 배제한다고 주장하지 않는다. 유의한미래예측력은 별도검증 대상이다."
+    ]
+  },
+  "primarySources": [
+    {
+      "title": "동행복권 공식 추첨결과",
+      "url": "https://m.dhlottery.co.kr/lt645/result",
+      "supports": "보관한공식자료의원출처; 통계는 기존 data/draws.json에서 직접계산"
+    },
+    {
+      "title": "동행복권 공식 이용안내",
+      "url": "https://www.dhlottery.co.kr/lt645/intro",
+      "supports": "자동·수동·반자동방식, 같은번호의 수량지정/복사기능, 등위별당첨금을당첨자수로나눔"
+    },
+    {
+      "title": "Aditya Guntuboyina, UC Berkeley STAT238 Lecture12 (2026)",
+      "url": "https://stat238.berkeley.edu/spring-2026/lecturetwelve238spring2026/",
+      "supports": "Dirichlet-Multinomial 사후갱신 및 사후평균 공식"
+    },
+    {
+      "title": "Gneiting and Raftery (2007), Strictly Proper Scoring Rules",
+      "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+      "supports": "실현된결과의 확률분포를 적절한로그점수로 평가하는원리"
+    }
+  ]
+}

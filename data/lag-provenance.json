@@ -1,0 +1,65 @@
+{
+  "dataSha256": "3188ae42aa4b6319de2313a3c215ddc7b6855d0eec4a428b8e85c5b5d8aa0f9f",
+  "files": [
+    {
+      "path": "data/lag-research/analyze_lag_associations.py",
+      "sha256": "c60c0db1e46a4cbe5274306cdde284aff844fb3dd9f273590914440f9172cd97"
+    },
+    {
+      "path": "data/lag-research/independent-audit.json",
+      "sha256": "b6d86298e58bb830a124259ada7043741d760c9714dad744f2e6f154e97bf880"
+    },
+    {
+      "path": "data/lag-research/lag-associations-all-counts.json.gz",
+      "sha256": "8a69e082da6f1228aeadab304a62f687a56e39633ff1d6cab2dbc8f207477cd3"
+    },
+    {
+      "path": "data/lag-research/lag-associations-summary.json",
+      "sha256": "f2d0dc4bc1dbb1d22ef4d83508f002b7116a0304c04733fae87f9ef9e02463d1"
+    },
+    {
+      "path": "data/lag-research/lag-models.cjs",
+      "sha256": "95157f7c0dd7960e2e3d40c7802acff4b71634965efaeb82be7f4dda6259d631"
+    },
+    {
+      "path": "data/lag-research/methodology.json",
+      "sha256": "eaf7d3e4932c27899073645b176db14893fc39f4e437b99d0ac1a632c1e13727"
+    },
+    {
+      "path": "data/lag-research/run-lag-experiment.cjs",
+      "sha256": "36bcc21477cc17d4ee22bb3a5229cc74ef3adb92428f8043e21645befed381cc"
+    },
+    {
+      "path": "data/lag-research/specification.json",
+      "sha256": "fdeb772d6e2ca66332d22fd4ae5e8c1be742a9ddcc89e0a56c0965d9cd40d020"
+    },
+    {
+      "path": "data/lag-research/verification-summary.json",
+      "sha256": "c189af6fec25acf7387cccfcc4394739c3bebc36820209a0eb25508222fff2c2"
+    },
+    {
+      "path": "data/lag-research/verification.json",
+      "sha256": "954ac8e3a715742fc8cad9d83e377aade91d09b60aea7b88aa2eaac78cd18af4"
+    },
+    {
+      "path": "data/lag-research/verify-lag-models.cjs",
+      "sha256": "9abb83d83cca5e2fcd3cc76d680401c3247dd28d48b1e1d5497aaea820dfb874"
+    },
+    {
+      "path": "data/lag-research/verify_lag_associations.py",
+      "sha256": "975af3fc38110d5476b79c4400e96d0c7ccfc3a9c097ae8797036cb0b4e52b88"
+    },
+    {
+      "path": "data/lag-models.json",
+      "sha256": "0fbba95c4096c5c5cddd8398aee60d01cde8f9f2b934b921b8b6292ae36fa83a"
+    },
+    {
+      "path": "data/lag-associations.json",
+      "sha256": "bbaec61e8b36a8cce31b934861e69f5e5f90795bf2bc50276cb2a4ba408f639f"
+    },
+    {
+      "path": "data/lag-research/joint-independent-audit.json",
+      "sha256": "0affe62a3480308325cf2a7c29f99231fd7c8d7f10c7826e0625c3e0d3810c14"
+    }
+  ]
+}

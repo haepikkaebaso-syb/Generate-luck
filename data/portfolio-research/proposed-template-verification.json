@@ -1,0 +1,154 @@
+{
+  "passed": true,
+  "independentMethod": "Each of8145060 possible main-number draws enumerated exactly once; for eachdraw, count maximum matching numbers across all tickets.",
+  "proposedTemplateGamesVerified": [
+    8,
+    10,
+    15,
+    20
+  ],
+  "disjointGamesVerified": [
+    1,
+    5,
+    7
+  ],
+  "drawEvaluationsForProposed": 32580240,
+  "results": [
+    {
+      "games": 8,
+      "maxHitsHistogram": [
+        0,
+        643680,
+        5969376,
+        1441204,
+        88920,
+        1872,
+        8
+      ],
+      "counts": {
+        "3": 1532004,
+        "4": 90800,
+        "5": 1880,
+        "6": 8
+      },
+      "probabilities": {
+        "3": 0.18808995882166613,
+        "4": 0.01114786140310814,
+        "5": 0.00023081475151809808,
+        "6": 9.821904319919067e-07
+      },
+      "randomDistinctBaseline": {
+        "3": 0.1755029610827637,
+        "4": 0.011093647180147612,
+        "5": 0.00023079154401689243,
+        "6": 9.821904319919067e-07
+      },
+      "gainAtLeast3PercentagePoints": 1.2586997738902428,
+      "reachesAtLeast4UniversalUnionBound": true
+    },
+    {
+      "games": 10,
+      "maxHitsHistogram": [
+        0,
+        367705,
+        5902290,
+        1761565,
+        111150,
+        2340,
+        10
+      ],
+      "counts": {
+        "3": 1875065,
+        "4": 113500,
+        "5": 2350,
+        "6": 10
+      },
+      "probabilities": {
+        "3": 0.23020886279536307,
+        "4": 0.013934826753885177,
+        "5": 0.0002885184393976226,
+        "6": 1.2277380399898835e-06
+      },
+      "randomDistinctBaseline": {
+        "3": 0.2143368890234624,
+        "4": 0.01384777754037448,
+        "5": 0.0002884811423391035,
+        "6": 1.2277380399898835e-06
+      },
+      "gainAtLeast3PercentagePoints": 1.5871973771900665,
+      "reachesAtLeast4UniversalUnionBound": true
+    },
+    {
+      "games": 15,
+      "maxHitsHistogram": [
+        0,
+        34860,
+        5384513,
+        2555437,
+        166725,
+        3510,
+        15
+      ],
+      "counts": {
+        "3": 2725687,
+        "4": 170250,
+        "5": 3525,
+        "6": 15
+      },
+      "probabilities": {
+        "3": 0.33464296150059053,
+        "4": 0.020902240130827764,
+        "5": 0.0004327776590964339,
+        "6": 1.8416070599848253e-06
+      },
+      "randomDistinctBaseline": {
+        "3": 0.303606843459597,
+        "4": 0.020699595414310674,
+        "5": 0.0004326906367754576,
+        "6": 1.8416070599848253e-06
+      },
+      "gainAtLeast3PercentagePoints": 3.103611804099354,
+      "reachesAtLeast4UniversalUnionBound": true
+    },
+    {
+      "games": 20,
+      "maxHitsHistogram": [
+        0,
+        7994,
+        4664682,
+        3245384,
+        222300,
+        4680,
+        20
+      ],
+      "counts": {
+        "3": 3472384,
+        "4": 227000,
+        "5": 4700,
+        "6": 20
+      },
+      "probabilities": {
+        "3": 0.4263177926252231,
+        "4": 0.027869653507770355,
+        "5": 0.0005770368787952452,
+        "6": 2.455476079979767e-06
+      },
+      "randomDistinctBaseline": {
+        "3": 0.38273366108576984,
+        "4": 0.02750381079897007,
+        "5": 0.0005768794173404803,
+        "6": 2.455476079979767e-06
+      },
+      "gainAtLeast3PercentagePoints": 4.358413153945328,
+      "reachesAtLeast4UniversalUnionBound": true
+    }
+  ],
+  "findings": [
+    "Existing dist/research.js coverageExact has correct one-ticket count194130, correct random-distinct baseline, and correct disjoint formula forup to7games.",
+    "All four requested proposed portfolios agree exactly between exhaustive draw enumeration, independent linear inclusion-exclusion formula, and template metadata, for thresholds3,4,5,6.",
+    "At least4-hit coverage is globally maximal for each fixedgamecount because pairwise overlap<=1 makes all ticket success events mutually exclusive.",
+    "No global optimality proof was established for at least3-hit coverage. The optimizer selects an improved candidate within its explored design family.",
+    "Jackpot probability remains m/8145060 for anym distincttickets. Expected number of tickets with at leastk matches remains m*K_k/8145060; portfolio geometry only changes the probability distribution across simultaneous winners.",
+    "Uniform relabeling of the45numbers leaves all exact coverage counts unchanged, so fixed verified templates can produce varying numbers without historical weights."
+  ]
+}

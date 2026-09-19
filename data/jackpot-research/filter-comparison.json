@@ -1,0 +1,254 @@
+{
+  "schemaVersion": 1,
+  "sourceSha256": "3188ae42aa4b6319de2313a3c215ddc7b6855d0eec4a428b8e85c5b5d8aa0f9f",
+  "drawCount": 522,
+  "totalCombinations": 8145060,
+  "exploratory": true,
+  "independentFreshTest": false,
+  "method": "Exact constrained combination count with LottoCore.createSpace; each draw counted once; pre-existing UI filters only.",
+  "filters": [
+    {
+      "id": "odd3",
+      "label": "홀수3개·짝수3개",
+      "options": {
+        "minOdd": 3,
+        "maxOdd": 3
+      },
+      "possibleCombinations": 2727340,
+      "fairTypeProbability": 0.33484590659860086,
+      "observedDraws": 163,
+      "observedRate": 0.31226053639846746,
+      "expectedDraws": 174.78956324446966,
+      "historicalEnrichment": 0.9325499587868404,
+      "descriptiveWilson95": [
+        0.2739995460356255,
+        0.3532645338268303
+      ],
+      "fairSingleTicketProbability": 1.2277380399898834e-7,
+      "fairFiveDistinctInsideTypeProbability": 6.138690199949418e-7,
+      "rawEmpiricalWithinTypeTicketProbability": 1.1449270585936021e-7,
+      "exampleRounds": [
+        {
+          "round": 720,
+          "date": "2016-09-17",
+          "numbers": [
+            1,
+            12,
+            29,
+            34,
+            36,
+            37
+          ]
+        },
+        {
+          "round": 722,
+          "date": "2016-10-01",
+          "numbers": [
+            12,
+            14,
+            21,
+            30,
+            39,
+            43
+          ]
+        },
+        {
+          "round": 732,
+          "date": "2016-12-10",
+          "numbers": [
+            2,
+            4,
+            5,
+            17,
+            27,
+            32
+          ]
+        }
+      ]
+    },
+    {
+      "id": "odd2to4",
+      "label": "홀수2~4개",
+      "options": {
+        "minOdd": 2,
+        "maxOdd": 4
+      },
+      "possibleCombinations": 6623540,
+      "fairTypeProbability": 0.8131972017394593,
+      "observedDraws": 422,
+      "observedRate": 0.8084291187739464,
+      "expectedDraws": 424.4889393079978,
+      "historicalEnrichment": 0.9941366215288078,
+      "descriptiveWilson95": [
+        0.7724643925094844,
+        0.8398874762879097
+      ],
+      "fairSingleTicketProbability": 1.2277380399898834e-7,
+      "fairFiveDistinctInsideTypeProbability": 6.138690199949418e-7,
+      "rawEmpiricalWithinTypeTicketProbability": 1.2205393471979432e-7,
+      "exampleRounds": [
+        {
+          "round": 720,
+          "date": "2016-09-17",
+          "numbers": [
+            1,
+            12,
+            29,
+            34,
+            36,
+            37
+          ]
+        },
+        {
+          "round": 721,
+          "date": "2016-09-24",
+          "numbers": [
+            1,
+            28,
+            35,
+            41,
+            43,
+            44
+          ]
+        },
+        {
+          "round": 722,
+          "date": "2016-10-01",
+          "numbers": [
+            12,
+            14,
+            21,
+            30,
+            39,
+            43
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sum100to180",
+      "label": "합계100~180",
+      "options": {
+        "minSum": 100,
+        "maxSum": 180
+      },
+      "possibleCombinations": 6662971,
+      "fairTypeProbability": 0.8180382956049433,
+      "observedDraws": 419,
+      "observedRate": 0.8026819923371648,
+      "expectedDraws": 427.0159903057804,
+      "historicalEnrichment": 0.9812278919577689,
+      "descriptiveWilson95": [
+        0.766383581096128,
+        0.8345580044317494
+      ],
+      "fairSingleTicketProbability": 1.2277380399898834e-7,
+      "fairFiveDistinctInsideTypeProbability": 6.138690199949418e-7,
+      "rawEmpiricalWithinTypeTicketProbability": 1.2046908088556362e-7,
+      "exampleRounds": [
+        {
+          "round": 720,
+          "date": "2016-09-17",
+          "numbers": [
+            1,
+            12,
+            29,
+            34,
+            36,
+            37
+          ]
+        },
+        {
+          "round": 722,
+          "date": "2016-10-01",
+          "numbers": [
+            12,
+            14,
+            21,
+            30,
+            39,
+            43
+          ]
+        },
+        {
+          "round": 724,
+          "date": "2016-10-15",
+          "numbers": [
+            2,
+            8,
+            33,
+            35,
+            37,
+            41
+          ]
+        }
+      ]
+    },
+    {
+      "id": "oldBalanced",
+      "label": "합계100~180이고 홀수2~4개",
+      "options": {
+        "minSum": 100,
+        "maxSum": 180,
+        "minOdd": 2,
+        "maxOdd": 4
+      },
+      "possibleCombinations": 5406040,
+      "fairTypeProbability": 0.663720095370691,
+      "observedDraws": 338,
+      "observedRate": 0.6475095785440613,
+      "expectedDraws": 346.4618897835007,
+      "historicalEnrichment": 0.975576275391246,
+      "descriptiveWilson95": [
+        0.6055841737495824,
+        0.6872797635013452
+      ],
+      "fairSingleTicketProbability": 1.2277380399898834e-7,
+      "fairFiveDistinctInsideTypeProbability": 6.138690199949418e-7,
+      "rawEmpiricalWithinTypeTicketProbability": 1.1977521042094792e-7,
+      "exampleRounds": [
+        {
+          "round": 720,
+          "date": "2016-09-17",
+          "numbers": [
+            1,
+            12,
+            29,
+            34,
+            36,
+            37
+          ]
+        },
+        {
+          "round": 722,
+          "date": "2016-10-01",
+          "numbers": [
+            12,
+            14,
+            21,
+            30,
+            39,
+            43
+          ]
+        },
+        {
+          "round": 724,
+          "date": "2016-10-15",
+          "numbers": [
+            2,
+            8,
+            33,
+            35,
+            37,
+            41
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "The four filters overlap; frequencies and Wilson intervals are descriptive, not simultaneous inference or future prediction guarantees.",
+    "The naive observed-rate/cardinality is shown only to distinguish type frequency and per-combination probability, not recommended as a forecast.",
+    "For five fixed distinct tickets in a category, fair jackpot probability = P(category)*5/categorySize =5/8145060. Conditioning on the category actually winning in hindsight omits its failure probability."
+  ]
+}

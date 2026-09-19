@@ -1,0 +1,17 @@
+{
+  "all20TemplatesValid": true,
+  "relabelingInvarianceChecks": 200,
+  "all45UsedFrom8Games": true,
+  "usageDifferenceAtMost1": true,
+  "pairwiseOverlapAtMost1": true,
+  "disjointUpTo7Games": true,
+  "umdBrowserExport": true,
+  "cloneIsolation": true,
+  "independentExhaustiveAudit": "C:/Users/Public/Documents/ESTsoft/CreatorTemp/lotto-portfolio-audit-20260913/proposed-template-verification.json",
+  "hashes": {
+    "build-portfolios.cjs": "9f2a8c3546f20579254c75eb568235e561c6a41a25348f52842b1c52a7211d36",
+    "portfolio-runtime.cjs": "79682571815b2a0baec5860ef0d5aff3f85be20ff29eecc52a575133bc52ba21",
+    "portfolio-templates.json": "567021149c40aa6ddcda02273e2336b87b773bf5e8c2e755fc75c4176d4939d2",
+    "portfolio-analysis.json": "cc7fd40ae82e8349d8db552eff58d8b2f411bb8d8861b437f5da209aab13ecb1"
+  }
+}

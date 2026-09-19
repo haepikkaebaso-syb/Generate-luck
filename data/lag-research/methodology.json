@@ -1,0 +1,166 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Independent read-only source-support and statistical methodology facts",
+  "createdAtUtc": "2026-09-13T12:56:51.378968+00:00",
+  "source": {
+    "path": "D:\\로또 당첨번호 발생기\\data\\draws.json",
+    "count": 522,
+    "firstRound": 720,
+    "lastRound": 1241,
+    "numbers": "six main numbers; bonus excluded"
+  },
+  "observedFullSixSets": {
+    "distinctCount": 522,
+    "repeatedSetCount": 0,
+    "repeatedDrawsBeyondFirst": 0,
+    "equalUnorderedDrawPairCount": 0,
+    "repeatedSets": []
+  },
+  "fairIIDFullSixBaseline": {
+    "outcomeCount": 8145060,
+    "drawCount": 522,
+    "expectedEqualUnorderedDrawPairs": 0.016694904641586433,
+    "probabilityAtLeastOneRepeatedSet": 0.01655666744623118,
+    "probabilityNoRepeatedSet": 0.9834433325537688,
+    "expectedDistinctSetCount": 521.9833054506336,
+    "expectedOccurrencesOfOnePrespecifiedSixSet": 6.408792568747192e-05,
+    "expectedOccurrencesOfOnePrespecifiedPair": 7.909090909090909,
+    "expectedOccurrencesOfOnePrespecifiedTriple": 0.7357293868921776,
+    "repeatProbabilityFormula": "1 - product(j=0..n-1)(1-j/C(45,6))",
+    "expectedDistinctFormula": "C(45,6)*(1-(1-1/C(45,6))^n)"
+  },
+  "nextForecastSourceSupport": [
+    {
+      "lag": 1,
+      "queryRound": 1241,
+      "queryNumbers": [
+        7,
+        13,
+        16,
+        23,
+        24,
+        43
+      ],
+      "eligibleHistoricalSourceCount": 521,
+      "maximumHistoricalSourceIndex": 520,
+      "maximumHistoricalTargetIndex": 521,
+      "histogramOverlapExactly0Through6": [
+        202,
+        228,
+        73,
+        17,
+        1,
+        0,
+        0
+      ],
+      "atLeastThree": 18,
+      "atLeastFour": 1,
+      "atLeastFive": 0,
+      "atLeastSix": 0,
+      "eligibility": "query index t-lag; historical source s=0..t-lag-1; observed target s+lag<t; t=522"
+    },
+    {
+      "lag": 2,
+      "queryRound": 1240,
+      "queryNumbers": [
+        11,
+        13,
+        19,
+        20,
+        31,
+        44
+      ],
+      "eligibleHistoricalSourceCount": 520,
+      "maximumHistoricalSourceIndex": 519,
+      "maximumHistoricalTargetIndex": 521,
+      "histogramOverlapExactly0Through6": [
+        209,
+        217,
+        83,
+        10,
+        1,
+        0,
+        0
+      ],
+      "atLeastThree": 11,
+      "atLeastFour": 1,
+      "atLeastFive": 0,
+      "atLeastSix": 0,
+      "eligibility": "query index t-lag; historical source s=0..t-lag-1; observed target s+lag<t; t=522"
+    },
+    {
+      "lag": 3,
+      "queryRound": 1239,
+      "queryNumbers": [
+        11,
+        13,
+        22,
+        32,
+        33,
+        36
+      ],
+      "eligibleHistoricalSourceCount": 519,
+      "maximumHistoricalSourceIndex": 518,
+      "maximumHistoricalTargetIndex": 521,
+      "histogramOverlapExactly0Through6": [
+        212,
+        211,
+        83,
+        13,
+        0,
+        0,
+        0
+      ],
+      "atLeastThree": 13,
+      "atLeastFour": 0,
+      "atLeastFive": 0,
+      "atLeastSix": 0,
+      "eligibility": "query index t-lag; historical source s=0..t-lag-1; observed target s+lag<t; t=522"
+    }
+  ],
+  "fairIIDZeroJackpot": {
+    "roundCount": 366,
+    "assumptions": "Fair independent draws; each round has g distinct valid tickets selected before that draw. Choices may adapt to past draws.",
+    "formula": "(1-g/C(45,6))^366",
+    "byGames": [
+      {
+        "uniqueGamesEachRound": 1,
+        "probabilityZero": 0.9999550657945496,
+        "expectedJackpotCount": 4.493521226362973e-05
+      },
+      {
+        "uniqueGamesEachRound": 5,
+        "probabilityZero": 0.9997753491075126,
+        "expectedJackpotCount": 0.00022467606131814868
+      }
+    ]
+  },
+  "primaryMethodologySources": [
+    {
+      "title": "Gneiting and Raftery (2007), Strictly Proper Scoring Rules, Prediction, and Estimation",
+      "url": "https://sites.stat.washington.edu/people/raftery/Research/PDF/Gneiting2007jasa.pdf",
+      "supports": "The logarithmic score evaluates a predictive distribution at the realized outcome; proper scoring rules encourage reporting the true predictive distribution."
+    },
+    {
+      "title": "Romano and Tirlea, Permutation Testing for Dependence in Time Series",
+      "url": "https://arxiv.org/abs/2009.03170",
+      "supports": "Permutation exactness holds under an i.i.d. or exchangeable null; it does not generally hold under merely uncorrelated time-series nulls."
+    },
+    {
+      "title": "Shafer (2021), Testing by Betting: A Strategy for Statistical and Scientific Communication",
+      "url": "https://academic.oup.com/jrsssa/article/184/2/407/7056412",
+      "supports": "Successive likelihood ratios form a nonnegative martingale; sequential probability assignments must precede the realized outcomes."
+    }
+  ],
+  "limitations": [
+    "Fair-IID quantities are mathematical baselines, not claims that fairness or independence was proved by this sample.",
+    "All 522 full-six antecedent sets are distinct; this dataset contains no replicated exact full-six antecedent from which a corresponding six-to-six conditional distribution can be directly estimated.",
+    "A pair-conditioned model of each future number does not estimate arbitrary future-pair or full-six interactions.",
+    "Overlap support counts describe eligible historical sources, not independent causal interventions. Weighted similarity totals are not automatically an effective independent sample size.",
+    "The last 104 historical draws have already been examined in earlier experiments. New comparisons there are exploratory reuse, not a fresh holdout.",
+    "Shuffling entire six-number draw rows and rerunning the full fixed analysis preserves within-draw constraints under an exchangeable null; shuffling already-built lag rows is a different procedure.",
+    "After selecting the best model or lag, inference must account for that selection; a fixed-family correction does not erase all prior data exploration.",
+    "A joint logarithmic score improvement or its exponential is not a proven multiplier of purchased-ticket jackpot probability.",
+    "Prospective evidence accumulation must begin after this exploratory analysis with saved pre-draw predictions; it cannot retroactively validate data-informed model choices."
+  ]
+}

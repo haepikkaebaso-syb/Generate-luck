@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#142c3b">
+<meta name="description" content="생성한 로또 조합의 1등 확률을 정확한 경우의 수, 퍼센트, 몇 분의 1로 확인합니다. 게임 수를 바꾸면 현재 묶음의 확률이 바로 반영됩니다.">
+<title>로또 아틀리에 · 내 조합의 1등 확률</title>
+<link rel="stylesheet" href="styles.css">
+<script defer src="core.js"></script><script defer src="portfolio.js"></script><script defer src="draws.js"></script><script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 이동</a>
+<header class="topbar"><a class="brand" href="#main"><span class="brand-mark">6<span>/</span>45</span>로또 아틀리에</a><span class="local-note">내 기기에서 생성 · 저장</span></header>
+<main id="main">
+<div class="page-heading"><p class="eyebrow">LOTTO 6/45</p><h1>내 조합의 1등 확률</h1><p>게임 수를 고르면 번호와 함께, 현재 묶음의 1등 확률을 계산합니다.</p></div>
+<div class="workspace">
+<aside class="controls">
+<section class="panel setup"><div class="section-caption">조합 구성</div><label for="amount">만들 게임 수</label><div class="amount-line"><select id="amount" aria-describedby="amount-note"></select><strong id="cost"></strong></div><p id="amount-note" class="hint">기본 5게임입니다. 생성은 구매가 아닙니다.</p><div class="method-summary"><strong>겹침을 줄이는 배치 자동 적용</strong><p id="method-note"></p></div><button id="generate" class="primary-button">새 번호 5게임 만들기</button><p id="form-error" class="error-text" role="alert" hidden></p></section>
+<section class="probability-card" aria-labelledby="chance-title"><p class="section-caption">다른 등위도 함께 확인</p><h2 id="chance-title">한 장이라도 5등 이상</h2><div class="main-chance"><strong id="prize-probability">—</strong><span>%</span></div><p class="chance-subtitle">본번호 3개 이상 일치 · 현재 묶음</p><div class="comparison-line"><span>무작위 같은 게임 수의 평균</span><b id="random-probability">—</b></div><div class="comparison-line"><span>5등 이상 확률의 차이</span><b id="improvement">—</b></div><div class="no-win"><span>모든 게임이 미당첨</span><strong id="no-win">—</strong></div><p class="hint">수익이 날 확률과는 다릅니다.</p></section>
+</aside>
+<div class="results-column">
+  <section class="jackpot-card" aria-labelledby="jackpot-title" aria-describedby="jackpot-scope">
+    <div class="jackpot-heading"><h2 id="jackpot-title">현재 묶음의 1등 확률</h2><span class="jackpot-badge">본번호 6개 모두 일치</span></div>
+    <p id="jackpot-scope" class="jackpot-scope">이 번호들을 같은 한 회차에 구매했을 때, 한 장이라도 1등이 될 확률</p>
+    <div class="jackpot-value"><strong id="jackpot-percent">—</strong><span>%</span></div>
+    <p id="jackpot-reciprocal" class="jackpot-reciprocal">번호를 생성하면 표시됩니다.</p>
+    <div class="jackpot-equation"><span>정확한 경우의 수</span><strong id="jackpot-fraction">— / 8,145,060</strong></div>
+    <p id="jackpot-coverage" class="jackpot-coverage">서로 다른 유효 조합 수로 계산합니다.</p>
+    <p class="jackpot-assumption">공정·독립 추첨 기준 · 백분율은 반올림한 값입니다.</p>
+  </section>
+  <p id="jackpot-status" class="sr-only" role="status" aria-atomic="true"></p>
+  <section class="panel ticket-panel" aria-labelledby="result-title"><div class="ticket-heading"><div><p class="section-caption">이 확률에 해당하는 번호</p><h2 id="result-title">5게임의 조합</h2></div><span id="unique-badge" class="verified-badge">서로 다른 조합 확인</span></div><div id="tickets"></div><div class="ticket-foot"><span id="structure-summary"></span><time id="generation-time"></time></div><div class="result-actions"><button id="save" class="dark-button">보관함에 저장</button><button id="copy" class="secondary-button">번호 복사</button><button id="csv" class="secondary-button">CSV 받기</button></div><p class="jackpot-note" id="jackpot-note"></p></section>
+</div>
+</div>
+<details class="panel explanation"><summary><span>1등 확률은 어떻게 계산하나요?</span><span class="summary-meta">계산 기준 · 다른 등위 비교</span></summary><div class="details-content">
+<div class="jackpot-explainer"><h3>맞히는 조합 수 ÷ 전체 가능한 조합 수</h3><p>1~45 중 서로 다른 6개를 고르는 방법은 총 <strong>8,145,060가지</strong>입니다. 한 회차의 당첨 본번호는 그중 하나이므로, 서로 다른 조합을 몇 개 담았는지로 1등 확률을 계산합니다.</p><p id="jackpot-calculation" class="calculation-line"></p><p>1게임의 1등 확률은 1 / 8,145,060입니다. <strong>같은 수의 서로 다른 조합이면 1등 확률은 같습니다.</strong> 일부 번호가 겹쳐도 여섯 번호 전체가 다른 조합이면 각각 셉니다. 똑같은 여섯 번호를 여러 번 사는 것은 1등이 한 번이라도 나올 확률을 늘리지 않습니다.</p></div>
+<div class="reason-grid"><article><span>01</span><h3>현재 묶음만 계산합니다.</h3><p>보관함에는 여러 날짜의 번호와 중복 조합이 있을 수 있습니다. 화면의 확률에는 지금 생성한 묶음만 포함합니다.</p></article><article><span>02</span><h3>다른 등위는 겹침도 살핍니다.</h3><p>5등 이상은 일부 번호만 맞아도 당첨됩니다. 게임 사이의 겹침을 줄여 한 장이라도 당첨되는 경우를 넓힙니다.</p></article><article><span>03</span><h3>번호를 바꿔도 확률은 같습니다.</h3><p>같은 게임 수와 배치에서 번호를 새로 섞어도 확률은 같습니다. 서로 다른 구매 조합 수를 늘리면 1등 확률과 비용이 함께 늘어납니다.</p></article></div><div class="table-wrap" tabindex="0" aria-label="당첨 등위별 현재 묶음과 무작위 묶음 평균 비교"><table><thead><tr><th scope="col">한 장 이상 당첨</th><th scope="col">현재 묶음</th><th scope="col">무작위 묶음 평균</th></tr></thead><tbody id="probability-table"></tbody></table></div><p id="method-verdict" class="method-verdict"></p><p class="hint">공정하고 독립적인 추첨을 가정한 조합론 계산입니다. ‘무작위 묶음 평균’은 같은 수의 서로 다른 조합을 무작위로 고른 평균입니다. 현재 배치가 5등 이상 확률의 전역 최적이라는 보장은 없습니다. 같은 게임 수에서 기대 당첨 장수는 같습니다.</p><p class="hint">공식 522회의 당첨번호 유형·빈도·회차 간 관계를 분석했지만, 특정 번호의 미래 1등 확률이 더 높다는 근거는 확인하지 못했습니다. 표시한 1등 확률은 과거 적중률이나 예측 점수를 변환한 값이 아닙니다.</p><a class="source-link" href="https://m.dhlottery.co.kr/lt645/intro" target="_blank" rel="noopener noreferrer">동행복권 당첨 규칙 확인 ↗</a></div></details>
+<details class="panel check-panel"><summary><span>당첨번호와 대조하기</span><span class="summary-meta">현재 묶음 확인</span></summary><div class="details-content"><label for="draw-select">비교할 회차</label><select id="draw-select"></select><p id="data-note" class="hint"></p><div class="check-inputs"><div><label for="winning-input">본번호 6개</label><input id="winning-input" type="text" inputmode="numeric" placeholder="예: 1 2 3 4 5 6" autocomplete="off"></div><div><label for="bonus-input">보너스</label><input id="bonus-input" type="text" inputmode="numeric" maxlength="2" placeholder="선택" autocomplete="off"></div><button id="check" class="dark-button">현재 번호 대조</button></div><p id="check-message" class="hint" role="status">과거 대조는 다음 회차 예측 성적이 아닙니다.</p><div id="check-results"></div></div></details>
+<details class="panel collection"><summary><span>내 번호 보관함 <b id="saved-count">0</b></span><span class="summary-meta">이 기기에 저장한 번호</span></summary><div class="details-content"><div class="collection-tools"><p class="hint">중요한 번호는 CSV로 보관해 주세요.</p><button id="export-all" class="secondary-button">전체 CSV 받기</button></div><div id="saved-list"></div></div></details>
+<footer><span>당첨번호 예측을 보장하지 않습니다.</span><span>확률은 현재 묶음을 같은 한 회차에 사용할 때의 값입니다.</span></footer>
+</main><div id="toast" role="status" hidden></div>
+</body></html>

@@ -1,0 +1,32 @@
+{
+  "audit": "independent Python oracle versus JavaScript lag implementation; active-nine brute-force distribution check",
+  "passed": true,
+  "oracleModelHistoryCases": 66,
+  "historyLengths": [
+    0,
+    1,
+    2,
+    3,
+    9,
+    17,
+    90,
+    160,
+    8,
+    9,
+    25
+  ],
+  "maximumWeightAbsoluteError": 8.881784197001252e-16,
+  "distributionBruteForceCombinations": 84,
+  "distributionInactiveWeight": 1e-80,
+  "moduleSha256": "95157f7c0dd7960e2e3d40c7802acff4b71634965efaeb82be7f4dda6259d631",
+  "driverSha256": "36bcc21477cc17d4ee22bb3a5229cc74ef3adb92428f8043e21645befed381cc",
+  "findings": [
+    "No lag indexing or unknown-target leakage found in inspected module.",
+    "Pair support cutoff includes8 and excludes7.",
+    "Similarity kernel is shared-pair fraction C(overlap,2)/15, not arbitrary six-way interaction.",
+    "Mixed six-number distribution is mean of separately normalized components.",
+    "Mixture top6 based on largest marginals is not guaranteed joint-probability maximizer.",
+    "Adjusted confidence 1-.05/6 is 99.1666667%; intervals remain approximate exploratory percentile bootstrap.",
+    "Last104 draws correctly labeled reused historical test."
+  ]
+}

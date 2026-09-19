@@ -1,0 +1,10 @@
+{
+  "name": "lotto-atelier-645",
+  "version": "4.0.0",
+  "private": true,
+  "description": "공식 최근 10년 분석·예측력 검증·정확한 당첨 범위 계산을 제공하는 로또 6/45 생성기",
+  "scripts": {
+    "test": "node --test tests/*.test.cjs",
+    "build": "node scripts/build.cjs"
+  }
+}

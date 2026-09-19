@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "referenceDate": "2026-09-13",
+  "noHistoricalDrawInput": true,
+  "files": [
+    {
+      "path": "data/portfolio-templates.json",
+      "sha256": "87fe730ca517af8e6137d88e65132ac57e9493cf85c65f8f039e1e53dc799312"
+    },
+    {
+      "path": "data/portfolio-research/audit-owner-module.cjs",
+      "sha256": "bee45e4016dc69f614c1edbca3e357a2c65c1f91acbf94881ac00e86080afbe8"
+    },
+    {
+      "path": "data/portfolio-research/build-lotto-portfolio-facts-20260913.py",
+      "sha256": "7a5ede9f8e896d2722b5fbc268c939d3512f9c6d1776f6209efad76315b08902"
+    },
+    {
+      "path": "data/portfolio-research/build-portfolios.cjs",
+      "sha256": "aef157d04d0ec4fc64802f540ae8586e1047e80f51819dbf0d59504e44fc5eec"
+    },
+    {
+      "path": "data/portfolio-research/exact_portfolio_audit.js",
+      "sha256": "8e0fbe9b5bd0a41fba8e0dc67e8f57d5189d5e200540d16f40bf549746cd2e7d"
+    },
+    {
+      "path": "data/portfolio-research/final-template-manifest.json",
+      "sha256": "889ddb6416c692416b03ea3e844caf9bbaad1c6f955497a4047a05e362876710"
+    },
+    {
+      "path": "data/portfolio-research/FINDINGS.ko.md",
+      "sha256": "8e156d75d8d9a075976e008c595139f9fb9e1e9fc19f4c113bc88dc66c69fabd"
+    },
+    {
+      "path": "data/portfolio-research/linear_portfolio_formula.py",
+      "sha256": "6a88ac5638308255c311a4556ef4e629141eb8372c42b088e65c3aa8a2c6a7b1"
+    },
+    {
+      "path": "data/portfolio-research/owner-module-audit.json",
+      "sha256": "e66b715624bf57da071bcc80cd3fd69a337139ec0d59ab8fb1c0d44d414bb7cc"
+    },
+    {
+      "path": "data/portfolio-research/portfolio-analysis.json",
+      "sha256": "1ecfe6d55c77be3db844d542f6ad92bedb8142d80645c26e9d8451fcee7db87d"
+    },
+    {
+      "path": "data/portfolio-research/probability-facts.json",
+      "sha256": "fb91a9e6ef632c2150a5ed35f1a9ef1d2e986b7e2fc29a504e7c114cc6d24f2c"
+    },
+    {
+      "path": "data/portfolio-research/proposed-template-verification.json",
+      "sha256": "396440736bc7bd8dc436d169e8df6d29df8aa5f58c6291f5bb766b39487158e7"
+    },
+    {
+      "path": "data/portfolio-research/proposed-templates-exhaustive.json",
+      "sha256": "a16e0eb5e081096027099ae49f3a993e57959994ca00ae3538804c7c60ac6fe1"
+    },
+    {
+      "path": "data/portfolio-research/verification-summary.json",
+      "sha256": "d99126f3d0625aacb60d9085b3ea85a5ae42abafe27eb7291342c1f3f0deb65c"
+    }
+  ]
+}
