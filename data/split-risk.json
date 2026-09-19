@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "description": "공식 1등 당첨자 수로 추정한 당첨금 분할 위험. 당첨 확률과 무관하며 공동 당첨자 수의 기댓값만 설명합니다.",
+  "sourceRounds": {
+    "first": 720,
+    "last": 1241,
+    "count": 522
+  },
+  "model": {
+    "form": "log E[1등 당첨자 수] = log(1등 총당첨금) + a + beta × (번호 합계 − 138) / 100",
+    "center": 138,
+    "scale": 100,
+    "beta": -0.346666,
+    "standardError": 0.062023,
+    "z": -5.589307,
+    "dispersion": 2.104718
+  },
+  "validation": {
+    "method": "시간순 10개 연속 블록 교차검증, 포아송 이탈도(작을수록 좋음)",
+    "constantModel": 1021.706821,
+    "sumModel": 960.806777,
+    "improves": true,
+    "firstHalfBeta": -0.347206,
+    "secondHalfBeta": -0.345069,
+    "withoutRoundsOver30WinnersBeta": -0.314317
+  },
+  "averageWinnersRecent": 15.307692,
+  "observedSumRange": {
+    "p05": 91,
+    "p95": 191,
+    "min": 50,
+    "max": 229
+  }
+}

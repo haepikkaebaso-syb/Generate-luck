@@ -18,12 +18,14 @@ for(let m=1;m<=20;m++){
   if(actual.games!==m||actual.probabilities[3].favorable!==entry.stats.favorable3||actual.maximumUsage-actual.minimumUsage>1)throw new Error('조합 설계 검증 실패: '+m);
   for(const k of [4,5,6])if(actual.probabilities[k].favorable!==entry.stats['favorable'+k])throw new Error('당첨 영역 검증 실패: '+m);
 }
+const split=require('../data/split-risk.json');
+if(split.sourceRounds.last!==data.metadata.lastRound||split.sourceRounds.count!==data.draws.length||!split.validation.improves)throw new Error('분할 위험 모형이 추첨 자료와 맞지 않습니다. node scripts/analyze-split-risk.cjs를 다시 실행하세요.');
 const compact={metadata:data.metadata,draws:data.draws.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
-fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORTFOLIO',templates]].map(([name,value])=>'window.'+name+' = '+JSON.stringify(value).replace(/</g,'\\u003c')+';').join('\n'));
+fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORTFOLIO',templates],['LOTTO_SPLIT',split]].map(([name,value])=>'window.'+name+' = '+JSON.stringify(value).replace(/</g,'\\u003c')+';').join('\n'));
 let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(dist,'styles.css'),'utf8');
 html=html.replace('<link rel="stylesheet" href="styles.css">',()=>'<style>\n'+css+'\n</style>');
-for(const name of ['core.js','portfolio.js','draws.js','app.js']){
+for(const name of ['core.js','portfolio.js','split.js','round.js','draws.js','app.js']){
   const code=fs.readFileSync(path.join(dist,name),'utf8');
   new vm.Script(code,{filename:name});
   // Preserve defer ordering in a single offline file by moving scripts below the body content.
@@ -35,6 +37,12 @@ for(const match of fs.readFileSync(path.join(dist,'index.html'),'utf8').matchAll
 }
 const output=path.join(root,'로또번호 생성기.html');
 fs.writeFileSync(output,html);
+// GitHub Pages(main 브랜치 /docs)용 배포본: 같은 단일 HTML과 홈 화면 아이콘.
+const pages=path.join(root,'docs');
+fs.mkdirSync(pages,{recursive:true});
+fs.writeFileSync(path.join(pages,'index.html'),html);
+for(const name of ['manifest.webmanifest','icon.svg'])fs.copyFileSync(path.join(dist,name),path.join(pages,name));
+fs.writeFileSync(path.join(pages,'.nojekyll'),'');
 require('./build-portfolio-report.cjs');
 require('./build-jackpot-report.cjs');
 console.log(`완료: ${output} (${Math.round(fs.statSync(output).size/1024)} KB), 과거 기록 ${data.draws.length}회`);

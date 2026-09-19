@@ -1,0 +1,19 @@
+{
+  "name": "로또 아틀리에",
+  "short_name": "로또 아틀리에",
+  "description": "로또 6/45 번호 생성과 정확한 1등 확률 확인. 당첨을 예측하지 않습니다.",
+  "lang": "ko",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f1f5f7",
+  "theme_color": "#142c3b",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

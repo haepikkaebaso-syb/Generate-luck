@@ -89,6 +89,14 @@ test('HTML의 참조 ID, 오프라인 파일과 스크립트 구성이 일치',(
   for(const match of app.matchAll(/\$\('([^']+)'\)/g))if(!match[1].endsWith('-'))assert(ids.includes(match[1]),'missing ID: '+match[1]);
   const standalone=fs.readFileSync(path.join(__dirname,'../로또번호 생성기.html'),'utf8');
   assert(!standalone.includes('<script defer src='));assert(!standalone.includes('<link rel="stylesheet"'));
-  assert.equal([...standalone.matchAll(/<script>/g)].length,4);
+  assert.equal([...standalone.matchAll(/<script>/g)].length,6);
   assert(standalone.indexOf('window.LOTTO_DATA =') < standalone.indexOf('const source = window.LOTTO_DATA'));
+});
+
+test('판매 중인 회차를 날짜로 계산: 공식 522회 모두 마감 직전은 해당 회차, 마감 시각부터는 다음 회차',()=>{
+  const draws=require('../data/draws.json').draws;
+  const R=require('../dist/round.js');
+  for(const d of draws){const close=Date.parse(d.date+'T11:00:00Z');assert.equal(R.upcoming(close-1),d.round);assert.equal(R.upcoming(close),d.round+1);}
+  assert.equal(R.upcoming(Date.parse('2026-09-18T03:00:00Z')),1242);
+  assert.throws(()=>R.upcoming(NaN));
 });
