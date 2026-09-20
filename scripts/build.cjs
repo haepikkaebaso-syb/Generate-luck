@@ -20,7 +20,10 @@ for(let m=1;m<=20;m++){
 }
 const split=require('../data/split-risk.json');
 if(split.sourceRounds.last!==data.metadata.lastRound||split.sourceRounds.count!==data.draws.length||!split.validation.improves)throw new Error('분할 위험 모형이 추첨 자료와 맞지 않습니다. node scripts/analyze-split-risk.cjs를 다시 실행하세요.');
-const compact={metadata:data.metadata,draws:data.draws.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
+// 연구용 자료 이후의 공식 회차(자동 갱신분)는 앱의 대조 기능에만 합친다. 분석 모형과 해시 고정 자료는 그대로다.
+const recent=require('./recent-draws.cjs');
+const merged=[...data.draws,...recent.validate(data.draws,recent.load())];
+const compact={metadata:{...data.metadata,lastRound:merged.at(-1).round,lastDrawDate:merged.at(-1).date},draws:merged.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
 fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORTFOLIO',templates],['LOTTO_SPLIT',split]].map(([name,value])=>'window.'+name+' = '+JSON.stringify(value).replace(/</g,'\\u003c')+';').join('\n'));
 let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(dist,'styles.css'),'utf8');
@@ -45,4 +48,4 @@ for(const name of ['manifest.webmanifest','icon.svg'])fs.copyFileSync(path.join(
 fs.writeFileSync(path.join(pages,'.nojekyll'),'');
 require('./build-portfolio-report.cjs');
 require('./build-jackpot-report.cjs');
-console.log(`완료: ${output} (${Math.round(fs.statSync(output).size/1024)} KB), 과거 기록 ${data.draws.length}회`);
+console.log(`완료: ${output} (${Math.round(fs.statSync(output).size/1024)} KB), 과거 기록 ${merged.length}회`);

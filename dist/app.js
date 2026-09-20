@@ -172,7 +172,7 @@
   });
   $('draw-select').innerHTML='<option value="manual">당첨번호 직접 입력</option>'+[...draws].reverse().map(d=>'<option value="'+d.round+'">'+d.round+'회 · '+d.date+'</option>').join('');
   $('draw-select').value='manual';
-  $('data-note').textContent='보관된 공식 자료: '+source.metadata.firstRound+'~'+source.metadata.lastRound+'회 · '+source.metadata.lastDrawDate+'까지. 자동 갱신되지 않으므로 이후 회차는 직접 입력해 주세요.';
+  $('data-note').textContent='보관된 공식 자료: '+source.metadata.firstRound+'~'+source.metadata.lastRound+'회 · '+source.metadata.lastDrawDate+'까지. 매주 추첨 후 자동으로 추가되며, 아직 없는 회차는 직접 입력해 주세요.';
   $('draw-select').addEventListener('change',selectDraw);$('check').addEventListener('click',checkNumbers);
   ['winning-input','bonus-input'].forEach(id=>$(id).addEventListener('input',()=>{$('draw-select').value='manual';activeCheck=null;$('check-results').innerHTML='';$('check-message').textContent='번호를 확인한 뒤 현재 번호 대조를 눌러 주세요.';$('check-message').classList.remove('error-text');renderCurrent();}));
   window.addEventListener('storage',event=>{if(event.key===storageKey||event.key===null){saved=[];storageIssue='';loadSaved();renderSaved();renderCurrent();}});

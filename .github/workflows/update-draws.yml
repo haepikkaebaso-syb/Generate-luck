@@ -1,0 +1,39 @@
+name: 당첨번호 자동 갱신
+
+on:
+  schedule:
+    - cron: '30 12 * * 6'  # 매주 토요일 21:30 KST (추첨 약 1시간 뒤)
+    - cron: '0 23 * * 6'   # 일요일 08:00 KST (발표가 늦었을 때 재시도)
+  workflow_dispatch:       # Actions 탭에서 수동 실행
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-draws
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: 공식 API에서 새 회차 받기
+        run: node scripts/update-recent-draws.cjs
+      - name: 새 회차가 있으면 다시 빌드하고 커밋
+        run: |
+          if git diff --quiet -- data/recent-draws.json && [ -z "$(git status --porcelain -- data/recent-draws.json)" ]; then
+            echo "변경 없음"
+            exit 0
+          fi
+          node scripts/build.cjs
+          node --test tests/recent-draws.test.cjs tests/core.test.cjs
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/recent-draws.json dist/draws.js docs "로또번호 생성기.html"
+          git commit -m "당첨번호 자동 갱신: $(node -p "require('./data/recent-draws.json').draws.at(-1).round")회"
+          git push
