@@ -51,9 +51,10 @@ test('번호를 새로 섞고 저장하거나 과거 회차를 대조해도 현�
  h.node('save').fire('click');checkProbability(h,5);
  assert.equal(h.read().savedGames,7);
  assert.equal(JSON.parse(h.storage.get('lotto-atelier-645.v1')).length,2);
- h.node('draw-select').value='1241';h.node('draw-select').fire('change');h.node('check').fire('click');checkProbability(h,5);
- assert.match(h.node('check-message').textContent,/1241회/);
+ h.node('manual-round').value='1242';h.node('winning-input').value='1 2 3 4 5 6';h.node('bonus-input').value='7';h.node('check').fire('click');checkProbability(h,5);
+ assert.match(h.node('check-message').textContent,/1242회 당첨번호로 대조/);
  h.node('winning-input').value='1 2 3';h.node('check').fire('click');checkProbability(h,5);
+ assert.match(h.node('check-message').textContent,/본번호 6개/);
 });
 
 test('표시 분자는 실제 여섯 번호를 중복 제거해 계산하고 게임 수나 profile로 대체하지 않음',()=>{
