@@ -28,6 +28,7 @@ fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORT
 let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(dist,'styles.css'),'utf8');
 html=html.replace('<link rel="stylesheet" href="styles.css">',()=>'<style>\n'+css+'\n</style>');
+new vm.Script(fs.readFileSync(path.join(dist,'sw.js'),'utf8'),{filename:'sw.js'});
 for(const name of ['core.js','portfolio.js','split.js','round.js','draws.js','app.js']){
   const code=fs.readFileSync(path.join(dist,name),'utf8');
   new vm.Script(code,{filename:name});
@@ -44,7 +45,7 @@ fs.writeFileSync(output,html);
 const pages=path.join(root,'docs');
 fs.mkdirSync(pages,{recursive:true});
 fs.writeFileSync(path.join(pages,'index.html'),html);
-for(const name of ['manifest.webmanifest','icon.svg'])fs.copyFileSync(path.join(dist,name),path.join(pages,name));
+for(const name of ['manifest.webmanifest','icon.svg','sw.js'])fs.copyFileSync(path.join(dist,name),path.join(pages,name));
 fs.writeFileSync(path.join(pages,'.nojekyll'),'');
 require('./build-portfolio-report.cjs');
 require('./build-jackpot-report.cjs');
