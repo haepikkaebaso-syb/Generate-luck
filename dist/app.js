@@ -45,13 +45,30 @@
     const reciprocalText=reciprocal===null?'고유 조합을 추가하면 표시됩니다.':(Number.isInteger(reciprocal)?'':'약 ')+fmt(Math.round(reciprocal))+'분의 1';
     return {percent,reciprocalText};
   }
-  function ticketRow(numbers,index,small=false,check=false){
-    const marks=n=>check&&activeCheck?(activeCheck.numbers.includes(n)?'match':activeCheck.bonus===n?'bonus':''):'';
-    return '<div class="ticket-row"><span class="row-letter">'+String.fromCharCode(65+index)+'</span><div class="balls" aria-label="'+numbers.join(', ')+'">'+numbers.map(n=>ball(n,small,marks(n))).join('')+'</div></div>';
+  function ticketRow(numbers,index,small=false,draw=null,result=''){
+    const marks=n=>draw?(draw.numbers.includes(n)?'match':draw.bonus===n?'bonus':''):'';
+    return '<div class="ticket-row"><span class="row-letter">'+String.fromCharCode(65+index)+'</span><div class="balls" aria-label="'+numbers.join(', ')+'">'+numbers.map(n=>ball(n,small,marks(n))).join('')+'</div>'+result+'</div>';
+  }
+  // 보관한 번호를 같은 회차의 공식 당첨번호와 대조한다. 당첨번호가 아직 없으면 null.
+  const drawByRound=new Map(draws.map(d=>[d.round,d]));
+  function checkSaved(round){
+    const draw=drawByRound.get(round);if(!draw)return null;
+    const games=[...new Map(saved.filter(b=>b.targetRound===round).flatMap(b=>b.games).map(n=>[C.key(n),n])).values()];
+    const ranks=[0,0,0,0,0,0];games.forEach(n=>ranks[C.match(n,draw.numbers,draw.bonus).rank]++);
+    return {draw,games:games.length,ranks,won:games.length-ranks[0]};
+  }
+  const rankSummary=result=>result.won?[1,2,3,4,5].filter(r=>result.ranks[r]).map(r=>r+'등 '+result.ranks[r]+'게임').join(' · ')+(result.ranks[0]?' · 미당첨 '+result.ranks[0]+'게임':''):'모두 미당첨';
+  function renderResultBanner(){
+    const result=checkSaved(source.metadata.lastRound);
+    $('result-banner').hidden=!result||!result.games;if(!result||!result.games)return;
+    $('banner-title').textContent=result.draw.round+'회 추첨 결과 · 보관한 '+result.games+'게임';
+    $('result-numbers').innerHTML=result.draw.numbers.map(n=>ball(n,true)).join('')+'<span class="plus">+</span>'+ball(result.draw.bonus,true);
+    $('result-summary').textContent=rankSummary(result);
+    $('result-banner').classList.toggle('won',result.won>0);
   }
   function renderCurrent(){
     const games=current?.games||[];
-    $('tickets').innerHTML=games.map((n,i)=>ticketRow(n,i,false,true)).join('');
+    $('tickets').innerHTML=games.map((n,i)=>ticketRow(n,i,false,activeCheck)).join('');
     ['save','copy','csv'].forEach(id=>$(id).disabled=!games.length);
     if(!current)return;
     const profile=current.profile,m=games.length,p=profile.probabilities[3],diff=(p.probability-p.randomBaseline)*100;
@@ -129,8 +146,15 @@
     }catch{toast('복사하지 못했습니다. CSV 받기를 이용해 주세요.',true);}
   }
   function renderSaved(){
-    const count=saved.reduce((n,b)=>n+b.games.length,0);$('saved-count').textContent=fmt(count);$('export-all').disabled=!count;
-    $('saved-list').innerHTML=(storageIssue?'<p class="backup-notice">'+escape(storageIssue)+'</p>':'')+(saved.length?saved.map(batch=>'<section class="saved-batch"><div class="saved-heading"><div><h3>'+(batch.targetRound?escape(batch.targetRound+'회'):'회차 미지정')+' · '+batch.games.length+'게임</h3><p>'+escape(time(batch.createdAt))+' · '+escape(batch.label)+'</p></div><div class="saved-actions"><button class="secondary-button" data-export="'+escape(batch.id)+'">CSV</button><button class="secondary-button" data-delete="'+escape(batch.id)+'">삭제</button></div></div>'+batch.games.map((n,i)=>ticketRow(n,i,true)).join('')+'</section>').join(''):'<p class="empty-state">보관한 번호가 없습니다. 현재 묶음에서 ‘보관함에 저장’을 눌러 주세요.</p>');
+    const count=saved.reduce((n,b)=>n+b.games.length,0);$('saved-count').textContent=fmt(count);$('export-all').disabled=!count;renderResultBanner();
+    $('saved-list').innerHTML=(storageIssue?'<p class="backup-notice">'+escape(storageIssue)+'</p>':'')+(saved.length?saved.map(batch=>'<section class="saved-batch"><div class="saved-heading"><div><h3>'+(batch.targetRound?escape(batch.targetRound+'회'):'회차 미지정')+' · '+batch.games.length+'게임</h3><p>'+escape(time(batch.createdAt))+' · '+escape(batch.label)+'</p></div><div class="saved-actions"><button class="secondary-button" data-export="'+escape(batch.id)+'">CSV</button><button class="secondary-button" data-delete="'+escape(batch.id)+'">삭제</button></div></div>'+savedResult(batch)+batch.games.map((n,i)=>{const draw=drawByRound.get(batch.targetRound),m=draw&&C.match(n,draw.numbers,draw.bonus);return ticketRow(n,i,true,draw,m?'<span class="game-result'+(m.rank?' win':'')+'">'+m.hits+'개 · '+m.label+'</span>':'');}).join('')+'</section>').join(''):'<p class="empty-state">보관한 번호가 없습니다. 현재 묶음에서 ‘보관함에 저장’을 눌러 주세요.</p>');
+  }
+  function savedResult(batch){
+    if(!batch.targetRound)return '<p class="saved-result pending">구매 회차가 기록되지 않아 자동으로 대조할 수 없습니다.</p>';
+    const draw=drawByRound.get(batch.targetRound);
+    if(!draw)return '<p class="saved-result pending">'+batch.targetRound+'회 당첨번호가 아직 없습니다. 추첨 후 인터넷에 연결된 상태에서 앱을 다시 열면 자동으로 대조합니다.</p>';
+    const won=batch.games.filter(n=>C.match(n,draw.numbers,draw.bonus).rank).length;
+    return '<div class="saved-result'+(won?' won':'')+'"><span>'+draw.round+'회 당첨번호</span><span class="balls">'+draw.numbers.map(n=>ball(n,true)).join('')+'<span class="plus">+</span>'+ball(draw.bonus,true)+'</span><strong>'+(won?'당첨 '+won+'게임':'모두 미당첨')+'</strong></div>';
   }
   function saveCurrent(){
     if(!current)return;
@@ -173,6 +197,7 @@
   $('draw-select').innerHTML='<option value="manual">당첨번호 직접 입력</option>'+[...draws].reverse().map(d=>'<option value="'+d.round+'">'+d.round+'회 · '+d.date+'</option>').join('');
   $('draw-select').value='manual';
   $('data-note').textContent='보관된 공식 자료: '+source.metadata.firstRound+'~'+source.metadata.lastRound+'회 · '+source.metadata.lastDrawDate+'까지. 매주 추첨 후 자동으로 추가되며, 아직 없는 회차는 직접 입력해 주세요.';
+  $('result-open').addEventListener('click',()=>{$('collection-panel').open=true;$('collection-panel').scrollIntoView?.({behavior:'smooth',block:'start'});});
   $('draw-select').addEventListener('change',selectDraw);$('check').addEventListener('click',checkNumbers);
   ['winning-input','bonus-input'].forEach(id=>$(id).addEventListener('input',()=>{$('draw-select').value='manual';activeCheck=null;$('check-results').innerHTML='';$('check-message').textContent='번호를 확인한 뒤 현재 번호 대조를 눌러 주세요.';$('check-message').classList.remove('error-text');renderCurrent();}));
   window.addEventListener('storage',event=>{if(event.key===storageKey||event.key===null){saved=[];storageIssue='';loadSaved();renderSaved();renderCurrent();}});

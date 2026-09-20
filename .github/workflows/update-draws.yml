@@ -31,7 +31,7 @@ jobs:
             exit 0
           fi
           node scripts/build.cjs
-          node --test tests/recent-draws.test.cjs tests/core.test.cjs tests/sw.test.cjs
+          node --test tests/recent-draws.test.cjs tests/core.test.cjs tests/sw.test.cjs tests/saved-results.test.cjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/recent-draws.json dist/draws.js docs "로또번호 생성기.html"
