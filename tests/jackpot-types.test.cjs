@@ -8,7 +8,7 @@ const E=require('../data/jackpot-research/exact-type-cardinalities.json');
 const R=require('../data/jackpot-research/jackpot-type-report.json');
 const A=require('../data/jackpot-research/audit/final-report-audit.json');
 const independent=require('../data/jackpot-research/audit/independent-scoring-reconstruction.json');
-const {draws}=require('../data/draws.json');
+const {draws}=require('../data/draws-720-1241.json');
 const hash=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
 function close(a,b,tol=1e-12){assert.ok(Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<=tol,`${a} != ${b}`);}
 function choose(n,k){if(k<0||k>n)return 0;let v=1;for(let i=1;i<=k;i++)v=v*(n-i+1)/i;return Math.round(v);}
@@ -17,7 +17,7 @@ test('1등 연구가 공식 원본·명세·독립 감사에서 검증한 정확
  const provenance=require('../data/jackpot-provenance.json');
  for(const f of provenance.files)assert.equal(hash(f.path),f.sha256,f.path);
  assert.equal(hash('data/jackpot-research/jackpot-type-report.json'),A.sourceSha256);
- assert.equal(hash('data/draws.json'),R.metadata.dataSha256);
+ assert.equal(hash('data/draws-720-1241.json'),R.metadata.dataSha256);
  assert.equal(A.passed,true);assert.equal(R.metadata.firstPrizeWinnerCountsUsedAsWeights,false);
  assert.equal(R.metadata.freshHoldout,false);assert.equal(R.metadata.everyDrawWeight,1);
  for(const [f,h] of Object.entries(R.metadata.codeSha256))assert.equal(hash('data/jackpot-research/'+f),h);

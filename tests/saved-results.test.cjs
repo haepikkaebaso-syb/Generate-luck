@@ -2,10 +2,10 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
 const C=require('../dist/core.js'),P=require('../dist/portfolio.js'),S=require('../dist/split.js'),R=require('../dist/round.js');
-const templates=require('../data/portfolio-templates.json'),source=require('../data/draws.json'),model=require('../data/split-risk.json');
+const templates=require('../data/portfolio-templates.json'),source=require('../data/draws-720-1241.json'),model=require('../data/split-risk.json');
 const root=path.resolve(__dirname,'..');
 const markup=fs.readFileSync(path.join(root,'dist/index.html'),'utf8'),app=fs.readFileSync(path.join(root,'dist/app.js'),'utf8');
-const last=source.draws.at(-1); // 1241회: 7 13 16 23 24 43 + 9
+const last=source.draws.at(-1); // 1241회: 7 13 16 23 24 43 + 9 (고정 픽스처: 1241회까지의 스냅숏)
 
 function startApp(saved,data=source,storage=new Map()){
  const nodes=new Map();

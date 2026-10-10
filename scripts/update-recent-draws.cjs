@@ -14,7 +14,8 @@ async function page(round){
   return list;
 }
 (async()=>{
-  const before=R.load(),byRound=new Map(before.map(d=>[d.round,d]));
+  // 연구 자료에 이미 합쳐진 회차는 버린다(draws.json을 새로 받은 직후).
+  const before=R.load(),byRound=new Map(before.filter(d=>d.round>frozenLast).map(d=>[d.round,d]));
   // 이미 아는 회차를 기준으로 요청하면 그 이후 발표분이 함께 온다. 더 나오지 않을 때까지 반복한다.
   for(let cursor=Math.max(frozenLast,...byRound.keys()),guard=0;guard<60;guard++){
     const rows=(await page(cursor)).map(R.parseRow).filter(d=>d.round>frozenLast);
@@ -27,5 +28,5 @@ async function page(round){
   if(JSON.stringify(draws)===JSON.stringify(before)){console.log('새 회차 없음 (최신 '+(draws.at(-1)?.round??frozenLast)+'회)');return;}
   const output={schemaVersion:1,description:'data/draws.json 이후의 공식 당첨번호. 앱의 대조 기능 전용이며 분석 모형에는 쓰지 않습니다.',sourceApiUrl:API,after:frozenLast,draws};
   fs.writeFileSync(R.FILE,JSON.stringify(output,null,2)+'\n');
-  console.log('갱신: '+draws[0].round+'~'+draws.at(-1).round+'회 ('+draws.length+'개), 최신 '+draws.at(-1).numbers.join(' ')+' + '+draws.at(-1).bonus);
+  console.log(draws.length?'갱신: '+draws[0].round+'~'+draws.at(-1).round+'회 ('+draws.length+'개), 최신 '+draws.at(-1).numbers.join(' ')+' + '+draws.at(-1).bonus:'연구 자료('+frozenLast+'회까지)에 합쳐진 회차를 정리했습니다.');
 })().catch(error=>{console.error(error.message);process.exit(1);});

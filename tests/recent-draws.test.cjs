@@ -14,10 +14,10 @@ test('공식 응답 한 줄을 검증해 앱 형식으로 변환',()=>{
 });
 
 test('추가 회차는 연구 자료 바로 다음부터 빠짐없이 매주 이어져야 함',()=>{
- const a=R.parseRow(row(1242,'20260919',[2,4,10,16,31,41],9)),b=R.parseRow(row(1243,'20260926',[1,8,15,22,29,36],43));
+ const a=R.parseRow(row(1245,'20261010',[2,4,10,16,31,41],9)),b=R.parseRow(row(1246,'20261017',[1,8,15,22,29,36],43));
  assert.equal(R.validate(source.draws,[a,b]).length,2);
  assert.throws(()=>R.validate(source.draws,[b]),/이어지지/);
- assert.throws(()=>R.validate(source.draws,[a,{...b,date:'2026-10-03'}]),/7일/);
+ assert.throws(()=>R.validate(source.draws,[a,{...b,date:'2026-10-24'}]),/7일/);
  assert.equal(R.validate(source.draws,[]).length,0);
 });
 

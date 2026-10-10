@@ -12,7 +12,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="ko" xml:lang="ko">
 
 <script type="text/javascript">
-	var rsaModulus = '96dc5fad88988dc5f2a4c5d9765c5770c2f5443691f90f27ca9af800b1ae5610dfc2ea6e5dd45f62ebeeb591ad2aaef55860c6fb40af9d7d54b9bbd159f558c42e7aeb81b22f71d95f4ed166b978620b38b485c0cbcca9df08b2f8578810b18335a0690fe4b6c5bc31e1ec11318e3ef8224a18181feefd6be43efc95a51a2ce85b8d9c5a98a0b42238dc35fe8c35b4e5eef0cd93f85d5770cec2590767f4d114fb05bac4014ab4cadd9089a4aa7a2c86722d023183e3dd9af40d68b3bdeae1cc7cf2e85b495dcf82be739cf3ad35e96557e500e4663a9fd26b70a62a65bbac9025328a8e13cb7cfb54188a2eaa0b131985858ea92b69f320faf2f73d7ee176f7';
+	var rsaModulus = 'b23315b9fbeeec54419148ac571fae640bdd03c5634fd4f144f17e6a55fd30aecbd687fa34b610967da7284d3a02adc2328cb3fe846c214c6bccc22c3e2705d4384e69a67d31e4717671eac6a75197ce05e20c3c8d9749ea927d699980248bfd2b3714c97c34785a6dae543e67f177cb729c39b9e3c95549f979714c0f2d1c8df43912248db35595d02088dced75a144b4a84e77394fd359569ad7fb23010e0af523d597733781db47d708297fedfc15bb84bdc4a2f835cd88c49fde92a442ff3babf7e429f9e957a2528630d232f07fb047a7aebc8b537d8ab1050c01378d3c465799b8d50b65a800c75bd35337649d6b22eaca74289fc426f9422ef88ab4ad';
 	var publicExponent = '10001';
 	
 	const layoutsL = {
@@ -58,12 +58,10 @@
     <script type="text/javascript" src="/resources/swiper/swiper-bundle.js"></script>
     <script type="text/javascript" src="/resources/js/common.js?v=20260806"></script>
     
-    <!-- tracer js -->
-    <script type="text/javascript" src="/resources/js/tracer/tracerapi.js?v=202601201"></script>
 
 	<!-- common js -->
-    <script type="text/javascript" src="/common/cmmUtil.js?v=20260706" ></script>
-	<script type="text/javascript" src="/common/gmUtil.js?v=20260209" ></script>
+    <script type="text/javascript" src="/common/cmmUtil.js?v=20260928" ></script>
+	<script type="text/javascript" src="/common/gmUtil.js?v=20260928" ></script>
 	<!-- alert,confirm js -->
 	<script type="text/javascript" src="/common/msgUtil.js?v=20260318" ></script>
 	<!-- attache Files -->
@@ -110,61 +108,8 @@
 			}
 		};
 		
-		function checkInAPI(host) {
-			isMypage = false;
-			
-			var host="www.dhlottery.co.kr";
-			var port="443";
-			var pageUrl = window.location.pathname.substr(1);	// 현재 페이지 정보
-			var ip ='114.207.117.32';							// 클라이언트 IP
-			var loginId ='114.207.117.32';						// 클라이언트 IP 또는 로그인 ID
-			
-			if(pageUrl === undefined || pageUrl == null || pageUrl == "") {
-				pageUrl = 'main';
-			}
-					
-		
-			callTracerApiInput(host, ip, loginId, port, pageUrl, this);
-		}
-		
-		function checkOutAPI() {
-			var host="www.dhlottery.co.kr";
-			var port="443";
-			var pageUrl=window.location.pathname.substr(1);	// 현재 페이지 정보
-			var ip ='114.207.117.32';        				// 클라이언트 IP
-			var loginId ='114.207.117.32';   				// 클라이언트 IP 또는 로그인 ID
-			
-			if(pageUrl === undefined || pageUrl == null || pageUrl == "") {
-				pageUrl = 'main';
-			}
-		
-			callTracerApiOutput(host, ip, loginId, port, pageUrl, this);
-		}
-		
-		function callBackTracer() {
-			if(isMypage==true) {
-				
-				const opt = {isStatic : true};
-				var paramP = {
-		       		ltGdsCd : MyLotteryledgerM.list[_index].ltGdsCd,	
-		       		ltEpsd : MyLotteryledgerM.list[_index].ltEpsd,	
-		       		barcd : MyLotteryledgerM.list[_index].gmInfo,	
-		       		ntslOrdrNo : MyLotteryledgerM.list[_index].ntslOrdrNo,	
-		       		winResult : MyLotteryledgerM.list[_index].ltWnResult,	
-		       		srchStrDt : $("#srchStrDt").val().replaceAll("-",""),	
-		       		srchEndDt : $("#srchEndDt").val().replaceAll("-",""),	
-		        }
-				
-				cmmUtil.openLayerPopup("Lotto645TicketP", MyLotteryledgerM.path + "/lotto645Ticket", paramP, opt);
-			}
-		};
-		
-	</script>
-	
-	<script>
 		/* 타이틀 정보*/
 		document.addEventListener("DOMContentLoaded", function() {
-		  checkInAPI();
 			
 		  const breadCrumb = document.querySelector(".bread-crumb .nav-ul");
 		  if (!breadCrumb) return;
@@ -2847,8 +2792,8 @@ const topL = {
              $("#d-trigger_txt").text("" + '회');
              $("#opt_val").val("");
          } else {
-             $("#d-trigger_txt").text("1241" + '회');
-             $("#opt_val").val("1241");
+             $("#d-trigger_txt").text("1244" + '회');
+             $("#opt_val").val("1244");
         }
         
      	// 유효 회차 목록 초기화 (드롭박스 렌더링 후)
@@ -3138,11 +3083,17 @@ const topL = {
                 회차별 당첨번호
                 <div class="board-select-box">
                     <div class="d-select-cus w-215">
-                        <input type="hidden" class="opt_val" id="opt_val" value="1241">
+                        <input type="hidden" class="opt_val" id="opt_val" value="1244">
                         <button type="button" class="d-trigger">
                             <span class="d-trigger_txt" id="d-trigger_txt">회차선택</span>
                         </button>
                         <ul class="d-option" id="ltEpsdDiv">
+                            
+                                <li><button type="button" class="option-il" data-value="1244">1244회</button></li>
+                            
+                                <li><button type="button" class="option-il" data-value="1243">1243회</button></li>
+                            
+                                <li><button type="button" class="option-il" data-value="1242">1242회</button></li>
                             
                                 <li><button type="button" class="option-il" data-value="1241">1241회</button></li>
                             
@@ -5732,6 +5683,12 @@ const topL = {
                         <select class="rec-select w-215" id="srchStrLtEpsd" title="시작회차">
                             <option value="">선택</option>
                             
+                                <option value="1244">1244회</option>
+                            
+                                <option value="1243">1243회</option>
+                            
+                                <option value="1242">1242회</option>
+                            
                                 <option value="1241">1241회</option>
                             
                                 <option value="1240">1240회</option>
@@ -8220,6 +8177,12 @@ const topL = {
                     <div class="custom-select">
                         <select class="rec-select w-215" id="srchEndLtEpsd" title="종료회차">
                             <option value="">선택</option>
+                            
+                                <option value="1244">1244회</option>
+                            
+                                <option value="1243">1243회</option>
+                            
+                                <option value="1242">1242회</option>
                             
                                 <option value="1241">1241회</option>
                             

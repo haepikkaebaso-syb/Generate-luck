@@ -12,7 +12,7 @@ import urllib.request
 
 OUT=pathlib.Path(__file__).resolve().parent.parent/'data'
 START=dt.date(2016,9,13)
-END=dt.date(2026,9,13)
+END=dt.date(2026,10,4)
 PAGE='https://m.dhlottery.co.kr/lt645/result'
 API='https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do'
 RAW=OUT/'raw'
@@ -73,7 +73,7 @@ last_saturday=END-dt.timedelta(days=(END.weekday()-5)%7)
 expected_count=(last_saturday-first_saturday).days//7+1
 complete=draws[0]['date']==first_saturday.isoformat() and draws[-1]['date']==last_saturday.isoformat() and len(draws)==expected_count
 metadata={
-    'schemaVersion':1,'game':'Korean Lotto 6/45','requestedAsOf':'2026-09-13','timezone':'Asia/Seoul',
+    'schemaVersion':1,'game':'Korean Lotto 6/45','requestedAsOf':END.isoformat(),'timezone':'Asia/Seoul',
     'requestedStartDate':START.isoformat(),'requestedEndDate':END.isoformat(),
     'sourceName':'Donghaeng Lottery official public draw-result API','sourceType':'official-primary',
     'sourcePageUrl':PAGE,'sourceApiUrl':API,
@@ -89,4 +89,4 @@ metadata={
 (OUT/'source-manifest.json').write_text(json.dumps({'requests':manifest},ensure_ascii=False,indent=2),encoding='utf-8')
 print(json.dumps(metadata,ensure_ascii=False,indent=2))
 print('FIRST',draws[0])
-print('LAST',draws[-1])
+print('LAST',draws[-1])

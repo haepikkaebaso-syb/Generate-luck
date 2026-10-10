@@ -2,7 +2,7 @@
 const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
 const C=require('../dist/core.js'),P=require('../dist/portfolio.js');
-const templates=require('../data/portfolio-templates.json'),source=require('../data/draws.json');
+const templates=require('../data/portfolio-templates.json'),source=require('../data/draws-720-1241.json') // 고정 픽스처: 다음 회차 1242;
 const root=path.resolve(__dirname,'..');
 const markup=fs.readFileSync(path.join(root,'dist/index.html'),'utf8');
 const app=fs.readFileSync(path.join(root,'dist/app.js'),'utf8');

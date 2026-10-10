@@ -1,12 +1,12 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),crypto=require('node:crypto'),zlib=require('node:zlib');
 const C=require('../dist/core.js'),J=require('../dist/joint.js'),LM=require('../data/lag-research/lag-models.cjs');
-const {draws}=require('../data/draws.json'),S=require('../data/lag-associations.json'),L=require('../data/lag-models.json');
+const {draws}=require('../data/draws-720-1241.json'),S=require('../data/lag-associations.json'),L=require('../data/lag-models.json');
 const close=(a,b,t=1e-11)=>assert(Math.abs(a-b)<=t,`${a} != ${b}`);
 test('회차 간 연구 산출물·자료·실험 원래 코드의 해시 일치',()=>{
   const provenance=require('../data/lag-provenance.json'),root=path.resolve(__dirname,'..');
   const digest=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
-  assert.equal(digest('data/draws.json'),L.metadata.dataSha256);assert.equal(L.metadata.dataSha256,S.source.dataSha256);assert.equal(L.metadata.dataSha256,provenance.dataSha256);
+  assert.equal(digest('data/draws-720-1241.json'),L.metadata.dataSha256);assert.equal(L.metadata.dataSha256,S.source.dataSha256);assert.equal(L.metadata.dataSha256,provenance.dataSha256);
   for(const f of provenance.files)assert.equal(digest(f.path),f.sha256,f.path);
   for(const [file,hash] of Object.entries(L.metadata.codeSha256))assert.equal(digest('data/lag-research/'+file),hash,file);
   assert.equal(digest('dist/joint.js'),require('../data/lag-research/joint-independent-audit.json').sha256);

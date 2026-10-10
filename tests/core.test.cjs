@@ -73,9 +73,9 @@ test('확률 분자는 순서에 상관없이 서로 다른 유효 조합만 집
   assert.equal(C.jackpotProbability([]).probability,0);
   assert.equal(C.jackpotProbability(C.generate({},5).numbers).probability,5/8145060);
 });
-test('최근 10년 공식 522회 모두 범위·날짜·회차·보너스 검증',()=>{
+test('공식 525회(720~1244회) 모두 범위·날짜·회차·보너스 검증',()=>{
   const {draws,metadata}=require('../data/draws.json');
-  assert.equal(draws.length,522);assert.equal(metadata.sourceType,'official-primary');assert.equal(metadata.lastDrawDate,'2026-09-12');
+  assert.equal(draws.length,525);assert.equal(metadata.sourceType,'official-primary');assert.equal(metadata.lastDrawDate,'2026-10-03');
   draws.forEach((d,i)=>{
     assert.equal(d.round,i+720);assert(C.validNumbers(d.numbers,6));C.match(d.numbers,d.numbers,d.bonus);
     if(i)assert.equal(Date.parse(d.date)-Date.parse(draws[i-1].date),7*86400000);
@@ -93,7 +93,7 @@ test('HTML의 참조 ID, 오프라인 파일과 스크립트 구성이 일치',(
   assert(standalone.indexOf('window.LOTTO_DATA =') < standalone.indexOf('const source = window.LOTTO_DATA'));
 });
 
-test('판매 중인 회차를 날짜로 계산: 공식 522회 모두 마감 직전은 해당 회차, 마감 시각부터는 다음 회차',()=>{
+test('판매 중인 회차를 날짜로 계산: 공식 525회 모두 마감 직전은 해당 회차, 마감 시각부터는 다음 회차',()=>{
   const draws=require('../data/draws.json').draws;
   const R=require('../dist/round.js');
   for(const d of draws){const close=Date.parse(d.date+'T11:00:00Z');assert.equal(R.upcoming(close-1),d.round);assert.equal(R.upcoming(close),d.round+1);}

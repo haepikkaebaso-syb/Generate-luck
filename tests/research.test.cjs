@@ -44,7 +44,7 @@ test('분산 생성의 조건과 번호 비중복 보장, 빠른 경로 회귀',
 });
 test('최종 검증 구간은 선택 이후, 균등 기준은 정확히 0개선',()=>{
   const v=require('../data/validation.json'),source=require('../data/draws.json');
-  assert.equal(v.protocol.warmup,156);assert.equal(v.protocol.holdout,104);assert.equal(v.protocol.development,262);
+  assert.equal(v.protocol.warmup,156);assert.equal(v.protocol.holdout,104);assert.equal(v.protocol.development,265);
   const best=[...v.models].sort((a,b)=>a.development.brier-b.development.brier)[0];assert.equal(v.selectedModel,best.id);
   for(const m of v.models){assert.equal(m.development.lastRound+1,m.holdout.firstRound);assert.equal(m.holdout.count,104);assert.equal(m.holdout.lastRound,source.draws.at(-1).round);}
   const uniform=v.models.find(m=>m.id==='uniform');assert.equal(uniform.holdout.improvement,0);assert.deepEqual(uniform.holdout.improvementCI95,[0,0]);

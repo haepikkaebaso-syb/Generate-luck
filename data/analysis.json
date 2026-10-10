@@ -4,24 +4,24 @@
   "data": {
     "schemaVersion": 1,
     "game": "Korean Lotto 6/45",
-    "requestedAsOf": "2026-09-13",
+    "requestedAsOf": "2026-10-04",
     "timezone": "Asia/Seoul",
     "requestedStartDate": "2016-09-13",
-    "requestedEndDate": "2026-09-13",
+    "requestedEndDate": "2026-10-04",
     "sourceName": "Donghaeng Lottery official public draw-result API",
     "sourceType": "official-primary",
     "sourcePageUrl": "https://m.dhlottery.co.kr/lt645/result",
     "sourceApiUrl": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do",
     "sourceMethod": "GET; srchDir=center&srchLtEpsd=latest followed by srchDir=older&srchCursorLtEpsd=oldest. Endpoint and parameter names read from official result-page JavaScript.",
-    "latestPublishedRoundAtRetrieval": 1241,
+    "latestPublishedRoundAtRetrieval": 1244,
     "firstRound": 720,
-    "lastRound": 1241,
+    "lastRound": 1244,
     "firstDrawDate": "2016-09-17",
-    "lastDrawDate": "2026-09-12",
-    "drawCount": 522,
-    "expectedDrawCount": 522,
+    "lastDrawDate": "2026-10-03",
+    "drawCount": 525,
+    "expectedDrawCount": 525,
     "completeRequestedWindow": true,
-    "retrievedAtUtc": "2026-09-13T12:27:36.519661+00:00",
+    "retrievedAtUtc": "2026-10-10T04:50:07.192897+00:00",
     "noExcelSource": true,
     "validation": {
       "uniqueRounds": true,
@@ -50,12 +50,12 @@
       "allManifestByteLengthsAndSha256Match": true,
       "allNormalizedRecordsMatchRetainedOfficialRawApi": true
     },
-    "expectedWeeklyDrawCount": 522,
-    "actualDrawCount": 522,
+    "expectedWeeklyDrawCount": 525,
+    "actualDrawCount": 525,
     "missingDrawCount": 0,
     "rawResponseFilesHashVerified": 54,
-    "rawDrawRowsReconciled": 522,
-    "datasetSha256": "3188ae42aa4b6319de2313a3c215ddc7b6855d0eec4a428b8e85c5b5d8aa0f9f",
+    "rawDrawRowsReconciled": 525,
+    "datasetSha256": "4525ad3f8bce12975ed68bbdf7ec0dcb1d3741d61201db15aaa650f3c9969adf",
     "failures": []
   },
   "model": {
@@ -72,16 +72,16 @@
   "numberFrequency": [
     {
       "number": 1,
-      "count": 64,
-      "expectedCount": 69.6,
-      "rate": 0.12260536398467432,
+      "count": 65,
+      "expectedCount": 70.0,
+      "rate": 0.12380952380952381,
       "recent52Count": 9,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 19,
+      "recent156Count": 20,
       "recent156Expected": 20.8,
-      "currentGap": 7,
-      "lastSeenRound": 1234,
-      "lastSeenDate": "2026-07-25",
+      "currentGap": 0,
+      "lastSeenRound": 1244,
+      "lastSeenDate": "2026-10-03",
       "maximumCompletedGap": 36,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 36,
       "maximumObservedAbsenceRunDetails": [
@@ -101,33 +101,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 7,
-        "previousAppearanceRound": 1234,
-        "throughRound": 1241,
+        "absentDraws": 0,
+        "previousAppearanceRound": 1244,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.5195866942051355,
+      "binomialTwoSidedP": 0.5635155550854145,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.09571472569727854,
-        "high": 0.15385400268852073
+        "low": 0.09686734937795763,
+        "high": 0.1550697834245903
       },
       "bonusCountSeparately": 8
     },
     {
       "number": 2,
-      "count": 62,
-      "expectedCount": 69.6,
-      "rate": 0.11877394636015326,
-      "recent52Count": 6,
+      "count": 63,
+      "expectedCount": 70.0,
+      "rate": 0.12,
+      "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 14,
+      "recent156Count": 15,
       "recent156Expected": 20.8,
-      "currentGap": 3,
-      "lastSeenRound": 1238,
-      "lastSeenDate": "2026-08-22",
+      "currentGap": 2,
+      "lastSeenRound": 1242,
+      "lastSeenDate": "2026-09-19",
       "maximumCompletedGap": 48,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 48,
       "maximumObservedAbsenceRunDetails": [
@@ -147,31 +147,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 3,
-        "previousAppearanceRound": 1238,
-        "throughRound": 1241,
+        "absentDraws": 2,
+        "previousAppearanceRound": 1242,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.36715332869847705,
+      "binomialTwoSidedP": 0.4039303813645802,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.09228692863142826,
-        "high": 0.1496657120352178
+        "low": 0.09345508851757021,
+        "high": 0.1509091460128662
       },
       "bonusCountSeparately": 14
     },
     {
       "number": 3,
       "count": 77,
-      "expectedCount": 69.6,
-      "rate": 0.1475095785440613,
+      "expectedCount": 70.0,
+      "rate": 0.14666666666666667,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 25,
       "recent156Expected": 20.8,
-      "currentGap": 11,
+      "currentGap": 14,
       "lastSeenRound": 1230,
       "lastSeenDate": "2026-06-27",
       "maximumCompletedGap": 24,
@@ -193,33 +193,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 11,
+        "absentDraws": 14,
         "previousAppearanceRound": 1230,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.3342789693620012,
+      "binomialTwoSidedP": 0.3686275896882261,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11819858012792134,
-        "high": 0.18087835474836317
+        "low": 0.11751247285499791,
+        "high": 0.17986508602737636
       },
       "bonusCountSeparately": 15
     },
     {
       "number": 4,
-      "count": 58,
-      "expectedCount": 69.6,
-      "rate": 0.1111111111111111,
+      "count": 59,
+      "expectedCount": 70.0,
+      "rate": 0.11238095238095239,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 16,
+      "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 10,
-      "lastSeenRound": 1231,
-      "lastSeenDate": "2026-07-04",
+      "currentGap": 2,
+      "lastSeenRound": 1242,
+      "lastSeenDate": "2026-09-19",
       "maximumCompletedGap": 35,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 35,
       "maximumObservedAbsenceRunDetails": [
@@ -239,31 +239,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 10,
-        "previousAppearanceRound": 1231,
-        "throughRound": 1241,
+        "absentDraws": 2,
+        "previousAppearanceRound": 1242,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.13902701106264934,
+      "binomialTwoSidedP": 0.17723419064818224,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.08545963945306623,
-        "high": 0.1412613899666055
+        "low": 0.08665809155763242,
+        "high": 0.14256088562347038
       },
       "bonusCountSeparately": 17
     },
     {
       "number": 5,
       "count": 51,
-      "expectedCount": 69.6,
-      "rate": 0.09770114942528736,
+      "expectedCount": 70.0,
+      "rate": 0.09714285714285714,
       "recent52Count": 4,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 13,
       "recent156Expected": 20.8,
-      "currentGap": 28,
+      "currentGap": 31,
       "lastSeenRound": 1213,
       "lastSeenDate": "2026-02-28",
       "maximumCompletedGap": 73,
@@ -285,31 +285,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 28,
+        "absentDraws": 31,
         "previousAppearanceRound": 1213,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.016977653226231806,
-      "bonferroni45AdjustedP": 0.7639943951804313,
+      "binomialTwoSidedP": 0.014501964833793507,
+      "bonferroni45AdjustedP": 0.6525884175207078,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.07361205596071912,
-        "high": 0.12645582805667938
+        "low": 0.07318631572928526,
+        "high": 0.12574476974207036
       },
       "bonusCountSeparately": 12
     },
     {
       "number": 6,
       "count": 77,
-      "expectedCount": 69.6,
-      "rate": 0.1475095785440613,
+      "expectedCount": 70.0,
+      "rate": 0.14666666666666667,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 25,
       "recent156Expected": 20.8,
-      "currentGap": 6,
+      "currentGap": 9,
       "lastSeenRound": 1235,
       "lastSeenDate": "2026-08-01",
       "maximumCompletedGap": 30,
@@ -331,31 +331,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 6,
+        "absentDraws": 9,
         "previousAppearanceRound": 1235,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.3342789693620012,
+      "binomialTwoSidedP": 0.3686275896882261,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11819858012792134,
-        "high": 0.18087835474836317
+        "low": 0.11751247285499791,
+        "high": 0.17986508602737636
       },
       "bonusCountSeparately": 14
     },
     {
       "number": 7,
       "count": 73,
-      "expectedCount": 69.6,
-      "rate": 0.13984674329501914,
-      "recent52Count": 7,
+      "expectedCount": 70.0,
+      "rate": 0.13904761904761906,
+      "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 26,
       "recent156Expected": 20.8,
-      "currentGap": 0,
+      "currentGap": 3,
       "lastSeenRound": 1241,
       "lastSeenDate": "2026-09-12",
       "maximumCompletedGap": 29,
@@ -377,31 +377,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 0,
+        "absentDraws": 3,
         "previousAppearanceRound": 1241,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.6522136190471837,
+      "binomialTwoSidedP": 0.6999916681822365,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11124544876847543,
-        "high": 0.1725976037786157
+        "low": 0.11060004726566763,
+        "high": 0.17163018970471755
       },
       "bonusCountSeparately": 14
     },
     {
       "number": 8,
       "count": 56,
-      "expectedCount": 69.6,
-      "rate": 0.10727969348659004,
+      "expectedCount": 70.0,
+      "rate": 0.10666666666666667,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 18,
       "recent156Expected": 20.8,
-      "currentGap": 11,
+      "currentGap": 14,
       "lastSeenRound": 1230,
       "lastSeenDate": "2026-06-27",
       "maximumCompletedGap": 28,
@@ -423,33 +423,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 11,
+        "absentDraws": 14,
         "previousAppearanceRound": 1230,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.08213248758835279,
+      "binomialTwoSidedP": 0.07236484003090293,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.08206099608150126,
-        "high": 0.13704454208733743
+        "low": 0.08158603956753555,
+        "high": 0.13627452699375708
       },
       "bonusCountSeparately": 7
     },
     {
       "number": 9,
-      "count": 64,
-      "expectedCount": 69.6,
-      "rate": 0.12260536398467432,
+      "count": 65,
+      "expectedCount": 70.0,
+      "rate": 0.12380952380952381,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 20,
+      "recent156Count": 21,
       "recent156Expected": 20.8,
-      "currentGap": 11,
-      "lastSeenRound": 1230,
-      "lastSeenDate": "2026-06-27",
+      "currentGap": 1,
+      "lastSeenRound": 1243,
+      "lastSeenDate": "2026-09-26",
       "maximumCompletedGap": 35,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 35,
       "maximumObservedAbsenceRunDetails": [
@@ -469,33 +469,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 11,
-        "previousAppearanceRound": 1230,
-        "throughRound": 1241,
+        "absentDraws": 1,
+        "previousAppearanceRound": 1243,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.5195866942051355,
+      "binomialTwoSidedP": 0.5635155550854145,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.09571472569727854,
-        "high": 0.15385400268852073
+        "low": 0.09686734937795763,
+        "high": 0.1550697834245903
       },
-      "bonusCountSeparately": 12
+      "bonusCountSeparately": 13
     },
     {
       "number": 10,
-      "count": 66,
-      "expectedCount": 69.6,
-      "rate": 0.12643678160919541,
+      "count": 67,
+      "expectedCount": 70.0,
+      "rate": 0.12761904761904763,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 17,
+      "recent156Count": 18,
       "recent156Expected": 20.8,
-      "currentGap": 4,
-      "lastSeenRound": 1237,
-      "lastSeenDate": "2026-08-15",
+      "currentGap": 2,
+      "lastSeenRound": 1242,
+      "lastSeenDate": "2026-09-19",
       "maximumCompletedGap": 46,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 46,
       "maximumObservedAbsenceRunDetails": [
@@ -515,31 +515,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 4,
-        "previousAppearanceRound": 1237,
-        "throughRound": 1241,
+        "absentDraws": 2,
+        "previousAppearanceRound": 1242,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.699265636673734,
+      "binomialTwoSidedP": 0.7483372702038252,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.0991514466092597,
-        "high": 0.15803353885490878
+        "low": 0.10028829664885035,
+        "high": 0.15922189654614305
       },
       "bonusCountSeparately": 14
     },
     {
       "number": 11,
       "count": 69,
-      "expectedCount": 69.6,
-      "rate": 0.13218390804597702,
-      "recent52Count": 6,
+      "expectedCount": 70.0,
+      "rate": 0.13142857142857142,
+      "recent52Count": 5,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 21,
+      "recent156Count": 19,
       "recent156Expected": 20.8,
-      "currentGap": 1,
+      "currentGap": 4,
       "lastSeenRound": 1240,
       "lastSeenDate": "2026-09-05",
       "maximumCompletedGap": 31,
@@ -561,31 +561,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 1,
+        "absentDraws": 4,
         "previousAppearanceRound": 1240,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 1.0,
+      "binomialTwoSidedP": 0.9488427276886504,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10432250699777297,
-        "high": 0.16428715516793355
+        "low": 0.10371759771122148,
+        "high": 0.16336580643749826
       },
       "bonusCountSeparately": 10
     },
     {
       "number": 12,
       "count": 88,
-      "expectedCount": 69.6,
-      "rate": 0.1685823754789272,
-      "recent52Count": 6,
+      "expectedCount": 70.0,
+      "rate": 0.1676190476190476,
+      "recent52Count": 5,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 23,
       "recent156Expected": 20.8,
-      "currentGap": 5,
+      "currentGap": 8,
       "lastSeenRound": 1236,
       "lastSeenDate": "2026-08-08",
       "maximumCompletedGap": 28,
@@ -607,33 +607,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 5,
+        "absentDraws": 8,
         "previousAppearanceRound": 1236,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.020364034848351954,
-      "bonferroni45AdjustedP": 0.9163815681758379,
+      "binomialTwoSidedP": 0.02443935589818451,
+      "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.13746024429982298,
-        "high": 0.20351194475773432
+        "low": 0.13666118241507288,
+        "high": 0.2023735775131432
       },
       "bonusCountSeparately": 12
     },
     {
       "number": 13,
-      "count": 82,
-      "expectedCount": 69.6,
-      "rate": 0.15708812260536398,
-      "recent52Count": 10,
+      "count": 83,
+      "expectedCount": 70.0,
+      "rate": 0.1580952380952381,
+      "recent52Count": 11,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 30,
       "recent156Expected": 20.8,
       "currentGap": 0,
-      "lastSeenRound": 1241,
-      "lastSeenDate": "2026-09-12",
+      "lastSeenRound": 1244,
+      "lastSeenDate": "2026-10-03",
       "maximumCompletedGap": 31,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 31,
       "maximumObservedAbsenceRunDetails": [
@@ -654,30 +654,30 @@
       },
       "rightCensoredCurrentAbsenceRun": {
         "absentDraws": 0,
-        "previousAppearanceRound": 1241,
-        "throughRound": 1241,
+        "previousAppearanceRound": 1244,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.12185608814868909,
+      "binomialTwoSidedP": 0.09526849439639311,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.12692949725753586,
-        "high": 0.1911903913313523
+        "low": 0.12793313579239565,
+        "high": 0.19216619446493122
       },
       "bonusCountSeparately": 7
     },
     {
       "number": 14,
       "count": 69,
-      "expectedCount": 69.6,
-      "rate": 0.13218390804597702,
+      "expectedCount": 70.0,
+      "rate": 0.13142857142857142,
       "recent52Count": 3,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 17,
+      "recent156Count": 16,
       "recent156Expected": 20.8,
-      "currentGap": 10,
+      "currentGap": 13,
       "lastSeenRound": 1231,
       "lastSeenDate": "2026-07-04",
       "maximumCompletedGap": 31,
@@ -699,31 +699,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 10,
+        "absentDraws": 13,
         "previousAppearanceRound": 1231,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 1.0,
+      "binomialTwoSidedP": 0.9488427276886504,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10432250699777297,
-        "high": 0.16428715516793355
+        "low": 0.10371759771122148,
+        "high": 0.16336580643749826
       },
       "bonusCountSeparately": 9
     },
     {
       "number": 15,
       "count": 72,
-      "expectedCount": 69.6,
-      "rate": 0.13793103448275862,
+      "expectedCount": 70.0,
+      "rate": 0.13714285714285715,
       "recent52Count": 11,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 25,
       "recent156Expected": 20.8,
-      "currentGap": 6,
+      "currentGap": 9,
       "lastSeenRound": 1235,
       "lastSeenDate": "2026-08-01",
       "maximumCompletedGap": 37,
@@ -745,33 +745,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 6,
+        "absentDraws": 9,
         "previousAppearanceRound": 1235,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.7475072352745291,
+      "binomialTwoSidedP": 0.7972652259656732,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10951180092795268,
-        "high": 0.1705228552954848
+        "low": 0.1088765429765888,
+        "high": 0.16956693734351705
       },
       "bonusCountSeparately": 13
     },
     {
       "number": 16,
-      "count": 80,
-      "expectedCount": 69.6,
-      "rate": 0.1532567049808429,
+      "count": 81,
+      "expectedCount": 70.0,
+      "rate": 0.15428571428571428,
       "recent52Count": 9,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 27,
       "recent156Expected": 20.8,
-      "currentGap": 0,
-      "lastSeenRound": 1241,
-      "lastSeenDate": "2026-09-12",
+      "currentGap": 2,
+      "lastSeenRound": 1242,
+      "lastSeenDate": "2026-09-19",
       "maximumCompletedGap": 24,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 24,
       "maximumObservedAbsenceRunDetails": [
@@ -791,31 +791,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 0,
-        "previousAppearanceRound": 1241,
-        "throughRound": 1241,
+        "absentDraws": 2,
+        "previousAppearanceRound": 1242,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.17666359546453736,
+      "binomialTwoSidedP": 0.15788165127655676,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.12343205675361306,
-        "high": 0.1870705760056056
+        "low": 0.1244529333832918,
+        "high": 0.1880723764945272
       },
       "bonusCountSeparately": 12
     },
     {
       "number": 17,
       "count": 67,
-      "expectedCount": 69.6,
-      "rate": 0.12835249042145594,
+      "expectedCount": 70.0,
+      "rate": 0.12761904761904763,
       "recent52Count": 5,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 15,
+      "currentGap": 18,
       "lastSeenRound": 1226,
       "lastSeenDate": "2026-05-30",
       "maximumCompletedGap": 24,
@@ -837,33 +837,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 15,
+        "absentDraws": 18,
         "previousAppearanceRound": 1226,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.7967741010327529,
+      "binomialTwoSidedP": 0.7483372702038252,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10087304390015545,
-        "high": 0.16012012973565615
+        "low": 0.10028829664885035,
+        "high": 0.15922189654614305
       },
       "bonusCountSeparately": 16
     },
     {
       "number": 18,
-      "count": 79,
-      "expectedCount": 69.6,
-      "rate": 0.15134099616858238,
-      "recent52Count": 7,
+      "count": 81,
+      "expectedCount": 70.0,
+      "rate": 0.15428571428571428,
+      "recent52Count": 9,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 16,
+      "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 3,
-      "lastSeenRound": 1238,
-      "lastSeenDate": "2026-08-22",
+      "currentGap": 0,
+      "lastSeenRound": 1244,
+      "lastSeenDate": "2026-10-03",
       "maximumCompletedGap": 57,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 57,
       "maximumObservedAbsenceRunDetails": [
@@ -883,31 +883,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 3,
-        "previousAppearanceRound": 1238,
-        "throughRound": 1241,
+        "absentDraws": 0,
+        "previousAppearanceRound": 1244,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.22145528175778012,
+      "binomialTwoSidedP": 0.15788165127655676,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.12168584701066727,
-        "high": 0.18500819423620155
+        "low": 0.1244529333832918,
+        "high": 0.1880723764945272
       },
       "bonusCountSeparately": 9
     },
     {
       "number": 19,
       "count": 75,
-      "expectedCount": 69.6,
-      "rate": 0.14367816091954022,
-      "recent52Count": 8,
+      "expectedCount": 70.0,
+      "rate": 0.14285714285714285,
+      "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 27,
       "recent156Expected": 20.8,
-      "currentGap": 1,
+      "currentGap": 4,
       "lastSeenRound": 1240,
       "lastSeenDate": "2026-09-05",
       "maximumCompletedGap": 36,
@@ -929,31 +929,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 1,
+        "absentDraws": 4,
         "previousAppearanceRound": 1240,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.47884110724223855,
+      "binomialTwoSidedP": 0.5207364291363179,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11471836885018016,
-        "high": 0.1767415673983262
+        "low": 0.11405264041344652,
+        "high": 0.175751200382885
       },
       "bonusCountSeparately": 8
     },
     {
       "number": 20,
       "count": 57,
-      "expectedCount": 69.6,
-      "rate": 0.10919540229885058,
-      "recent52Count": 8,
+      "expectedCount": 70.0,
+      "rate": 0.10857142857142857,
+      "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 21,
       "recent156Expected": 20.8,
-      "currentGap": 1,
+      "currentGap": 4,
       "lastSeenRound": 1240,
       "lastSeenDate": "2026-09-05",
       "maximumCompletedGap": 27,
@@ -982,31 +982,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 1,
+        "absentDraws": 4,
         "previousAppearanceRound": 1240,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.10764444715187729,
+      "binomialTwoSidedP": 0.10807061589422409,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.08375902014765195,
-        "high": 0.13915423559262
+        "low": 0.0832741652993796,
+        "high": 0.13837248312622827
       },
       "bonusCountSeparately": 15
     },
     {
       "number": 21,
       "count": 82,
-      "expectedCount": 69.6,
-      "rate": 0.15708812260536398,
+      "expectedCount": 70.0,
+      "rate": 0.15619047619047619,
       "recent52Count": 4,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 22,
+      "recent156Count": 20,
       "recent156Expected": 20.8,
-      "currentGap": 5,
+      "currentGap": 8,
       "lastSeenRound": 1236,
       "lastSeenDate": "2026-08-08",
       "maximumCompletedGap": 26,
@@ -1028,31 +1028,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 5,
+        "absentDraws": 8,
         "previousAppearanceRound": 1236,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.12185608814868909,
+      "binomialTwoSidedP": 0.12348507188411545,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.12692949725753586,
-        "high": 0.1911903913313523
+        "low": 0.1261922245537471,
+        "high": 0.19012008404528305
       },
       "bonusCountSeparately": 6
     },
     {
       "number": 22,
       "count": 65,
-      "expectedCount": 69.6,
-      "rate": 0.12452107279693486,
+      "expectedCount": 70.0,
+      "rate": 0.12380952380952381,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 17,
+      "recent156Count": 16,
       "recent156Expected": 20.8,
-      "currentGap": 2,
+      "currentGap": 5,
       "lastSeenRound": 1239,
       "lastSeenDate": "2026-08-29",
       "maximumCompletedGap": 32,
@@ -1074,31 +1074,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 2,
+        "absentDraws": 5,
         "previousAppearanceRound": 1239,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.6064628932930043,
+      "binomialTwoSidedP": 0.5635155550854145,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.09743199301282796,
-        "high": 0.15594484353807272
+        "low": 0.09686734937795763,
+        "high": 0.1550697834245903
       },
       "bonusCountSeparately": 12
     },
     {
       "number": 23,
       "count": 60,
-      "expectedCount": 69.6,
-      "rate": 0.11494252873563218,
-      "recent52Count": 7,
+      "expectedCount": 70.0,
+      "rate": 0.11428571428571428,
+      "recent52Count": 5,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 16,
       "recent156Expected": 20.8,
-      "currentGap": 0,
+      "currentGap": 3,
       "lastSeenRound": 1241,
       "lastSeenDate": "2026-09-12",
       "maximumCompletedGap": 48,
@@ -1120,33 +1120,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 0,
+        "absentDraws": 3,
         "previousAppearanceRound": 1241,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.24611923195636848,
+      "binomialTwoSidedP": 0.2222512727993921,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.08886843094009744,
-        "high": 0.14546830499782465
+        "low": 0.08835377756786149,
+        "high": 0.1446514420152809
       },
       "bonusCountSeparately": 8
     },
     {
       "number": 24,
-      "count": 72,
-      "expectedCount": 69.6,
-      "rate": 0.13793103448275862,
-      "recent52Count": 9,
+      "count": 73,
+      "expectedCount": 70.0,
+      "rate": 0.13904761904761906,
+      "recent52Count": 10,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 21,
+      "recent156Count": 22,
       "recent156Expected": 20.8,
-      "currentGap": 0,
-      "lastSeenRound": 1241,
-      "lastSeenDate": "2026-09-12",
+      "currentGap": 1,
+      "lastSeenRound": 1243,
+      "lastSeenDate": "2026-09-26",
       "maximumCompletedGap": 23,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 23,
       "maximumObservedAbsenceRunDetails": [
@@ -1166,31 +1166,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 0,
-        "previousAppearanceRound": 1241,
-        "throughRound": 1241,
+        "absentDraws": 1,
+        "previousAppearanceRound": 1243,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.7475072352745291,
+      "binomialTwoSidedP": 0.6999916681822365,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10951180092795268,
-        "high": 0.1705228552954848
+        "low": 0.11060004726566763,
+        "high": 0.17163018970471755
       },
       "bonusCountSeparately": 17
     },
     {
       "number": 25,
       "count": 54,
-      "expectedCount": 69.6,
-      "rate": 0.10344827586206896,
+      "expectedCount": 70.0,
+      "rate": 0.10285714285714286,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 17,
+      "recent156Count": 16,
       "recent156Expected": 20.8,
-      "currentGap": 8,
+      "currentGap": 11,
       "lastSeenRound": 1233,
       "lastSeenDate": "2026-07-18",
       "maximumCompletedGap": 53,
@@ -1212,33 +1212,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 8,
+        "absentDraws": 11,
         "previousAppearanceRound": 1233,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.04572988048355288,
+      "binomialTwoSidedP": 0.03980287667529454,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.0786729822093052,
-        "high": 0.1328172991672068
+        "low": 0.07821776846751302,
+        "high": 0.13207081167023432
       },
-      "bonusCountSeparately": 9
+      "bonusCountSeparately": 10
     },
     {
       "number": 26,
-      "count": 66,
-      "expectedCount": 69.6,
-      "rate": 0.12643678160919541,
+      "count": 67,
+      "expectedCount": 70.0,
+      "rate": 0.12761904761904763,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 20,
+      "recent156Count": 21,
       "recent156Expected": 20.8,
-      "currentGap": 15,
-      "lastSeenRound": 1226,
-      "lastSeenDate": "2026-05-30",
+      "currentGap": 0,
+      "lastSeenRound": 1244,
+      "lastSeenDate": "2026-10-03",
       "maximumCompletedGap": 33,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 33,
       "maximumObservedAbsenceRunDetails": [
@@ -1258,31 +1258,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 15,
-        "previousAppearanceRound": 1226,
-        "throughRound": 1241,
+        "absentDraws": 0,
+        "previousAppearanceRound": 1244,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.699265636673734,
+      "binomialTwoSidedP": 0.7483372702038252,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.0991514466092597,
-        "high": 0.15803353885490878
+        "low": 0.10028829664885035,
+        "high": 0.15922189654614305
       },
       "bonusCountSeparately": 14
     },
     {
       "number": 27,
       "count": 70,
-      "expectedCount": 69.6,
-      "rate": 0.13409961685823754,
+      "expectedCount": 70.0,
+      "rate": 0.13333333333333333,
       "recent52Count": 10,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 24,
+      "recent156Count": 23,
       "recent156Expected": 20.8,
-      "currentGap": 17,
+      "currentGap": 20,
       "lastSeenRound": 1224,
       "lastSeenDate": "2026-05-16",
       "maximumCompletedGap": 43,
@@ -1304,31 +1304,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 17,
+        "absentDraws": 20,
         "previousAppearanceRound": 1224,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.9486621747722357,
+      "binomialTwoSidedP": 1.0,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10605029517535783,
-        "high": 0.16636766472555328
+        "low": 0.10543528353480357,
+        "high": 0.16543477924937566
       },
       "bonusCountSeparately": 13
     },
     {
       "number": 28,
       "count": 73,
-      "expectedCount": 69.6,
-      "rate": 0.13984674329501914,
+      "expectedCount": 70.0,
+      "rate": 0.13904761904761906,
       "recent52Count": 9,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 26,
       "recent156Expected": 20.8,
-      "currentGap": 11,
+      "currentGap": 14,
       "lastSeenRound": 1230,
       "lastSeenDate": "2026-06-27",
       "maximumCompletedGap": 27,
@@ -1350,31 +1350,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 11,
+        "absentDraws": 14,
         "previousAppearanceRound": 1230,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.6522136190471837,
+      "binomialTwoSidedP": 0.6999916681822365,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11124544876847543,
-        "high": 0.1725976037786157
+        "low": 0.11060004726566763,
+        "high": 0.17163018970471755
       },
       "bonusCountSeparately": 12
     },
     {
       "number": 29,
       "count": 66,
-      "expectedCount": 69.6,
-      "rate": 0.12643678160919541,
+      "expectedCount": 70.0,
+      "rate": 0.12571428571428572,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 21,
       "recent156Expected": 20.8,
-      "currentGap": 5,
+      "currentGap": 8,
       "lastSeenRound": 1236,
       "lastSeenDate": "2026-08-08",
       "maximumCompletedGap": 30,
@@ -1396,31 +1396,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 5,
+        "absentDraws": 8,
         "previousAppearanceRound": 1236,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.699265636673734,
+      "binomialTwoSidedP": 0.6532806798574369,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.0991514466092597,
-        "high": 0.15803353885490878
+        "low": 0.09857675858698861,
+        "high": 0.15714688489720294
       },
       "bonusCountSeparately": 11
     },
     {
       "number": 30,
       "count": 74,
-      "expectedCount": 69.6,
-      "rate": 0.1417624521072797,
+      "expectedCount": 70.0,
+      "rate": 0.14095238095238094,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 26,
+      "recent156Count": 25,
       "recent156Expected": 20.8,
-      "currentGap": 13,
+      "currentGap": 16,
       "lastSeenRound": 1228,
       "lastSeenDate": "2026-06-13",
       "maximumCompletedGap": 26,
@@ -1442,33 +1442,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 13,
+        "absentDraws": 16,
         "previousAppearanceRound": 1228,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.5622937126326326,
+      "binomialTwoSidedP": 0.6074102883968663,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11298098207137584,
-        "high": 0.1746704974858843
+        "low": 0.11232542367826175,
+        "high": 0.17369160045067789
       },
       "bonusCountSeparately": 14
     },
     {
       "number": 31,
-      "count": 73,
-      "expectedCount": 69.6,
-      "rate": 0.13984674329501914,
-      "recent52Count": 10,
+      "count": 74,
+      "expectedCount": 70.0,
+      "rate": 0.14095238095238094,
+      "recent52Count": 11,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 25,
+      "recent156Count": 26,
       "recent156Expected": 20.8,
-      "currentGap": 1,
-      "lastSeenRound": 1240,
-      "lastSeenDate": "2026-09-05",
+      "currentGap": 2,
+      "lastSeenRound": 1242,
+      "lastSeenDate": "2026-09-19",
       "maximumCompletedGap": 23,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 23,
       "maximumObservedAbsenceRunDetails": [
@@ -1488,31 +1488,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 1,
-        "previousAppearanceRound": 1240,
-        "throughRound": 1241,
+        "absentDraws": 2,
+        "previousAppearanceRound": 1242,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.6522136190471837,
+      "binomialTwoSidedP": 0.6074102883968663,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11124544876847543,
-        "high": 0.1725976037786157
+        "low": 0.11232542367826175,
+        "high": 0.17369160045067789
       },
       "bonusCountSeparately": 16
     },
     {
       "number": 32,
       "count": 61,
-      "expectedCount": 69.6,
-      "rate": 0.11685823754789272,
+      "expectedCount": 70.0,
+      "rate": 0.11619047619047619,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 2,
+      "currentGap": 5,
       "lastSeenRound": 1239,
       "lastSeenDate": "2026-08-29",
       "maximumCompletedGap": 33,
@@ -1541,31 +1541,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 2,
+        "absentDraws": 5,
         "previousAppearanceRound": 1239,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.3026333210394415,
+      "binomialTwoSidedP": 0.27489577881964833,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.09057649271229441,
-        "high": 0.14756817180486367
+        "low": 0.09005187309165898,
+        "high": 0.14673963812757365
       },
       "bonusCountSeparately": 20
     },
     {
       "number": 33,
       "count": 76,
-      "expectedCount": 69.6,
-      "rate": 0.14559386973180077,
+      "expectedCount": 70.0,
+      "rate": 0.14476190476190476,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 23,
       "recent156Expected": 20.8,
-      "currentGap": 2,
+      "currentGap": 5,
       "lastSeenRound": 1239,
       "lastSeenDate": "2026-08-29",
       "maximumCompletedGap": 27,
@@ -1587,33 +1587,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 2,
+        "absentDraws": 5,
         "previousAppearanceRound": 1239,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.40266599010080983,
+      "binomialTwoSidedP": 0.44092170753735893,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.1164575781756749,
-        "high": 0.17881084348499998
+        "low": 0.11578166672125993,
+        "high": 0.17780901929688162
       },
       "bonusCountSeparately": 11
     },
     {
       "number": 34,
-      "count": 76,
-      "expectedCount": 69.6,
-      "rate": 0.14559386973180077,
-      "recent52Count": 6,
+      "count": 77,
+      "expectedCount": 70.0,
+      "rate": 0.14666666666666667,
+      "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 22,
       "recent156Expected": 20.8,
-      "currentGap": 4,
-      "lastSeenRound": 1237,
-      "lastSeenDate": "2026-08-15",
+      "currentGap": 0,
+      "lastSeenRound": 1244,
+      "lastSeenDate": "2026-10-03",
       "maximumCompletedGap": 24,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 24,
       "maximumObservedAbsenceRunDetails": [
@@ -1640,31 +1640,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 4,
-        "previousAppearanceRound": 1237,
-        "throughRound": 1241,
+        "absentDraws": 0,
+        "previousAppearanceRound": 1244,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.40266599010080983,
+      "binomialTwoSidedP": 0.3686275896882261,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.1164575781756749,
-        "high": 0.17881084348499998
+        "low": 0.11751247285499791,
+        "high": 0.17986508602737636
       },
       "bonusCountSeparately": 12
     },
     {
       "number": 35,
       "count": 74,
-      "expectedCount": 69.6,
-      "rate": 0.1417624521072797,
+      "expectedCount": 70.0,
+      "rate": 0.14095238095238094,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 21,
+      "recent156Count": 20,
       "recent156Expected": 20.8,
-      "currentGap": 7,
+      "currentGap": 10,
       "lastSeenRound": 1234,
       "lastSeenDate": "2026-07-25",
       "maximumCompletedGap": 26,
@@ -1686,31 +1686,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 7,
+        "absentDraws": 10,
         "previousAppearanceRound": 1234,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.5622937126326326,
+      "binomialTwoSidedP": 0.6074102883968663,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11298098207137584,
-        "high": 0.1746704974858843
+        "low": 0.11232542367826175,
+        "high": 0.17369160045067789
       },
-      "bonusCountSeparately": 10
+      "bonusCountSeparately": 11
     },
     {
       "number": 36,
       "count": 72,
-      "expectedCount": 69.6,
-      "rate": 0.13793103448275862,
-      "recent52Count": 8,
+      "expectedCount": 70.0,
+      "rate": 0.13714285714285715,
+      "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 19,
+      "recent156Count": 18,
       "recent156Expected": 20.8,
-      "currentGap": 2,
+      "currentGap": 5,
       "lastSeenRound": 1239,
       "lastSeenDate": "2026-08-29",
       "maximumCompletedGap": 25,
@@ -1732,31 +1732,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 2,
+        "absentDraws": 5,
         "previousAppearanceRound": 1239,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.7475072352745291,
+      "binomialTwoSidedP": 0.7972652259656732,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10951180092795268,
-        "high": 0.1705228552954848
+        "low": 0.1088765429765888,
+        "high": 0.16956693734351705
       },
       "bonusCountSeparately": 15
     },
     {
       "number": 37,
       "count": 69,
-      "expectedCount": 69.6,
-      "rate": 0.13218390804597702,
+      "expectedCount": 70.0,
+      "rate": 0.13142857142857142,
       "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 25,
       "recent156Expected": 20.8,
-      "currentGap": 4,
+      "currentGap": 7,
       "lastSeenRound": 1237,
       "lastSeenDate": "2026-08-15",
       "maximumCompletedGap": 35,
@@ -1778,33 +1778,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 4,
+        "absentDraws": 7,
         "previousAppearanceRound": 1237,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 1.0,
+      "binomialTwoSidedP": 0.9488427276886504,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10432250699777297,
-        "high": 0.16428715516793355
+        "low": 0.10371759771122148,
+        "high": 0.16336580643749826
       },
       "bonusCountSeparately": 10
     },
     {
       "number": 38,
-      "count": 81,
-      "expectedCount": 69.6,
-      "rate": 0.15517241379310345,
-      "recent52Count": 9,
+      "count": 83,
+      "expectedCount": 70.0,
+      "rate": 0.1580952380952381,
+      "recent52Count": 11,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 26,
+      "recent156Count": 28,
       "recent156Expected": 20.8,
-      "currentGap": 3,
-      "lastSeenRound": 1238,
-      "lastSeenDate": "2026-08-22",
+      "currentGap": 0,
+      "lastSeenRound": 1244,
+      "lastSeenDate": "2026-10-03",
       "maximumCompletedGap": 29,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 29,
       "maximumObservedAbsenceRunDetails": [
@@ -1824,31 +1824,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 3,
-        "previousAppearanceRound": 1238,
-        "throughRound": 1241,
+        "absentDraws": 0,
+        "previousAppearanceRound": 1244,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.15620343884337679,
+      "binomialTwoSidedP": 0.09526849439639311,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.12517994867004145,
-        "high": 0.1891313001156456
+        "low": 0.12793313579239565,
+        "high": 0.19216619446493122
       },
       "bonusCountSeparately": 13
     },
     {
       "number": 39,
       "count": 70,
-      "expectedCount": 69.6,
-      "rate": 0.13409961685823754,
-      "recent52Count": 7,
+      "expectedCount": 70.0,
+      "rate": 0.13333333333333333,
+      "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 18,
+      "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 6,
+      "currentGap": 9,
       "lastSeenRound": 1235,
       "lastSeenDate": "2026-08-01",
       "maximumCompletedGap": 41,
@@ -1870,31 +1870,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 6,
+        "absentDraws": 9,
         "previousAppearanceRound": 1235,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.9486621747722357,
+      "binomialTwoSidedP": 1.0,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10605029517535783,
-        "high": 0.16636766472555328
+        "low": 0.10543528353480357,
+        "high": 0.16543477924937566
       },
       "bonusCountSeparately": 9
     },
     {
       "number": 40,
       "count": 60,
-      "expectedCount": 69.6,
-      "rate": 0.11494252873563218,
-      "recent52Count": 6,
+      "expectedCount": 70.0,
+      "rate": 0.11428571428571428,
+      "recent52Count": 5,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 24,
       "recent156Expected": 20.8,
-      "currentGap": 4,
+      "currentGap": 7,
       "lastSeenRound": 1237,
       "lastSeenDate": "2026-08-15",
       "maximumCompletedGap": 39,
@@ -1916,33 +1916,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 4,
+        "absentDraws": 7,
         "previousAppearanceRound": 1237,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.24611923195636848,
+      "binomialTwoSidedP": 0.2222512727993921,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.08886843094009744,
-        "high": 0.14546830499782465
+        "low": 0.08835377756786149,
+        "high": 0.1446514420152809
       },
       "bonusCountSeparately": 9
     },
     {
       "number": 41,
-      "count": 67,
-      "expectedCount": 69.6,
-      "rate": 0.12835249042145594,
+      "count": 68,
+      "expectedCount": 70.0,
+      "rate": 0.1295238095238095,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 16,
+      "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 14,
-      "lastSeenRound": 1227,
-      "lastSeenDate": "2026-06-06",
+      "currentGap": 2,
+      "lastSeenRound": 1242,
+      "lastSeenDate": "2026-09-19",
       "maximumCompletedGap": 25,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 25,
       "maximumObservedAbsenceRunDetails": [
@@ -1962,31 +1962,31 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 14,
-        "previousAppearanceRound": 1227,
-        "throughRound": 1241,
+        "absentDraws": 2,
+        "previousAppearanceRound": 1242,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.7967741010327529,
+      "binomialTwoSidedP": 0.847360895028767,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10087304390015545,
-        "high": 0.16012012973565615
+        "low": 0.102001922787857,
+        "high": 0.16129485774079452
       },
       "bonusCountSeparately": 9
     },
     {
       "number": 42,
       "count": 71,
-      "expectedCount": 69.6,
-      "rate": 0.1360153256704981,
+      "expectedCount": 70.0,
+      "rate": 0.13523809523809524,
       "recent52Count": 7,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 18,
       "recent156Expected": 20.8,
-      "currentGap": 3,
+      "currentGap": 6,
       "lastSeenRound": 1238,
       "lastSeenDate": "2026-08-22",
       "maximumCompletedGap": 34,
@@ -2008,33 +2008,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 3,
+        "absentDraws": 6,
         "previousAppearanceRound": 1238,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.8468341190930009,
+      "binomialTwoSidedP": 0.8977976423779841,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10778007164452359,
-        "high": 0.1684462199953053
+        "low": 0.10715494371359649,
+        "high": 0.1675018115117525
       },
       "bonusCountSeparately": 9
     },
     {
       "number": 43,
-      "count": 68,
-      "expectedCount": 69.6,
-      "rate": 0.13026819923371646,
-      "recent52Count": 5,
+      "count": 69,
+      "expectedCount": 70.0,
+      "rate": 0.13142857142857142,
+      "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 16,
+      "recent156Count": 17,
       "recent156Expected": 20.8,
-      "currentGap": 0,
-      "lastSeenRound": 1241,
-      "lastSeenDate": "2026-09-12",
+      "currentGap": 1,
+      "lastSeenRound": 1243,
+      "lastSeenDate": "2026-09-26",
       "maximumCompletedGap": 38,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 38,
       "maximumObservedAbsenceRunDetails": [
@@ -2054,33 +2054,33 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 0,
-        "previousAppearanceRound": 1241,
-        "throughRound": 1241,
+        "absentDraws": 1,
+        "previousAppearanceRound": 1243,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.8975500103147027,
+      "binomialTwoSidedP": 0.9488427276886504,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10259674387069034,
-        "high": 0.16220465578044382
+        "low": 0.10371759771122148,
+        "high": 0.16336580643749826
       },
       "bonusCountSeparately": 7
     },
     {
       "number": 44,
-      "count": 68,
-      "expectedCount": 69.6,
-      "rate": 0.13026819923371646,
-      "recent52Count": 7,
+      "count": 69,
+      "expectedCount": 70.0,
+      "rate": 0.13142857142857142,
+      "recent52Count": 8,
       "recent52Expected": 6.933333333333334,
-      "recent156Count": 21,
+      "recent156Count": 20,
       "recent156Expected": 20.8,
       "currentGap": 1,
-      "lastSeenRound": 1240,
-      "lastSeenDate": "2026-09-05",
+      "lastSeenRound": 1243,
+      "lastSeenDate": "2026-09-26",
       "maximumCompletedGap": 32,
       "maximumObservedAbsenceRunIncludingCensoredEnds": 32,
       "maximumObservedAbsenceRunDetails": [
@@ -2101,30 +2101,30 @@
       },
       "rightCensoredCurrentAbsenceRun": {
         "absentDraws": 1,
-        "previousAppearanceRound": 1240,
-        "throughRound": 1241,
+        "previousAppearanceRound": 1243,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.8975500103147027,
+      "binomialTwoSidedP": 0.9488427276886504,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.10259674387069034,
-        "high": 0.16220465578044382
+        "low": 0.10371759771122148,
+        "high": 0.16336580643749826
       },
       "bonusCountSeparately": 8
     },
     {
       "number": 45,
       "count": 78,
-      "expectedCount": 69.6,
-      "rate": 0.14942528735632185,
-      "recent52Count": 7,
+      "expectedCount": 70.0,
+      "rate": 0.14857142857142858,
+      "recent52Count": 6,
       "recent52Expected": 6.933333333333334,
       "recent156Count": 18,
       "recent156Expected": 20.8,
-      "currentGap": 17,
+      "currentGap": 20,
       "lastSeenRound": 1224,
       "lastSeenDate": "2026-05-16",
       "maximumCompletedGap": 28,
@@ -2146,41 +2146,41 @@
         "rightCensored": false
       },
       "rightCensoredCurrentAbsenceRun": {
-        "absentDraws": 17,
+        "absentDraws": 20,
         "previousAppearanceRound": 1224,
-        "throughRound": 1241,
+        "throughRound": 1244,
         "leftCensored": false,
         "rightCensored": true
       },
-      "binomialTwoSidedP": 0.2738949982355375,
+      "binomialTwoSidedP": 0.30421903639957104,
       "bonferroni45AdjustedP": 1,
       "significantAfterBonferroni45At005": false,
       "rateConfidence95ExactUnadjusted": {
-        "low": 0.11994134575105393,
-        "high": 0.1829441292670456
+        "low": 0.11924503002627641,
+        "high": 0.18191942849076737
       },
       "bonusCountSeparately": 10
     }
   ],
   "frequencyUniformity": {
-    "pearsonQ": 41.41954022988506,
+    "pearsonQ": 42.34285714285714,
     "withinDrawCovarianceFactor": 0.8863636363636364,
-    "correctedQ": 46.72973769525494,
+    "correctedQ": 47.771428571428565,
     "degreesOfFreedom": 44,
-    "asymptoticChiSquaredP": 0.36093284980149654,
+    "asymptoticChiSquaredP": 0.3221331997242416,
     "method": "For 6 distinct numbers sampled from 45, the count covariance is 39/44 times the multinomial covariance for 6N independent categorical draws; scale Pearson Q by 44/39. Chi-square reference is asymptotic, not an exact finite-sample test.",
     "numberTests": "45 two-sided exact Binomial(N,6/45) tests; Bonferroni familywise adjustment across numbers; alpha=0.05.",
     "numberTestsSignificantAfterBonferroni45": []
   },
   "recentWindows": {
     "last52": {
-      "firstRound": 1190,
-      "lastRound": 1241,
+      "firstRound": 1193,
+      "lastRound": 1244,
       "drawCount": 52
     },
     "last156": {
-      "firstRound": 1086,
-      "lastRound": 1241,
+      "firstRound": 1089,
+      "lastRound": 1244,
       "drawCount": 156
     }
   },
@@ -2193,9 +2193,9 @@
           21
         ],
         "count": 19,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.000507207707360654,
-        "bonferroni990AdjustedP": 0.5021356302870474,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.00087347712936544,
+        "bonferroni990AdjustedP": 0.8647423580717856,
         "significantAfterBonferroni990At005": false
       },
       {
@@ -2204,8 +2204,8 @@
           42
         ],
         "count": 18,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.0016281673041188968,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.001695788119604737,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2215,8 +2215,8 @@
           42
         ],
         "count": 17,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.0034240579568268342,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.0035896933530299062,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2226,8 +2226,8 @@
           38
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2237,8 +2237,8 @@
           19
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2248,8 +2248,8 @@
           17
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2259,8 +2259,8 @@
           21
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2270,8 +2270,8 @@
           34
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2281,8 +2281,8 @@
           35
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2292,8 +2292,8 @@
           38
         ],
         "count": 16,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.01012303604046361,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.010369254588081538,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2303,8 +2303,8 @@
           13
         ],
         "count": 15,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.018167869003845653,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.0187535370883789,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2314,8 +2314,19 @@
           26
         ],
         "count": 15,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.018167869003845653,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.0187535370883789,
+        "bonferroni990AdjustedP": 1,
+        "significantAfterBonferroni990At005": false
+      },
+      {
+        "numbers": [
+          13,
+          18
+        ],
+        "count": 15,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.0187535370883789,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2325,8 +2336,8 @@
           24
         ],
         "count": 15,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.018167869003845653,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.0187535370883789,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       },
@@ -2336,24 +2347,13 @@
           28
         ],
         "count": 15,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.018167869003845653,
-        "bonferroni990AdjustedP": 1,
-        "significantAfterBonferroni990At005": false
-      },
-      {
-        "numbers": [
-          21,
-          34
-        ],
-        "count": 15,
-        "expectedCount": 7.909090909090909,
-        "binomialTwoSidedP": 0.018167869003845653,
+        "expectedCount": 7.954545454545454,
+        "binomialTwoSidedP": 0.0187535370883789,
         "bonferroni990AdjustedP": 1,
         "significantAfterBonferroni990At005": false
       }
     ],
-    "expectedCountPerPair": 7.909090909090909,
+    "expectedCountPerPair": 7.954545454545454,
     "significantPairsAfterBonferroni990At005": [],
     "interpretation": "Exploratory ranking selected from 990 pairs. Individual unadjusted p-values cannot establish an exceptional pair after this selection; adjusted p-values control the family of 990 fixed-pair tests. High past cooccurrence is not evidence of greater future odds."
   },
@@ -2362,59 +2362,59 @@
       {
         "value": 0,
         "count": 11,
-        "proportion": 0.0210727969348659,
+        "proportion": 0.02095238095238095,
         "theoreticalProbability": 0.009160521837776518,
-        "expectedCount": 4.781792399319342
+        "expectedCount": 4.809273964832672
       },
       {
         "value": 1,
         "count": 37,
-        "proportion": 0.07088122605363985,
+        "proportion": 0.07047619047619047,
         "theoreticalProbability": 0.07436188315371525,
-        "expectedCount": 38.816903006239365
+        "expectedCount": 39.039988655700505
       },
       {
         "value": 2,
-        "count": 113,
-        "proportion": 0.2164750957854406,
+        "count": 116,
+        "proportion": 0.22095238095238096,
         "theoreticalProbability": 0.22721686519190773,
-        "expectedCount": 118.60720363017583
+        "expectedCount": 119.28885422575156
       },
       {
         "value": 3,
         "count": 163,
-        "proportion": 0.31226053639846746,
+        "proportion": 0.31047619047619046,
         "theoreticalProbability": 0.33484590659860086,
-        "expectedCount": 174.78956324446966
+        "expectedCount": 175.79410096426545
       },
       {
         "value": 4,
         "count": 146,
-        "proportion": 0.2796934865900383,
+        "proportion": 0.2780952380952381,
         "theoreticalProbability": 0.25113442994895063,
-        "expectedCount": 131.09217243335223
+        "expectedCount": 131.8455757231991
       },
       {
         "value": 5,
         "count": 47,
-        "proportion": 0.09003831417624521,
+        "proportion": 0.08952380952380952,
         "theoreticalProbability": 0.09088674607676309,
-        "expectedCount": 47.44288145207033
+        "expectedCount": 47.71554169030062
       },
       {
         "value": 6,
         "count": 5,
-        "proportion": 0.009578544061302681,
+        "proportion": 0.009523809523809525,
         "theoreticalProbability": 0.012393647192285877,
-        "expectedCount": 6.469483834373228
+        "expectedCount": 6.506664775950085
       }
     ],
     "formula": "P(K=k)=C(23,k)*C(22,6-k)/C(45,6)"
   },
   "sum": {
-    "mean": 139.2624521072797,
-    "sampleStandardDeviation": 30.27611399787762,
-    "median": 137.5,
+    "mean": 139.24761904761905,
+    "sampleStandardDeviation": 30.273871078598553,
+    "median": 137,
     "minimumObserved": 50,
     "maximumObserved": 229,
     "theoreticalMean": 138,
@@ -2425,81 +2425,81 @@
         "from": 21,
         "to": 60,
         "count": 2,
-        "proportion": 0.0038314176245210726,
+        "proportion": 0.0038095238095238095,
         "theoreticalProbability": 0.003531834019638898,
-        "expectedCount": 1.8436173582515045
+        "expectedCount": 1.8542128603104213
       },
       {
         "from": 61,
         "to": 80,
         "count": 8,
-        "proportion": 0.01532567049808429,
+        "proportion": 0.015238095238095238,
         "theoreticalProbability": 0.02312235882854147,
-        "expectedCount": 12.069871308498648
+        "expectedCount": 12.139238384984273
       },
       {
         "from": 81,
         "to": 100,
         "count": 45,
-        "proportion": 0.08620689655172414,
+        "proportion": 0.08571428571428572,
         "theoreticalProbability": 0.08161671000581948,
-        "expectedCount": 42.60392262303777
+        "expectedCount": 42.84877275305523
       },
       {
         "from": 101,
         "to": 120,
-        "count": 89,
-        "proportion": 0.17049808429118773,
+        "count": 90,
+        "proportion": 0.17142857142857143,
         "theoreticalProbability": 0.17580742192199936,
-        "expectedCount": 91.77147424328366
+        "expectedCount": 92.29889650904965
       },
       {
         "from": 121,
         "to": 140,
-        "count": 136,
-        "proportion": 0.26053639846743293,
+        "count": 137,
+        "proportion": 0.26095238095238094,
         "theoreticalProbability": 0.24833150400365375,
-        "expectedCount": 129.62904508990727
+        "expectedCount": 130.3740396019182
       },
       {
         "from": 141,
         "to": 160,
         "count": 117,
-        "proportion": 0.22413793103448276,
+        "proportion": 0.22285714285714286,
         "theoreticalProbability": 0.23647130898974347,
-        "expectedCount": 123.4380232926461
+        "expectedCount": 124.14743721961533
       },
       {
         "from": 161,
         "to": 180,
-        "count": 73,
-        "proportion": 0.13984674329501914,
+        "count": 74,
+        "proportion": 0.14095238095238094,
         "theoreticalProbability": 0.1512603958718536,
-        "expectedCount": 78.95792664510759
+        "expectedCount": 79.41170783272315
       },
       {
         "from": 181,
         "to": 200,
         "count": 40,
-        "proportion": 0.07662835249042145,
+        "proportion": 0.0761904761904762,
         "theoreticalProbability": 0.06263894925267585,
-        "expectedCount": 32.6975315098968
+        "expectedCount": 32.88544835765482
       },
       {
         "from": 201,
         "to": 220,
         "count": 10,
-        "proportion": 0.019157088122605363,
+        "proportion": 0.01904761904761905,
         "theoreticalProbability": 0.015363054415805408,
-        "expectedCount": 8.019514405050423
+        "expectedCount": 8.06560356829784
       },
       {
         "from": 221,
         "to": 255,
         "count": 2,
-        "proportion": 0.0038314176245210726,
+        "proportion": 0.0038095238095238095,
         "theoreticalProbability": 0.0018564626902687028,
-        "expectedCount": 0.9690735243202628
+        "expectedCount": 0.9746429123910689
       }
     ],
     "exactDistribution": [
@@ -3005,7 +3005,7 @@
         "sum": 104,
         "combinationCount": 58453,
         "theoreticalProbability": 0.007176497165152866,
-        "observedCount": 5
+        "observedCount": 6
       },
       {
         "sum": 105,
@@ -3161,7 +3161,7 @@
         "sum": 130,
         "combinationCount": 102324,
         "theoreticalProbability": 0.012562706720392483,
-        "observedCount": 10
+        "observedCount": 11
       },
       {
         "sum": 131,
@@ -3437,7 +3437,7 @@
         "sum": 176,
         "combinationCount": 50236,
         "theoreticalProbability": 0.006167664817693179,
-        "observedCount": 6
+        "observedCount": 7
       },
       {
         "sum": 177,
@@ -3917,69 +3917,69 @@
     "method": "Exact 6-number subset-sum distribution computed by dynamic programming; variance=6*((45^2-1)/12)*(45-6)/(45-1)."
   },
   "consecutive": {
-    "drawsWithAtLeastOneConsecutivePair": 272,
-    "drawCount": 522,
-    "observedRate": 0.5210727969348659,
+    "drawsWithAtLeastOneConsecutivePair": 273,
+    "drawCount": 525,
+    "observedRate": 0.52,
     "theoreticalRate": 0.5287474862063631,
-    "expectedCount": 276.00618779972154,
-    "binomialTwoSidedPUnadjusted": 0.7260463161966363,
+    "expectedCount": 277.59243025834064,
+    "binomialTwoSidedPUnadjusted": 0.6941911179990725,
     "formula": "1-C(40,6)/C(45,6)",
     "notes": "Feature-level exploratory p-value is unadjusted; consecutive numbers are a normal outcome of random sampling."
   },
   "previousDrawRepeats": {
-    "transitionCount": 521,
+    "transitionCount": 524,
     "distribution": [
       {
         "value": 0,
-        "count": 204,
-        "proportion": 0.3915547024952015,
+        "count": 205,
+        "proportion": 0.39122137404580154,
         "theoreticalProbability": 0.40056463672459136,
-        "expectedCount": 208.6941757335121
+        "expectedCount": 209.89586964368587
       },
       {
         "value": 1,
-        "count": 228,
-        "proportion": 0.43761996161228406,
+        "count": 229,
+        "proportion": 0.43702290076335876,
         "theoreticalProbability": 0.4241272624142732,
-        "expectedCount": 220.97030371783632
+        "expectedCount": 222.24268550507915
       },
       {
         "value": 2,
-        "count": 79,
-        "proportion": 0.15163147792706333,
+        "count": 80,
+        "proportion": 0.15267175572519084,
         "theoreticalProbability": 0.15147402229081186,
-        "expectedCount": 78.91796561351298
+        "expectedCount": 79.37238768038542
       },
       {
         "value": 3,
         "count": 9,
-        "proportion": 0.01727447216890595,
+        "proportion": 0.01717557251908397,
         "theoreticalProbability": 0.02244059589493509,
-        "expectedCount": 11.691550461261182
+        "expectedCount": 11.758872248945986
       },
       {
         "value": 4,
         "count": 1,
-        "proportion": 0.0019193857965451055,
+        "proportion": 0.0019083969465648854,
         "theoreticalProbability": 0.0013646308314487555,
-        "expectedCount": 0.7109726631848016
+        "expectedCount": 0.7150665556791479
       },
       {
         "value": 5,
         "count": 0,
         "proportion": 0.0,
         "theoreticalProbability": 2.872907013576327e-05,
-        "expectedCount": 0.014967845540732664
+        "expectedCount": 0.015054032751139954
       },
       {
         "value": 6,
         "count": 0,
         "proportion": 0.0,
         "theoreticalProbability": 1.2277380399898834e-07,
-        "expectedCount": 6.396515188347292e-05
+        "expectedCount": 6.43334732954699e-05
       }
     ],
-    "observedMeanRepeats": 0.800383877159309,
+    "observedMeanRepeats": 0.8015267175572519,
     "theoreticalMeanRepeats": 0.8,
     "formula": "P(K=k)=C(6,k)*C(39,6-k)/C(45,6)",
     "notes": "Only adjacent draw pairs both inside the requested 10-year window are used."
@@ -5007,56 +5007,56 @@
     },
     {
       "year": 2026,
-      "drawCount": 37,
+      "drawCount": 40,
       "firstDate": "2026-01-03",
-      "lastDate": "2026-09-12",
+      "lastDate": "2026-10-03",
       "completeCalendarYear": false,
-      "expectedPerNumber": 4.933333333333334,
+      "expectedPerNumber": 5.333333333333333,
       "counts": [
+        7,
         6,
+        4,
         5,
-        4,
-        4,
         2,
         4,
         4,
         4,
-        4,
         5,
+        6,
         5,
         3,
+        10,
+        3,
+        8,
+        5,
+        5,
+        8,
+        6,
+        6,
+        3,
+        6,
+        5,
+        6,
+        5,
+        4,
+        8,
+        6,
+        4,
+        4,
         9,
-        3,
-        8,
-        4,
-        5,
-        6,
-        6,
-        6,
-        3,
-        6,
-        5,
-        5,
         5,
         3,
-        8,
         6,
         4,
-        4,
-        8,
-        5,
-        3,
         5,
         4,
-        5,
-        4,
-        8,
+        10,
         4,
         3,
+        6,
+        7,
         5,
         7,
-        4,
-        6,
         5
       ],
       "numberOrder": [

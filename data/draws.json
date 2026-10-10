@@ -2,24 +2,24 @@
   "metadata": {
     "schemaVersion": 1,
     "game": "Korean Lotto 6/45",
-    "requestedAsOf": "2026-09-13",
+    "requestedAsOf": "2026-10-04",
     "timezone": "Asia/Seoul",
     "requestedStartDate": "2016-09-13",
-    "requestedEndDate": "2026-09-13",
+    "requestedEndDate": "2026-10-04",
     "sourceName": "Donghaeng Lottery official public draw-result API",
     "sourceType": "official-primary",
     "sourcePageUrl": "https://m.dhlottery.co.kr/lt645/result",
     "sourceApiUrl": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do",
     "sourceMethod": "GET; srchDir=center&srchLtEpsd=latest followed by srchDir=older&srchCursorLtEpsd=oldest. Endpoint and parameter names read from official result-page JavaScript.",
-    "latestPublishedRoundAtRetrieval": 1241,
+    "latestPublishedRoundAtRetrieval": 1244,
     "firstRound": 720,
-    "lastRound": 1241,
+    "lastRound": 1244,
     "firstDrawDate": "2016-09-17",
-    "lastDrawDate": "2026-09-12",
-    "drawCount": 522,
-    "expectedDrawCount": 522,
+    "lastDrawDate": "2026-10-03",
+    "drawCount": 525,
+    "expectedDrawCount": 525,
     "completeRequestedWindow": true,
-    "retrievedAtUtc": "2026-09-13T12:27:36.519661+00:00",
+    "retrievedAtUtc": "2026-10-10T04:50:07.192897+00:00",
     "noExcelSource": true,
     "validation": {
       "uniqueRounds": true,
@@ -7863,6 +7863,51 @@
       "bonus": 9,
       "firstPrizeWinners": 18,
       "firstPrizePerWinner": 1628391980
+    },
+    {
+      "round": 1242,
+      "date": "2026-09-19",
+      "numbers": [
+        2,
+        4,
+        10,
+        16,
+        31,
+        41
+      ],
+      "bonus": 9,
+      "firstPrizeWinners": 9,
+      "firstPrizePerWinner": 3281029250
+    },
+    {
+      "round": 1243,
+      "date": "2026-09-26",
+      "numbers": [
+        9,
+        18,
+        24,
+        38,
+        43,
+        44
+      ],
+      "bonus": 35,
+      "firstPrizeWinners": 12,
+      "firstPrizePerWinner": 2592525282
+    },
+    {
+      "round": 1244,
+      "date": "2026-10-03",
+      "numbers": [
+        1,
+        13,
+        18,
+        26,
+        34,
+        38
+      ],
+      "bonus": 25,
+      "firstPrizeWinners": 18,
+      "firstPrizePerWinner": 1604686625
     }
   ]
 }

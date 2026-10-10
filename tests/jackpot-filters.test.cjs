@@ -1,6 +1,6 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
-const F=require('../data/jackpot-research/filter-comparison.json'),{draws}=require('../data/draws.json');
+const F=require('../data/jackpot-research/filter-comparison.json'),{draws}=require('../data/draws-720-1241.json');
 function choose(n,k){let value=1;for(let i=1;i<=k;i++)value=value*(n-i+1)/i;return Math.round(value);}
 test('기존 조건의 역사 적중수와 홀짝 조합수를 별도 식으로 대조',()=>{
   for(const f of F.filters){

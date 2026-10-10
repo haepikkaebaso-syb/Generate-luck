@@ -1,13 +1,13 @@
-# Official Korean Lotto 6/45 data: recent 10 years
+# Official Korean Lotto 6/45 data: 2016-09-13 onward
 
-- Requested date window: 2016-09-13 through 2026-09-13 (Asia/Seoul).
-- Actual draws within that window: 720 (2016-09-17) through 1241 (2026-09-12), inclusive, 522 draws.
-- Coverage: complete; all 522 expected weekly Saturday draws are present.
+- Requested date window: 2016-09-13 through 2026-10-04 (Asia/Seoul). Re-acquired on 2026-10-10 to add rounds 1242-1244; the earlier 10-year window (through 2026-09-13) is kept byte-for-byte as `draws-720-1241.json` for the hash-pinned jackpot-type and lag research.
+- Actual draws within that window: 720 (2016-09-17) through 1244 (2026-10-03), inclusive, 525 draws. Rounds 720-1241 are identical to the earlier snapshot.
+- Coverage: complete; all 525 expected weekly Saturday draws are present.
 - Source: official Donghaeng Lottery website. No workbook or third-party mirror was used.
 - Source page: https://m.dhlottery.co.kr/lt645/result
 - Public API used by that page: https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do
 - The result page's `fn_selectPstLt645Info` JavaScript defines the API and its GET parameters.
-- Initial GET: `?srchDir=center&srchLtEpsd=1241`.
+- Initial GET: `?srchDir=center&srchLtEpsd=1244`.
 - Older pages: `?srchDir=older&srchCursorLtEpsd=<oldest fetched round>`.
 - Pages return up to 10 records. We traversed back until the oldest date preceded the requested start, then filtered the exact inclusive date window.
 - Latest published round was detected from the official result page's dropdown, not inferred from calendar arithmetic.

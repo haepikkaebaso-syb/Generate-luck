@@ -4,7 +4,7 @@ const root=path.resolve(__dirname,'..'),folder='data/jackpot-research/';
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const R=read(folder+'jackpot-type-report.json'),F=read(folder+'filter-comparison.json');
 const W=read(folder+'winner-cases.json'),A=read(folder+'audit/final-report-audit.json');
-const E=read(folder+'exact-type-cardinalities.json'),D=read('data/draws.json');
+const E=read(folder+'exact-type-cardinalities.json'),D=read('data/draws-720-1241.json');
 const provenance=read('data/jackpot-provenance.json');
 for(const file of provenance.files){
   const actual=crypto.createHash('sha256').update(fs.readFileSync(path.join(root,file.path))).digest('hex');

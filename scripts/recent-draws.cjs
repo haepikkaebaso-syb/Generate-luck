@@ -1,5 +1,5 @@
 'use strict';
-// 연구용 data/draws.json(해시 고정, 720~1241회)은 그대로 두고, 그 이후 회차만 data/recent-draws.json에 쌓는다.
+// 연구용 data/draws.json(720~1244회)은 그대로 두고, 그 이후 회차만 data/recent-draws.json에 쌓는다.
 // 앱의 당첨번호 대조·과거 1등 번호 회피에만 쓰이며, 분석 모형에는 들어가지 않는다.
 const fs=require('node:fs'),path=require('node:path');
 const FILE=path.resolve(__dirname,'../data/recent-draws.json');
