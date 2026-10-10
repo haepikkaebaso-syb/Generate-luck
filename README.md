@@ -60,7 +60,7 @@
 
 ## 당첨번호 자동 갱신 (GitHub Actions)
 
-`.github/workflows/update-draws.yml`이 매주 토요일 21:30(KST)과 일요일 08:00(재시도)에 `scripts/update-recent-draws.cjs`를 실행합니다. 동행복권 공식 결과 API에서 새 회차를 받아 검증(토요일·7일 간격·회차 연속·번호 범위/중복)한 뒤 `data/recent-draws.json`에 쌓고, 다시 빌드해 `docs/`(GitHub Pages)에 반영합니다. 새 회차가 없으면 아무것도 커밋하지 않습니다. Actions 탭의 **Run workflow**로 수동 실행할 수 있고, PC에서는 `node scripts/update-recent-draws.cjs && node scripts/build.cjs`로 같은 작업을 합니다.
+`.github/workflows/update-draws.yml`이 매주 토요일 21:47(KST)과 일요일 08:17(재시도)에 `scripts/update-recent-draws.cjs`를 실행합니다. 동행복권 공식 결과 API에서 새 회차를 받아 검증(토요일·7일 간격·회차 연속·번호 범위/중복)한 뒤 `data/recent-draws.json`에 쌓고, 다시 빌드해 `docs/`(GitHub Pages)에 반영합니다. 새 회차가 없으면 아무것도 커밋하지 않습니다. GitHub의 예약 실행은 붐비면 몇 시간씩 늦게 시작될 수 있습니다(정각·30분을 피해 설정). Actions 탭의 **Run workflow**로 수동 실행할 수 있고, PC에서는 `node scripts/update-recent-draws.cjs && node scripts/build.cjs`로 같은 작업을 합니다.
 
 분석용 `data/draws.json`(2026-10-10 기준 720~1244회, 525회)은 자동 갱신하지 않습니다. 그 이후 회차는 앱의 **당첨번호 대조**와 **과거 1등 번호 회피**에만 쓰이며, 분할 위험 모형 등 분석에는 들어가지 않습니다. 분석에 합치려면 `scripts/acquire_official_draws.py`의 `END`를 새 기준일로 바꿔 다시 받은 뒤 `node scripts/analyze-split-risk.cjs`, `node scripts/validate-models.cjs`, `python scripts/analyze_official_draws.py`(scipy 필요), `node scripts/update-recent-draws.cjs`(합쳐진 회차 정리), `node scripts/build.cjs` 순서로 실행합니다. 1등 유형·시차 연구는 해시로 고정된 1241회까지의 스냅숏 `data/draws-720-1241.json`을 그대로 씁니다. 해시 검증이 어느 환경에서나 같도록 `.gitattributes`에서 줄바꿈 변환을 껐습니다.
 
