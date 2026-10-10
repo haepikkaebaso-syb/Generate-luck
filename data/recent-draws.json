@@ -3,5 +3,21 @@
   "description": "data/draws.json 이후의 공식 당첨번호. 앱의 대조 기능 전용이며 분석 모형에는 쓰지 않습니다.",
   "sourceApiUrl": "https://m.dhlottery.co.kr/lt645/selectPstLt645InfoNew.do",
   "after": 1244,
-  "draws": []
+  "draws": [
+    {
+      "round": 1245,
+      "date": "2026-10-10",
+      "numbers": [
+        4,
+        5,
+        25,
+        28,
+        32,
+        42
+      ],
+      "bonus": 12,
+      "firstPrizeWinners": 10,
+      "firstPrizePerWinner": 3006515775
+    }
+  ]
 }
