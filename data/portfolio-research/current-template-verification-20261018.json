@@ -1,0 +1,350 @@
+{
+  "referenceDate": "2026-10-18",
+  "passed": true,
+  "totalPossibleDraws": 8145060,
+  "method": "For every ticket enumerate all six-number draws with3,4,5,6matches; map each draw to its combinatorial rank, retain maximum match count, then count thresholds. No production formula or research helper imported.",
+  "templatesSha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+  "verifierSha256": "cea1c9d1474688b932a291a00d087fc835728c5e2f7bfc903d809a36a1f6b4d9",
+  "results": [
+    {
+      "games": 1,
+      "ticketsSha256": "3b80163ed979c04fe5b9bbd47416c5b5ba8cf6b7df6b73529fdaa5e090c60cd3",
+      "lessThanThree": 7950930,
+      "maximumHitsAtLeastThreeHistogram": [
+        182780,
+        11115,
+        234,
+        1
+      ],
+      "counts": {
+        "3": 194130,
+        "4": 11350,
+        "5": 235,
+        "6": 1
+      }
+    },
+    {
+      "games": 2,
+      "ticketsSha256": "e0e10f5293e03f95e34a89ac7c39ad4fa4cd1d7140b283294c022d1669e9ef83",
+      "lessThanThree": 7757200,
+      "maximumHitsAtLeastThreeHistogram": [
+        365160,
+        22230,
+        468,
+        2
+      ],
+      "counts": {
+        "3": 387860,
+        "4": 22700,
+        "5": 470,
+        "6": 2
+      }
+    },
+    {
+      "games": 3,
+      "ticketsSha256": "a454b5611aa0dbc16b95b148d4b1b0256ea2d96329e88a7b22b81384df4fcb22",
+      "lessThanThree": 7563870,
+      "maximumHitsAtLeastThreeHistogram": [
+        547140,
+        33345,
+        702,
+        3
+      ],
+      "counts": {
+        "3": 581190,
+        "4": 34050,
+        "5": 705,
+        "6": 3
+      }
+    },
+    {
+      "games": 4,
+      "ticketsSha256": "4bb802db5eeb3ef0cd4837198a7b6b58ce8b6ea89ec1f308ca236165b5c3dea3",
+      "lessThanThree": 7370940,
+      "maximumHitsAtLeastThreeHistogram": [
+        728720,
+        44460,
+        936,
+        4
+      ],
+      "counts": {
+        "3": 774120,
+        "4": 45400,
+        "5": 940,
+        "6": 4
+      }
+    },
+    {
+      "games": 5,
+      "ticketsSha256": "ec858fe04075ee40931366c05617ad7d04d934c5f72ac35c9b74c26ba91f8d87",
+      "lessThanThree": 7178410,
+      "maximumHitsAtLeastThreeHistogram": [
+        909900,
+        55575,
+        1170,
+        5
+      ],
+      "counts": {
+        "3": 966650,
+        "4": 56750,
+        "5": 1175,
+        "6": 5
+      }
+    },
+    {
+      "games": 6,
+      "ticketsSha256": "5c15a73dece6c0f9d93e87e9713d69ddc22f52fe16a88fc2d5cd068b063bac86",
+      "lessThanThree": 6986280,
+      "maximumHitsAtLeastThreeHistogram": [
+        1090680,
+        66690,
+        1404,
+        6
+      ],
+      "counts": {
+        "3": 1158780,
+        "4": 68100,
+        "5": 1410,
+        "6": 6
+      }
+    },
+    {
+      "games": 7,
+      "ticketsSha256": "965567e62080a14fbcf780fb14b900f6f61f411f3527b10623927b59e339d398",
+      "lessThanThree": 6794550,
+      "maximumHitsAtLeastThreeHistogram": [
+        1271060,
+        77805,
+        1638,
+        7
+      ],
+      "counts": {
+        "3": 1350510,
+        "4": 79450,
+        "5": 1645,
+        "6": 7
+      }
+    },
+    {
+      "games": 8,
+      "ticketsSha256": "c42a190b60dde834c8d56906eff8c4782d9107c3ad5722de4d0f15781d9e5fae",
+      "lessThanThree": 6613056,
+      "maximumHitsAtLeastThreeHistogram": [
+        1441204,
+        88920,
+        1872,
+        8
+      ],
+      "counts": {
+        "3": 1532004,
+        "4": 90800,
+        "5": 1880,
+        "6": 8
+      }
+    },
+    {
+      "games": 9,
+      "ticketsSha256": "23b1778b7c9ddca7051707a3581e246c2fac57a2872ccf25c27177d087e6088b",
+      "lessThanThree": 6441544,
+      "maximumHitsAtLeastThreeHistogram": [
+        1601366,
+        100035,
+        2106,
+        9
+      ],
+      "counts": {
+        "3": 1703516,
+        "4": 102150,
+        "5": 2115,
+        "6": 9
+      }
+    },
+    {
+      "games": 10,
+      "ticketsSha256": "121fda678590506b9ffe91fd80f7f544a2bef25d5e042343a4625f0ca62fbdba",
+      "lessThanThree": 6269995,
+      "maximumHitsAtLeastThreeHistogram": [
+        1761565,
+        111150,
+        2340,
+        10
+      ],
+      "counts": {
+        "3": 1875065,
+        "4": 113500,
+        "5": 2350,
+        "6": 10
+      }
+    },
+    {
+      "games": 11,
+      "ticketsSha256": "c016c57b2eed3f1ce9a7114096ff6fa202f3a8f41591fd083bea64d4ceab22a7",
+      "lessThanThree": 6098725,
+      "maximumHitsAtLeastThreeHistogram": [
+        1921485,
+        122265,
+        2574,
+        11
+      ],
+      "counts": {
+        "3": 2046335,
+        "4": 124850,
+        "5": 2585,
+        "6": 11
+      }
+    },
+    {
+      "games": 12,
+      "ticketsSha256": "e8a71c080a59f7b9152a85879cec629bfb7a1c6f9e66c3aaa39bb02c69635d44",
+      "lessThanThree": 5928540,
+      "maximumHitsAtLeastThreeHistogram": [
+        2080320,
+        133380,
+        2808,
+        12
+      ],
+      "counts": {
+        "3": 2216520,
+        "4": 136200,
+        "5": 2820,
+        "6": 12
+      }
+    },
+    {
+      "games": 13,
+      "ticketsSha256": "84020188072d3f76573d01e33946145f732b4e779a974c09d9777da2fa443749",
+      "lessThanThree": 5758566,
+      "maximumHitsAtLeastThreeHistogram": [
+        2238944,
+        144495,
+        3042,
+        13
+      ],
+      "counts": {
+        "3": 2386494,
+        "4": 147550,
+        "5": 3055,
+        "6": 13
+      }
+    },
+    {
+      "games": 14,
+      "ticketsSha256": "189c6039f11e750e7bd7c4e6d4404e8aa4b64628eeb3d722bbf03636680130a2",
+      "lessThanThree": 5588679,
+      "maximumHitsAtLeastThreeHistogram": [
+        2397481,
+        155610,
+        3276,
+        14
+      ],
+      "counts": {
+        "3": 2556381,
+        "4": 158900,
+        "5": 3290,
+        "6": 14
+      }
+    },
+    {
+      "games": 15,
+      "ticketsSha256": "eb79e8983027f4d990266cf86fe0a98ab9140d7c6cdf7f54db8c1e0fd6dbd730",
+      "lessThanThree": 5419373,
+      "maximumHitsAtLeastThreeHistogram": [
+        2555437,
+        166725,
+        3510,
+        15
+      ],
+      "counts": {
+        "3": 2725687,
+        "4": 170250,
+        "5": 3525,
+        "6": 15
+      }
+    },
+    {
+      "games": 16,
+      "ticketsSha256": "8a8f9534821bd5cebee886aa375c14d64863c2c77f683decd9754ec5e181951b",
+      "lessThanThree": 5267973,
+      "maximumHitsAtLeastThreeHistogram": [
+        2695487,
+        177840,
+        3744,
+        16
+      ],
+      "counts": {
+        "3": 2877087,
+        "4": 181600,
+        "5": 3760,
+        "6": 16
+      }
+    },
+    {
+      "games": 17,
+      "ticketsSha256": "1c6dea61fcc177e5098cb8d0962c5a70b619eb0a526737f73aaec5bfe8d4b187",
+      "lessThanThree": 5117962,
+      "maximumHitsAtLeastThreeHistogram": [
+        2834148,
+        188955,
+        3978,
+        17
+      ],
+      "counts": {
+        "3": 3027098,
+        "4": 192950,
+        "5": 3995,
+        "6": 17
+      }
+    },
+    {
+      "games": 18,
+      "ticketsSha256": "5232305a1ba6ae7d9c1e359f943f95a1d06f30e2a503d15b1492cf2605aa45f9",
+      "lessThanThree": 4967922,
+      "maximumHitsAtLeastThreeHistogram": [
+        2972838,
+        200070,
+        4212,
+        18
+      ],
+      "counts": {
+        "3": 3177138,
+        "4": 204300,
+        "5": 4230,
+        "6": 18
+      }
+    },
+    {
+      "games": 19,
+      "ticketsSha256": "d84c70a33cd8b48c2dc1764680a4681743c6ad9b315e9efd02c5624981a14c8c",
+      "lessThanThree": 4819245,
+      "maximumHitsAtLeastThreeHistogram": [
+        3110165,
+        211185,
+        4446,
+        19
+      ],
+      "counts": {
+        "3": 3325815,
+        "4": 215650,
+        "5": 4465,
+        "6": 19
+      }
+    },
+    {
+      "games": 20,
+      "ticketsSha256": "b744e3288ba66107a7218af2e3b5ca24a8f5655f2763996f7a360e08b40552f7",
+      "lessThanThree": 4669945,
+      "maximumHitsAtLeastThreeHistogram": [
+        3248115,
+        222300,
+        4680,
+        20
+      ],
+      "counts": {
+        "3": 3475115,
+        "4": 227000,
+        "5": 4700,
+        "6": 20
+      }
+    }
+  ]
+}

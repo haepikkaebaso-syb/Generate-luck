@@ -3,16 +3,39 @@ const test=require('node:test'),assert=require('node:assert/strict'),fs=require(
 const C=require('../dist/core.js'),P=require('../dist/portfolio.js'),R=require('../dist/research.js'),D=require('../data/portfolio-templates.json');
 const close=(a,b,t=1e-12)=>assert(Math.abs(a-b)<=t,`${a} != ${b}`);
 test('확정20개 배치: 독립 비트집합 열거와 모든 당첨 영역 일치',()=>{
-  const audited=require('../data/portfolio-research/proposed-template-verification.json');
+  const audited=require('../data/portfolio-research/current-template-verification-20261018.json');
+  assert.equal(audited.results.length,20);
   for(let m=1;m<=20;m++){
     const t=D.templates[m],a=P.analyze(t.tickets),expected=R.coverageExact(t.tickets);
     assert.equal(a.games,m);assert.equal(a.probabilities[3].favorable,expected.favorable);assert.equal(a.probabilities[3].favorable,t.stats.favorable3);
     assert(a.maxOverlap<=1);assert(a.maximumUsage-a.minimumUsage<=1);assert.equal(a.distinctNumbers,Math.min(45,m*6));
     for(const k of [4,5,6])assert.equal(a.probabilities[k].favorable,m*P.ONE[k]);
     const independent=audited.results.find(r=>r.games===m);
-    if(independent)for(const k of [3,4,5,6])assert.equal(a.probabilities[k].favorable,independent.counts[k]);
+    assert(independent,`${m}게임 독립 검산 누락`);
+    assert.equal(crypto.createHash('sha256').update(JSON.stringify(t.tickets)).digest('hex'),independent.ticketsSha256);
+    for(const k of [3,4,5,6])assert.equal(a.probabilities[k].favorable,independent.counts[k]);
     assert(a.probabilities[3].probability>=a.probabilities[3].randomBaseline-1e-12);
   }
+});
+
+test('이전 확정 배치를 보존하고 검증된 같은 게임 수의 개선만 채택',()=>{
+  const previous=require('../data/portfolio-research/portfolio-templates-20260913.json');
+  const historicalAudit=require('../data/portfolio-research/proposed-template-verification.json');
+  for(const result of historicalAudit.results){
+    const old=P.analyze(previous.templates[result.games].tickets);
+    for(const k of [3,4,5,6])assert.equal(old.probabilities[k].favorable,result.counts[k]);
+  }
+  const revised=[11,12,13,14,16,17,18,19,20];
+  for(let m=1;m<=20;m++){
+    const before=previous.templates[m].stats.favorable3,after=D.templates[m].stats.favorable3;
+    if(revised.includes(m))assert(after>before,`${m}게임 개선 없음`);
+    else assert.deepEqual(D.templates[m].tickets,previous.templates[m].tickets);
+    for(const k of [4,5,6])assert.equal(D.templates[m].stats['favorable'+k],previous.templates[m].stats['favorable'+k]);
+  }
+  const proof=require('../data/portfolio-research/splitting-optimality-20261018.json');
+  for(const entry of proof.maxima)assert.equal(D.templates[entry.games].stats.favorable3,entry.favorable);
+  assert.equal(D.templates[8].stats.favorable3,proof.eightGameAllSharedShapes.maximum);
+  assert.deepEqual(D.metadata.globalMaximumAtLeast3Games,[1,2,3,4,5,6,7,8]);
 });
 test('전체 번호의 무작위 치환100회가 당첨 영역과 균형을 보존',()=>{
   const rand=R.seededRandom(45645),rng=bound=>Math.floor(rand()*bound);
@@ -47,7 +70,10 @@ test('부적합·희소 배열·지원하지 않는 겹침에는 확률을 반�
 test('확정 설계와 검증 원본 해시, 감사한 실제 생성 엔진 일치',()=>{
   const root=path.resolve(__dirname,'..'),digest=p=>crypto.createHash('sha256').update(fs.readFileSync(path.join(root,p))).digest('hex');
   for(const f of require('../data/portfolio-provenance.json').files)assert.equal(digest(f.path),f.sha256,f.path);
-  assert.equal(digest('data/portfolio-templates.json'),'87fe730ca517af8e6137d88e65132ac57e9493cf85c65f8f039e1e53dc799312');
+  const audit=require('../data/portfolio-research/current-template-verification-20261018.json');
+  assert.equal(digest('data/portfolio-templates.json'),audit.templatesSha256);
+  assert.equal(digest('data/portfolio-research/verify-current-templates-20261018.cjs'),audit.verifierSha256);
+  assert.equal(digest('data/portfolio-research/portfolio-templates-20260913.json'),'87fe730ca517af8e6137d88e65132ac57e9493cf85c65f8f039e1e53dc799312');
   assert.equal(digest('dist/portfolio.js'),'c15e708854ee0e010273bd84b45188973b2ec2c21468d35a4803605cf7ae32c9');
   assert.equal(digest('dist/core.js'),'e8aa26ad134bef0f100bbcfb595ad090559fff3d9ba9ab300963b811e43f0d04');
 });

@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   const $=id=>document.getElementById(id);
-  const C=window.LottoCore,P=window.LottoPortfolio,S=window.LottoSplit;
+  const C=window.LottoCore,P=window.LottoPortfolio,S=window.LottoSplit,E=window.LottoExtension;
   const source = window.LOTTO_DATA;
   const templates=window.LOTTO_PORTFOLIO;
   const splitModel=S&&window.LOTTO_SPLIT?.model?window.LOTTO_SPLIT:null;
@@ -39,6 +39,11 @@
     const currentGames=current?.targetRound===round?current.games:[];
     const all=[...savedGames,...currentGames],jackpot=C.jackpotProbability(all);
     return {...jackpot,round,savedGames:savedGames.length,currentGames:currentGames.length,entries:all.length,duplicates:all.length-jackpot.unique};
+  }
+  function prizeCoverageForRound(round){
+    const all=[...saved.filter(batch=>batch.targetRound===round).flatMap(batch=>batch.games),...(current?.targetRound===round?current.games:[])];
+    const unique=[...new Map(all.map(numbers=>[C.key(numbers),numbers])).values()];
+    try{return P.analyze(unique);}catch{return null;}
   }
   function formatChance(jackpot){
     const percent=(jackpot.probability*100).toFixed(8),reciprocal=jackpot.unique?jackpot.total/jackpot.unique:null;
@@ -88,7 +93,12 @@
     if(currentDraw)$('current-check').textContent=current.targetRound+'회 '+(currentDraw.manual?'직접 입력한':'공식')+' 당첨번호와 대조한 참고용 결과입니다. 실선 테두리는 본번호, 점선은 보너스 일치입니다.';
     ['save','copy','csv'].forEach(id=>$(id).disabled=!games.length);
     if(!current)return;
-    const profile=current.profile,m=games.length,p=profile.probabilities[3],diff=(p.probability-p.randomBaseline)*100;
+    const profile=current.profile,m=games.length,roundProfile=prizeCoverageForRound(current.targetRound);
+    const displayProfile=roundProfile||profile,p=displayProfile.probabilities[3],diff=(p.probability-p.randomBaseline)*100;
+    $('chance-scope').textContent='본번호 3개 이상 일치 · '+(roundProfile&&roundProfile.games>m?'보관함 + 현재 '+roundProfile.games+'게임':'현재 '+m+'게임');
+    $('round-prize-note').textContent=roundProfile&&roundProfile.games>m
+      ?'보관 번호를 포함한 회차 전체의 확률입니다. 현재 '+m+'게임만의 확률은 '+(profile.probabilities[3].probability*100).toFixed(4)+'%입니다.'
+      :!roundProfile?'회차 전체에 겹침이 큰 조합이 있거나 20게임을 넘어, 이 카드는 현재 묶음만 계산합니다.':'';
     $('result-title').textContent=m+'게임의 조합';
     $('generation-time').textContent=time(current.createdAt);$('generation-time').dateTime=current.createdAt;
     $('structure-summary').textContent='사용 번호 '+profile.distinctNumbers+'개 · 게임끼리 겹침 최대 '+profile.maxOverlap+'개';
@@ -126,21 +136,31 @@
     $('form-error').hidden=true;
     try{
       const amount=Number($('amount').value),targetRound=selectedRound();
-      const blocked=new Set(saved.filter(batch=>batch.targetRound===targetRound).flatMap(batch=>batch.games.map(C.key)));
+      const savedRows=[...new Map(saved.filter(batch=>batch.targetRound===targetRound).flatMap(batch=>batch.games).map(numbers=>[C.key(numbers),numbers])).values()];
+      const blocked=new Set(savedRows.map(C.key));
       const avoid=Boolean(splitModel&&$('avoid-popular').checked);
       let result=null,best=null;
-      for(let attempt=0;attempt<(avoid?SEARCH:200);attempt++){
+      if(savedRows.length&&E){
+        for(let attempt=0;attempt<(avoid?8:1);attempt++){
+          const candidate=E.extend(templates,savedRows,amount);
+          const value=candidate.roundProfile?.probabilities[3].favorable??-1;
+          const previous=result?.roundProfile?.probabilities[3].favorable??-1;
+          const split=avoid?S.assess(candidate.numbers,splitModel,pastWinners):null;
+          if(!result||value>previous||(value===previous&&avoid&&S.better(split,best))){result=candidate;best=split;}
+        }
+      }else for(let attempt=0;attempt<(avoid?SEARCH:200);attempt++){
         const candidate=P.generate(templates,amount);
         if(candidate.numbers.some(numbers=>blocked.has(C.key(numbers))))continue;
         if(!avoid){result=candidate;break;}
         const split=S.assess(candidate.numbers,splitModel,pastWinners);
         if(S.better(split,best)){best=split;result=candidate;}
       }
-      if(result&&best?.flagged){const repaired=S.repair(result.numbers,splitModel,pastWinners,C.randomInt,numbers=>blocked.has(C.key(numbers)));result={...result,numbers:repaired.numbers,profile:P.analyze(repaired.numbers)};}
+      if(result&&!savedRows.length&&best?.flagged){const repaired=S.repair(result.numbers,splitModel,pastWinners,C.randomInt,numbers=>blocked.has(C.key(numbers)));result={...result,numbers:repaired.numbers,profile:P.analyze(repaired.numbers)};}
       if(!result)throw new Error('보관함과 겹치지 않는 새 배치를 만들지 못했습니다. 다시 시도해 주세요.');
-      current={id:globalThis.crypto?.randomUUID?.()||Date.now()+'-'+C.randomInt(1000000),createdAt:new Date().toISOString(),targetRound,label:(amount<=7?'번호 비중복 배치':'게임 간 겹침 최대 1개 배치')+(avoid?' · 인기 번호대 회피':''),method:result.method,model:null,options:{avoidPopular:avoid},games:result.numbers,profile:result.profile};
+      current={id:globalThis.crypto?.randomUUID?.()||Date.now()+'-'+C.randomInt(1000000),createdAt:new Date().toISOString(),targetRound,label:(savedRows.length?'보관 번호 유지 · 추가 구성':amount<=7?'번호 비중복 배치':'게임 간 겹침 최대 1개 배치')+(avoid?' · 인기 번호대 고려':''),method:result.method,extension:result.extension||null,model:null,options:{avoidPopular:avoid},games:result.numbers,profile:result.profile};
       $('cost').textContent=fmt(amount*1000)+'원';$('generate').textContent='새 번호 '+amount+'게임 만들기';
-      $('method-note').textContent=(amount<=7?'게임끼리 같은 번호를 쓰지 않도록 구성합니다.':'45개 번호를 고르게 사용하고, 두 게임의 공통 번호는 최대 1개로 제한합니다.')+' '+targetRound+'회 보관함의 기존 조합은 제외합니다.'+(avoid?' 같은 확률의 후보 '+SEARCH+'개 중 공동 당첨자가 가장 적을 것으로 추정되는 묶음을 골랐습니다.':'');
+      const popularityNote=!avoid?'':!savedRows.length?' 같은 확률의 후보 '+SEARCH+'개 중 공동 당첨자가 가장 적을 것으로 추정되는 묶음을 골랐습니다.':result.roundProfile?' 전체 당첨 범위를 우선하고, 같은 범위의 후보에서는 인기 번호대를 함께 고려합니다.':' 기존 번호와의 겹침을 줄이는 후보에서 인기 번호대도 함께 고려합니다. 회차 전체의 확률 개선은 보장하지 않습니다.';
+      $('method-note').textContent=(result.extension?.reason||(amount<=7?'게임끼리 같은 번호를 쓰지 않도록 구성합니다.':'45개 번호를 고르게 사용하고, 두 게임의 공통 번호는 최대 1개로 제한합니다.'))+' '+targetRound+'회 보관함의 기존 조합은 제외합니다.'+popularityNote;
       renderCurrent();return true;
     }catch(error){$('form-error').textContent=error.message;$('form-error').hidden=false;return false;}
   }
@@ -209,6 +229,9 @@
     if(deleteButton){const batch=saved.find(b=>b.id===deleteButton.dataset.delete);if(batch&&window.confirm('이 묶음의 '+batch.games.length+'게임을 보관함에서 삭제할까요?')&&persist(saved.filter(b=>b.id!==batch.id))){renderSaved();renderCurrent();toast('묶음을 삭제했습니다.');}}
   });
   $('manual-round').value=String(source.metadata.lastRound+1);
+  const latestDraw=draws.at(-1);
+  $('latest-draw-title').textContent='공식 '+latestDraw.round+'회 당첨번호 · '+latestDraw.date;
+  $('latest-draw-numbers').textContent=latestDraw.numbers.join(' · ')+' + 보너스 '+latestDraw.bonus;
   $('data-note').textContent='보관된 공식 자료: '+source.metadata.firstRound+'~'+source.metadata.lastRound+'회 · '+source.metadata.lastDrawDate+'까지. 매주 추첨 후 자동으로 추가되며, 그 뒤 회차만 직접 입력할 수 있습니다.';
   $('result-open').addEventListener('click',()=>{$('collection-panel').open=true;$('collection-panel').scrollIntoView?.({behavior:'smooth',block:'start'});});
   $('check').addEventListener('click',checkNumbers);
@@ -222,6 +245,5 @@
     for(const action of actions){try{Promise.resolve(document.modelContext.registerTool({name:action.name,title:action.title,description:action.description,annotations:action.annotations,inputSchema:{type:'object',properties:{},additionalProperties:false},execute(input){if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).length)throw new Error('빈 객체를 입력해 주세요. 게임 수는 화면에서 선택합니다.');return action.run();}},{signal:lifecycle.signal})).catch(()=>{});}catch{}}
     window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
   }
-  // 오프라인 지원(sw.js). 파일로 직접 연 단일 HTML에서는 등록할 수 없으므로 웹 주소에서만 켠다.
-  if('serviceWorker' in navigator&&(location.protocol==='https:'||location.hostname==='localhost'))navigator.serviceWorker.register('sw.js').catch(()=>{});
+  // 설치 앱의 새 버전 확인과 서비스 워커 등록은 update.js에서 처리한다.
 })();

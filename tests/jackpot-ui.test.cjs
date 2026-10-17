@@ -8,7 +8,7 @@ const markup=fs.readFileSync(path.join(root,'dist/index.html'),'utf8');
 const app=fs.readFileSync(path.join(root,'dist/app.js'),'utf8');
 
 // A minimal host for the real app's state and event wiring; no browser or visual assertions.
-function startApp(initialSaved=[],failInitially=false){
+function startApp(initialSaved=[],failInitially=false,withExtension=false){
  const nodes=new Map(),tools=new Map(),storage=new Map();
  for(const match of markup.matchAll(/\bid="([^"]+)"/g)){
    const listeners=new Map();let value='';nodes.set(match[1],{get value(){return value;},set value(v){value=String(v);},textContent:'',innerHTML:'',hidden:false,disabled:false,
@@ -20,7 +20,7 @@ function startApp(initialSaved=[],failInitially=false){
  const context={document:{getElementById:id=>{assert.ok(nodes.has(id),'Missing node '+id);return nodes.get(id);},modelContext:{registerTool(action){tools.set(action.name,action);}}},
    localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},navigator:{},
    crypto:crypto.webcrypto,structuredClone,AbortController,Date:class extends Date{constructor(...a){a.length?super(...a):super('2026-09-18T03:00:00Z');}static now(){return Date.parse('2026-09-18T03:00:00Z');}},setTimeout:()=>1,clearTimeout:()=>{},
-   window:{LottoRound:require('../dist/round.js'),LottoCore:C,LottoPortfolio:{...P,generate(...args){if(fail)throw new Error('Generation unavailable');return queued.length?queued.shift():P.generate(...args);}},LOTTO_DATA:source,LOTTO_PORTFOLIO:templates,addEventListener(){}}};
+   window:{LottoExtension:withExtension?require('../dist/extension.js'):undefined,LottoRound:require('../dist/round.js'),LottoCore:C,LottoPortfolio:{...P,generate(...args){if(fail)throw new Error('Generation unavailable');return queued.length?queued.shift():P.generate(...args);}},LOTTO_DATA:source,LOTTO_PORTFOLIO:templates,addEventListener(){}}};
  vm.runInNewContext(app,context,{filename:'app.js'});
  return {node:id=>nodes.get(id),read:()=>tools.get('read_lotto_collection').execute({}),storage,setFailure:v=>fail=v,
    queue(...results){queued.push(...results);},amount(n){nodes.get('amount').value=String(n);nodes.get('amount').fire('change');},round(n){nodes.get('target-round').value=String(n);nodes.get('target-round').fire('change');}};
@@ -102,4 +102,23 @@ test('처음 생성에 실패하면 계산된 확률이나 무한대 역수를 �
  assert.equal(h.node('jackpot-reciprocal').textContent,'');
  assert.match(markup,/id="jackpot-percent">—</);
  assert.match(markup,/id="jackpot-reciprocal"[^>]*>번호를 생성하면 표시됩니다\.</);
+});
+
+test('실제 추가 생성 연결: 저장한5게임을 유지하고 전체10게임의 5등 이상 확률을 표시',()=>{
+ const rows=Array.from({length:5},(_,i)=>Array.from({length:6},(_,j)=>6*i+j+1));
+ const saved={id:'old-five',createdAt:'2026-09-18T00:00:00Z',targetRound:1242,label:'구매한5게임',games:rows};
+ const h=startApp([saved],false,true),current=h.read().current;
+ assert.equal(current.extension.status,'template-extension');
+ assert.equal(P.analyze([...rows,...current.games]).probabilities[3].favorable,1875065);
+ assert.equal(h.node('prize-probability').textContent,'23.02');assert.match(h.node('chance-scope').textContent,/10게임/);
+ assert.deepEqual(JSON.parse(h.storage.get('lotto-atelier-645.v1')),[saved]);
+ h.node('save').fire('click');assert.equal(h.node('prize-probability').textContent,'23.02');checkProbability(h,10,5);
+ h.round(1243);assert.equal(h.node('prize-probability').textContent,'11.87');checkProbability(h,5,5);
+});
+
+test('임의 보관 번호의 전체 확률을 계산할 수 없으면 현재 묶음 기준임을 표시',()=>{
+ const saved={id:'overlapping',createdAt:'2026-09-18T00:00:00Z',targetRound:1242,label:'기존번호',games:[[1,2,3,4,5,6],[1,2,7,8,9,10]]};
+ const h=startApp([saved],false,true);
+ assert.match(h.node('round-prize-note').textContent,/현재 묶음만/);assert.match(h.node('chance-scope').textContent,/현재 5게임/);
+ assert.equal(h.node('prize-probability').textContent,'11.87');checkProbability(h,7,5);
 });

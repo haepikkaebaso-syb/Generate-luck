@@ -25,11 +25,15 @@ const recent=require('./recent-draws.cjs');
 const merged=[...data.draws,...recent.validate(data.draws,recent.load())];
 const compact={metadata:{...data.metadata,lastRound:merged.at(-1).round,lastDrawDate:merged.at(-1).date},draws:merged.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
 fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORTFOLIO',templates],['LOTTO_SPLIT',split]].map(([name,value])=>'window.'+name+' = '+JSON.stringify(value).replace(/</g,'\\u003c')+';').join('\n'));
+const modules=['core.js','portfolio.js','extension.js','split.js','round.js','draws.js','app.js','update.js'];
 let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(dist,'styles.css'),'utf8');
+const sw=fs.readFileSync(path.join(dist,'sw.js'),'utf8');
+const release=require('node:crypto').createHash('sha256').update([html,css,sw,...modules.map(name=>fs.readFileSync(path.join(dist,name),'utf8'))].join('\n')).digest('hex').slice(0,16);
+html=html.replaceAll('__LOTTO_RELEASE__',release);
 html=html.replace('<link rel="stylesheet" href="styles.css">',()=>'<style>\n'+css+'\n</style>');
 new vm.Script(fs.readFileSync(path.join(dist,'sw.js'),'utf8'),{filename:'sw.js'});
-for(const name of ['core.js','portfolio.js','split.js','round.js','draws.js','app.js']){
+for(const name of modules){
   const code=fs.readFileSync(path.join(dist,name),'utf8');
   new vm.Script(code,{filename:name});
   // Preserve defer ordering in a single offline file by moving scripts below the body content.
@@ -45,7 +49,9 @@ fs.writeFileSync(output,html);
 const pages=path.join(root,'docs');
 fs.mkdirSync(pages,{recursive:true});
 fs.writeFileSync(path.join(pages,'index.html'),html);
-for(const name of ['manifest.webmanifest','icon.svg','sw.js'])fs.copyFileSync(path.join(dist,name),path.join(pages,name));
+for(const name of ['manifest.webmanifest','icon.svg'])fs.copyFileSync(path.join(dist,name),path.join(pages,name));
+fs.writeFileSync(path.join(pages,'sw.js'),sw.replaceAll('__LOTTO_RELEASE__',release));
+fs.writeFileSync(path.join(pages,'version.json'),JSON.stringify({release,lastRound:compact.metadata.lastRound,lastDrawDate:compact.metadata.lastDrawDate})+'\n');
 fs.writeFileSync(path.join(pages,'.nojekyll'),'');
 require('./build-portfolio-report.cjs');
 require('./build-jackpot-report.cjs');

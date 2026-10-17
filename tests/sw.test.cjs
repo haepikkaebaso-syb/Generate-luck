@@ -10,11 +10,11 @@ function host(){
   const cache={addAll:async list=>{for(const item of list)store.set(keyOf(item),await network({url:keyOf(item)}));},put:async(request,response)=>{store.set(keyOf(request),response);},
     match:async(request,options)=>store.get(keyOf(request,options?.ignoreSearch))};
   const self={location:{origin:ORIGIN},addEventListener:(name,fn)=>{listeners[name]=fn;},skipWaiting:async()=>{},clients:{claim:async()=>{}}};
-  vm.runInNewContext(code,{self,caches:{open:async()=>cache,keys:async()=>['old-cache','lotto-atelier-v1'],delete:async key=>{store.deleted=(store.deleted||[]).concat(key);}},
+  vm.runInNewContext(code,{self,caches:{open:async()=>cache,keys:async()=>['lotto-atelier-v1','other-app','lotto-atelier-__LOTTO_RELEASE__'],delete:async key=>{store.deleted=(store.deleted||[]).concat(key);}},
     fetch:request=>network(request),URL,Promise,setTimeout:(fn,ms)=>{timers.push(fn);return timers.length;},clearTimeout(){}});
   const run=async(name,event={})=>{let waited;listeners[name]({...event,waitUntil:p=>{waited=p;}});await waited;};
   const request=(url,extra={})=>({url:new URL(url,ORIGIN+'/app/').href,method:'GET',mode:'navigate',...extra});
-  const fetchEvent=req=>{let answer=null;listeners.fetch({request:req,respondWith:p=>{answer=p;}});return answer;};
+  const fetchEvent=req=>{let answer=null;listeners.fetch({request:req,respondWith:p=>{answer=p;},waitUntil:p=>{store.background=p;}});return answer;};
   const response=body=>({ok:true,type:'basic',body,clone(){return response(body);}});
   return {store,timers,run,request,fetchEvent,response,setNetwork:fn=>{network=fn;}};
 }
@@ -23,7 +23,7 @@ test('설치할 때 앱 화면과 아이콘을 저장하고, 이전 버전 저�
   const h=host();h.setNetwork(async r=>h.response('v1 '+r.url));
   await h.run('install');await h.run('activate');
   assert.deepEqual([...h.store.keys()].sort(),[ORIGIN+'/app/',ORIGIN+'/app/icon.svg',ORIGIN+'/app/manifest.webmanifest']);
-  assert.deepEqual(h.store.deleted,['old-cache']);
+  assert.deepEqual(h.store.deleted,['lotto-atelier-v1']);
 });
 
 test('온라인이면 서버의 최신본을 보여 주고 사본도 새것으로 교체',async()=>{
@@ -60,7 +60,26 @@ test('오류 응답은 저장하지 않고, 다른 사이트 요청이나 GET이
 });
 
 test('앱은 웹 주소에서만 등록하고 배포 폴더에 같은 파일이 들어 있음',()=>{
-  const app=fs.readFileSync(path.resolve(__dirname,'../dist/app.js'),'utf8');
-  assert.match(app,/'serviceWorker' in navigator&&\(location\.protocol==='https:'\|\|location\.hostname==='localhost'\)/);
-  assert.equal(fs.readFileSync(path.resolve(__dirname,'../docs/sw.js'),'utf8'),code);
+  const app=fs.readFileSync(path.resolve(__dirname,'../dist/update.js'),'utf8');
+  assert.match(app,/location\.protocol!=='https:'/);assert.match(app,/'127\.0\.0\.1'/);
+  const version=require('../docs/version.json');
+  assert.equal(fs.readFileSync(path.resolve(__dirname,'../docs/sw.js'),'utf8'),code.replaceAll('__LOTTO_RELEASE__',version.release));
+  assert.match(fs.readFileSync(path.resolve(__dirname,'../docs/index.html'),'utf8'),new RegExp('name="lotto-release" content="'+version.release+'"'));
+});
+
+test('버전 정보는 사본을 사용하지 않아 오래된 배포를 최신이라고 표시하지 않음',async()=>{
+  const h=host();h.setNetwork(async()=>h.response('new-version'));
+  assert.equal((await h.fetchEvent(h.request('version.json'))).body,'new-version');
+  assert.equal(h.store.has(ORIGIN+'/app/version.json'),false);
+  h.setNetwork(async()=>{throw new Error('offline');});
+  await assert.rejects(h.fetchEvent(h.request('version.json')),/offline/);
+});
+
+test('새 버전 주소로 업데이트한 뒤 오프라인으로 다시 열어도 새 화면을 유지',async()=>{
+  const h=host();h.setNetwork(async()=>h.response('old'));await h.run('install');
+  h.setNetwork(async()=>h.response('new'));
+  assert.equal((await h.fetchEvent(h.request('./?v=new-release'))).body,'new');
+  h.setNetwork(async()=>{throw new Error('offline');});
+  assert.equal((await h.fetchEvent(h.request('./'))).body,'new');
+  assert.equal((await h.fetchEvent(h.request('./?v=new-release'))).body,'new');
 });

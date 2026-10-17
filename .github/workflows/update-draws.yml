@@ -4,6 +4,7 @@ on:
   schedule:
     # 정각·30분은 GitHub 예약 실행이 몰려 2~4시간씩 밀렸다(2026-09-26·10-03 실측). 붐비지 않는 분으로 둔다.
     - cron: '47 12 * * 6'  # 매주 토요일 21:47 KST (추첨 약 1시간 뒤)
+    - cron: '17 13,14 * * 6'  # 토요일 22:17·23:17 KST (공식 사이트 일시 장애 재시도)
     - cron: '17 23 * * 6'  # 일요일 08:17 KST (발표가 늦었을 때 재시도)
   workflow_dispatch:       # Actions 탭에서 수동 실행
 
@@ -20,6 +21,8 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -32,9 +35,10 @@ jobs:
             exit 0
           fi
           node scripts/build.cjs
-          node --test tests/recent-draws.test.cjs tests/core.test.cjs tests/sw.test.cjs tests/saved-results.test.cjs
+          node --test tests/recent-draws.test.cjs tests/updater.test.cjs tests/core.test.cjs tests/sw.test.cjs tests/saved-results.test.cjs
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/recent-draws.json dist/draws.js docs "로또번호 생성기.html"
           git commit -m "당첨번호 자동 갱신: $(node -p "require('./data/recent-draws.json').draws.at(-1).round")회"
-          git push
+          # 동시에 소스가 배포되면 푸시를 실패시키고 다음 예약에서 최신 소스로 다시 빌드한다.
+          git push origin "HEAD:$GITHUB_REF_NAME"

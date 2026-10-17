@@ -1,0 +1,1520 @@
+{
+  "scope": "New proof and independent audit only; fair uniform Lotto6/45, >=3 main matches. No app edits.",
+  "theorem": "Splitting a shared label into a globally unused label never decreases probability of at least one ticket reaching a common hit threshold. If 6m<=45, repeated splits prove disjoint tickets globally optimal.",
+  "maxima": [
+    {
+      "games": 1,
+      "favorable": 194130,
+      "probability": 0.023834078570323606
+    },
+    {
+      "games": 2,
+      "favorable": 387860,
+      "probability": 0.047619047619047616
+    },
+    {
+      "games": 3,
+      "favorable": 581190,
+      "probability": 0.07135490714617204
+    },
+    {
+      "games": 4,
+      "favorable": 774120,
+      "probability": 0.09504165715169685
+    },
+    {
+      "games": 5,
+      "favorable": 966650,
+      "probability": 0.11867929763562209
+    },
+    {
+      "games": 6,
+      "favorable": 1158780,
+      "probability": 0.1422678285979477
+    },
+    {
+      "games": 7,
+      "favorable": 1350510,
+      "probability": 0.16580725003867375
+    }
+  ],
+  "exhaustiveToyAudit": {
+    "universe": 7,
+    "ticketSize": 3,
+    "drawSize": 3,
+    "threshold": 2,
+    "portfolios": 6545,
+    "transforms": 68040,
+    "strictImprovements": 68040
+  },
+  "actualSplitAudit": {
+    "steps": [
+      {
+        "tickets": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            1,
+            3,
+            7,
+            11,
+            12,
+            13
+          ],
+          [
+            2,
+            4,
+            8,
+            11,
+            14,
+            15
+          ],
+          [
+            3,
+            5,
+            9,
+            12,
+            14,
+            16
+          ]
+        ],
+        "favorable": 871327
+      },
+      {
+        "replace": {
+          "ticket": 0,
+          "from": 1,
+          "to": 17
+        },
+        "favorable": 887204
+      },
+      {
+        "replace": {
+          "ticket": 1,
+          "from": 1,
+          "to": 18
+        },
+        "favorable": 896511
+      },
+      {
+        "replace": {
+          "ticket": 0,
+          "from": 2,
+          "to": 19
+        },
+        "favorable": 908523
+      },
+      {
+        "replace": {
+          "ticket": 1,
+          "from": 2,
+          "to": 20
+        },
+        "favorable": 918292
+      },
+      {
+        "replace": {
+          "ticket": 0,
+          "from": 3,
+          "to": 21
+        },
+        "favorable": 930804
+      },
+      {
+        "replace": {
+          "ticket": 2,
+          "from": 3,
+          "to": 22
+        },
+        "favorable": 940569
+      },
+      {
+        "replace": {
+          "ticket": 0,
+          "from": 4,
+          "to": 23
+        },
+        "favorable": 943805
+      },
+      {
+        "replace": {
+          "ticket": 0,
+          "from": 5,
+          "to": 24
+        },
+        "favorable": 947105
+      },
+      {
+        "replace": {
+          "ticket": 1,
+          "from": 7,
+          "to": 25
+        },
+        "favorable": 950278
+      },
+      {
+        "replace": {
+          "ticket": 1,
+          "from": 8,
+          "to": 26
+        },
+        "favorable": 953514
+      },
+      {
+        "replace": {
+          "ticket": 1,
+          "from": 9,
+          "to": 27
+        },
+        "favorable": 956814
+      },
+      {
+        "replace": {
+          "ticket": 2,
+          "from": 11,
+          "to": 28
+        },
+        "favorable": 960050
+      },
+      {
+        "replace": {
+          "ticket": 2,
+          "from": 12,
+          "to": 29
+        },
+        "favorable": 963350
+      },
+      {
+        "replace": {
+          "ticket": 3,
+          "from": 14,
+          "to": 30
+        },
+        "favorable": 966650
+      }
+    ],
+    "finalTickets": [
+      [
+        6,
+        17,
+        19,
+        21,
+        23,
+        24
+      ],
+      [
+        10,
+        18,
+        20,
+        25,
+        26,
+        27
+      ],
+      [
+        1,
+        7,
+        13,
+        22,
+        28,
+        29
+      ],
+      [
+        2,
+        4,
+        8,
+        11,
+        15,
+        30
+      ],
+      [
+        3,
+        5,
+        9,
+        12,
+        14,
+        16
+      ]
+    ]
+  },
+  "savedFivePlusAddedFive": {
+    "existing": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ]
+    ],
+    "added": [
+      [
+        1,
+        31,
+        32,
+        33,
+        34,
+        41
+      ],
+      [
+        2,
+        31,
+        35,
+        36,
+        37,
+        42
+      ],
+      [
+        3,
+        32,
+        35,
+        38,
+        39,
+        43
+      ],
+      [
+        4,
+        33,
+        36,
+        38,
+        40,
+        44
+      ],
+      [
+        5,
+        34,
+        37,
+        39,
+        40,
+        45
+      ]
+    ],
+    "stats": {
+      "games": 10,
+      "total": 8145060,
+      "usage": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "distinctNumbers": 45,
+      "minimumUsage": 1,
+      "maximumUsage": 2,
+      "maxOverlap": 1,
+      "overlappingPairs": 15,
+      "triangles": 20,
+      "quadruples": 15,
+      "probabilities": {
+        "3": {
+          "favorable": 1875065,
+          "probability": 0.23020886279536307,
+          "randomBaseline": 0.21433688902346237
+        },
+        "4": {
+          "favorable": 113500,
+          "probability": 0.013934826753885177,
+          "randomBaseline": 0.013847777540374482
+        },
+        "5": {
+          "favorable": 2350,
+          "probability": 0.0002885184393976226,
+          "randomBaseline": 0.0002884811423391035
+        },
+        "6": {
+          "favorable": 10,
+          "probability": 0.0000012277380399898835,
+          "randomBaseline": 0.0000012277380399898835
+        }
+      }
+    },
+    "verified": {
+      "favorable": 1875065,
+      "total": 8145060,
+      "probability": 0.23020886279536307,
+      "uniqueGames": 10,
+      "randomBaseline": 0.21433688902346226,
+      "jackpot": 0.0000012277380399898835
+    }
+  },
+  "eightGameAllSharedShapes": {
+    "maximum": 1532004,
+    "probability": 0.18808995882166613,
+    "results": [
+      {
+        "name": "three pairs: matching",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            4,
+            5
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            1,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          [
+            2,
+            14,
+            15,
+            16,
+            17,
+            18
+          ],
+          [
+            2,
+            19,
+            20,
+            21,
+            22,
+            23
+          ],
+          [
+            3,
+            24,
+            25,
+            26,
+            27,
+            28
+          ],
+          [
+            3,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1531940,
+        "total": 8145060,
+        "probability": 0.1880821012982102,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: wedge plus edge",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            1,
+            2,
+            9,
+            10,
+            11,
+            12
+          ],
+          [
+            2,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          [
+            3,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          [
+            3,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1531940,
+        "total": 8145060,
+        "probability": 0.1880821012982102,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: path",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            4,
+            5,
+            6,
+            7,
+            8
+          ],
+          [
+            1,
+            2,
+            9,
+            10,
+            11,
+            12
+          ],
+          [
+            2,
+            3,
+            13,
+            14,
+            15,
+            16
+          ],
+          [
+            3,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1531940,
+        "total": 8145060,
+        "probability": 0.1880821012982102,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: star",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            2,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          [
+            3,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1531940,
+        "total": 8145060,
+        "probability": 0.1880821012982102,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: triangle",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ],
+          [
+            0,
+            2
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            2,
+            3,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1532004,
+        "total": 8145060,
+        "probability": 0.18808995882166613,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: double edge plus separate edge",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            2,
+            3
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            3,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          [
+            3,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1525040,
+        "total": 8145060,
+        "probability": 0.18723496205061718,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: double edge plus adjacent edge",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            2,
+            3,
+            8,
+            9,
+            10
+          ],
+          [
+            3,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1525080,
+        "total": 8145060,
+        "probability": 0.18723987300277714,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "three pairs: triple edge",
+        "supports": [
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            3,
+            7,
+            8,
+            9
+          ],
+          [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1510890,
+        "total": 8145060,
+        "probability": 0.1854977127240315,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "triple and pair: disjoint",
+        "supports": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          [
+            1,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          [
+            1,
+            13,
+            14,
+            15,
+            16,
+            17
+          ],
+          [
+            2,
+            18,
+            19,
+            20,
+            21,
+            22
+          ],
+          [
+            2,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1528640,
+        "total": 8145060,
+        "probability": 0.18767694774501353,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "triple and pair: one shared ticket",
+        "supports": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            3
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            1,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          [
+            2,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1528640,
+        "total": 8145060,
+        "probability": 0.18767694774501353,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "triple and pair: two shared tickets",
+        "supports": [
+          [
+            0,
+            1,
+            2
+          ],
+          [
+            0,
+            1
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            2,
+            7,
+            8,
+            9,
+            10
+          ],
+          [
+            1,
+            11,
+            12,
+            13,
+            14,
+            15
+          ],
+          [
+            16,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1521900,
+        "total": 8145060,
+        "probability": 0.18684945230606037,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      },
+      {
+        "name": "one quadruple",
+        "supports": [
+          [
+            0,
+            1,
+            2,
+            3
+          ]
+        ],
+        "tickets": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          [
+            1,
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          [
+            1,
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          [
+            1,
+            17,
+            18,
+            19,
+            20,
+            21
+          ],
+          [
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          [
+            28,
+            29,
+            30,
+            31,
+            32,
+            33
+          ],
+          [
+            34,
+            35,
+            36,
+            37,
+            38,
+            39
+          ],
+          [
+            40,
+            41,
+            42,
+            43,
+            44,
+            45
+          ]
+        ],
+        "favorable": 1522040,
+        "total": 8145060,
+        "probability": 0.1868666406386202,
+        "uniqueGames": 8,
+        "randomBaseline": 0.17550296108276364,
+        "jackpot": 9.821904319919067e-7
+      }
+    ]
+  },
+  "twoBlockExactDuplicateRejectionBound": {
+    "rejectionProbabilityAtMost": 0.0000030693450999747086,
+    "averageDifferencePercentagePointsAtMost": 0.0003069345099974709,
+    "explanation": "For a fixed disjoint first5 and independently uniformly relabeled second5, each of25 possible row equalities has probability1/N. Conditioning the second block on no exact duplicates changes expected union probability by at most the rejection probability. Applies with popular-number filtering disabled."
+  },
+  "independentFiveBlockComparison": [
+    {
+      "blocks": 2,
+      "games": 10,
+      "independentAverage": 0.22327381958395964,
+      "currentJointTemplate": 0.23020886279536307,
+      "differencePercentagePoints": 0.6935043211403424
+    },
+    {
+      "blocks": 3,
+      "games": 15,
+      "independentAverage": 0.31545513713093487,
+      "currentJointTemplate": 0.33464296150059053,
+      "differencePercentagePoints": 1.918782436965566
+    },
+    {
+      "blocks": 4,
+      "games": 20,
+      "independentAverage": 0.3966964406563088,
+      "currentJointTemplate": 0.4263177926252231,
+      "differencePercentagePoints": 2.9621351968914302
+    }
+  ],
+  "caveats": [
+    "Independent-block averages assume independent uniformly relabeled blocks, BEFORE saved exact-duplicate rejection or popular-number filtering; they are not an exact average of all current app modes.",
+    "Exact extension comparison concerns a specified fixed portfolio; any disjoint saved five can be mapped to the example by a label permutation.",
+    "The splitting argument directly proves1..7;8 is additionally resolved by a complete12-shape classification. No global claim is made for9 or more.",
+    "At least one prize probability is not expected prize count, profit, or jackpot probability."
+  ]
+}

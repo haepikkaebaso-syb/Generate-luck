@@ -1,0 +1,21 @@
+{
+  "method": "Independent direct enumeration of every six-number draw, two 32-bit masks and population counts; no portfolio or research module used",
+  "results": [
+    {
+      "games": 16,
+      "total": 8145060,
+      "favorable": 2877087,
+      "probability": 0.35323091542603735,
+      "verified": true,
+      "seconds": 0.363
+    },
+    {
+      "games": 20,
+      "total": 8145060,
+      "favorable": 3475115,
+      "probability": 0.4266530878839444,
+      "verified": true,
+      "seconds": 0.653
+    }
+  ]
+}

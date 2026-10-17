@@ -1,11 +1,13 @@
 {
-  "schemaVersion": 1,
-  "referenceDate": "2026-09-13",
+  "schemaVersion": 2,
+  "referenceDate": "2026-10-18",
   "noHistoricalDrawInput": true,
   "files": [
     {
-      "path": "data/portfolio-templates.json",
-      "sha256": "87fe730ca517af8e6137d88e65132ac57e9493cf85c65f8f039e1e53dc799312"
+      "path": "data/portfolio-research/portfolio-templates-20260913.json",
+      "sha256": "87fe730ca517af8e6137d88e65132ac57e9493cf85c65f8f039e1e53dc799312",
+      "referenceDate": "2026-09-13",
+      "originalPath": "data/portfolio-templates.json"
     },
     {
       "path": "data/portfolio-research/audit-owner-module.cjs",
@@ -58,6 +60,62 @@
     {
       "path": "data/portfolio-research/verification-summary.json",
       "sha256": "d99126f3d0625aacb60d9085b3ea85a5ae42abafe27eb7291342c1f3f0deb65c"
+    },
+    {
+      "path": "data/portfolio-templates.json",
+      "sha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/best-candidates-20261018.json",
+      "sha256": "696990d26d1d613f10dca6236b6d3580a097554a2cff527a0ee5de00056f72e1",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/targeted-search-20261018.cjs",
+      "sha256": "9c348b76bc8a3f9d76041f4295607e51e2c897249ff4bad9edbb2546b861e3d5",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/targeted-search-20261018.json",
+      "sha256": "4fcaaea8fb49dcb311b2cce0b8d710922ce3685430816b7d02e7326b1a037392",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/structured16-20261018.cjs",
+      "sha256": "488eada77e5c17f8e9ba6bdf90e30e6c08d30b7eaf2c2febc8778d5feb848af3",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/structured16-20261018.json",
+      "sha256": "50c4b6bdd554ecc880815a5495401b4a7bba30ac476a007840fbf3b65d281a32",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/splitting-optimality-20261018.cjs",
+      "sha256": "fbd948b1e9c572055530ab6574d19ebb53cd5869928b17aafaaeb7152deeed29",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/splitting-optimality-20261018.json",
+      "sha256": "4b991a7d064e66d1da814ebd9e66f1c76957ab89e8f11edde578db8de0c500df",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/splitting-optimality-20261018.md",
+      "sha256": "8e9c2dd9dba63a454fee4b00cb0e171b6370ff9b8ba7839a1598adda8661bd54",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/verify-current-templates-20261018.cjs",
+      "sha256": "cea1c9d1474688b932a291a00d087fc835728c5e2f7bfc903d809a36a1f6b4d9",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/current-template-verification-20261018.json",
+      "sha256": "47453e66e90e4e7c74468cedbe597a55fb87e62c4f7daa2feb51cc17e1df5e67",
+      "referenceDate": "2026-10-18"
     }
-  ]
+  ],
+  "previousReferenceDate": "2026-09-13"
 }
