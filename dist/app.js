@@ -1,17 +1,14 @@
 (function(){
   'use strict';
   const $=id=>document.getElementById(id);
-  const C=window.LottoCore,P=window.LottoPortfolio,S=window.LottoSplit,E=window.LottoExtension;
+  const C=window.LottoCore,P=window.LottoPortfolio,E=window.LottoExtension;
   const source = window.LOTTO_DATA;
   const templates=window.LOTTO_PORTFOLIO;
-  const splitModel=S&&window.LOTTO_SPLIT?.model?window.LOTTO_SPLIT:null;
   const draws=source.draws.slice().sort((a,b)=>a.round-b.round);
   const fmt=n=>n.toLocaleString('ko-KR');
   const escape=value=>String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const storageKey='lotto-atelier-645.v1';
   const defaultTargetRound=Math.max(source.metadata.lastRound+1,window.LottoRound?window.LottoRound.upcoming(Date.now()):0);
-  const pastWinners=new Set(draws.map(d=>C.key(d.numbers)));
-  const SEARCH=300; // 같은 배치의 번호 치환 후보 수. 어느 후보든 당첨 확률은 같다.
   let current=null,saved=[],storageIssue='',toastTimer;
   const time=value=>new Date(value).toLocaleString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
   function toast(message,error=false){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').classList.toggle('error',error);$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,4500);}
@@ -121,16 +118,6 @@
     const labels={3:'5등 이상 · 본번호 3개 이상',4:'4등 이상 · 본번호 4개 이상',5:'3등 이상 · 본번호 5개 이상',6:'1등 · 본번호 6개'};
     $('probability-table').innerHTML=[6,5,4,3].map(k=>'<tr'+(k===6?' class="jackpot-table-row"':'')+'><th scope="row">'+labels[k]+'</th><td>'+((k===6?currentJackpot.probability:profile.probabilities[k].probability)*100).toFixed(k===6?8:6)+'%</td><td>'+((k===6?currentJackpot.probability:profile.probabilities[k].randomBaseline)*100).toFixed(k===6?8:6)+'%</td></tr>').join('');
     $('method-verdict').textContent='4등 이상 당첨 확률은 같은 '+m+'게임으로 가능한 수학적 상한에 도달합니다. 두 게임이 각각 4개 이상 맞으려면 최소 7개의 당첨번호가 필요하므로, 현재 배치에서는 두 게임의 4등 이상 당첨 경우가 겹치지 않기 때문입니다. 5등 이상 확률은 별도의 정확한 합집합 계산으로 표시합니다.';
-    renderSplit();
-  }
-  function renderSplit(){
-    const split=splitModel&&current?S.assess(current.games,splitModel,pastWinners):null;
-    $('split-card').hidden=!split;if(!split)return;
-    const signed=v=>(v>=1?'+':'−')+Math.abs((v-1)*100).toFixed(0)+'%';
-    $('split-payout').textContent=signed(split.payout);
-    $('split-range').textContent='추정 범위 '+signed(split.payoutLow)+' ~ '+signed(split.payoutHigh);
-    const warnings=split.flags.map((flag,i)=>flag?String.fromCharCode(65+i)+' '+flag:'').filter(Boolean);
-    $('split-note').textContent='공동 1등 예상 인원이 평균적인 조합의 '+split.crowd.toFixed(2)+'배입니다. '+(warnings.length?'손으로 많이 고르는 모양: '+warnings.join(', ')+'. ':'손으로 많이 고르는 모양은 없습니다. ')+'1등 확률은 어떤 번호든 같습니다.';
   }
   function generate(){
     $('form-error').hidden=true;
@@ -138,29 +125,24 @@
       const amount=Number($('amount').value),targetRound=selectedRound();
       const savedRows=[...new Map(saved.filter(batch=>batch.targetRound===targetRound).flatMap(batch=>batch.games).map(numbers=>[C.key(numbers),numbers])).values()];
       const blocked=new Set(savedRows.map(C.key));
-      const avoid=Boolean(splitModel&&$('avoid-popular').checked);
-      let result=null,best=null;
+      let result=null;
       if(savedRows.length&&E){
-        for(let attempt=0;attempt<(avoid?8:1);attempt++){
+        // 보관 번호에 맞춘 후보는 전체의 5등 이상 당첨 범위만 비교한다.
+        for(let attempt=0;attempt<8;attempt++){
           const candidate=E.extend(templates,savedRows,amount);
           const value=candidate.roundProfile?.probabilities[3].favorable??-1;
           const previous=result?.roundProfile?.probabilities[3].favorable??-1;
-          const split=avoid?S.assess(candidate.numbers,splitModel,pastWinners):null;
-          if(!result||value>previous||(value===previous&&avoid&&S.better(split,best))){result=candidate;best=split;}
+          if(!result||value>previous)result=candidate;
         }
-      }else for(let attempt=0;attempt<(avoid?SEARCH:200);attempt++){
+      }else for(let attempt=0;attempt<200;attempt++){
         const candidate=P.generate(templates,amount);
         if(candidate.numbers.some(numbers=>blocked.has(C.key(numbers))))continue;
-        if(!avoid){result=candidate;break;}
-        const split=S.assess(candidate.numbers,splitModel,pastWinners);
-        if(S.better(split,best)){best=split;result=candidate;}
+        result=candidate;break;
       }
-      if(result&&!savedRows.length&&best?.flagged){const repaired=S.repair(result.numbers,splitModel,pastWinners,C.randomInt,numbers=>blocked.has(C.key(numbers)));result={...result,numbers:repaired.numbers,profile:P.analyze(repaired.numbers)};}
       if(!result)throw new Error('보관함과 겹치지 않는 새 배치를 만들지 못했습니다. 다시 시도해 주세요.');
-      current={id:globalThis.crypto?.randomUUID?.()||Date.now()+'-'+C.randomInt(1000000),createdAt:new Date().toISOString(),targetRound,label:(savedRows.length?'보관 번호 유지 · 추가 구성':amount<=7?'번호 비중복 배치':'게임 간 겹침 최대 1개 배치')+(avoid?' · 인기 번호대 고려':''),method:result.method,extension:result.extension||null,model:null,options:{avoidPopular:avoid},games:result.numbers,profile:result.profile};
+      current={id:globalThis.crypto?.randomUUID?.()||Date.now()+'-'+C.randomInt(1000000),createdAt:new Date().toISOString(),targetRound,label:savedRows.length?'보관 번호 유지 · 추가 구성':amount<=7?'번호 비중복 배치':'게임 간 겹침 최대 1개 배치',method:result.method,extension:result.extension||null,model:null,games:result.numbers,profile:result.profile};
       $('cost').textContent=fmt(amount*1000)+'원';$('generate').textContent='새 번호 '+amount+'게임 만들기';
-      const popularityNote=!avoid?'':!savedRows.length?' 같은 확률의 후보 '+SEARCH+'개 중 공동 당첨자가 가장 적을 것으로 추정되는 묶음을 골랐습니다.':result.roundProfile?' 전체 당첨 범위를 우선하고, 같은 범위의 후보에서는 인기 번호대를 함께 고려합니다.':' 기존 번호와의 겹침을 줄이는 후보에서 인기 번호대도 함께 고려합니다. 회차 전체의 확률 개선은 보장하지 않습니다.';
-      $('method-note').textContent=(result.extension?.reason||(amount<=7?'게임끼리 같은 번호를 쓰지 않도록 구성합니다.':'45개 번호를 고르게 사용하고, 두 게임의 공통 번호는 최대 1개로 제한합니다.'))+' '+targetRound+'회 보관함의 기존 조합은 제외합니다.'+popularityNote;
+      $('method-note').textContent=(result.extension?.reason||(amount<=7?'게임끼리 같은 번호를 쓰지 않도록 구성합니다.':'45개 번호를 고르게 사용하고, 두 게임의 공통 번호는 최대 1개로 제한합니다.'))+' '+targetRound+'회 보관함의 기존 조합은 제외합니다.';
       renderCurrent();return true;
     }catch(error){$('form-error').textContent=error.message;$('form-error').hidden=false;return false;}
   }
@@ -220,7 +202,6 @@
   $('amount').innerHTML=Array.from({length:20},(_,i)=>'<option value="'+(i+1)+'">'+(i+1)+'게임</option>').join('');$('amount').value='5';
   $('target-round').addEventListener('change',generate);
   $('amount').addEventListener('change',generate);
-  $('avoid-popular').addEventListener('change',generate);
   $('generate').addEventListener('click',()=>{if(generate())toast('새 번호 '+current.games.length+'게임을 만들었습니다.');});
   $('save').addEventListener('click',saveCurrent);$('copy').addEventListener('click',copyNumbers);$('csv').addEventListener('click',()=>current&&exportCSV([current]));$('export-all').addEventListener('click',()=>exportCSV(saved));
   $('saved-list').addEventListener('click',event=>{

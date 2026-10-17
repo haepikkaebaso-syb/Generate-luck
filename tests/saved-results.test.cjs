@@ -1,8 +1,8 @@
 'use strict';
 const test=require('node:test'),assert=require('node:assert/strict');
 const fs=require('node:fs'),path=require('node:path'),vm=require('node:vm'),crypto=require('node:crypto');
-const C=require('../dist/core.js'),P=require('../dist/portfolio.js'),S=require('../dist/split.js'),R=require('../dist/round.js');
-const templates=require('../data/portfolio-templates.json'),source=require('../data/draws-720-1241.json'),model=require('../data/split-risk.json');
+const C=require('../dist/core.js'),P=require('../dist/portfolio.js'),R=require('../dist/round.js');
+const templates=require('../data/portfolio-templates.json'),source=require('../data/draws-720-1241.json');
 const root=path.resolve(__dirname,'..');
 const markup=fs.readFileSync(path.join(root,'dist/index.html'),'utf8'),app=fs.readFileSync(path.join(root,'dist/app.js'),'utf8');
 const last=source.draws.at(-1); // 1241회: 7 13 16 23 24 43 + 9 (고정 픽스처: 1241회까지의 스냅숏)
@@ -14,7 +14,7 @@ function startApp(saved,data=source,storage=new Map()){
  if(saved.length)storage.set('lotto-atelier-645.v1',JSON.stringify(saved));
  vm.runInNewContext(app,{document:{getElementById:id=>{assert.ok(nodes.has(id),'Missing node '+id);return nodes.get(id);}},localStorage:{getItem:k=>storage.get(k)??null,setItem:(k,v)=>storage.set(k,v)},navigator:{},crypto:crypto.webcrypto,structuredClone,AbortController,
    Date:class extends Date{constructor(...a){a.length?super(...a):super('2026-09-18T03:00:00Z');}static now(){return Date.parse('2026-09-18T03:00:00Z');}},setTimeout:()=>1,clearTimeout(){},
-   window:{LottoRound:R,LottoCore:C,LottoPortfolio:P,LottoSplit:S,LOTTO_DATA:data,LOTTO_PORTFOLIO:templates,LOTTO_SPLIT:model,addEventListener(){}}},{filename:'app.js'});
+   window:{LottoRound:R,LottoCore:C,LottoPortfolio:P,LOTTO_DATA:data,LOTTO_PORTFOLIO:templates,addEventListener(){}}},{filename:'app.js'});
  return {node:id=>nodes.get(id),storage};
 }
 const batch=(id,targetRound,games)=>({id,createdAt:'2026-09-08T03:00:00Z',label:'구매 번호',...(targetRound?{targetRound}:{}),games});

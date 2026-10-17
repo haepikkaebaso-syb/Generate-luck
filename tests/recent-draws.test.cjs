@@ -29,5 +29,5 @@ test('저장된 추가 회차 파일과 빌드된 앱 자료가 일치하고 연
  assert.equal(built.metadata.lastRound,expected.at(-1).round);assert.equal(built.metadata.lastDrawDate,expected.at(-1).date);
  assert.equal(built.metadata.firstRound,source.metadata.firstRound);
  for(const [i,d] of expected.entries())assert.deepEqual(JSON.parse(JSON.stringify(built.draws[i])),{round:d.round,date:d.date,numbers:d.numbers,bonus:d.bonus});
- assert.equal(context.window.LOTTO_SPLIT.sourceRounds.last,source.metadata.lastRound); // 분석 모형은 자동 갱신분을 쓰지 않음
+ assert.equal(Object.hasOwn(context.window,'LOTTO_SPLIT'),false); // 보존한 연구 모형은 운영 앱에 주입하지 않음
 });

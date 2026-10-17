@@ -89,7 +89,8 @@ test('HTML의 참조 ID, 오프라인 파일과 스크립트 구성이 일치',(
   for(const match of app.matchAll(/\$\('([^']+)'\)/g))if(!match[1].endsWith('-'))assert(ids.includes(match[1]),'missing ID: '+match[1]);
   const standalone=fs.readFileSync(path.join(__dirname,'../로또번호 생성기.html'),'utf8');
   assert(!standalone.includes('<script defer src='));assert(!standalone.includes('<link rel="stylesheet"'));
-  assert.equal([...standalone.matchAll(/<script>/g)].length,8);
+  assert.equal([...standalone.matchAll(/<script>/g)].length,7);
+  assert(!standalone.includes('LOTTO_SPLIT'));assert(!standalone.includes('LottoSplit'));
   assert(standalone.indexOf('window.LOTTO_DATA =') < standalone.indexOf('const source = window.LOTTO_DATA'));
 });
 

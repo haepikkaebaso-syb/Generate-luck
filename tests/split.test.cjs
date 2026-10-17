@@ -56,20 +56,25 @@ test('번호 맞바꿈 수리는 인기 모양을 없애면서 배치의 당첨 
  assert.ok(!S.repair([[7,8,9,20,30,40]],model,new Set(),C.randomInt,n=>C.key(n)===blockedKey).numbers.some(n=>C.key(n)===blockedKey));
 });
 
-test('앱에서 인기 번호대 피하기를 켜면 무작위 치환보다 예상 수령액이 높고 1등 확률 표시는 같음',()=>{
+test('운영 앱은 보존한 분할 위험 연구 모형을 불러오거나 번호 선택에 사용하지 않음',()=>{
  const markup=fs.readFileSync(path.join(root,'dist/index.html'),'utf8'),app=fs.readFileSync(path.join(root,'dist/app.js'),'utf8');
- assert.match(markup,/id="avoid-popular" type="checkbox" checked/);
+ const build=fs.readFileSync(path.join(root,'scripts/build.cjs'),'utf8');
+ assert.doesNotMatch(markup,/avoid-popular|split-card|split-payout|split-range|split-note|src="split\.js"/);
+ assert.doesNotMatch(app,/LottoSplit|LOTTO_SPLIT|S\.assess|S\.repair|avoidPopular/);
+ assert.doesNotMatch(build,/split-risk\.json|LOTTO_SPLIT|['"]split\.js['"]/);
  const nodes=new Map();
- for(const match of markup.matchAll(/\bid="([^"]+)"/g)){const listeners=new Map();let value='';nodes.set(match[1],{get value(){return value;},set value(v){value=String(v);},textContent:'',innerHTML:'',hidden:false,disabled:false,checked:match[1]==='avoid-popular',classList:{add(){},remove(){},toggle(){}},addEventListener(name,fn){listeners.set(name,fn);},fire(name){return listeners.get(name)({});}});}
+ for(const match of markup.matchAll(/\bid="([^"]+)"/g)){const listeners=new Map();let value='';nodes.set(match[1],{get value(){return value;},set value(v){value=String(v);},textContent:'',innerHTML:'',hidden:false,disabled:false,classList:{add(){},remove(){},toggle(){}},addEventListener(name,fn){listeners.set(name,fn);},fire(name){return listeners.get(name)({});}});}
  const tools=new Map();
+ // Deliberately include the shapes the archived research would flag. The app
+ // must retain the generated layout without filtering or repairing its labels.
+ const numbers=Array.from({length:5},(_,i)=>Array.from({length:6},(_,j)=>i*6+j+1));
+ let generationCalls=0;
+ const portfolio={...P,generate(){generationCalls++;return {numbers,profile:P.analyze(numbers),method:'test-layout'};}};
  vm.runInNewContext(app,{document:{getElementById:id=>nodes.get(id),modelContext:{registerTool(a){tools.set(a.name,a);}}},localStorage:{getItem:()=>null,setItem(){}},navigator:{},crypto:crypto.webcrypto,structuredClone,AbortController,Date:class extends Date{constructor(...a){a.length?super(...a):super('2026-09-18T03:00:00Z');}static now(){return Date.parse('2026-09-18T03:00:00Z');}},setTimeout:()=>1,clearTimeout(){},
-   window:{LottoRound:require('../dist/round.js'),LottoCore:C,LottoPortfolio:P,LottoSplit:S,LOTTO_DATA:source,LOTTO_PORTFOLIO:templates,LOTTO_SPLIT:model,addEventListener(){}}},{filename:'app.js'});
+   window:{LottoRound:require('../dist/round.js'),LottoCore:C,LottoPortfolio:portfolio,LottoExtension:require('../dist/extension.js'),LOTTO_DATA:source,LOTTO_PORTFOLIO:templates,addEventListener(){}}},{filename:'app.js'});
  const read=()=>tools.get('read_lotto_collection').execute({}).current;
- const on=read(),onSplit=S.assess(on.games,model);
- assert.equal(on.options.avoidPopular,true);assert.equal(onSplit.flagged,0);assert.ok(onSplit.payout>1.05);
- assert.equal(nodes.get('split-card').hidden,false);assert.match(nodes.get('split-payout').textContent,/^\+\d+%$/);
+ assert.equal(generationCalls,1);
+ assert.deepEqual(JSON.parse(JSON.stringify(read().games)),numbers);
+ assert.equal(read().profile.probabilities[3].favorable,966650);
  assert.equal(nodes.get('jackpot-fraction').textContent,'5 / 8,145,060');
- nodes.get('avoid-popular').checked=false;nodes.get('avoid-popular').fire('change');
- assert.equal(read().options.avoidPopular,false);assert.equal(nodes.get('jackpot-fraction').textContent,'5 / 8,145,060');
- for(const m of [7,8,20]){nodes.get('avoid-popular').checked=true;nodes.get('amount').value=String(m);nodes.get('amount').fire('change');assert.equal(read().games.length,m);assert.equal(S.assess(read().games,model).flagged,0,m+'게임에서 인기 모양이 남음');}
 });
