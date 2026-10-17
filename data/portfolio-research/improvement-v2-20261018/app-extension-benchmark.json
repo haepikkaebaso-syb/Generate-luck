@@ -1,0 +1,4156 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-17T23:47:49.207Z",
+  "nodeVersion": "v24.16.0",
+  "platform": "win32",
+  "architecture": "x64",
+  "baseline": {
+    "gitCommit": "0d361dc1dba8bf37a372958b0d23388aa3b54f6d",
+    "extensionSha256": "4b04e58d399b138c232321aa764bae0861aca536ebdf0fbb92eb294b44926e39",
+    "appSha256": "a23cc5bf7243ec3fc4e3001bc42581ebec6f30d06d8c7104479fc16015ed0ac6",
+    "policy": "The original app calls the original E.extend exactly eight times with one continuous seeded RNG. It chooses the greatest linear roundProfile favorable count, treating a null profile as -1, retaining the first candidate on ties.",
+    "sharedCurrentDependencies": [
+      "dist/core.js",
+      "dist/portfolio.js"
+    ],
+    "sharedDependenciesMatchHistoricalSource": {
+      "dist/core.js": true,
+      "dist/portfolio.js": true
+    },
+    "sharedFrozenTemplates": {
+      "file": "data/portfolio-research/improvement-v2-20261018/baseline-templates.json",
+      "sha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+      "historicalFile": "data/portfolio-templates.json",
+      "matchesHistoricalSource": true
+    }
+  },
+  "current": {
+    "entryPoint": "G.generate in dist/generation.js",
+    "inputTemplates": "data/portfolio-research/improvement-v2-20261018/baseline-templates.json",
+    "sourceHashes": {
+      "dist/core.js": "e8aa26ad134bef0f100bbcfb595ad090559fff3d9ba9ab300963b811e43f0d04",
+      "dist/portfolio.js": "c15e708854ee0e010273bd84b45188973b2ec2c21468d35a4803605cf7ae32c9",
+      "dist/extension.js": "ef3981d278f58191b1b40b2513efc85a25e40380119a7e9c6b6ae28d81934ec5",
+      "dist/coverage.js": "1fcfcaf53365eaed04c50e123324aa82b7cfd2e19fc68894f05011bb00fd580b",
+      "dist/generation.js": "ac80f63aaf53d1b340e3ff18e0ca942dc1a244f7d08439f118fcb34d2f6c23e4",
+      "dist/research.js": "a8b24d8d3910681673fca1629c9092bf814079145d8c634583455190251bc5f5",
+      "data/portfolio-research/improvement-v2-20261018/baseline-templates.json": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+      "data/portfolio-research/improvement-v2-20261018/app-extension-benchmark.cjs": "e2f6b3e589d60e9941ec53718200fcdef2f43cb21f3a8d371349c48f9c0521e8"
+    }
+  },
+  "method": {
+    "seeds": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "rng": "R.seededRandom with integer output floor(random*n)",
+    "sameInitialRngState": true,
+    "exactFinalScoring": "X.coverageExact on saved rows plus final new batch, including nonlinear totals and all 25 tickets.",
+    "storageAndBatchChecks": "Both paths must leave saved rows unchanged, return no saved duplicates, and produce a linear new batch accepted by P.analyze.",
+    "timing": "One old run then one current run per seed; generation time excludes the separate final validation. These local single-run timings include uneven JIT warmup and do not predict browser device latency."
+  },
+  "fixtures": [
+    {
+      "id": "disjoint-saved-7-add-1",
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1
+    },
+    {
+      "id": "nonlinear-saved-2-add-6",
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "amount": 6
+    },
+    {
+      "id": "nonlinear-saved-2-add-8",
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          2,
+          7,
+          8,
+          9,
+          10
+        ]
+      ],
+      "amount": 8
+    },
+    {
+      "id": "template-saved-20-add-5",
+      "saved": [
+        [
+          16,
+          18,
+          27,
+          30,
+          42,
+          45
+        ],
+        [
+          4,
+          10,
+          11,
+          14,
+          21,
+          22
+        ],
+        [
+          1,
+          7,
+          12,
+          18,
+          19,
+          43
+        ],
+        [
+          15,
+          20,
+          22,
+          31,
+          32,
+          34
+        ],
+        [
+          6,
+          13,
+          18,
+          22,
+          28,
+          29
+        ],
+        [
+          2,
+          3,
+          4,
+          31,
+          38,
+          39
+        ],
+        [
+          12,
+          23,
+          25,
+          29,
+          42,
+          44
+        ],
+        [
+          2,
+          9,
+          14,
+          15,
+          17,
+          26
+        ],
+        [
+          4,
+          26,
+          33,
+          34,
+          40,
+          41
+        ],
+        [
+          3,
+          20,
+          21,
+          24,
+          26,
+          36
+        ],
+        [
+          1,
+          5,
+          6,
+          10,
+          25,
+          45
+        ],
+        [
+          5,
+          8,
+          12,
+          13,
+          16,
+          39
+        ],
+        [
+          2,
+          11,
+          20,
+          35,
+          40,
+          43
+        ],
+        [
+          3,
+          14,
+          32,
+          33,
+          35,
+          37
+        ],
+        [
+          9,
+          16,
+          19,
+          24,
+          25,
+          28
+        ],
+        [
+          1,
+          8,
+          17,
+          27,
+          28,
+          44
+        ],
+        [
+          6,
+          8,
+          19,
+          21,
+          23,
+          30
+        ],
+        [
+          5,
+          7,
+          17,
+          24,
+          29,
+          30
+        ],
+        [
+          7,
+          9,
+          10,
+          13,
+          23,
+          27
+        ],
+        [
+          11,
+          15,
+          36,
+          37,
+          38,
+          41
+        ]
+      ],
+      "amount": 5
+    }
+  ],
+  "comparisons": [
+    {
+      "fixture": "disjoint-saved-7-add-1",
+      "seed": 1,
+      "old": {
+        "numbers": [
+          [
+            3,
+            14,
+            24,
+            36,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1528640,
+        "probability": 0.18767694774501353,
+        "reportedRoundFavorable": 1528640,
+        "generationMs": 11.447099999999978,
+        "independentFinalValidationMs": 32.38980000000001,
+        "rngCalls": 4328,
+        "chosenAttempt": 7,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 2,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 3,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 4,
+            "status": "coverage-search",
+            "selectionScore": 1522040
+          },
+          {
+            "attempt": 5,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "coverage-search",
+            "selectionScore": 1528640
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1618,
+          "reason": "보관한 조합과 합쳐 정확히 계산할 수 있는 후보 중 당첨 범위가 큰 배치를 골랐습니다. 전체 최적을 보장하지는 않습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            6,
+            9,
+            37,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "probability": 0.1880821012982102,
+        "reportedRoundFavorable": 1531940,
+        "generationMs": 18.4623,
+        "independentFinalValidationMs": 19.60220000000001,
+        "rngCalls": 4548,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1619,
+          "reason": "보관한 조합과 합쳐 정확히 계산한 당첨 범위로 후보를 비교하고, 추가 탐색에서는 그 범위가 커지는 변경만 반영했습니다. 전체 최적을 보장하지는 않습니다.",
+          "exactRoundFavorable": 1531940,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1525340,
+            "finalFavorable": 1531940,
+            "refinementChecks": 240,
+            "acceptedImprovements": 2,
+            "exactEvaluationLimit": 24
+          }
+        }
+      },
+      "change": 3300,
+      "percentagePointChange": 0.04051535531966615,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "disjoint-saved-7-add-1",
+      "seed": 2,
+      "old": {
+        "numbers": [
+          [
+            14,
+            24,
+            28,
+            33,
+            43,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1528640,
+        "probability": 0.18767694774501353,
+        "reportedRoundFavorable": 1528640,
+        "generationMs": 5.400599999999997,
+        "independentFinalValidationMs": 18.938900000000018,
+        "rngCalls": 4328,
+        "chosenAttempt": 6,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 3,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 4,
+            "status": "coverage-search",
+            "selectionScore": 1522040
+          },
+          {
+            "attempt": 5,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 6,
+            "status": "coverage-search",
+            "selectionScore": 1528640
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          }
+        ],
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1617,
+          "reason": "보관한 조합과 합쳐 정확히 계산할 수 있는 후보 중 당첨 범위가 큰 배치를 골랐습니다. 전체 최적을 보장하지는 않습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            6,
+            15,
+            22,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "probability": 0.1880821012982102,
+        "reportedRoundFavorable": 1531940,
+        "generationMs": 9.706999999999994,
+        "independentFinalValidationMs": 17.75060000000002,
+        "rngCalls": 4460,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1618,
+          "reason": "보관한 조합과 합쳐 정확히 계산한 당첨 범위로 후보를 비교하고, 추가 탐색에서는 그 범위가 커지는 변경만 반영했습니다. 전체 최적을 보장하지는 않습니다.",
+          "exactRoundFavorable": 1531940,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1525340,
+            "finalFavorable": 1531940,
+            "refinementChecks": 240,
+            "acceptedImprovements": 2,
+            "exactEvaluationLimit": 24
+          }
+        }
+      },
+      "change": 3300,
+      "percentagePointChange": 0.04051535531966615,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "disjoint-saved-7-add-1",
+      "seed": 3,
+      "old": {
+        "numbers": [
+          [
+            2,
+            24,
+            27,
+            36,
+            37,
+            43
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1525340,
+        "probability": 0.1872717941918169,
+        "reportedRoundFavorable": 1525340,
+        "generationMs": 6.255899999999997,
+        "independentFinalValidationMs": 18.28480000000002,
+        "rngCalls": 4328,
+        "chosenAttempt": 2,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1618,
+          "reason": "보관한 조합과 합쳐 정확히 계산할 수 있는 후보 중 당첨 범위가 큰 배치를 골랐습니다. 전체 최적을 보장하지는 않습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            24,
+            27,
+            36,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "probability": 0.1880821012982102,
+        "reportedRoundFavorable": 1531940,
+        "generationMs": 10.6019,
+        "independentFinalValidationMs": 17.769999999999982,
+        "rngCalls": 4548,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1618,
+          "reason": "보관한 조합과 합쳐 정확히 계산한 당첨 범위로 후보를 비교하고, 추가 탐색에서는 그 범위가 커지는 변경만 반영했습니다. 전체 최적을 보장하지는 않습니다.",
+          "exactRoundFavorable": 1531940,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1525340,
+            "finalFavorable": 1531940,
+            "refinementChecks": 240,
+            "acceptedImprovements": 2,
+            "exactEvaluationLimit": 24
+          }
+        }
+      },
+      "change": 6600,
+      "percentagePointChange": 0.0810307106393323,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "disjoint-saved-7-add-1",
+      "seed": 4,
+      "old": {
+        "numbers": [
+          [
+            4,
+            9,
+            22,
+            31,
+            43,
+            44
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1528640,
+        "probability": 0.18767694774501353,
+        "reportedRoundFavorable": 1528640,
+        "generationMs": 4.1358000000000175,
+        "independentFinalValidationMs": 21.53290000000004,
+        "rngCalls": 4328,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "coverage-search",
+            "selectionScore": 1528640
+          },
+          {
+            "attempt": 2,
+            "status": "coverage-search",
+            "selectionScore": 1522040
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 5,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 6,
+            "status": "coverage-search",
+            "selectionScore": 1528640
+          },
+          {
+            "attempt": 7,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 8,
+            "status": "coverage-search",
+            "selectionScore": 1522040
+          }
+        ],
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1617,
+          "reason": "보관한 조합과 합쳐 정확히 계산할 수 있는 후보 중 당첨 범위가 큰 배치를 골랐습니다. 전체 최적을 보장하지는 않습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            4,
+            22,
+            31,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "probability": 0.1880821012982102,
+        "reportedRoundFavorable": 1531940,
+        "generationMs": 10.259000000000015,
+        "independentFinalValidationMs": 18.82589999999999,
+        "rngCalls": 4592,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1617,
+          "reason": "보관한 조합과 합쳐 정확히 계산한 당첨 범위로 후보를 비교하고, 추가 탐색에서는 그 범위가 커지는 변경만 반영했습니다. 전체 최적을 보장하지는 않습니다.",
+          "exactRoundFavorable": 1531940,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1528640,
+            "finalFavorable": 1531940,
+            "refinementChecks": 240,
+            "acceptedImprovements": 1,
+            "exactEvaluationLimit": 24
+          }
+        }
+      },
+      "change": 3300,
+      "percentagePointChange": 0.04051535531966615,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "disjoint-saved-7-add-1",
+      "seed": 5,
+      "old": {
+        "numbers": [
+          [
+            10,
+            19,
+            27,
+            34,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1528640,
+        "probability": 0.18767694774501353,
+        "reportedRoundFavorable": 1528640,
+        "generationMs": 5.555600000000027,
+        "independentFinalValidationMs": 17.72720000000004,
+        "rngCalls": 4328,
+        "chosenAttempt": 2,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 2,
+            "status": "coverage-search",
+            "selectionScore": 1528640
+          },
+          {
+            "attempt": 3,
+            "status": "coverage-search",
+            "selectionScore": 1522040
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 6,
+            "status": "coverage-search",
+            "selectionScore": 1525340
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1617,
+          "reason": "보관한 조합과 합쳐 정확히 계산할 수 있는 후보 중 당첨 범위가 큰 배치를 골랐습니다. 전체 최적을 보장하지는 않습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            10,
+            33,
+            39,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "probability": 0.1880821012982102,
+        "reportedRoundFavorable": 1531940,
+        "generationMs": 9.307999999999993,
+        "independentFinalValidationMs": 20.519000000000005,
+        "rngCalls": 4548,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "coverage-search",
+          "savedUnique": 7,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 1618,
+          "reason": "보관한 조합과 합쳐 정확히 계산한 당첨 범위로 후보를 비교하고, 추가 탐색에서는 그 범위가 커지는 변경만 반영했습니다. 전체 최적을 보장하지는 않습니다.",
+          "exactRoundFavorable": 1531940,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1525340,
+            "finalFavorable": 1531940,
+            "refinementChecks": 240,
+            "acceptedImprovements": 2,
+            "exactEvaluationLimit": 24
+          }
+        }
+      },
+      "change": 3300,
+      "percentagePointChange": 0.04051535531966615,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-6",
+      "seed": 1,
+      "old": {
+        "numbers": [
+          [
+            2,
+            10,
+            13,
+            15,
+            31,
+            32
+          ],
+          [
+            5,
+            25,
+            27,
+            28,
+            37,
+            41
+          ],
+          [
+            4,
+            7,
+            11,
+            29,
+            30,
+            36
+          ],
+          [
+            3,
+            20,
+            21,
+            22,
+            24,
+            33
+          ],
+          [
+            8,
+            16,
+            35,
+            40,
+            42,
+            44
+          ],
+          [
+            12,
+            17,
+            18,
+            23,
+            39,
+            43
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1496238,
+        "probability": 0.18369883094783832,
+        "reportedRoundFavorable": null,
+        "generationMs": 3.702099999999973,
+        "independentFinalValidationMs": 19.730099999999993,
+        "rngCalls": 4704,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            4,
+            8,
+            27,
+            31,
+            42,
+            44
+          ],
+          [
+            9,
+            11,
+            17,
+            30,
+            38,
+            39
+          ],
+          [
+            7,
+            24,
+            29,
+            33,
+            37,
+            40
+          ],
+          [
+            2,
+            20,
+            21,
+            26,
+            35,
+            45
+          ],
+          [
+            1,
+            18,
+            19,
+            22,
+            23,
+            43
+          ],
+          [
+            10,
+            13,
+            14,
+            16,
+            32,
+            41
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1499342,
+        "probability": 0.1840799208354512,
+        "reportedRoundFavorable": 1499342,
+        "generationMs": 409.2515,
+        "independentFinalValidationMs": 21.27159999999992,
+        "rngCalls": 5336,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 1499342,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1499342,
+            "finalFavorable": 1499342,
+            "refinementChecks": 13,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1496238,
+          "finalFavorable": 1499342
+        }
+      },
+      "change": 3104,
+      "percentagePointChange": 0.03810898876128598,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-6",
+      "seed": 2,
+      "old": {
+        "numbers": [
+          [
+            3,
+            5,
+            7,
+            35,
+            40,
+            43
+          ],
+          [
+            1,
+            23,
+            28,
+            31,
+            37,
+            42
+          ],
+          [
+            20,
+            26,
+            27,
+            30,
+            44,
+            45
+          ],
+          [
+            8,
+            16,
+            18,
+            29,
+            33,
+            38
+          ],
+          [
+            6,
+            9,
+            11,
+            15,
+            24,
+            32
+          ],
+          [
+            4,
+            13,
+            14,
+            17,
+            21,
+            39
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1492987,
+        "probability": 0.1832996933110376,
+        "reportedRoundFavorable": null,
+        "generationMs": 3.1065999999999576,
+        "independentFinalValidationMs": 19.086599999999976,
+        "rngCalls": 4704,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            1,
+            14,
+            26,
+            33,
+            41,
+            42
+          ],
+          [
+            18,
+            23,
+            28,
+            30,
+            31,
+            37
+          ],
+          [
+            2,
+            4,
+            16,
+            27,
+            32,
+            45
+          ],
+          [
+            17,
+            22,
+            34,
+            35,
+            38,
+            43
+          ],
+          [
+            5,
+            7,
+            12,
+            20,
+            25,
+            39
+          ],
+          [
+            3,
+            9,
+            15,
+            24,
+            29,
+            40
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1493280,
+        "probability": 0.1833356660356093,
+        "reportedRoundFavorable": 1493280,
+        "generationMs": 426.99289999999996,
+        "independentFinalValidationMs": 22.758499999999913,
+        "rngCalls": 5336,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 1493280,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1493280,
+            "finalFavorable": 1493280,
+            "refinementChecks": 13,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1492987,
+          "finalFavorable": 1493280
+        }
+      },
+      "change": 293,
+      "percentagePointChange": 0.0035972724571703583,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-6",
+      "seed": 3,
+      "old": {
+        "numbers": [
+          [
+            6,
+            12,
+            29,
+            30,
+            31,
+            34
+          ],
+          [
+            11,
+            15,
+            21,
+            42,
+            44,
+            45
+          ],
+          [
+            3,
+            16,
+            24,
+            25,
+            38,
+            40
+          ],
+          [
+            5,
+            9,
+            17,
+            22,
+            23,
+            41
+          ],
+          [
+            8,
+            14,
+            18,
+            27,
+            36,
+            37
+          ],
+          [
+            1,
+            13,
+            26,
+            28,
+            35,
+            39
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1505782,
+        "probability": 0.18487058413320467,
+        "reportedRoundFavorable": null,
+        "generationMs": 2.9692000000000007,
+        "independentFinalValidationMs": 19.367899999999963,
+        "rngCalls": 4704,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            6,
+            12,
+            29,
+            30,
+            31,
+            34
+          ],
+          [
+            11,
+            15,
+            21,
+            42,
+            44,
+            45
+          ],
+          [
+            3,
+            16,
+            24,
+            25,
+            38,
+            40
+          ],
+          [
+            5,
+            9,
+            17,
+            22,
+            23,
+            41
+          ],
+          [
+            8,
+            14,
+            18,
+            27,
+            36,
+            37
+          ],
+          [
+            1,
+            13,
+            26,
+            28,
+            35,
+            39
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1505782,
+        "probability": 0.18487058413320467,
+        "reportedRoundFavorable": 1505782,
+        "generationMs": 419.9469999999999,
+        "independentFinalValidationMs": 18.419900000000098,
+        "rngCalls": 5336,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": null,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": null,
+            "finalFavorable": null,
+            "refinementChecks": 0,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1505782,
+          "finalFavorable": 1505782
+        }
+      },
+      "change": 0,
+      "percentagePointChange": 0,
+      "outcome": "tied"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-6",
+      "seed": 4,
+      "old": {
+        "numbers": [
+          [
+            5,
+            14,
+            18,
+            32,
+            38,
+            44
+          ],
+          [
+            7,
+            11,
+            20,
+            28,
+            37,
+            42
+          ],
+          [
+            12,
+            17,
+            21,
+            26,
+            27,
+            31
+          ],
+          [
+            4,
+            13,
+            24,
+            29,
+            34,
+            36
+          ],
+          [
+            8,
+            15,
+            16,
+            22,
+            33,
+            45
+          ],
+          [
+            2,
+            6,
+            19,
+            23,
+            25,
+            39
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1499316,
+        "probability": 0.1840767287165472,
+        "reportedRoundFavorable": null,
+        "generationMs": 3.219000000000051,
+        "independentFinalValidationMs": 18.146299999999883,
+        "rngCalls": 4704,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            5,
+            14,
+            18,
+            32,
+            38,
+            44
+          ],
+          [
+            7,
+            11,
+            20,
+            28,
+            37,
+            42
+          ],
+          [
+            12,
+            17,
+            21,
+            26,
+            27,
+            31
+          ],
+          [
+            4,
+            13,
+            24,
+            29,
+            34,
+            36
+          ],
+          [
+            8,
+            15,
+            16,
+            22,
+            33,
+            45
+          ],
+          [
+            2,
+            6,
+            19,
+            23,
+            25,
+            39
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1499316,
+        "probability": 0.1840767287165472,
+        "reportedRoundFavorable": 1499316,
+        "generationMs": 414.5491999999999,
+        "independentFinalValidationMs": 19.891799999999876,
+        "rngCalls": 5336,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": null,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": null,
+            "finalFavorable": null,
+            "refinementChecks": 0,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1499316,
+          "finalFavorable": 1499316
+        }
+      },
+      "change": 0,
+      "percentagePointChange": 0,
+      "outcome": "tied"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-6",
+      "seed": 5,
+      "old": {
+        "numbers": [
+          [
+            3,
+            10,
+            14,
+            20,
+            30,
+            45
+          ],
+          [
+            16,
+            21,
+            25,
+            32,
+            34,
+            43
+          ],
+          [
+            11,
+            22,
+            29,
+            31,
+            33,
+            44
+          ],
+          [
+            5,
+            6,
+            8,
+            26,
+            38,
+            41
+          ],
+          [
+            13,
+            28,
+            35,
+            37,
+            39,
+            40
+          ],
+          [
+            9,
+            12,
+            15,
+            19,
+            23,
+            24
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1502607,
+        "probability": 0.18448077730550788,
+        "reportedRoundFavorable": null,
+        "generationMs": 2.723399999999856,
+        "independentFinalValidationMs": 20.529199999999946,
+        "rngCalls": 4704,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            3,
+            10,
+            14,
+            20,
+            30,
+            45
+          ],
+          [
+            16,
+            21,
+            25,
+            32,
+            34,
+            43
+          ],
+          [
+            11,
+            22,
+            29,
+            31,
+            33,
+            44
+          ],
+          [
+            5,
+            6,
+            8,
+            26,
+            38,
+            41
+          ],
+          [
+            13,
+            28,
+            35,
+            37,
+            39,
+            40
+          ],
+          [
+            9,
+            12,
+            15,
+            19,
+            23,
+            24
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1502607,
+        "probability": 0.18448077730550788,
+        "reportedRoundFavorable": 1502607,
+        "generationMs": 395.77509999999984,
+        "independentFinalValidationMs": 19.707300000000032,
+        "rngCalls": 5336,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 8,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": null,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": null,
+            "finalFavorable": null,
+            "refinementChecks": 0,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1502607,
+          "finalFavorable": 1502607
+        }
+      },
+      "change": 0,
+      "percentagePointChange": 0,
+      "outcome": "tied"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-8",
+      "seed": 1,
+      "old": {
+        "numbers": [
+          [
+            9,
+            16,
+            25,
+            36,
+            42,
+            45
+          ],
+          [
+            5,
+            10,
+            17,
+            32,
+            37,
+            41
+          ],
+          [
+            3,
+            15,
+            22,
+            33,
+            38,
+            42
+          ],
+          [
+            20,
+            24,
+            28,
+            31,
+            35,
+            43
+          ],
+          [
+            4,
+            8,
+            12,
+            18,
+            34,
+            40
+          ],
+          [
+            1,
+            7,
+            14,
+            26,
+            39,
+            44
+          ],
+          [
+            2,
+            19,
+            23,
+            27,
+            29,
+            30
+          ],
+          [
+            6,
+            9,
+            11,
+            13,
+            21,
+            38
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1852190,
+        "probability": 0.22740041202888622,
+        "reportedRoundFavorable": null,
+        "generationMs": 4.427799999999934,
+        "independentFinalValidationMs": 26.84609999999975,
+        "rngCalls": 4896,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            10,
+            12,
+            15,
+            23,
+            24,
+            33
+          ],
+          [
+            1,
+            11,
+            13,
+            19,
+            40,
+            45
+          ],
+          [
+            6,
+            9,
+            21,
+            27,
+            28,
+            45
+          ],
+          [
+            18,
+            20,
+            35,
+            39,
+            43,
+            44
+          ],
+          [
+            3,
+            7,
+            28,
+            30,
+            36,
+            40
+          ],
+          [
+            5,
+            17,
+            37,
+            38,
+            41,
+            42
+          ],
+          [
+            2,
+            8,
+            14,
+            16,
+            25,
+            26
+          ],
+          [
+            4,
+            22,
+            29,
+            31,
+            32,
+            34
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1855536,
+        "probability": 0.22781121317706685,
+        "reportedRoundFavorable": 1855536,
+        "generationMs": 600.3957,
+        "independentFinalValidationMs": 31.402700000000095,
+        "rngCalls": 5552,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 1855536,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1855415,
+            "finalFavorable": 1855536,
+            "refinementChecks": 13,
+            "acceptedImprovements": 1,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1852190,
+          "finalFavorable": 1855536
+        }
+      },
+      "change": 3346,
+      "percentagePointChange": 0.0410801148180615,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-8",
+      "seed": 2,
+      "old": {
+        "numbers": [
+          [
+            2,
+            13,
+            16,
+            30,
+            35,
+            38
+          ],
+          [
+            3,
+            6,
+            12,
+            18,
+            22,
+            39
+          ],
+          [
+            4,
+            10,
+            25,
+            31,
+            33,
+            41
+          ],
+          [
+            8,
+            9,
+            24,
+            26,
+            28,
+            42
+          ],
+          [
+            1,
+            20,
+            29,
+            33,
+            43,
+            44
+          ],
+          [
+            7,
+            11,
+            23,
+            34,
+            36,
+            40
+          ],
+          [
+            5,
+            15,
+            19,
+            21,
+            32,
+            37
+          ],
+          [
+            4,
+            14,
+            17,
+            27,
+            43,
+            45
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1844738,
+        "probability": 0.22648550164148576,
+        "reportedRoundFavorable": null,
+        "generationMs": 4.952499999999873,
+        "independentFinalValidationMs": 32.010499999999865,
+        "rngCalls": 4896,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            1,
+            15,
+            16,
+            19,
+            32,
+            43
+          ],
+          [
+            6,
+            11,
+            25,
+            27,
+            33,
+            42
+          ],
+          [
+            5,
+            26,
+            29,
+            36,
+            39,
+            45
+          ],
+          [
+            4,
+            10,
+            35,
+            37,
+            38,
+            41
+          ],
+          [
+            3,
+            8,
+            22,
+            23,
+            40,
+            42
+          ],
+          [
+            9,
+            12,
+            18,
+            23,
+            30,
+            33
+          ],
+          [
+            2,
+            20,
+            28,
+            31,
+            34,
+            44
+          ],
+          [
+            7,
+            13,
+            14,
+            17,
+            21,
+            24
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1861496,
+        "probability": 0.2285429450489008,
+        "reportedRoundFavorable": 1861496,
+        "generationMs": 613.2112999999999,
+        "independentFinalValidationMs": 33.159400000000005,
+        "rngCalls": 5552,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 1861496,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1861496,
+            "finalFavorable": 1861496,
+            "refinementChecks": 13,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1844738,
+          "finalFavorable": 1861496
+        }
+      },
+      "change": 16758,
+      "percentagePointChange": 0.20574434074150466,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-8",
+      "seed": 3,
+      "old": {
+        "numbers": [
+          [
+            6,
+            8,
+            18,
+            35,
+            37,
+            38
+          ],
+          [
+            13,
+            14,
+            21,
+            25,
+            28,
+            39
+          ],
+          [
+            3,
+            10,
+            19,
+            26,
+            34,
+            44
+          ],
+          [
+            1,
+            27,
+            29,
+            31,
+            36,
+            45
+          ],
+          [
+            4,
+            17,
+            22,
+            23,
+            32,
+            41
+          ],
+          [
+            5,
+            9,
+            11,
+            24,
+            30,
+            42
+          ],
+          [
+            7,
+            12,
+            15,
+            32,
+            40,
+            43
+          ],
+          [
+            2,
+            4,
+            16,
+            20,
+            33,
+            40
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1852346,
+        "probability": 0.22741956474231007,
+        "reportedRoundFavorable": null,
+        "generationMs": 5.466200000000299,
+        "independentFinalValidationMs": 33.6255000000001,
+        "rngCalls": 4896,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            11,
+            12,
+            18,
+            21,
+            25,
+            43
+          ],
+          [
+            2,
+            7,
+            14,
+            30,
+            38,
+            45
+          ],
+          [
+            1,
+            19,
+            23,
+            32,
+            33,
+            36
+          ],
+          [
+            5,
+            9,
+            26,
+            34,
+            37,
+            40
+          ],
+          [
+            15,
+            22,
+            28,
+            35,
+            39,
+            44
+          ],
+          [
+            4,
+            13,
+            21,
+            29,
+            31,
+            41
+          ],
+          [
+            6,
+            8,
+            16,
+            17,
+            24,
+            42
+          ],
+          [
+            3,
+            10,
+            11,
+            20,
+            27,
+            31
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1855410,
+        "probability": 0.22779574367776295,
+        "reportedRoundFavorable": 1855410,
+        "generationMs": 679.7074000000002,
+        "independentFinalValidationMs": 32.31550000000061,
+        "rngCalls": 5552,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 1855410,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1855355,
+            "finalFavorable": 1855410,
+            "refinementChecks": 13,
+            "acceptedImprovements": 1,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1852346,
+          "finalFavorable": 1855410
+        }
+      },
+      "change": 3064,
+      "percentagePointChange": 0.03761789354529003,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-8",
+      "seed": 4,
+      "old": {
+        "numbers": [
+          [
+            3,
+            10,
+            11,
+            12,
+            17,
+            31
+          ],
+          [
+            2,
+            20,
+            21,
+            25,
+            36,
+            39
+          ],
+          [
+            5,
+            7,
+            13,
+            26,
+            32,
+            42
+          ],
+          [
+            16,
+            29,
+            35,
+            38,
+            43,
+            44
+          ],
+          [
+            9,
+            18,
+            19,
+            24,
+            30,
+            37
+          ],
+          [
+            1,
+            4,
+            14,
+            15,
+            33,
+            41
+          ],
+          [
+            6,
+            20,
+            27,
+            28,
+            34,
+            45
+          ],
+          [
+            6,
+            8,
+            22,
+            23,
+            39,
+            40
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1852314,
+        "probability": 0.2274156359805821,
+        "reportedRoundFavorable": null,
+        "generationMs": 6.166000000000167,
+        "independentFinalValidationMs": 33.28979999999956,
+        "rngCalls": 4896,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            3,
+            10,
+            11,
+            12,
+            17,
+            31
+          ],
+          [
+            2,
+            20,
+            21,
+            25,
+            36,
+            39
+          ],
+          [
+            5,
+            7,
+            13,
+            26,
+            32,
+            42
+          ],
+          [
+            16,
+            29,
+            35,
+            38,
+            43,
+            44
+          ],
+          [
+            9,
+            18,
+            19,
+            24,
+            30,
+            37
+          ],
+          [
+            1,
+            4,
+            14,
+            15,
+            33,
+            41
+          ],
+          [
+            6,
+            20,
+            27,
+            28,
+            34,
+            45
+          ],
+          [
+            6,
+            8,
+            22,
+            23,
+            39,
+            40
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1852314,
+        "probability": 0.2274156359805821,
+        "reportedRoundFavorable": 1852314,
+        "generationMs": 634.9938999999995,
+        "independentFinalValidationMs": 30.845100000000457,
+        "rngCalls": 5552,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": null,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": null,
+            "finalFavorable": null,
+            "refinementChecks": 0,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1852314,
+          "finalFavorable": 1852314
+        }
+      },
+      "change": 0,
+      "percentagePointChange": 0,
+      "outcome": "tied"
+    },
+    {
+      "fixture": "nonlinear-saved-2-add-8",
+      "seed": 5,
+      "old": {
+        "numbers": [
+          [
+            8,
+            14,
+            19,
+            23,
+            33,
+            36
+          ],
+          [
+            5,
+            10,
+            23,
+            39,
+            43,
+            45
+          ],
+          [
+            16,
+            28,
+            35,
+            38,
+            40,
+            41
+          ],
+          [
+            1,
+            3,
+            18,
+            20,
+            25,
+            30
+          ],
+          [
+            6,
+            15,
+            26,
+            32,
+            36,
+            45
+          ],
+          [
+            7,
+            9,
+            17,
+            22,
+            27,
+            31
+          ],
+          [
+            4,
+            13,
+            21,
+            34,
+            37,
+            42
+          ],
+          [
+            2,
+            11,
+            12,
+            24,
+            29,
+            44
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 1848402,
+        "probability": 0.22693534485933806,
+        "reportedRoundFavorable": null,
+        "generationMs": 4.295599999999467,
+        "independentFinalValidationMs": 29.16309999999976,
+        "rngCalls": 4896,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            3,
+            8,
+            26,
+            28,
+            36,
+            41
+          ],
+          [
+            6,
+            10,
+            32,
+            35,
+            40,
+            43
+          ],
+          [
+            5,
+            9,
+            24,
+            37,
+            39,
+            45
+          ],
+          [
+            4,
+            16,
+            18,
+            19,
+            36,
+            38
+          ],
+          [
+            14,
+            20,
+            23,
+            30,
+            33,
+            44
+          ],
+          [
+            2,
+            11,
+            12,
+            17,
+            25,
+            31
+          ],
+          [
+            4,
+            7,
+            28,
+            29,
+            34,
+            42
+          ],
+          [
+            1,
+            13,
+            15,
+            21,
+            22,
+            27
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 1858662,
+        "probability": 0.22819500408836768,
+        "reportedRoundFavorable": 1858662,
+        "generationMs": 669.2835999999998,
+        "independentFinalValidationMs": 22.711899999999332,
+        "rngCalls": 5552,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 2,
+          "roundGames": 10,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 1858662,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 1858418,
+            "finalFavorable": 1858662,
+            "refinementChecks": 13,
+            "acceptedImprovements": 1,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 1848402,
+          "finalFavorable": 1858662
+        }
+      },
+      "change": 10260,
+      "percentagePointChange": 0.12596592290296205,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "template-saved-20-add-5",
+      "seed": 1,
+      "old": {
+        "numbers": [
+          [
+            3,
+            7,
+            8,
+            11,
+            27,
+            41
+          ],
+          [
+            4,
+            18,
+            23,
+            24,
+            38,
+            45
+          ],
+          [
+            2,
+            6,
+            10,
+            20,
+            31,
+            33
+          ],
+          [
+            12,
+            15,
+            19,
+            37,
+            39,
+            42
+          ],
+          [
+            5,
+            13,
+            25,
+            34,
+            35,
+            36
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 4072020,
+        "probability": 0.4999373853599605,
+        "reportedRoundFavorable": null,
+        "generationMs": 15.812399999999798,
+        "independentFinalValidationMs": 75.4348,
+        "rngCalls": 4608,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            16,
+            23,
+            33,
+            37,
+            40,
+            45
+          ],
+          [
+            14,
+            20,
+            21,
+            25,
+            30,
+            44
+          ],
+          [
+            7,
+            8,
+            15,
+            34,
+            38,
+            43
+          ],
+          [
+            10,
+            12,
+            31,
+            35,
+            36,
+            42
+          ],
+          [
+            2,
+            13,
+            19,
+            22,
+            39,
+            41
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 4086366,
+        "probability": 0.50169869835213,
+        "reportedRoundFavorable": 4086366,
+        "generationMs": 519.0859,
+        "independentFinalValidationMs": 83.29950000000008,
+        "rngCalls": 5228,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 4086366,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 4083684,
+            "finalFavorable": 4086366,
+            "refinementChecks": 13,
+            "acceptedImprovements": 1,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 4072020,
+          "finalFavorable": 4086366
+        }
+      },
+      "change": 14346,
+      "percentagePointChange": 0.17613129921694867,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "template-saved-20-add-5",
+      "seed": 2,
+      "old": {
+        "numbers": [
+          [
+            17,
+            18,
+            21,
+            23,
+            32,
+            37
+          ],
+          [
+            4,
+            7,
+            9,
+            16,
+            41,
+            45
+          ],
+          [
+            1,
+            24,
+            26,
+            31,
+            39,
+            40
+          ],
+          [
+            2,
+            19,
+            20,
+            27,
+            29,
+            33
+          ],
+          [
+            8,
+            13,
+            14,
+            15,
+            36,
+            44
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 4075399,
+        "probability": 0.5003522380436731,
+        "reportedRoundFavorable": null,
+        "generationMs": 13.246399999999994,
+        "independentFinalValidationMs": 86.2474000000002,
+        "rngCalls": 4608,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            14,
+            18,
+            20,
+            23,
+            39,
+            40
+          ],
+          [
+            3,
+            7,
+            8,
+            15,
+            25,
+            34
+          ],
+          [
+            19,
+            26,
+            30,
+            31,
+            38,
+            45
+          ],
+          [
+            10,
+            11,
+            13,
+            24,
+            43,
+            44
+          ],
+          [
+            6,
+            12,
+            16,
+            17,
+            22,
+            27
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 4084136,
+        "probability": 0.5014249127692123,
+        "reportedRoundFavorable": 4084136,
+        "generationMs": 507.6676000000007,
+        "independentFinalValidationMs": 81.41960000000017,
+        "rngCalls": 5228,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 4084136,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 4067069,
+            "finalFavorable": 4084136,
+            "refinementChecks": 13,
+            "acceptedImprovements": 3,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 4075399,
+          "finalFavorable": 4084136
+        }
+      },
+      "change": 8737,
+      "percentagePointChange": 0.10726747255391611,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "template-saved-20-add-5",
+      "seed": 3,
+      "old": {
+        "numbers": [
+          [
+            8,
+            14,
+            18,
+            27,
+            36,
+            37
+          ],
+          [
+            11,
+            15,
+            21,
+            42,
+            44,
+            45
+          ],
+          [
+            5,
+            9,
+            17,
+            22,
+            23,
+            41
+          ],
+          [
+            1,
+            13,
+            26,
+            28,
+            35,
+            39
+          ],
+          [
+            6,
+            12,
+            29,
+            30,
+            31,
+            34
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 4049532,
+        "probability": 0.49717644805563127,
+        "reportedRoundFavorable": null,
+        "generationMs": 14.710299999999734,
+        "independentFinalValidationMs": 77.2473,
+        "rngCalls": 4608,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            4,
+            6,
+            9,
+            27,
+            35,
+            40
+          ],
+          [
+            16,
+            19,
+            26,
+            31,
+            37,
+            42
+          ],
+          [
+            15,
+            17,
+            23,
+            34,
+            38,
+            43
+          ],
+          [
+            12,
+            18,
+            20,
+            21,
+            25,
+            33
+          ],
+          [
+            1,
+            5,
+            13,
+            22,
+            32,
+            44
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 4068449,
+        "probability": 0.49949896010588013,
+        "reportedRoundFavorable": 4068449,
+        "generationMs": 523.1185999999998,
+        "independentFinalValidationMs": 89.53319999999985,
+        "rngCalls": 5228,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 4068449,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 4060701,
+            "finalFavorable": 4068449,
+            "refinementChecks": 13,
+            "acceptedImprovements": 3,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 4049532,
+          "finalFavorable": 4068449
+        }
+      },
+      "change": 18917,
+      "percentagePointChange": 0.23225120502488625,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "template-saved-20-add-5",
+      "seed": 4,
+      "old": {
+        "numbers": [
+          [
+            2,
+            9,
+            17,
+            18,
+            24,
+            25
+          ],
+          [
+            12,
+            22,
+            23,
+            30,
+            38,
+            41
+          ],
+          [
+            10,
+            15,
+            31,
+            35,
+            36,
+            42
+          ],
+          [
+            4,
+            16,
+            20,
+            34,
+            37,
+            44
+          ],
+          [
+            3,
+            8,
+            27,
+            28,
+            40,
+            43
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 4058100,
+        "probability": 0.4982283740082946,
+        "reportedRoundFavorable": null,
+        "generationMs": 15.14429999999993,
+        "independentFinalValidationMs": 79.23710000000028,
+        "rngCalls": 4608,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            2,
+            26,
+            34,
+            37,
+            43,
+            45
+          ],
+          [
+            5,
+            8,
+            11,
+            18,
+            39,
+            40
+          ],
+          [
+            6,
+            9,
+            23,
+            33,
+            36,
+            44
+          ],
+          [
+            7,
+            12,
+            17,
+            21,
+            24,
+            31
+          ],
+          [
+            3,
+            13,
+            15,
+            25,
+            32,
+            41
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 4061372,
+        "probability": 0.4986300898949793,
+        "reportedRoundFavorable": 4061372,
+        "generationMs": 545.4580999999998,
+        "independentFinalValidationMs": 91.95669999999882,
+        "rngCalls": 5228,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": 4061372,
+          "exactEvaluationCalls": 24,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": 4057898,
+            "finalFavorable": 4061372,
+            "refinementChecks": 13,
+            "acceptedImprovements": 1,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 4058100,
+          "finalFavorable": 4061372
+        }
+      },
+      "change": 3272,
+      "percentagePointChange": 0.04017158866846898,
+      "outcome": "improved"
+    },
+    {
+      "fixture": "template-saved-20-add-5",
+      "seed": 5,
+      "old": {
+        "numbers": [
+          [
+            14,
+            21,
+            23,
+            40,
+            42,
+            43
+          ],
+          [
+            7,
+            8,
+            16,
+            32,
+            35,
+            41
+          ],
+          [
+            1,
+            3,
+            12,
+            13,
+            28,
+            30
+          ],
+          [
+            11,
+            19,
+            26,
+            27,
+            33,
+            39
+          ],
+          [
+            5,
+            9,
+            18,
+            29,
+            36,
+            38
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": 4078281,
+        "probability": 0.5007060721467982,
+        "reportedRoundFavorable": null,
+        "generationMs": 15.674399999999878,
+        "independentFinalValidationMs": 82.54659999999967,
+        "rngCalls": 4608,
+        "chosenAttempt": 1,
+        "oldSelectionAttempts": [
+          {
+            "attempt": 1,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 2,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 3,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 4,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 5,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 6,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 7,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          },
+          {
+            "attempt": 8,
+            "status": "overlap-fallback",
+            "selectionScore": -1
+          }
+        ],
+        "extension": {
+          "status": "overlap-fallback",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관한 조합과의 겹침이 적은 후보를 골랐습니다. 같은 회차 전체의 5등 이상 확률은 계산하지 않았습니다."
+        }
+      },
+      "current": {
+        "numbers": [
+          [
+            14,
+            21,
+            23,
+            40,
+            42,
+            43
+          ],
+          [
+            7,
+            8,
+            16,
+            32,
+            35,
+            41
+          ],
+          [
+            1,
+            3,
+            12,
+            13,
+            28,
+            30
+          ],
+          [
+            11,
+            19,
+            26,
+            27,
+            33,
+            39
+          ],
+          [
+            5,
+            9,
+            18,
+            29,
+            36,
+            38
+          ]
+        ],
+        "status": "exact-coverage-search",
+        "favorable": 4078281,
+        "probability": 0.5007060721467982,
+        "reportedRoundFavorable": 4078281,
+        "generationMs": 553.3654000000006,
+        "independentFinalValidationMs": 86.07960000000094,
+        "rngCalls": 5228,
+        "chosenAttempt": null,
+        "oldSelectionAttempts": null,
+        "extension": {
+          "status": "exact-coverage-search",
+          "savedUnique": 20,
+          "roundGames": 25,
+          "globalOptimal": false,
+          "templateGames": null,
+          "attempts": 12,
+          "reason": "보관 번호를 유지하고, 회차 전체의 당첨 확률을 정확히 비교해 추가 번호를 골랐습니다.",
+          "exactRoundFavorable": null,
+          "exactEvaluationCalls": 0,
+          "search": {
+            "baselineCandidates": 12,
+            "baselineFavorable": null,
+            "finalFavorable": null,
+            "refinementChecks": 0,
+            "acceptedImprovements": 0,
+            "exactEvaluationLimit": 24
+          },
+          "exactEvaluations": 26,
+          "initialFavorable": 4078281,
+          "finalFavorable": 4078281
+        }
+      },
+      "change": 0,
+      "percentagePointChange": 0,
+      "outcome": "tied"
+    }
+  ],
+  "summary": {
+    "cases": 20,
+    "improved": 15,
+    "tied": 5,
+    "worse": 0,
+    "favorableChange": {
+      "min": 0,
+      "max": 18917,
+      "mean": 5094.85
+    },
+    "percentagePointChange": {
+      "min": 0,
+      "max": 0.23225120502488625,
+      "mean": 0.06255141153042457
+    },
+    "oldGenerationMs": {
+      "min": 2.723399999999856,
+      "max": 15.812399999999798,
+      "mean": 7.420559999999947
+    },
+    "currentGenerationMs": {
+      "min": 9.307999999999993,
+      "max": 679.7074000000002,
+      "mean": 398.55706999999995
+    }
+  },
+  "summaryByFixture": {
+    "disjoint-saved-7-add-1": {
+      "cases": 5,
+      "improved": 5,
+      "tied": 0,
+      "worse": 0,
+      "favorableChange": {
+        "min": 3300,
+        "max": 6600,
+        "mean": 3960
+      },
+      "percentagePointChange": {
+        "min": 0.04051535531966615,
+        "max": 0.0810307106393323,
+        "mean": 0.04861842638359938
+      },
+      "oldGenerationMs": {
+        "min": 4.1358000000000175,
+        "max": 11.447099999999978,
+        "mean": 6.559000000000003
+      },
+      "currentGenerationMs": {
+        "min": 9.307999999999993,
+        "max": 18.4623,
+        "mean": 11.66764
+      }
+    },
+    "nonlinear-saved-2-add-6": {
+      "cases": 5,
+      "improved": 2,
+      "tied": 3,
+      "worse": 0,
+      "favorableChange": {
+        "min": 0,
+        "max": 3104,
+        "mean": 679.4
+      },
+      "percentagePointChange": {
+        "min": 0,
+        "max": 0.03810898876128598,
+        "mean": 0.008341252243691267
+      },
+      "oldGenerationMs": {
+        "min": 2.723399999999856,
+        "max": 3.702099999999973,
+        "mean": 3.1440599999999677
+      },
+      "currentGenerationMs": {
+        "min": 395.77509999999984,
+        "max": 426.99289999999996,
+        "mean": 413.30314
+      }
+    },
+    "nonlinear-saved-2-add-8": {
+      "cases": 5,
+      "improved": 4,
+      "tied": 1,
+      "worse": 0,
+      "favorableChange": {
+        "min": 0,
+        "max": 16758,
+        "mean": 6685.6
+      },
+      "percentagePointChange": {
+        "min": 0,
+        "max": 0.20574434074150466,
+        "mean": 0.08208165440156365
+      },
+      "oldGenerationMs": {
+        "min": 4.295599999999467,
+        "max": 6.166000000000167,
+        "mean": 5.061619999999948
+      },
+      "currentGenerationMs": {
+        "min": 600.3957,
+        "max": 679.7074000000002,
+        "mean": 639.5183799999999
+      }
+    },
+    "template-saved-20-add-5": {
+      "cases": 5,
+      "improved": 4,
+      "tied": 1,
+      "worse": 0,
+      "favorableChange": {
+        "min": 0,
+        "max": 18917,
+        "mean": 9054.4
+      },
+      "percentagePointChange": {
+        "min": 0,
+        "max": 0.23225120502488625,
+        "mean": 0.111164313092844
+      },
+      "oldGenerationMs": {
+        "min": 13.246399999999994,
+        "max": 15.812399999999798,
+        "mean": 14.917559999999867
+      },
+      "currentGenerationMs": {
+        "min": 507.6676000000007,
+        "max": 553.3654000000006,
+        "mean": 529.7391200000002
+      }
+    }
+  },
+  "sourceChangedDuringRun": [],
+  "limitations": [
+    "Both generators receive the same frozen baseline-templates.json. This isolates the additional-generation engine change; it does not measure later production template improvements.",
+    "Twenty deterministic cases are a small regression benchmark, not proof of an average or universal gain.",
+    "Matching seeds only matches the initial RNG state. Refinement and early returns consume different random sequences, so candidate sets can differ and an individual current result can be worse than the old app result.",
+    "The extension search accepts strict improvements over its own retained baseline. This does not by itself guarantee dominance over all eight candidates selected by the previous app.",
+    "This compares overlap coverage for the same number of purchased games; it makes no claim of predicting drawn numbers or increasing one ticket's jackpot probability."
+  ]
+}

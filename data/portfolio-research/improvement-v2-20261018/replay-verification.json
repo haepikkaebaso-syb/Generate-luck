@@ -1,0 +1,88 @@
+{
+  "allPassed": true,
+  "durationSeconds": 18.697,
+  "verifications": [
+    {
+      "games": 18,
+      "seed": 2026103621,
+      "budget": 3000000,
+      "shake": true,
+      "settings": {
+        "threeRate": 0.2,
+        "temperature": 150,
+        "cycle": 500000
+      },
+      "discovery": {
+        "attempt": 2830450,
+        "seed": 2026103621
+      },
+      "sameTickets": true,
+      "sameDiscovery": true,
+      "independentExact": {
+        "favorable": 3177439,
+        "total": 8145060,
+        "probability": 0.39010627300474154,
+        "uniqueGames": 18,
+        "randomBaseline": 0.35222324675815186,
+        "jackpot": 0.0000022099284719817902
+      }
+    },
+    {
+      "games": 19,
+      "seed": 2026103720,
+      "budget": 3000000,
+      "shake": false,
+      "settings": {
+        "threeRate": 0,
+        "temperature": 70,
+        "cycle": 250000
+      },
+      "discovery": {
+        "attempt": 763886,
+        "seed": 2026103720
+      },
+      "sameTickets": true,
+      "sameDiscovery": true,
+      "independentExact": {
+        "favorable": 3327800,
+        "total": 8145060,
+        "probability": 0.4085666649478334,
+        "uniqueGames": 19,
+        "randomBaseline": 0.36766244291046635,
+        "jackpot": 0.0000023327022759807786
+      }
+    },
+    {
+      "games": 20,
+      "seed": 2026103820,
+      "budget": 3000000,
+      "shake": false,
+      "settings": {
+        "threeRate": 0,
+        "temperature": 70,
+        "cycle": 250000
+      },
+      "discovery": {
+        "attempt": 156674,
+        "seed": 2026103820
+      },
+      "sameTickets": true,
+      "sameDiscovery": true,
+      "independentExact": {
+        "favorable": 3476253,
+        "total": 8145060,
+        "probability": 0.42679280447289525,
+        "uniqueGames": 20,
+        "randomBaseline": 0.38273366108576967,
+        "jackpot": 0.000002455476079979767
+      }
+    }
+  ],
+  "sourceSha256": {
+    "reproduce.cjs": "b8b773af2b64b8ca7e3ffddd6587f89e33493e08231bb85d482005360a70bf27",
+    "search.cjs": "020db25cadacb2ff08ae663a22756f9953b3dbf94f5d6bbcde4eb963b20032cf",
+    "phase1-results.json": "99300b3b1b0f633fc8110b7bddd5519ad9b3f76ad175fa0028a58bd0abee710e",
+    "results.json": "468507ffe205e1e7e648245d8055215a312b95e623b284260e08595de468b7d2",
+    "best-candidates.json": "789b848a75ea71a8830736d55ae64355ccd9b16534ad79b3462fa124d2c50093"
+  }
+}

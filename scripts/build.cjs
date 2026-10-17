@@ -23,7 +23,8 @@ const recent=require('./recent-draws.cjs');
 const merged=[...data.draws,...recent.validate(data.draws,recent.load())];
 const compact={metadata:{...data.metadata,lastRound:merged.at(-1).round,lastDrawDate:merged.at(-1).date},draws:merged.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
 fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORTFOLIO',templates]].map(([name,value])=>'window.'+name+' = '+JSON.stringify(value).replace(/</g,'\\u003c')+';').join('\n'));
-const modules=['core.js','portfolio.js','extension.js','round.js','draws.js','app.js','update.js'];
+const modules=['core.js','portfolio.js','coverage.js','extension.js','generation.js','round.js','draws.js','app.js','update.js'];
+const workerSource=['core.js','portfolio.js','coverage.js','extension.js','generation.js'].map(name=>fs.readFileSync(path.join(dist,name),'utf8')).join('\n');
 let html=fs.readFileSync(path.join(dist,'index.html'),'utf8');
 const css=fs.readFileSync(path.join(dist,'styles.css'),'utf8');
 const sw=fs.readFileSync(path.join(dist,'sw.js'),'utf8');
@@ -32,7 +33,8 @@ html=html.replaceAll('__LOTTO_RELEASE__',release);
 html=html.replace('<link rel="stylesheet" href="styles.css">',()=>'<style>\n'+css+'\n</style>');
 new vm.Script(fs.readFileSync(path.join(dist,'sw.js'),'utf8'),{filename:'sw.js'});
 for(const name of modules){
-  const code=fs.readFileSync(path.join(dist,name),'utf8');
+  let code=fs.readFileSync(path.join(dist,name),'utf8');
+  if(name==='generation.js')code+='\nwindow.LOTTO_WORKER_SOURCE='+JSON.stringify(workerSource).replace(/</g,'\\u003c')+';';
   new vm.Script(code,{filename:name});
   // Preserve defer ordering in a single offline file by moving scripts below the body content.
   html=html.replace(`<script defer src="${name}"></script>`,'');

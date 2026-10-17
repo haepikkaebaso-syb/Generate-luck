@@ -1,7 +1,7 @@
 (function(){
   'use strict';
   const $=id=>document.getElementById(id);
-  const C=window.LottoCore,P=window.LottoPortfolio,E=window.LottoExtension;
+  const C=window.LottoCore,P=window.LottoPortfolio,E=window.LottoExtension,G=window.LottoGeneration;
   const source = window.LOTTO_DATA;
   const templates=window.LOTTO_PORTFOLIO;
   const draws=source.draws.slice().sort((a,b)=>a.round-b.round);
@@ -10,6 +10,35 @@
   const storageKey='lotto-atelier-645.v1';
   const defaultTargetRound=Math.max(source.metadata.lastRound+1,window.LottoRound?window.LottoRound.upcoming(Date.now()):0);
   let current=null,saved=[],storageIssue='',toastTimer;
+  let generationBusy=false,generationSequence=0,generationJob=null,coverageJob=null,coveragePending='',coverageFailed='',resumeGeneration=false;
+  const coverageCache=new Map();
+  const coverageKey=rows=>[...new Set(rows.map(C.key))].sort().join('|');
+  const canWork=()=>G&&typeof window.Worker==='function'&&typeof window.LOTTO_WORKER_SOURCE==='string';
+  function background(message){
+    const url=URL.createObjectURL(new Blob([window.LOTTO_WORKER_SOURCE],{type:'text/javascript'}));
+    let worker,timer,settled=false,rejectJob;
+    const finish=()=>{clearTimeout(timer);worker?.terminate();URL.revokeObjectURL(url);};
+    const promise=new Promise((resolve,reject)=>{
+      rejectJob=reject;
+      try{
+        worker=new window.Worker(url);
+        worker.onmessage=event=>{if(settled)return;settled=true;finish();event.data.ok?resolve(event.data.result):reject(new Error(event.data.error||'계산하지 못했습니다.'));};
+        worker.onerror=()=>{if(settled)return;settled=true;finish();reject(new Error('계산을 완료하지 못했습니다. 다시 만들어 주세요.'));};
+        timer=setTimeout(()=>{if(settled)return;settled=true;finish();reject(new Error('계산 시간이 길어 중단했습니다. 다시 만들어 주세요.'));},60000);
+        worker.postMessage(message);
+      }catch(error){settled=true;finish();reject(error);}
+    });
+    return {promise,cancel(){if(settled)return;settled=true;finish();rejectJob(new Error('계산 취소'));}};
+  }
+  function rememberCoverage(key,value){
+    coverageCache.set(key,value);if(coverageCache.size>8)coverageCache.delete(coverageCache.keys().next().value);
+  }
+  function busy(value){
+    generationBusy=value;$('generate').disabled=value;
+    ['save','copy','csv'].forEach(id=>$(id).disabled=value||!current?.games.length);
+    $('generation-status').hidden=!value;
+    $('generation-status').textContent=value?'보관 번호와 함께 쓸 추가 번호를 계산하고 있습니다. 계산이 끝나면 번호가 바뀝니다.':'';
+  }
   const time=value=>new Date(value).toLocaleString('ko-KR',{year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit'});
   function toast(message,error=false){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').classList.toggle('error',error);$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,4500);}
   function loadSaved(){
@@ -40,7 +69,21 @@
   function prizeCoverageForRound(round){
     const all=[...saved.filter(batch=>batch.targetRound===round).flatMap(batch=>batch.games),...(current?.targetRound===round?current.games:[])];
     const unique=[...new Map(all.map(numbers=>[C.key(numbers),numbers])).values()];
-    try{return P.analyze(unique);}catch{return null;}
+    try{return P.analyze(unique);}catch{}
+    if(!G||!unique.length||unique.length>G.MAX_GAMES)return null;
+    const key=coverageKey(unique);
+    if(coverageCache.has(key))return coverageCache.get(key);
+    if(coveragePending===key||coverageFailed===key)return null;
+    if(!canWork()){
+      try{const result=G.run({type:'coverage',numbers:unique});rememberCoverage(key,result);return result;}catch{coverageFailed=key;return null;}
+    }
+    coverageJob?.cancel();coveragePending=key;coverageFailed='';
+    const job=coverageJob=background({type:'coverage',numbers:unique});
+    job.promise.then(result=>{
+      if(coverageJob!==job)return;
+      rememberCoverage(key,result);coveragePending='';coverageJob=null;renderCurrent();
+    }).catch(()=>{if(coverageJob!==job)return;coveragePending='';coverageFailed=key;coverageJob=null;renderCurrent();});
+    return null;
   }
   function formatChance(jackpot){
     const percent=(jackpot.probability*100).toFixed(8),reciprocal=jackpot.unique?jackpot.total/jackpot.unique:null;
@@ -88,14 +131,14 @@
     $('tickets').innerHTML=games.map((n,i)=>ticketRow(n,i,false,currentDraw,currentDraw?gameResult(n,currentDraw):'')).join('');
     $('current-check').hidden=!currentDraw;
     if(currentDraw)$('current-check').textContent=current.targetRound+'회 '+(currentDraw.manual?'직접 입력한':'공식')+' 당첨번호와 대조한 참고용 결과입니다. 실선 테두리는 본번호, 점선은 보너스 일치입니다.';
-    ['save','copy','csv'].forEach(id=>$(id).disabled=!games.length);
+    ['save','copy','csv'].forEach(id=>$(id).disabled=generationBusy||!games.length);
     if(!current)return;
     const profile=current.profile,m=games.length,roundProfile=prizeCoverageForRound(current.targetRound);
     const displayProfile=roundProfile||profile,p=displayProfile.probabilities[3],diff=(p.probability-p.randomBaseline)*100;
     $('chance-scope').textContent='본번호 3개 이상 일치 · '+(roundProfile&&roundProfile.games>m?'보관함 + 현재 '+roundProfile.games+'게임':'현재 '+m+'게임');
     $('round-prize-note').textContent=roundProfile&&roundProfile.games>m
       ?'보관 번호를 포함한 회차 전체의 확률입니다. 현재 '+m+'게임만의 확률은 '+(profile.probabilities[3].probability*100).toFixed(4)+'%입니다.'
-      :!roundProfile?'회차 전체에 겹침이 큰 조합이 있거나 20게임을 넘어, 이 카드는 현재 묶음만 계산합니다.':'';
+      :!roundProfile?(coveragePending?'회차 전체 확률을 계산 중입니다. 지금은 현재 묶음만 표시합니다.':G?'회차 전체 계산을 완료하지 못했거나 '+G.MAX_GAMES+'게임을 넘어 현재 묶음만 표시합니다.':'회차 전체에 겹침이 큰 조합이 있거나 20게임을 넘어, 이 카드는 현재 묶음만 계산합니다.'):'';
     $('result-title').textContent=m+'게임의 조합';
     $('generation-time').textContent=time(current.createdAt);$('generation-time').dateTime=current.createdAt;
     $('structure-summary').textContent='사용 번호 '+profile.distinctNumbers+'개 · 게임끼리 겹침 최대 '+profile.maxOverlap+'개';
@@ -120,11 +163,30 @@
     $('method-verdict').textContent='4등 이상 당첨 확률은 같은 '+m+'게임으로 가능한 수학적 상한에 도달합니다. 두 게임이 각각 4개 이상 맞으려면 최소 7개의 당첨번호가 필요하므로, 현재 배치에서는 두 게임의 4등 이상 당첨 경우가 겹치지 않기 때문입니다. 5등 이상 확률은 별도의 정확한 합집합 계산으로 표시합니다.';
   }
   function generate(){
+    const sequence=++generationSequence;generationJob?.cancel();generationJob=null;coverageJob?.cancel();coverageJob=null;coveragePending='';coverageFailed='';busy(false);
     $('form-error').hidden=true;
     try{
       const amount=Number($('amount').value),targetRound=selectedRound();
+      $('cost').textContent=fmt(amount*1000)+'원';
+      $('generate').textContent='새 번호 '+amount+'게임 만들기';
       const savedRows=[...new Map(saved.filter(batch=>batch.targetRound===targetRound).flatMap(batch=>batch.games).map(numbers=>[C.key(numbers),numbers])).values()];
       const blocked=new Set(savedRows.map(C.key));
+      function accept(result){
+        if(sequence!==generationSequence)return false;
+        if(!result||result.numbers.length!==amount||result.numbers.some(row=>blocked.has(C.key(row))))throw new Error('보관함과 겹치지 않는 새 배치를 만들지 못했습니다. 다시 시도해 주세요.');
+        if(result.roundProfile)rememberCoverage(coverageKey([...savedRows,...result.numbers]),result.roundProfile);
+        current={id:globalThis.crypto?.randomUUID?.()||Date.now()+'-'+C.randomInt(1000000),createdAt:new Date().toISOString(),targetRound,label:savedRows.length?'보관 번호 유지 · 추가 구성':amount<=7?'번호 비중복 배치':'게임 간 겹침 최대 1개 배치',method:result.method,extension:result.extension||null,model:null,games:result.numbers,profile:result.profile};
+        busy(false);$('cost').textContent=fmt(amount*1000)+'원';$('generate').textContent='새 번호 '+amount+'게임 만들기';
+        $('method-note').textContent=(result.extension?.reason||(amount<=7?'게임끼리 같은 번호를 쓰지 않도록 구성합니다.':'45개 번호를 고르게 사용하고, 두 게임의 공통 번호는 최대 1개로 제한합니다.'))+' '+targetRound+'회 보관함의 기존 조합은 제외합니다.';
+        renderCurrent();return true;
+      }
+      if(savedRows.length&&canWork()){
+        busy(true);const job=generationJob=background({type:'generate',templates,saved:savedRows,amount});
+        return job.promise.then(result=>{if(sequence!==generationSequence)return false;generationJob=null;return accept(result);}).catch(error=>{
+          if(sequence!==generationSequence)return false;generationJob=null;busy(false);$('form-error').textContent=error.message;$('form-error').hidden=false;return false;
+        });
+      }
+      if(G)return accept(G.generate(templates,savedRows,amount));
       let result=null;
       if(savedRows.length&&E){
         // 보관 번호에 맞춘 후보는 전체의 5등 이상 당첨 범위만 비교한다.
@@ -140,11 +202,8 @@
         result=candidate;break;
       }
       if(!result)throw new Error('보관함과 겹치지 않는 새 배치를 만들지 못했습니다. 다시 시도해 주세요.');
-      current={id:globalThis.crypto?.randomUUID?.()||Date.now()+'-'+C.randomInt(1000000),createdAt:new Date().toISOString(),targetRound,label:savedRows.length?'보관 번호 유지 · 추가 구성':amount<=7?'번호 비중복 배치':'게임 간 겹침 최대 1개 배치',method:result.method,extension:result.extension||null,model:null,games:result.numbers,profile:result.profile};
-      $('cost').textContent=fmt(amount*1000)+'원';$('generate').textContent='새 번호 '+amount+'게임 만들기';
-      $('method-note').textContent=(result.extension?.reason||(amount<=7?'게임끼리 같은 번호를 쓰지 않도록 구성합니다.':'45개 번호를 고르게 사용하고, 두 게임의 공통 번호는 최대 1개로 제한합니다.'))+' '+targetRound+'회 보관함의 기존 조합은 제외합니다.';
-      renderCurrent();return true;
-    }catch(error){$('form-error').textContent=error.message;$('form-error').hidden=false;return false;}
+      return accept(result);
+    }catch(error){busy(false);$('form-error').textContent=error.message;$('form-error').hidden=false;return false;}
   }
   function download(content,filename,type){
     const url=URL.createObjectURL(new Blob([content],{type})),a=document.createElement('a');a.href=url;a.download=filename;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
@@ -176,7 +235,7 @@
     return '<section class="saved-round"><h3 class="round-title">'+(round?round+'회':'회차 미지정')+' · '+games+'게임</h3>'+head+batches.map((batch,index)=>'<div class="saved-batch"><div class="saved-heading"><div><h4>'+(batches.length-index)+'번째 저장 · '+batch.games.length+'게임</h4><p>'+escape(time(batch.createdAt))+' · '+escape(batch.label)+'</p></div><div class="saved-actions"><button class="secondary-button" data-export="'+escape(batch.id)+'">CSV</button><button class="secondary-button" data-delete="'+escape(batch.id)+'">삭제</button></div></div>'+batch.games.map((n,i)=>ticketRow(n,i,true,draw,draw?gameResult(n,draw):'')).join('')+'</div>').join('')+'</section>';
   }
   function saveCurrent(){
-    if(!current)return;
+    if(!current||generationBusy)return;
     if(saved.some(b=>b.id===current.id)){toast('이미 보관한 묶음입니다.');return;}
     if(persist([structuredClone(current),...saved])){renderSaved();renderCurrent();toast(current.targetRound+'회에 현재 '+current.games.length+'게임을 보관했습니다.');}
   }
@@ -202,12 +261,12 @@
   $('amount').innerHTML=Array.from({length:20},(_,i)=>'<option value="'+(i+1)+'">'+(i+1)+'게임</option>').join('');$('amount').value='5';
   $('target-round').addEventListener('change',generate);
   $('amount').addEventListener('change',generate);
-  $('generate').addEventListener('click',()=>{if(generate())toast('새 번호 '+current.games.length+'게임을 만들었습니다.');});
+  $('generate').addEventListener('click',()=>Promise.resolve(generate()).then(ok=>{if(ok)toast('새 번호 '+current.games.length+'게임을 만들었습니다.');}));
   $('save').addEventListener('click',saveCurrent);$('copy').addEventListener('click',copyNumbers);$('csv').addEventListener('click',()=>current&&exportCSV([current]));$('export-all').addEventListener('click',()=>exportCSV(saved));
   $('saved-list').addEventListener('click',event=>{
     const exportButton=event.target.closest('[data-export]'),deleteButton=event.target.closest('[data-delete]');
     if(exportButton){const batch=saved.find(b=>b.id===exportButton.dataset.export);if(batch)exportCSV([batch]);}
-    if(deleteButton){const batch=saved.find(b=>b.id===deleteButton.dataset.delete);if(batch&&window.confirm('이 묶음의 '+batch.games.length+'게임을 보관함에서 삭제할까요?')&&persist(saved.filter(b=>b.id!==batch.id))){renderSaved();renderCurrent();toast('묶음을 삭제했습니다.');}}
+    if(deleteButton){const batch=saved.find(b=>b.id===deleteButton.dataset.delete);if(batch&&window.confirm('이 묶음의 '+batch.games.length+'게임을 보관함에서 삭제할까요?')&&persist(saved.filter(b=>b.id!==batch.id))){renderSaved();if(generationBusy)generate();else renderCurrent();toast('묶음을 삭제했습니다.');}}
   });
   $('manual-round').value=String(source.metadata.lastRound+1);
   const latestDraw=draws.at(-1);
@@ -217,12 +276,14 @@
   $('result-open').addEventListener('click',()=>{$('collection-panel').open=true;$('collection-panel').scrollIntoView?.({behavior:'smooth',block:'start'});});
   $('check').addEventListener('click',checkNumbers);
   ['manual-round','winning-input','bonus-input'].forEach(id=>$(id).addEventListener('input',()=>{$('check-message').textContent='';$('check-message').classList.remove('error-text');renderCurrent();}));
-  window.addEventListener('storage',event=>{if(event.key===storageKey||event.key===manualKey||event.key===null){saved=[];storageIssue='';loadSaved();loadManual();renderSaved();renderCurrent();}});
+  window.addEventListener('storage',event=>{if(event.key===storageKey||event.key===manualKey||event.key===null){saved=[];storageIssue='';loadSaved();loadManual();renderSaved();if(generationBusy)generate();else renderCurrent();}});
+  window.addEventListener('pagehide',()=>{resumeGeneration=generationBusy;generationSequence++;generationJob?.cancel();coverageJob?.cancel();generationJob=null;coverageJob=null;coveragePending='';busy(false);});
+  window.addEventListener('pageshow',event=>{if(event.persisted){if(resumeGeneration){resumeGeneration=false;generate();}else renderCurrent();}});
   loadSaved();loadManual();renderSaved();generate();if(storageIssue)toast(storageIssue,true);
   if(document.modelContext?.registerTool){
     const lifecycle=new AbortController();
     const actions=[{name:'read_lotto_collection',title:'현재 로또 조합 확인',description:'현재 번호와 선택 회차 전체의 정확한 1등 확률, 보관 게임 수를 읽습니다.',annotations:{readOnlyHint:true},run:()=>({current,roundCoverage:coverageForRound(selectedRound()),savedGames:saved.reduce((n,b)=>n+b.games.length,0),forecastAdvantage:false})},
-      {name:'generate_lotto_numbers',title:'설정한 게임 수로 조합 생성',description:'화면에 선택한 게임 수로 겹침을 줄인 새 번호를 생성합니다. 저장하거나 구매하지 않습니다.',annotations:{readOnlyHint:false},run:()=>{if(!generate())throw new Error($('form-error').textContent);return current;}}];
+      {name:'generate_lotto_numbers',title:'설정한 게임 수로 조합 생성',description:'화면에 선택한 게임 수로 겹침을 줄인 새 번호를 생성합니다. 저장하거나 구매하지 않습니다.',annotations:{readOnlyHint:false},run:async()=>{if(!await generate())throw new Error($('form-error').textContent||'계산이 취소되었습니다.');return current;}}];
     for(const action of actions){try{Promise.resolve(document.modelContext.registerTool({name:action.name,title:action.title,description:action.description,annotations:action.annotations,inputSchema:{type:'object',properties:{},additionalProperties:false},execute(input){if(!input||typeof input!=='object'||Array.isArray(input)||Object.keys(input).length)throw new Error('빈 객체를 입력해 주세요. 게임 수는 화면에서 선택합니다.');return action.run();}},{signal:lifecycle.signal})).catch(()=>{});}catch{}}
     window.addEventListener('pagehide',()=>lifecycle.abort(),{once:true});
   }

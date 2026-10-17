@@ -1,0 +1,1115 @@
+{
+  "schemaVersion": 1,
+  "createdAtUtc": "2026-10-17T23:48:11.564Z",
+  "inputTemplates": "data/portfolio-research/improvement-v2-20261018/baseline-templates.json",
+  "baseline": "The same twelve generated candidates and original exact-linear/overlap ranking, with refinementBudget=0. Both paths receive the same frozen baseline templates and identical seeded RNG state, isolating the refinement change from later template improvements.",
+  "algorithm": "Keep the baseline winner; propose at most240 global label transpositions of the new batch across at most4 accepted moves. New-batch incidence is preserved, saved rows are never relabelled, and only strictly larger exact favorable counts are accepted.",
+  "exactEvaluatorContract": {
+    "input": "saved unique rows plus proposed new rows",
+    "output": "integer favorable winning-main-number combinations in0..8145060",
+    "defaultMaximumCalls": 24,
+    "allowedMaximumCalls": [
+      12,
+      32
+    ],
+    "generalScoresStoredSeparatelyFromLinearProfile": true
+  },
+  "sourceHashes": {
+    "dist/extension.js": "ef3981d278f58191b1b40b2513efc85a25e40380119a7e9c6b6ae28d81934ec5",
+    "dist/portfolio.js": "c15e708854ee0e010273bd84b45188973b2ec2c21468d35a4803605cf7ae32c9",
+    "dist/research.js": "a8b24d8d3910681673fca1629c9092bf814079145d8c634583455190251bc5f5",
+    "data/portfolio-research/improvement-v2-20261018/baseline-templates.json": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+    "data/portfolio-research/improvement-v2-20261018/extension-benchmark.cjs": "dd222b8947b228c3a292ca6f843e4ea9c1f556e31775d8accde054f887478caa"
+  },
+  "linearCases": [
+    {
+      "seed": 1,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            6,
+            9,
+            17,
+            31,
+            37,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1525340,
+        "elapsedMs": 3.5012000000000043,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1525340,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            6,
+            9,
+            37,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "elapsedMs": 5.788200000000003,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1531940,
+          "refinementChecks": 240,
+          "acceptedImprovements": 2,
+          "exactEvaluationLimit": 24
+        }
+      }
+    },
+    {
+      "seed": 4,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            4,
+            9,
+            22,
+            31,
+            43,
+            44
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1528640,
+        "elapsedMs": 0.7875000000000014,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1528640,
+          "finalFavorable": 1528640,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            4,
+            22,
+            31,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "elapsedMs": 3.490099999999998,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1528640,
+          "finalFavorable": 1531940,
+          "refinementChecks": 240,
+          "acceptedImprovements": 1,
+          "exactEvaluationLimit": 24
+        }
+      }
+    },
+    {
+      "seed": 5,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            10,
+            13,
+            28,
+            33,
+            39,
+            43
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1525340,
+        "elapsedMs": 0.7025000000000006,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1525340,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            10,
+            33,
+            39,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "elapsedMs": 2.808799999999998,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1531940,
+          "refinementChecks": 240,
+          "acceptedImprovements": 2,
+          "exactEvaluationLimit": 24
+        }
+      }
+    },
+    {
+      "seed": 6,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            5,
+            9,
+            14,
+            28,
+            36,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1525340,
+        "elapsedMs": 0.5332000000000008,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1525340,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            9,
+            28,
+            36,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "elapsedMs": 2.386499999999998,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1531940,
+          "refinementChecks": 240,
+          "acceptedImprovements": 2,
+          "exactEvaluationLimit": 24
+        }
+      }
+    },
+    {
+      "seed": 8,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            12,
+            16,
+            21,
+            33,
+            39,
+            44
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1525340,
+        "elapsedMs": 0.48699999999999477,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1525340,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            16,
+            33,
+            39,
+            43,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1531940,
+        "elapsedMs": 2.2715999999999994,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1525340,
+          "finalFavorable": 1531940,
+          "refinementChecks": 240,
+          "acceptedImprovements": 2,
+          "exactEvaluationLimit": 24
+        }
+      }
+    },
+    {
+      "seed": 19,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            7,
+            16,
+            19,
+            30,
+            35,
+            42
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1522040,
+        "elapsedMs": 0.4725000000000037,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1522040,
+          "finalFavorable": 1522040,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            7,
+            16,
+            19,
+            35,
+            44,
+            45
+          ]
+        ],
+        "status": "coverage-search",
+        "favorable": 1528640,
+        "elapsedMs": 2.5116999999999976,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": 1522040,
+          "finalFavorable": 1528640,
+          "refinementChecks": 240,
+          "acceptedImprovements": 2,
+          "exactEvaluationLimit": 24
+        }
+      }
+    },
+    {
+      "seed": 45,
+      "saved": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        [
+          37,
+          38,
+          39,
+          40,
+          41,
+          42
+        ]
+      ],
+      "amount": 1,
+      "baseline": {
+        "numbers": [
+          [
+            4,
+            6,
+            9,
+            23,
+            26,
+            44
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": null,
+        "elapsedMs": 0.4684000000000026,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": null,
+          "finalFavorable": null,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      },
+      "refined": {
+        "numbers": [
+          [
+            4,
+            6,
+            9,
+            23,
+            26,
+            44
+          ]
+        ],
+        "status": "overlap-fallback",
+        "favorable": null,
+        "elapsedMs": 0.49680000000000035,
+        "exactEvaluationCalls": 0,
+        "search": {
+          "baselineCandidates": 12,
+          "baselineFavorable": null,
+          "finalFavorable": null,
+          "refinementChecks": 0,
+          "acceptedImprovements": 0,
+          "exactEvaluationLimit": 24
+        }
+      }
+    }
+  ],
+  "independentlyEnumeratedFixture": {
+    "seed": 1,
+    "saved": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      [
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      [
+        19,
+        20,
+        21,
+        22,
+        23,
+        24
+      ],
+      [
+        25,
+        26,
+        27,
+        28,
+        29,
+        30
+      ],
+      [
+        31,
+        32,
+        33,
+        34,
+        35,
+        36
+      ],
+      [
+        37,
+        38,
+        39,
+        40,
+        41,
+        42
+      ]
+    ],
+    "amount": 1,
+    "baselineFavorable": 1525340,
+    "refinedFavorable": 1531940,
+    "favorableIncrease": 6600,
+    "percentagePointIncrease": 0.0810307106393323,
+    "enumerator": "R.coverageExact enumerates each ticket's >=3-hit winning draws into a bitset, independently of the linear inclusion-exclusion score.",
+    "fixedSavedUpperBound": 1531940,
+    "upperBoundReason": "Seven saved rows use42 distinct labels. A new row must overlap at least3 saved rows because only3 labels are unused. For a linear extension there are no distinct-intersection triangles: saved rows are pairwise disjoint. Favorable=8*194130-400*C(8,2)-3300*3=1531940. This is the optimum within linear extensions of this fixed saved set, not the unconditional8-game maximum."
+  },
+  "nonlinearCallbackCase": {
+    "saved": [
+      [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      [
+        1,
+        2,
+        7,
+        8,
+        9,
+        10
+      ]
+    ],
+    "amount": 6,
+    "rng": "constant0",
+    "baseline": {
+      "numbers": [
+        [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "status": "coverage-search",
+      "favorable": 1525080,
+      "elapsedMs": 301.6382,
+      "exactEvaluationCalls": 12,
+      "search": {
+        "baselineCandidates": 12,
+        "baselineFavorable": 1525080,
+        "finalFavorable": 1525080,
+        "refinementChecks": 0,
+        "acceptedImprovements": 0,
+        "exactEvaluationLimit": 24
+      }
+    },
+    "refined": {
+      "numbers": [
+        [
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15
+        ]
+      ],
+      "status": "coverage-search",
+      "favorable": 1525080,
+      "elapsedMs": 583.2279,
+      "exactEvaluationCalls": 24,
+      "search": {
+        "baselineCandidates": 12,
+        "baselineFavorable": 1525080,
+        "finalFavorable": 1525080,
+        "refinementChecks": 13,
+        "acceptedImprovements": 0,
+        "exactEvaluationLimit": 24
+      }
+    },
+    "independentFinalFavorable": 1525080
+  },
+  "preservedFastPath": {
+    "saved": [
+      [
+        13,
+        15,
+        19,
+        28,
+        36,
+        45
+      ],
+      [
+        5,
+        11,
+        18,
+        24,
+        26,
+        29
+      ],
+      [
+        4,
+        17,
+        27,
+        30,
+        34,
+        37
+      ],
+      [
+        6,
+        14,
+        16,
+        23,
+        39,
+        42
+      ],
+      [
+        3,
+        8,
+        9,
+        22,
+        33,
+        41
+      ]
+    ],
+    "amount": 5,
+    "numbers": [
+      [
+        7,
+        10,
+        12,
+        16,
+        25,
+        44
+      ],
+      [
+        2,
+        21,
+        25,
+        35,
+        40,
+        42
+      ],
+      [
+        1,
+        7,
+        21,
+        32,
+        38,
+        39
+      ],
+      [
+        1,
+        10,
+        14,
+        20,
+        35,
+        43
+      ],
+      [
+        2,
+        23,
+        31,
+        32,
+        43,
+        44
+      ]
+    ],
+    "status": "template-extension",
+    "favorable": 1875065,
+    "elapsedMs": 0.39049999999997453,
+    "exactEvaluationCalls": 0,
+    "search": null
+  },
+  "timingNotes": "Wall-clock timings from the current local Node process; warmup and CPU vary. General callback timings here use the older independent bitset enumerator rather than the new production evaluator.",
+  "limits": [
+    "Both paths use the frozen baseline-templates.json, so this benchmark excludes later production template improvements.",
+    "Search is bounded and does not guarantee a global optimum.",
+    "Without a supplied exact evaluator, nonlinear combined portfolios retain the original overlap fallback without claiming an exact improvement.",
+    "The standalone, disjoint, and successful template embedding paths retain their existing behavior."
+  ]
+}

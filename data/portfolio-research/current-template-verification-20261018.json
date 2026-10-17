@@ -3,7 +3,7 @@
   "passed": true,
   "totalPossibleDraws": 8145060,
   "method": "For every ticket enumerate all six-number draws with3,4,5,6matches; map each draw to its combinatorial rank, retain maximum match count, then count thresholds. No production formula or research helper imported.",
-  "templatesSha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+  "templatesSha256": "3a475538183bfe31893e1790b4d290e8bc5a16179a9084fa8477492c1e3efae4",
   "verifierSha256": "cea1c9d1474688b932a291a00d087fc835728c5e2f7bfc903d809a36a1f6b4d9",
   "results": [
     {
@@ -297,16 +297,16 @@
     },
     {
       "games": 18,
-      "ticketsSha256": "5232305a1ba6ae7d9c1e359f943f95a1d06f30e2a503d15b1492cf2605aa45f9",
-      "lessThanThree": 4967922,
+      "ticketsSha256": "3e02607ebaccef2457a4810a7630010556c121942be7cafd952bb14243133d25",
+      "lessThanThree": 4967621,
       "maximumHitsAtLeastThreeHistogram": [
-        2972838,
+        2973139,
         200070,
         4212,
         18
       ],
       "counts": {
-        "3": 3177138,
+        "3": 3177439,
         "4": 204300,
         "5": 4230,
         "6": 18
@@ -314,16 +314,16 @@
     },
     {
       "games": 19,
-      "ticketsSha256": "d84c70a33cd8b48c2dc1764680a4681743c6ad9b315e9efd02c5624981a14c8c",
-      "lessThanThree": 4819245,
+      "ticketsSha256": "9c6d2ee9ac04b6be5c20fca41d601c8684ad81426a51979ee696029702792f5a",
+      "lessThanThree": 4817260,
       "maximumHitsAtLeastThreeHistogram": [
-        3110165,
+        3112150,
         211185,
         4446,
         19
       ],
       "counts": {
-        "3": 3325815,
+        "3": 3327800,
         "4": 215650,
         "5": 4465,
         "6": 19
@@ -331,16 +331,16 @@
     },
     {
       "games": 20,
-      "ticketsSha256": "b744e3288ba66107a7218af2e3b5ca24a8f5655f2763996f7a360e08b40552f7",
-      "lessThanThree": 4669945,
+      "ticketsSha256": "d1795529821fa1e64db7b3c81ef9115284a82e659c6c99210e53c994964cd5e3",
+      "lessThanThree": 4668807,
       "maximumHitsAtLeastThreeHistogram": [
-        3248115,
+        3249253,
         222300,
         4680,
         20
       ],
       "counts": {
-        "3": 3475115,
+        "3": 3476253,
         "4": 227000,
         "5": 4700,
         "6": 20

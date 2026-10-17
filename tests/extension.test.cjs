@@ -77,3 +77,54 @@ test('잘못된 입력·희소 배열·잘못된 난수에 거짓 확률을 반�
   for(const amount of [0,21,1.5,NaN])assert.throws(()=>E.extend(D,[],amount,rng(1)));
   assert.throws(()=>E.extend(D,disjoint(2),3,n=>n));
 });
+
+test('기존12후보를 유지한 정밀 탐색은 정확히 개선되는 번호 치환만 반영',()=>{
+  const saved=disjoint(7),before=JSON.stringify(saved);
+  const baseline=E.extend(D,saved,1,rng(1),{refinementBudget:0});
+  const refined=E.extend(D,saved,1,rng(1));
+  validate(baseline,saved,1);validate(refined,saved,1);
+  assert.deepEqual(baseline.numbers,[[6,9,17,31,37,45]]);
+  assert.equal(baseline.roundProfile.probabilities[3].favorable,1525340);
+  assert.equal(refined.extension.search.baselineCandidates,12);
+  assert.equal(refined.extension.search.baselineFavorable,1525340);
+  assert.equal(refined.extension.search.finalFavorable,1531940);
+  assert.equal(refined.extension.search.acceptedImprovements,2);
+  assert(refined.extension.search.refinementChecks<=240);
+  assert.equal(JSON.stringify(saved),before);
+  assert.equal(R.coverageExact([...saved,...baseline.numbers]).favorable,1525340);
+  assert.equal(R.coverageExact([...saved,...refined.numbers]).favorable,1531940);
+});
+
+test('선형 정확 탐색은 같은 난수의 기존 후보보다 나빠지지 않고 빠른 경로를 유지',()=>{
+  for(const seed of [1,2,3,4,5,8,19,45]){
+    const saved=disjoint(7);
+    const baseline=E.extend(D,saved,1,rng(seed),{refinementBudget:0});
+    const improved=E.extend(D,saved,1,rng(seed));validate(improved,saved,1);
+    if(baseline.roundProfile)assert(improved.extension.exactRoundFavorable>=baseline.roundProfile.probabilities[3].favorable);
+    else{assert.deepEqual(improved.numbers,baseline.numbers);assert.equal(improved.extension.search.acceptedImprovements,0);}
+  }
+  const random=rng(66),saved=P.generate(D,5,random).numbers;
+  const result=E.extend(D,saved,5,random,{evaluateRound:()=>assert.fail('빠른 경로에서 일반 계산을 호출하면 안 됨')});
+  assert.equal(result.extension.status,'template-extension');assert.equal(result.extension.search,null);
+  assert.equal(result.extension.exactEvaluationCalls,0);
+});
+
+test('일반 정확 평가 콜백은 상수 난수에서도 횟수 상한을 지키고 선형 profile과 분리',()=>{
+  const saved=[[1,2,3,4,5,6],[1,2,7,8,9,10]],before=JSON.stringify(saved),evaluations=[];
+  const evaluateRound=rows=>{const score=R.coverageExact(rows).favorable;evaluations.push(score);return score;};
+  const result=E.extend(D,saved,6,()=>0,{evaluateRound,maxExactEvaluations:13});validate(result,saved,6);
+  assert.equal(JSON.stringify(saved),before);
+  assert.equal(result.roundProfile,null);assert.equal(result.extension.status,'coverage-search');
+  assert.equal(result.extension.exactEvaluationCalls,13);assert.equal(evaluations.length,13);
+  assert.equal(result.extension.search.baselineCandidates,12);
+  assert.equal(result.extension.search.baselineFavorable,Math.max(...evaluations.slice(0,12)));
+  assert(result.extension.exactRoundFavorable>=result.extension.search.baselineFavorable);
+  assert.equal(result.extension.exactRoundFavorable,R.coverageExact([...saved,...result.numbers]).favorable);
+  assert.equal(result.extension.globalOptimal,false);
+});
+
+test('정밀 탐색 옵션과 정확 평가 정수 범위를 검증',()=>{
+  const saved=[[1,2,3,4,5,6],[1,2,7,8,9,10]];
+  for(const options of [null,{evaluateRound:1},{maxExactEvaluations:11},{maxExactEvaluations:33},{refinementBudget:-1},{refinementBudget:481}])assert.throws(()=>E.extend(D,saved,6,rng(1),options));
+  for(const value of [NaN,-1,1.5,C.TOTAL+1])assert.throws(()=>E.extend(D,saved,6,rng(1),{evaluateRound:()=>value}),/정확 확률 평가 결과/);
+});

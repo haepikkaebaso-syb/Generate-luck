@@ -1,0 +1,4337 @@
+{
+  "metadata": {
+    "baselineSha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+    "phase1Sha256": "99300b3b1b0f633fc8110b7bddd5519ad9b3f76ad175fa0028a58bd0abee710e",
+    "scriptSha256": "020db25cadacb2ff08ae663a22756f9953b3dbf94f5d6bbcde4eb963b20032cf",
+    "method": "Phase2 fixed-budget multi-seed simulated annealing with 0/20/50/80 percent three-row cyclic incidence moves and four fixed temperature schedules;45label usages preserved, row pair linearity enforced by incremental edge updates; exact64T-Q objective. No global optimum assertion."
+  },
+  "durationSeconds": 333.988,
+  "results": [
+    {
+      "games": 20,
+      "baselineFavorable": 3475115,
+      "baselineProbability": 0.4266530878839444,
+      "candidateFavorable": 3476253,
+      "gain": 1138,
+      "runs": [
+        {
+          "seed": 2026103820,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3475776,
+          "endingFavorable": 3476253,
+          "valid": 811769,
+          "accepted": 29341,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103821,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 512477,
+          "accepted": 58283,
+          "threeAccepted": 2516
+        },
+        {
+          "seed": 2026103822,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 328721,
+          "accepted": 82708,
+          "threeAccepted": 15549
+        },
+        {
+          "seed": 2026103823,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 190803,
+          "accepted": 77292,
+          "threeAccepted": 39236
+        },
+        {
+          "seed": 2026103824,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3475115,
+          "endingFavorable": 3475115,
+          "valid": 706944,
+          "accepted": 19155,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103825,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 506014,
+          "accepted": 59133,
+          "threeAccepted": 2648
+        },
+        {
+          "seed": 2026103826,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 343363,
+          "accepted": 82890,
+          "threeAccepted": 15666
+        },
+        {
+          "seed": 2026103827,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 192769,
+          "accepted": 78700,
+          "threeAccepted": 39906
+        },
+        {
+          "seed": 2026103828,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 815199,
+          "accepted": 28854,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103829,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3475115,
+          "endingFavorable": 3476253,
+          "valid": 497185,
+          "accepted": 59389,
+          "threeAccepted": 2509
+        },
+        {
+          "seed": 2026103830,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 328310,
+          "accepted": 82426,
+          "threeAccepted": 15850
+        },
+        {
+          "seed": 2026103831,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 193072,
+          "accepted": 78473,
+          "threeAccepted": 39829
+        },
+        {
+          "seed": 2026103832,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 817883,
+          "accepted": 28808,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103833,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 510169,
+          "accepted": 58440,
+          "threeAccepted": 2528
+        },
+        {
+          "seed": 2026103834,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3475115,
+          "endingFavorable": 3476253,
+          "valid": 328246,
+          "accepted": 81430,
+          "threeAccepted": 15406
+        },
+        {
+          "seed": 2026103835,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 194655,
+          "accepted": 78738,
+          "threeAccepted": 40047
+        },
+        {
+          "seed": 2026103836,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 816839,
+          "accepted": 28776,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103837,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 509424,
+          "accepted": 59961,
+          "threeAccepted": 2538
+        },
+        {
+          "seed": 2026103838,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3476253,
+          "endingFavorable": 3476253,
+          "valid": 330699,
+          "accepted": 83916,
+          "threeAccepted": 15632
+        },
+        {
+          "seed": 2026103839,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3475115,
+          "endingFavorable": 3475300,
+          "valid": 194234,
+          "accepted": 77267,
+          "threeAccepted": 39532
+        }
+      ],
+      "tickets": [
+        [
+          17,
+          27,
+          1,
+          8,
+          9,
+          19
+        ],
+        [
+          31,
+          33,
+          8,
+          41,
+          18,
+          6
+        ],
+        [
+          5,
+          28,
+          11,
+          29,
+          16,
+          23
+        ],
+        [
+          20,
+          14,
+          26,
+          15,
+          23,
+          2
+        ],
+        [
+          10,
+          24,
+          20,
+          1,
+          5,
+          3
+        ],
+        [
+          2,
+          28,
+          18,
+          25,
+          7,
+          10
+        ],
+        [
+          21,
+          26,
+          5,
+          27,
+          13,
+          25
+        ],
+        [
+          22,
+          20,
+          25,
+          29,
+          19,
+          4
+        ],
+        [
+          21,
+          11,
+          22,
+          10,
+          14,
+          30
+        ],
+        [
+          24,
+          15,
+          12,
+          28,
+          21,
+          19
+        ],
+        [
+          22,
+          3,
+          13,
+          15,
+          18,
+          16
+        ],
+        [
+          34,
+          36,
+          41,
+          39,
+          38,
+          9
+        ],
+        [
+          45,
+          42,
+          40,
+          39,
+          17,
+          33
+        ],
+        [
+          9,
+          37,
+          6,
+          40,
+          23,
+          35
+        ],
+        [
+          35,
+          32,
+          31,
+          42,
+          34,
+          43
+        ],
+        [
+          30,
+          26,
+          29,
+          7,
+          3,
+          12
+        ],
+        [
+          4,
+          2,
+          12,
+          11,
+          1,
+          13
+        ],
+        [
+          16,
+          7,
+          24,
+          14,
+          27,
+          4
+        ],
+        [
+          30,
+          6,
+          36,
+          17,
+          43,
+          44
+        ],
+        [
+          8,
+          38,
+          32,
+          45,
+          44,
+          37
+        ]
+      ],
+      "gainPercentagePoints": 0.013971658895084874,
+      "candidateProbability": 0.42679280447289525,
+      "analysis": {
+        "games": 20,
+        "total": 8145060,
+        "usage": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 2,
+        "maximumUsage": 3,
+        "maxOverlap": 1,
+        "overlappingPairs": 105,
+        "triangles": 258,
+        "quadruples": 359,
+        "probabilities": {
+          "3": {
+            "favorable": 3476253,
+            "probability": 0.42679280447289525,
+            "randomBaseline": 0.38273366108576984
+          },
+          "4": {
+            "favorable": 227000,
+            "probability": 0.027869653507770355,
+            "randomBaseline": 0.02750381079897007
+          },
+          "5": {
+            "favorable": 4700,
+            "probability": 0.0005770368787952452,
+            "randomBaseline": 0.0005768794173404802
+          },
+          "6": {
+            "favorable": 20,
+            "probability": 0.000002455476079979767,
+            "randomBaseline": 0.000002455476079979766
+          }
+        }
+      },
+      "discovery": {
+        "attempt": 156674,
+        "seed": 2026103820
+      },
+      "independentExact": {
+        "favorable": 3476253,
+        "total": 8145060,
+        "probability": 0.42679280447289525,
+        "uniqueGames": 20,
+        "randomBaseline": 0.38273366108576967,
+        "jackpot": 0.000002455476079979767
+      }
+    },
+    {
+      "games": 19,
+      "baselineFavorable": 3325815,
+      "baselineProbability": 0.4083229589468954,
+      "candidateFavorable": 3327800,
+      "gain": 1985,
+      "runs": [
+        {
+          "seed": 2026103720,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3327556,
+          "endingFavorable": 3327800,
+          "valid": 1019764,
+          "accepted": 39769,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103721,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 659814,
+          "accepted": 82075,
+          "threeAccepted": 3600
+        },
+        {
+          "seed": 2026103722,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 421481,
+          "accepted": 107824,
+          "threeAccepted": 21586
+        },
+        {
+          "seed": 2026103723,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 250606,
+          "accepted": 102657,
+          "threeAccepted": 54572
+        },
+        {
+          "seed": 2026103724,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3325815,
+          "endingFavorable": 3327556,
+          "valid": 861461,
+          "accepted": 32465,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103725,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 660890,
+          "accepted": 79297,
+          "threeAccepted": 3467
+        },
+        {
+          "seed": 2026103726,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 415168,
+          "accepted": 106830,
+          "threeAccepted": 21396
+        },
+        {
+          "seed": 2026103727,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 253049,
+          "accepted": 102172,
+          "threeAccepted": 53610
+        },
+        {
+          "seed": 2026103728,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 1031906,
+          "accepted": 37143,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103729,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3325815,
+          "endingFavorable": 3327556,
+          "valid": 666054,
+          "accepted": 83199,
+          "threeAccepted": 3587
+        },
+        {
+          "seed": 2026103730,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 427083,
+          "accepted": 108492,
+          "threeAccepted": 21913
+        },
+        {
+          "seed": 2026103731,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 241464,
+          "accepted": 101422,
+          "threeAccepted": 54035
+        },
+        {
+          "seed": 2026103732,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 1029764,
+          "accepted": 37250,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103733,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 667125,
+          "accepted": 85464,
+          "threeAccepted": 3685
+        },
+        {
+          "seed": 2026103734,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3325815,
+          "endingFavorable": 3327323,
+          "valid": 404136,
+          "accepted": 105521,
+          "threeAccepted": 21673
+        },
+        {
+          "seed": 2026103735,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 251398,
+          "accepted": 101821,
+          "threeAccepted": 54261
+        },
+        {
+          "seed": 2026103736,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 1031596,
+          "accepted": 37336,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103737,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 641268,
+          "accepted": 80137,
+          "threeAccepted": 3681
+        },
+        {
+          "seed": 2026103738,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3327800,
+          "endingFavorable": 3327800,
+          "valid": 417739,
+          "accepted": 109290,
+          "threeAccepted": 22096
+        },
+        {
+          "seed": 2026103739,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3325815,
+          "endingFavorable": 3326898,
+          "valid": 244293,
+          "accepted": 101599,
+          "threeAccepted": 54159
+        }
+      ],
+      "tickets": [
+        [
+          15,
+          22,
+          20,
+          19,
+          10,
+          3
+        ],
+        [
+          30,
+          40,
+          44,
+          37,
+          26,
+          35
+        ],
+        [
+          9,
+          15,
+          45,
+          6,
+          16,
+          7
+        ],
+        [
+          33,
+          1,
+          26,
+          38,
+          18,
+          25
+        ],
+        [
+          32,
+          33,
+          29,
+          39,
+          37,
+          31
+        ],
+        [
+          9,
+          14,
+          12,
+          24,
+          8,
+          10
+        ],
+        [
+          36,
+          28,
+          40,
+          31,
+          25,
+          27
+        ],
+        [
+          20,
+          11,
+          7,
+          43,
+          14,
+          5
+        ],
+        [
+          16,
+          3,
+          12,
+          43,
+          4,
+          2
+        ],
+        [
+          17,
+          24,
+          13,
+          5,
+          45,
+          3
+        ],
+        [
+          8,
+          20,
+          6,
+          21,
+          13,
+          2
+        ],
+        [
+          4,
+          19,
+          17,
+          34,
+          6,
+          14
+        ],
+        [
+          29,
+          41,
+          21,
+          1,
+          44,
+          36
+        ],
+        [
+          5,
+          8,
+          23,
+          19,
+          16,
+          18
+        ],
+        [
+          32,
+          1,
+          35,
+          42,
+          27,
+          10
+        ],
+        [
+          30,
+          28,
+          42,
+          41,
+          38,
+          39
+        ],
+        [
+          23,
+          15,
+          4,
+          11,
+          24,
+          21
+        ],
+        [
+          11,
+          17,
+          18,
+          2,
+          9,
+          22
+        ],
+        [
+          13,
+          23,
+          7,
+          34,
+          22,
+          12
+        ]
+      ],
+      "gainPercentagePoints": 0.024370600093799186,
+      "candidateProbability": 0.4085666649478334,
+      "analysis": {
+        "games": 19,
+        "total": 8145060,
+        "usage": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 2,
+        "maximumUsage": 3,
+        "maxOverlap": 1,
+        "overlappingPairs": 93,
+        "triangles": 234,
+        "quadruples": 346,
+        "probabilities": {
+          "3": {
+            "favorable": 3327800,
+            "probability": 0.4085666649478334,
+            "randomBaseline": 0.36766244291046646
+          },
+          "4": {
+            "favorable": 215650,
+            "probability": 0.026476170832381837,
+            "randomBaseline": 0.026146760015084664
+          },
+          "5": {
+            "favorable": 4465,
+            "probability": 0.0005481850348554829,
+            "randomBaseline": 0.0005480433181949726
+          },
+          "6": {
+            "favorable": 19,
+            "probability": 0.0000023327022759807786,
+            "randomBaseline": 0.000002332702275980778
+          }
+        }
+      },
+      "discovery": {
+        "attempt": 763886,
+        "seed": 2026103720
+      },
+      "independentExact": {
+        "favorable": 3327800,
+        "total": 8145060,
+        "probability": 0.4085666649478334,
+        "uniqueGames": 19,
+        "randomBaseline": 0.36766244291046635,
+        "jackpot": 0.0000023327022759807786
+      }
+    },
+    {
+      "games": 18,
+      "baselineFavorable": 3177138,
+      "baselineProbability": 0.3900693180897378,
+      "candidateFavorable": 3177439,
+      "gain": 301,
+      "runs": [
+        {
+          "seed": 2026103620,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3177383,
+          "endingFavorable": 3177383,
+          "valid": 1078386,
+          "accepted": 53322,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103621,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3177383,
+          "endingFavorable": 3177439,
+          "valid": 760190,
+          "accepted": 107675,
+          "threeAccepted": 5407
+        },
+        {
+          "seed": 2026103622,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 493486,
+          "accepted": 140539,
+          "threeAccepted": 30557
+        },
+        {
+          "seed": 2026103623,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 309342,
+          "accepted": 136211,
+          "threeAccepted": 76008
+        },
+        {
+          "seed": 2026103624,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3177138,
+          "endingFavorable": 3177138,
+          "valid": 1032844,
+          "accepted": 63310,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103625,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 745898,
+          "accepted": 110733,
+          "threeAccepted": 5613
+        },
+        {
+          "seed": 2026103626,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 497329,
+          "accepted": 141117,
+          "threeAccepted": 31262
+        },
+        {
+          "seed": 2026103627,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 308185,
+          "accepted": 134985,
+          "threeAccepted": 75349
+        },
+        {
+          "seed": 2026103628,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 1109202,
+          "accepted": 48450,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103629,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3177138,
+          "endingFavorable": 3177439,
+          "valid": 761120,
+          "accepted": 108952,
+          "threeAccepted": 5559
+        },
+        {
+          "seed": 2026103630,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 497314,
+          "accepted": 142892,
+          "threeAccepted": 31250
+        },
+        {
+          "seed": 2026103631,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 312828,
+          "accepted": 136087,
+          "threeAccepted": 76007
+        },
+        {
+          "seed": 2026103632,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 1108470,
+          "accepted": 48306,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103633,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 758322,
+          "accepted": 108812,
+          "threeAccepted": 5441
+        },
+        {
+          "seed": 2026103634,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3177138,
+          "endingFavorable": 3177439,
+          "valid": 493025,
+          "accepted": 139532,
+          "threeAccepted": 30747
+        },
+        {
+          "seed": 2026103635,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 314381,
+          "accepted": 137472,
+          "threeAccepted": 76904
+        },
+        {
+          "seed": 2026103636,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 1108694,
+          "accepted": 48958,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103637,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 735103,
+          "accepted": 108953,
+          "threeAccepted": 5375
+        },
+        {
+          "seed": 2026103638,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3177439,
+          "endingFavorable": 3177439,
+          "valid": 502273,
+          "accepted": 141518,
+          "threeAccepted": 31155
+        },
+        {
+          "seed": 2026103639,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3177138,
+          "endingFavorable": 3177138,
+          "valid": 303698,
+          "accepted": 136362,
+          "threeAccepted": 76437
+        }
+      ],
+      "tickets": [
+        [
+          19,
+          21,
+          40,
+          39,
+          37,
+          36
+        ],
+        [
+          1,
+          3,
+          45,
+          7,
+          35,
+          8
+        ],
+        [
+          10,
+          7,
+          6,
+          31,
+          15,
+          22
+        ],
+        [
+          10,
+          5,
+          8,
+          4,
+          28,
+          13
+        ],
+        [
+          41,
+          11,
+          4,
+          14,
+          6,
+          45
+        ],
+        [
+          42,
+          17,
+          33,
+          2,
+          25,
+          39
+        ],
+        [
+          3,
+          13,
+          17,
+          15,
+          9,
+          14
+        ],
+        [
+          34,
+          19,
+          33,
+          24,
+          32,
+          30
+        ],
+        [
+          32,
+          23,
+          25,
+          20,
+          21,
+          29
+        ],
+        [
+          8,
+          22,
+          9,
+          27,
+          18,
+          11
+        ],
+        [
+          16,
+          15,
+          12,
+          35,
+          11,
+          28
+        ],
+        [
+          27,
+          12,
+          43,
+          14,
+          10,
+          1
+        ],
+        [
+          7,
+          4,
+          17,
+          43,
+          18,
+          16
+        ],
+        [
+          41,
+          5,
+          31,
+          12,
+          3,
+          18
+        ],
+        [
+          26,
+          44,
+          23,
+          2,
+          30,
+          40
+        ],
+        [
+          1,
+          16,
+          9,
+          5,
+          44,
+          6
+        ],
+        [
+          24,
+          38,
+          13,
+          20,
+          36,
+          2
+        ],
+        [
+          42,
+          34,
+          38,
+          26,
+          37,
+          29
+        ]
+      ],
+      "gainPercentagePoints": 0.003695491500369549,
+      "candidateProbability": 0.39010627300474154,
+      "analysis": {
+        "games": 18,
+        "total": 8145060,
+        "usage": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 2,
+        "maximumUsage": 3,
+        "maxOverlap": 1,
+        "overlappingPairs": 81,
+        "triangles": 185,
+        "quadruples": 241,
+        "probabilities": {
+          "3": {
+            "favorable": 3177439,
+            "probability": 0.39010627300474154,
+            "randomBaseline": 0.352223246758152
+          },
+          "4": {
+            "favorable": 204300,
+            "probability": 0.02508268815699332,
+            "randomBaseline": 0.024787815728304588
+          },
+          "5": {
+            "favorable": 4230,
+            "probability": 0.0005193331909157207,
+            "randomBaseline": 0.0005192063905894169
+          },
+          "6": {
+            "favorable": 18,
+            "probability": 0.0000022099284719817902,
+            "randomBaseline": 0.00000220992847198179
+          }
+        }
+      },
+      "discovery": {
+        "attempt": 2830450,
+        "seed": 2026103621
+      },
+      "independentExact": {
+        "favorable": 3177439,
+        "total": 8145060,
+        "probability": 0.39010627300474154,
+        "uniqueGames": 18,
+        "randomBaseline": 0.35222324675815186,
+        "jackpot": 0.0000022099284719817902
+      }
+    },
+    {
+      "games": 17,
+      "baselineFavorable": 3027098,
+      "baselineProbability": 0.3716483365377296,
+      "candidateFavorable": 3027098,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026103520,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 1234833,
+          "accepted": 70644,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103521,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 876737,
+          "accepted": 147152,
+          "threeAccepted": 8518
+        },
+        {
+          "seed": 2026103522,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 601892,
+          "accepted": 188239,
+          "threeAccepted": 45492
+        },
+        {
+          "seed": 2026103523,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 394299,
+          "accepted": 186552,
+          "threeAccepted": 109856
+        },
+        {
+          "seed": 2026103524,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 1238238,
+          "accepted": 71205,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103525,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 886270,
+          "accepted": 148054,
+          "threeAccepted": 8492
+        },
+        {
+          "seed": 2026103526,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 611107,
+          "accepted": 187182,
+          "threeAccepted": 45490
+        },
+        {
+          "seed": 2026103527,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 395082,
+          "accepted": 187500,
+          "threeAccepted": 110125
+        },
+        {
+          "seed": 2026103528,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 1235767,
+          "accepted": 70868,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103529,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 875554,
+          "accepted": 147336,
+          "threeAccepted": 8619
+        },
+        {
+          "seed": 2026103530,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 597113,
+          "accepted": 189299,
+          "threeAccepted": 45974
+        },
+        {
+          "seed": 2026103531,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 393754,
+          "accepted": 185193,
+          "threeAccepted": 108898
+        },
+        {
+          "seed": 2026103532,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 1238612,
+          "accepted": 70064,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103533,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 881190,
+          "accepted": 149305,
+          "threeAccepted": 8761
+        },
+        {
+          "seed": 2026103534,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 609731,
+          "accepted": 187481,
+          "threeAccepted": 45614
+        },
+        {
+          "seed": 2026103535,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 390898,
+          "accepted": 187367,
+          "threeAccepted": 110391
+        },
+        {
+          "seed": 2026103536,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 1234780,
+          "accepted": 70892,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103537,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 881120,
+          "accepted": 148942,
+          "threeAccepted": 8304
+        },
+        {
+          "seed": 2026103538,
+          "budget": 3000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 604880,
+          "accepted": 187859,
+          "threeAccepted": 45723
+        },
+        {
+          "seed": 2026103539,
+          "budget": 3000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 3027098,
+          "endingFavorable": 3027098,
+          "valid": 396695,
+          "accepted": 188262,
+          "threeAccepted": 110725
+        }
+      ],
+      "tickets": [
+        [
+          4,
+          8,
+          12,
+          27,
+          32,
+          33
+        ],
+        [
+          2,
+          29,
+          38,
+          42,
+          43,
+          44
+        ],
+        [
+          2,
+          14,
+          21,
+          34,
+          40,
+          45
+        ],
+        [
+          13,
+          20,
+          21,
+          22,
+          24,
+          44
+        ],
+        [
+          1,
+          5,
+          8,
+          9,
+          17,
+          31
+        ],
+        [
+          3,
+          6,
+          7,
+          9,
+          14,
+          27
+        ],
+        [
+          5,
+          6,
+          12,
+          18,
+          25,
+          30
+        ],
+        [
+          1,
+          3,
+          11,
+          19,
+          30,
+          33
+        ],
+        [
+          23,
+          24,
+          28,
+          41,
+          43,
+          45
+        ],
+        [
+          9,
+          10,
+          11,
+          15,
+          18,
+          32
+        ],
+        [
+          2,
+          20,
+          31,
+          35,
+          36,
+          41
+        ],
+        [
+          4,
+          5,
+          7,
+          15,
+          19,
+          39
+        ],
+        [
+          22,
+          28,
+          29,
+          34,
+          36,
+          37
+        ],
+        [
+          3,
+          10,
+          12,
+          16,
+          17,
+          39
+        ],
+        [
+          1,
+          4,
+          6,
+          10,
+          26,
+          38
+        ],
+        [
+          7,
+          8,
+          11,
+          16,
+          25,
+          26
+        ],
+        [
+          13,
+          23,
+          35,
+          37,
+          40,
+          42
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.3716483365377296,
+      "analysis": {
+        "games": 17,
+        "total": 8145060,
+        "usage": [
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 2,
+        "maximumUsage": 3,
+        "maxOverlap": 1,
+        "overlappingPairs": 69,
+        "triangles": 143,
+        "quadruples": 164,
+        "probabilities": {
+          "3": {
+            "favorable": 3027098,
+            "probability": 0.3716483365377296,
+            "randomBaseline": 0.33640708814758236
+          },
+          "4": {
+            "favorable": 192950,
+            "probability": 0.023689205481604803,
+            "randomBaseline": 0.02342697529684452
+          },
+          "5": {
+            "favorable": 3995,
+            "probability": 0.0004904813469759585,
+            "randomBaseline": 0.0004903686345001129
+          },
+          "6": {
+            "favorable": 17,
+            "probability": 0.000002087154667982802,
+            "randomBaseline": 0.000002087154667982802
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 3027098,
+        "total": 8145060,
+        "probability": 0.3716483365377296,
+        "uniqueGames": 17,
+        "randomBaseline": 0.33640708814758224,
+        "jackpot": 0.000002087154667982802
+      }
+    },
+    {
+      "games": 16,
+      "baselineFavorable": 2877087,
+      "baselineProbability": 0.35323091542603735,
+      "candidateFavorable": 2877087,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026103420,
+          "budget": 1000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2877087,
+          "endingFavorable": 2877087,
+          "valid": 526121,
+          "accepted": 34715,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103421,
+          "budget": 1000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2877087,
+          "endingFavorable": 2877087,
+          "valid": 363947,
+          "accepted": 71146,
+          "threeAccepted": 4531
+        },
+        {
+          "seed": 2026103422,
+          "budget": 1000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 2877087,
+          "endingFavorable": 2877087,
+          "valid": 247606,
+          "accepted": 105787,
+          "threeAccepted": 29607
+        },
+        {
+          "seed": 2026103423,
+          "budget": 1000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 2877087,
+          "endingFavorable": 2877087,
+          "valid": 171831,
+          "accepted": 127337,
+          "threeAccepted": 80403
+        },
+        {
+          "seed": 2026103424,
+          "budget": 1000000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2877087,
+          "endingFavorable": 2877087,
+          "valid": 519311,
+          "accepted": 35333,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103425,
+          "budget": 1000000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2877087,
+          "endingFavorable": 2877087,
+          "valid": 365873,
+          "accepted": 70927,
+          "threeAccepted": 4671
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          2,
+          7,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          3,
+          8,
+          12,
+          16,
+          17,
+          18
+        ],
+        [
+          4,
+          9,
+          13,
+          16,
+          19,
+          20
+        ],
+        [
+          5,
+          10,
+          14,
+          17,
+          19,
+          21
+        ],
+        [
+          6,
+          11,
+          15,
+          18,
+          20,
+          21
+        ],
+        [
+          22,
+          25,
+          28,
+          29,
+          30,
+          31
+        ],
+        [
+          22,
+          26,
+          32,
+          33,
+          34,
+          35
+        ],
+        [
+          22,
+          27,
+          36,
+          37,
+          38,
+          39
+        ],
+        [
+          23,
+          25,
+          32,
+          36,
+          40,
+          41
+        ],
+        [
+          23,
+          26,
+          28,
+          37,
+          42,
+          43
+        ],
+        [
+          23,
+          27,
+          29,
+          33,
+          44,
+          45
+        ],
+        [
+          24,
+          25,
+          34,
+          38,
+          42,
+          44
+        ],
+        [
+          24,
+          26,
+          30,
+          39,
+          40,
+          45
+        ],
+        [
+          24,
+          27,
+          31,
+          35,
+          41,
+          43
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.35323091542603735,
+      "analysis": {
+        "games": 16,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          3,
+          3,
+          3,
+          3,
+          3,
+          3,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 2,
+        "maximumUsage": 3,
+        "maxOverlap": 1,
+        "overlappingPairs": 57,
+        "triangles": 113,
+        "quadruples": 125,
+        "probabilities": {
+          "3": {
+            "favorable": 2877087,
+            "probability": 0.35323091542603735,
+            "randomBaseline": 0.32020476323526287
+          },
+          "4": {
+            "favorable": 181600,
+            "probability": 0.02229572280621628,
+            "randomBaseline": 0.022064236075233674
+          },
+          "5": {
+            "favorable": 3760,
+            "probability": 0.00046162950303619616,
+            "randomBaseline": 0.00046153004990336023
+          },
+          "6": {
+            "favorable": 16,
+            "probability": 0.0000019643808639838134,
+            "randomBaseline": 0.0000019643808639838134
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 2877087,
+        "total": 8145060,
+        "probability": 0.35323091542603735,
+        "uniqueGames": 16,
+        "randomBaseline": 0.3202047632352627,
+        "jackpot": 0.0000019643808639838134
+      }
+    },
+    {
+      "games": 9,
+      "baselineFavorable": 1703516,
+      "baselineProbability": 0.20914713949314062,
+      "candidateFavorable": 1703516,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026102720,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 1703516,
+          "endingFavorable": 1703516,
+          "valid": 358128,
+          "accepted": 245040,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026102721,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 1703516,
+          "endingFavorable": 1703516,
+          "valid": 337874,
+          "accepted": 255613,
+          "threeAccepted": 33699
+        },
+        {
+          "seed": 2026102722,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 1703516,
+          "endingFavorable": 1703516,
+          "valid": 311415,
+          "accepted": 286931,
+          "threeAccepted": 115664
+        },
+        {
+          "seed": 2026102723,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 1703516,
+          "endingFavorable": 1703516,
+          "valid": 279692,
+          "accepted": 274193,
+          "threeAccepted": 202264
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          3,
+          4,
+          11,
+          14,
+          38
+        ],
+        [
+          2,
+          3,
+          8,
+          9,
+          35,
+          41
+        ],
+        [
+          23,
+          28,
+          31,
+          36,
+          40,
+          42
+        ],
+        [
+          5,
+          7,
+          9,
+          19,
+          24,
+          29
+        ],
+        [
+          18,
+          21,
+          27,
+          39,
+          44,
+          45
+        ],
+        [
+          12,
+          15,
+          17,
+          32,
+          33,
+          43
+        ],
+        [
+          13,
+          16,
+          20,
+          22,
+          25,
+          26
+        ],
+        [
+          1,
+          2,
+          6,
+          7,
+          10,
+          34
+        ],
+        [
+          4,
+          5,
+          6,
+          8,
+          30,
+          37
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.20914713949314062,
+      "analysis": {
+        "games": 9,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 1,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 9,
+        "triangles": 7,
+        "quadruples": 2,
+        "probabilities": {
+          "3": {
+            "favorable": 1703516,
+            "probability": 0.20914713949314062,
+            "randomBaseline": 0.19515410759048432
+          },
+          "4": {
+            "favorable": 102150,
+            "probability": 0.01254134407849666,
+            "randomBaseline": 0.012471672403866913
+          },
+          "5": {
+            "favorable": 2115,
+            "probability": 0.00025966659545786035,
+            "randomBaseline": 0.0002596367575265368
+          },
+          "6": {
+            "favorable": 9,
+            "probability": 0.0000011049642359908951,
+            "randomBaseline": 0.0000011049642359908951
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 1703516,
+        "total": 8145060,
+        "probability": 0.20914713949314062,
+        "uniqueGames": 9,
+        "randomBaseline": 0.19515410759048424,
+        "jackpot": 0.0000011049642359908951
+      }
+    },
+    {
+      "games": 10,
+      "baselineFavorable": 1875065,
+      "baselineProbability": 0.23020886279536307,
+      "candidateFavorable": 1875065,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026102820,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 1875065,
+          "endingFavorable": 1875065,
+          "valid": 319000,
+          "accepted": 150218,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026102821,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 1875065,
+          "endingFavorable": 1875065,
+          "valid": 291542,
+          "accepted": 171560,
+          "threeAccepted": 19229
+        },
+        {
+          "seed": 2026102822,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 1875065,
+          "endingFavorable": 1875065,
+          "valid": 260290,
+          "accepted": 217458,
+          "threeAccepted": 82826
+        },
+        {
+          "seed": 2026102823,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 1875065,
+          "endingFavorable": 1875065,
+          "valid": 230530,
+          "accepted": 220407,
+          "threeAccepted": 159515
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          16
+        ],
+        [
+          1,
+          6,
+          7,
+          8,
+          9,
+          17
+        ],
+        [
+          2,
+          6,
+          10,
+          11,
+          12,
+          18
+        ],
+        [
+          3,
+          7,
+          10,
+          13,
+          14,
+          19
+        ],
+        [
+          4,
+          8,
+          11,
+          13,
+          15,
+          20
+        ],
+        [
+          5,
+          9,
+          12,
+          14,
+          15,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.23020886279536307,
+      "analysis": {
+        "games": 10,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 1,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 15,
+        "triangles": 20,
+        "quadruples": 15,
+        "probabilities": {
+          "3": {
+            "favorable": 1875065,
+            "probability": 0.23020886279536307,
+            "randomBaseline": 0.21433688902346237
+          },
+          "4": {
+            "favorable": 113500,
+            "probability": 0.013934826753885177,
+            "randomBaseline": 0.013847777540374482
+          },
+          "5": {
+            "favorable": 2350,
+            "probability": 0.0002885184393976226,
+            "randomBaseline": 0.0002884811423391035
+          },
+          "6": {
+            "favorable": 10,
+            "probability": 0.0000012277380399898835,
+            "randomBaseline": 0.0000012277380399898835
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 1875065,
+        "total": 8145060,
+        "probability": 0.23020886279536307,
+        "uniqueGames": 10,
+        "randomBaseline": 0.21433688902346226,
+        "jackpot": 0.0000012277380399898835
+      }
+    },
+    {
+      "games": 11,
+      "baselineFavorable": 2046335,
+      "baselineProbability": 0.2512363322062698,
+      "candidateFavorable": 2046335,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026102920,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2046335,
+          "endingFavorable": 2046335,
+          "valid": 296054,
+          "accepted": 98858,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026102921,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2046335,
+          "endingFavorable": 2046335,
+          "valid": 261297,
+          "accepted": 123577,
+          "threeAccepted": 11864
+        },
+        {
+          "seed": 2026102922,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 2046335,
+          "endingFavorable": 2046335,
+          "valid": 221730,
+          "accepted": 169555,
+          "threeAccepted": 61379
+        },
+        {
+          "seed": 2026102923,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 2046335,
+          "endingFavorable": 2046335,
+          "valid": 192505,
+          "accepted": 180490,
+          "threeAccepted": 128372
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          2,
+          7,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          3,
+          8,
+          12,
+          16,
+          17,
+          18
+        ],
+        [
+          4,
+          9,
+          13,
+          16,
+          19,
+          20
+        ],
+        [
+          5,
+          10,
+          14,
+          17,
+          19,
+          21
+        ],
+        [
+          6,
+          11,
+          15,
+          18,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        [
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.2512363322062698,
+      "analysis": {
+        "games": 11,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 1,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 21,
+        "triangles": 35,
+        "quadruples": 35,
+        "probabilities": {
+          "3": {
+            "favorable": 2046335,
+            "probability": 0.2512363322062698,
+            "randomBaseline": 0.2330624683303881
+          },
+          "4": {
+            "favorable": 124850,
+            "probability": 0.015328309429273695,
+            "randomBaseline": 0.015221965264810396
+          },
+          "5": {
+            "favorable": 2585,
+            "probability": 0.0003173702833373849,
+            "randomBaseline": 0.0003173246984782985
+          },
+          "6": {
+            "favorable": 11,
+            "probability": 0.0000013505118439888717,
+            "randomBaseline": 0.0000013505118439888717
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 2046335,
+        "total": 8145060,
+        "probability": 0.2512363322062698,
+        "uniqueGames": 11,
+        "randomBaseline": 0.2330624683303879,
+        "jackpot": 0.0000013505118439888717
+      }
+    },
+    {
+      "games": 12,
+      "baselineFavorable": 2216520,
+      "baselineProbability": 0.27213059203983764,
+      "candidateFavorable": 2216520,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026103020,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2216520,
+          "endingFavorable": 2216520,
+          "valid": 280377,
+          "accepted": 70189,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103021,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2216520,
+          "endingFavorable": 2216520,
+          "valid": 245729,
+          "accepted": 93843,
+          "threeAccepted": 8759
+        },
+        {
+          "seed": 2026103022,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 2216520,
+          "endingFavorable": 2216520,
+          "valid": 195128,
+          "accepted": 138704,
+          "threeAccepted": 47966
+        },
+        {
+          "seed": 2026103023,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 2216520,
+          "endingFavorable": 2216520,
+          "valid": 164673,
+          "accepted": 151728,
+          "threeAccepted": 106283
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          2,
+          7,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          3,
+          8,
+          12,
+          16,
+          17,
+          18
+        ],
+        [
+          4,
+          9,
+          13,
+          16,
+          19,
+          20
+        ],
+        [
+          5,
+          10,
+          14,
+          17,
+          19,
+          21
+        ],
+        [
+          6,
+          11,
+          15,
+          18,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          28,
+          29,
+          30
+        ],
+        [
+          22,
+          25,
+          26,
+          31,
+          32,
+          33
+        ],
+        [
+          23,
+          25,
+          27,
+          34,
+          35,
+          36
+        ],
+        [
+          24,
+          26,
+          27,
+          37,
+          38,
+          39
+        ],
+        [
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.27213059203983764,
+      "analysis": {
+        "games": 12,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 1,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 27,
+        "triangles": 39,
+        "quadruples": 36,
+        "probabilities": {
+          "3": {
+            "favorable": 2216520,
+            "probability": 0.27213059203983764,
+            "randomBaseline": 0.2513417424051078
+          },
+          "4": {
+            "favorable": 136200,
+            "probability": 0.016721792104662212,
+            "randomBaseline": 0.016594238248587953
+          },
+          "5": {
+            "favorable": 2820,
+            "probability": 0.00034622212727714713,
+            "randomBaseline": 0.0003461674259678271
+          },
+          "6": {
+            "favorable": 12,
+            "probability": 0.00000147328564798786,
+            "randomBaseline": 0.00000147328564798786
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 2216520,
+        "total": 8145060,
+        "probability": 0.27213059203983764,
+        "uniqueGames": 12,
+        "randomBaseline": 0.25134174240510765,
+        "jackpot": 0.00000147328564798786
+      }
+    },
+    {
+      "games": 13,
+      "baselineFavorable": 2386494,
+      "baselineProbability": 0.2929989466007617,
+      "candidateFavorable": 2386494,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026103120,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2386494,
+          "endingFavorable": 2386494,
+          "valid": 273584,
+          "accepted": 48254,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103121,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2386494,
+          "endingFavorable": 2386494,
+          "valid": 228432,
+          "accepted": 73605,
+          "threeAccepted": 6263
+        },
+        {
+          "seed": 2026103122,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 2386494,
+          "endingFavorable": 2386494,
+          "valid": 175556,
+          "accepted": 115057,
+          "threeAccepted": 38356
+        },
+        {
+          "seed": 2026103123,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 2386494,
+          "endingFavorable": 2386494,
+          "valid": 144520,
+          "accepted": 131169,
+          "threeAccepted": 90512
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          2,
+          7,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          3,
+          8,
+          12,
+          16,
+          17,
+          18
+        ],
+        [
+          4,
+          9,
+          13,
+          16,
+          19,
+          20
+        ],
+        [
+          5,
+          10,
+          14,
+          17,
+          19,
+          21
+        ],
+        [
+          6,
+          11,
+          15,
+          18,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          34,
+          35,
+          36,
+          37
+        ],
+        [
+          22,
+          24,
+          25,
+          26,
+          27,
+          38
+        ],
+        [
+          23,
+          24,
+          28,
+          29,
+          30,
+          39
+        ],
+        [
+          25,
+          28,
+          31,
+          32,
+          40,
+          41
+        ],
+        [
+          26,
+          29,
+          31,
+          33,
+          42,
+          43
+        ],
+        [
+          27,
+          30,
+          32,
+          33,
+          44,
+          45
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.2929989466007617,
+      "analysis": {
+        "games": 13,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 1,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 33,
+        "triangles": 46,
+        "quadruples": 40,
+        "probabilities": {
+          "3": {
+            "favorable": 2386494,
+            "probability": 0.2929989466007617,
+            "randomBaseline": 0.2691853484276747
+          },
+          "4": {
+            "favorable": 147550,
+            "probability": 0.01811527478005073,
+            "randomBaseline": 0.017964599159398856
+          },
+          "5": {
+            "favorable": 3055,
+            "probability": 0.0003750739712169094,
+            "randomBaseline": 0.000375009324831394
+          },
+          "6": {
+            "favorable": 13,
+            "probability": 0.0000015960594519868485,
+            "randomBaseline": 0.0000015960594519868485
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 2386494,
+        "total": 8145060,
+        "probability": 0.2929989466007617,
+        "uniqueGames": 13,
+        "randomBaseline": 0.2691853484276746,
+        "jackpot": 0.0000015960594519868485
+      }
+    },
+    {
+      "games": 14,
+      "baselineFavorable": 2556381,
+      "baselineProbability": 0.3138566198407378,
+      "candidateFavorable": 2556381,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026103220,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2556381,
+          "endingFavorable": 2556381,
+          "valid": 275126,
+          "accepted": 37088,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103221,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2556381,
+          "endingFavorable": 2556381,
+          "valid": 220978,
+          "accepted": 59977,
+          "threeAccepted": 4903
+        },
+        {
+          "seed": 2026103222,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 2556381,
+          "endingFavorable": 2556381,
+          "valid": 162076,
+          "accepted": 97653,
+          "threeAccepted": 31341
+        },
+        {
+          "seed": 2026103223,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 2556381,
+          "endingFavorable": 2556381,
+          "valid": 131463,
+          "accepted": 117736,
+          "threeAccepted": 80438
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          2,
+          7,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          3,
+          8,
+          12,
+          16,
+          17,
+          18
+        ],
+        [
+          4,
+          9,
+          13,
+          16,
+          19,
+          20
+        ],
+        [
+          5,
+          10,
+          14,
+          17,
+          19,
+          21
+        ],
+        [
+          6,
+          11,
+          15,
+          18,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          40,
+          41,
+          42
+        ],
+        [
+          22,
+          25,
+          26,
+          27,
+          28,
+          29
+        ],
+        [
+          23,
+          25,
+          30,
+          31,
+          32,
+          33
+        ],
+        [
+          24,
+          26,
+          30,
+          34,
+          35,
+          36
+        ],
+        [
+          27,
+          31,
+          34,
+          37,
+          38,
+          43
+        ],
+        [
+          28,
+          32,
+          35,
+          37,
+          39,
+          44
+        ],
+        [
+          29,
+          33,
+          36,
+          38,
+          39,
+          45
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.3138566198407378,
+      "analysis": {
+        "games": 14,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 1,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 39,
+        "triangles": 58,
+        "quadruples": 51,
+        "probabilities": {
+          "3": {
+            "favorable": 2556381,
+            "probability": 0.3138566198407378,
+            "randomBaseline": 0.28660367005427007
+          },
+          "4": {
+            "favorable": 158900,
+            "probability": 0.019508757455439247,
+            "randomBaseline": 0.019333050661218407
+          },
+          "5": {
+            "favorable": 3290,
+            "probability": 0.0004039258151566717,
+            "randomBaseline": 0.00040385039509270305
+          },
+          "6": {
+            "favorable": 14,
+            "probability": 0.0000017188332559858369,
+            "randomBaseline": 0.0000017188332559858367
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 2556381,
+        "total": 8145060,
+        "probability": 0.3138566198407378,
+        "uniqueGames": 14,
+        "randomBaseline": 0.2866036700542699,
+        "jackpot": 0.0000017188332559858369
+      }
+    },
+    {
+      "games": 15,
+      "baselineFavorable": 2725687,
+      "baselineProbability": 0.33464296150059053,
+      "candidateFavorable": 2725687,
+      "gain": 0,
+      "runs": [
+        {
+          "seed": 2026103320,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0,
+            "temperature": 70,
+            "cycle": 250000
+          },
+          "startingFavorable": 2725687,
+          "endingFavorable": 2725687,
+          "valid": 276736,
+          "accepted": 32240,
+          "threeAccepted": 0
+        },
+        {
+          "seed": 2026103321,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.2,
+            "temperature": 150,
+            "cycle": 500000
+          },
+          "startingFavorable": 2725687,
+          "endingFavorable": 2725687,
+          "valid": 216343,
+          "accepted": 53503,
+          "threeAccepted": 3934
+        },
+        {
+          "seed": 2026103322,
+          "budget": 500000,
+          "shake": false,
+          "settings": {
+            "threeRate": 0.5,
+            "temperature": 300,
+            "cycle": 750000
+          },
+          "startingFavorable": 2725687,
+          "endingFavorable": 2725687,
+          "valid": 153775,
+          "accepted": 86218,
+          "threeAccepted": 26725
+        },
+        {
+          "seed": 2026103323,
+          "budget": 500000,
+          "shake": true,
+          "settings": {
+            "threeRate": 0.8,
+            "temperature": 600,
+            "cycle": 1500000
+          },
+          "startingFavorable": 2725687,
+          "endingFavorable": 2725687,
+          "valid": 121978,
+          "accepted": 107782,
+          "threeAccepted": 73086
+        }
+      ],
+      "tickets": [
+        [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        [
+          1,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        [
+          2,
+          7,
+          12,
+          13,
+          14,
+          15
+        ],
+        [
+          3,
+          8,
+          12,
+          16,
+          17,
+          18
+        ],
+        [
+          4,
+          9,
+          13,
+          16,
+          19,
+          20
+        ],
+        [
+          5,
+          10,
+          14,
+          17,
+          19,
+          21
+        ],
+        [
+          6,
+          11,
+          15,
+          18,
+          20,
+          21
+        ],
+        [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        [
+          28,
+          29,
+          30,
+          31,
+          32,
+          33
+        ],
+        [
+          22,
+          28,
+          34,
+          35,
+          36,
+          37
+        ],
+        [
+          23,
+          29,
+          38,
+          39,
+          40,
+          41
+        ],
+        [
+          24,
+          30,
+          34,
+          38,
+          42,
+          43
+        ],
+        [
+          25,
+          31,
+          35,
+          39,
+          44,
+          45
+        ],
+        [
+          26,
+          32,
+          36,
+          40,
+          42,
+          44
+        ],
+        [
+          27,
+          33,
+          37,
+          41,
+          43,
+          45
+        ]
+      ],
+      "gainPercentagePoints": 0,
+      "candidateProbability": 0.33464296150059053,
+      "analysis": {
+        "games": 15,
+        "total": 8145060,
+        "usage": [
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2,
+          2
+        ],
+        "distinctNumbers": 45,
+        "minimumUsage": 2,
+        "maximumUsage": 2,
+        "maxOverlap": 1,
+        "overlappingPairs": 45,
+        "triangles": 67,
+        "quadruples": 51,
+        "probabilities": {
+          "3": {
+            "favorable": 2725687,
+            "probability": 0.33464296150059053,
+            "randomBaseline": 0.303606843459597
+          },
+          "4": {
+            "favorable": 170250,
+            "probability": 0.020902240130827764,
+            "randomBaseline": 0.020699595414310674
+          },
+          "5": {
+            "favorable": 3525,
+            "probability": 0.0004327776590964339,
+            "randomBaseline": 0.00043269063677545756
+          },
+          "6": {
+            "favorable": 15,
+            "probability": 0.0000018416070599848253,
+            "randomBaseline": 0.000001841607059984825
+          }
+        }
+      },
+      "independentExact": {
+        "favorable": 2725687,
+        "total": 8145060,
+        "probability": 0.33464296150059053,
+        "uniqueGames": 15,
+        "randomBaseline": 0.3036068434595969,
+        "jackpot": 0.0000018416070599848253
+      }
+    }
+  ]
+}

@@ -63,7 +63,7 @@
     },
     {
       "path": "data/portfolio-templates.json",
-      "sha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+      "sha256": "3a475538183bfe31893e1790b4d290e8bc5a16179a9084fa8477492c1e3efae4",
       "referenceDate": "2026-10-18"
     },
     {
@@ -113,7 +113,92 @@
     },
     {
       "path": "data/portfolio-research/current-template-verification-20261018.json",
+      "sha256": "b5885fa7b5cf7440de9a6f851cdf46bd7f9507aa520051eba15950b54fd94f05",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "dist/coverage.js",
+      "sha256": "1fcfcaf53365eaed04c50e123324aa82b7cfd2e19fc68894f05011bb00fd580b",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "dist/extension.js",
+      "sha256": "ef3981d278f58191b1b40b2513efc85a25e40380119a7e9c6b6ae28d81934ec5",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "dist/generation.js",
+      "sha256": "ac80f63aaf53d1b340e3ff18e0ca942dc1a244f7d08439f118fcb34d2f6c23e4",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/app-extension-benchmark.cjs",
+      "sha256": "e2f6b3e589d60e9941ec53718200fcdef2f43cb21f3a8d371349c48f9c0521e8",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/app-extension-benchmark.json",
+      "sha256": "78973d807d8cce6904674a420384e3130f55468d378888eb57b825f3b680d0f0",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/baseline-templates.json",
+      "sha256": "3ab1b32586caf4e324daa4e4437f94eb5ca5c38b03425ad3bfac80cf2b296b6f",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/baseline-verification.json",
       "sha256": "47453e66e90e4e7c74468cedbe597a55fb87e62c4f7daa2feb51cc17e1df5e67",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/best-candidates.json",
+      "sha256": "789b848a75ea71a8830736d55ae64355ccd9b16534ad79b3462fa124d2c50093",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/extension-benchmark.cjs",
+      "sha256": "dd222b8947b228c3a292ca6f843e4ea9c1f556e31775d8accde054f887478caa",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/extension-benchmark.json",
+      "sha256": "0bdc127af64b53cd62ff07b4cb9e012ccdb779cd3f0a65216e13b2f75d315934",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/phase1-results.json",
+      "sha256": "99300b3b1b0f633fc8110b7bddd5519ad9b3f76ad175fa0028a58bd0abee710e",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/phase1.cjs",
+      "sha256": "36f9c3413b1135f8d0ff6b9830adca54e4bf1f8d487a6c8f46ce88882f624e28",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/replay-verification.json",
+      "sha256": "fde85ff93cfdf21c266a3e05959a03ab5789372f7284ef1bc4160003bb1fb941",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/reproduce.cjs",
+      "sha256": "b8b773af2b64b8ca7e3ffddd6587f89e33493e08231bb85d482005360a70bf27",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/results.json",
+      "sha256": "468507ffe205e1e7e648245d8055215a312b95e623b284260e08595de468b7d2",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/search.cjs",
+      "sha256": "020db25cadacb2ff08ae663a22756f9953b3dbf94f5d6bbcde4eb963b20032cf",
+      "referenceDate": "2026-10-18"
+    },
+    {
+      "path": "data/portfolio-research/improvement-v2-20261018/summarize.cjs",
+      "sha256": "0158a45def05acd5a281e481c13d0cf1d445262657ca01d591c6081ddff2a121",
       "referenceDate": "2026-10-18"
     }
   ],

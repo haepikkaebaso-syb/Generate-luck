@@ -1,6 +1,6 @@
 'use strict';
 // 오프라인 지원: 온라인이면 항상 서버의 최신본을 쓰고 사본을 갱신한다. 연결이 없거나 너무 느릴 때만 사본을 쓴다.
-const CACHE='lotto-atelier-7ab216b2f5f0d32f',SHELL=['./','manifest.webmanifest','icon.svg'],TIMEOUT=4000;
+const CACHE='lotto-atelier-0dcf4a7e938a38a3',SHELL=['./','manifest.webmanifest','icon.svg'],TIMEOUT=4000;
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>Promise.all(SHELL.map(async path=>{
     const response=await fetch(path,{cache:'reload'});

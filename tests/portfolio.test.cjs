@@ -36,6 +36,16 @@ test('이전 확정 배치를 보존하고 검증된 같은 게임 수의 개선
   for(const entry of proof.maxima)assert.equal(D.templates[entry.games].stats.favorable3,entry.favorable);
   assert.equal(D.templates[8].stats.favorable3,proof.eightGameAllSharedShapes.maximum);
   assert.deepEqual(D.metadata.globalMaximumAtLeast3Games,[1,2,3,4,5,6,7,8]);
+  const prior=require('../data/portfolio-research/improvement-v2-20261018/baseline-templates.json');
+  const latest=require('../data/portfolio-research/improvement-v2-20261018/best-candidates.json');
+  assert.equal(latest.phase2Complete,true,'추가 탐색 결과가 확정되어야 함');
+  assert.deepEqual(latest.improvedCounts,[18,19,20]);
+  for(let m=1;m<=20;m++){
+    const before=prior.templates[m],after=D.templates[m];
+    if(latest.improvedCounts.includes(m))assert(after.stats.favorable3>before.stats.favorable3);
+    else assert.deepEqual(after, before);
+    for(const k of [4,5,6])assert.equal(after.stats['favorable'+k],before.stats['favorable'+k]);
+  }
 });
 test('전체 번호의 무작위 치환100회가 당첨 영역과 균형을 보존',()=>{
   const rand=R.seededRandom(45645),rng=bound=>Math.floor(rand()*bound);
