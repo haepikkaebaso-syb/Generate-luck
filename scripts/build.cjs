@@ -21,7 +21,18 @@ for(let m=1;m<=20;m++){
 // 연구용 자료 이후의 공식 회차(자동 갱신분)는 앱의 대조 기능에만 합친다. 분석 모형과 해시 고정 자료는 그대로다.
 const recent=require('./recent-draws.cjs');
 const merged=[...data.draws,...recent.validate(data.draws,recent.load())];
-const compact={metadata:{...data.metadata,lastRound:merged.at(-1).round,lastDrawDate:merged.at(-1).date},draws:merged.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
+const compact={metadata:{
+  schemaVersion:data.metadata.schemaVersion,game:data.metadata.game,timezone:data.metadata.timezone,
+  sourceName:data.metadata.sourceName,sourceType:data.metadata.sourceType,
+  sourcePageUrl:data.metadata.sourcePageUrl,sourceApiUrl:data.metadata.sourceApiUrl,
+  firstRound:merged[0].round,lastRound:merged.at(-1).round,
+  firstDrawDate:merged[0].date,lastDrawDate:merged.at(-1).date,
+  drawCount:merged.length,expectedDrawCount:merged.at(-1).round-merged[0].round+1,
+  completeStoredWindow:merged.every((draw,index)=>draw.round===merged[0].round+index),
+  // The original retrieval date, requested period and validation describe only
+  // the frozen source, not the subsequently merged app data.
+  baseSourceMetadata:data.metadata
+},draws:merged.map(({round,date,numbers,bonus})=>({round,date,numbers,bonus}))};
 fs.writeFileSync(path.join(dist,'draws.js'),[['LOTTO_DATA',compact],['LOTTO_PORTFOLIO',templates]].map(([name,value])=>'window.'+name+' = '+JSON.stringify(value).replace(/</g,'\\u003c')+';').join('\n'));
 const modules=['core.js','portfolio.js','coverage.js','extension.js','generation.js','round.js','draws.js','app.js','update.js'];
 const workerSource=['core.js','portfolio.js','coverage.js','extension.js','generation.js'].map(name=>fs.readFileSync(path.join(dist,name),'utf8')).join('\n');

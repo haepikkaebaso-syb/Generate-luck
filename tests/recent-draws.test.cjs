@@ -27,7 +27,14 @@ test('저장된 추가 회차 파일과 빌드된 앱 자료가 일치하고 연
  const built=context.window.LOTTO_DATA,expected=[...source.draws,...recent];
  assert.equal(built.draws.length,expected.length);
  assert.equal(built.metadata.lastRound,expected.at(-1).round);assert.equal(built.metadata.lastDrawDate,expected.at(-1).date);
- assert.equal(built.metadata.firstRound,source.metadata.firstRound);
+ assert.equal(built.metadata.firstRound,expected[0].round);assert.equal(built.metadata.firstDrawDate,expected[0].date);
+ assert.equal(built.metadata.drawCount,expected.length);
+ assert.equal(built.metadata.expectedDrawCount,expected.at(-1).round-expected[0].round+1);
+ assert.equal(built.metadata.drawCount,built.metadata.expectedDrawCount);
+ assert.equal(built.metadata.completeStoredWindow,true);
+ for(const key of ['schemaVersion','game','timezone','sourceName','sourceType','sourcePageUrl','sourceApiUrl'])assert.equal(built.metadata[key],source.metadata[key],key);
+ assert.deepEqual(JSON.parse(JSON.stringify(built.metadata.baseSourceMetadata)),source.metadata);
+ for(const key of ['requestedAsOf','requestedStartDate','requestedEndDate','retrievedAtUtc','latestPublishedRoundAtRetrieval','completeRequestedWindow','validation'])assert.equal(Object.hasOwn(built.metadata,key),false,key+' belongs to the frozen source metadata');
  for(const [i,d] of expected.entries())assert.deepEqual(JSON.parse(JSON.stringify(built.draws[i])),{round:d.round,date:d.date,numbers:d.numbers,bonus:d.bonus});
  assert.equal(Object.hasOwn(context.window,'LOTTO_SPLIT'),false); // 보존한 연구 모형은 운영 앱에 주입하지 않음
 });
