@@ -78,6 +78,21 @@
       "bonus": 14,
       "firstPrizeWinners": 14,
       "firstPrizePerWinner": 2025045509
+    },
+    {
+      "round": 1250,
+      "date": "2026-11-14",
+      "numbers": [
+        1,
+        5,
+        18,
+        23,
+        27,
+        28
+      ],
+      "bonus": 8,
+      "firstPrizeWinners": 9,
+      "firstPrizePerWinner": 3103164459
     }
   ]
 }
